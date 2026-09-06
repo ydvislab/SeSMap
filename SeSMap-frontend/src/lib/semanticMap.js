@@ -155,6 +155,7 @@ const STYLE = {
   OPACITY_PREVIEW_CENTER: 0.85,   // 鼠标所在 hex（中心）
   OPACITY_PREVIEW_NEIGHBOR: 0.7,  // 与中心点“有关系”的预览邻居
   OPACITY_ALT_FADE: 0.08,   // Alt 国家聚焦时：非该国家的 hex 统一降到这层透明度
+  OPACITY_SELECTED_MIN: 0.96,
 
   // --- 斜线阴影样式 ---
   HATCH_SPACING: 5,               // 斜线间距（px）
@@ -294,6 +295,7 @@ export async function initSemanticMap({
     uiPref: {
       route: false,          // 按钮想保持“Route Select 绿色”
       connectArmed: false,   // 按钮想保持“Connect 黄色（armed）”
+      area: false,           // 鼠标点击 Area Select 后保持 Alt/区域选择模式
     },
     //程序性布局/尺寸调整时，静默 RO 标记
     _squelchResize: false,
@@ -2702,7 +2704,7 @@ function buildConflictAlphaRampFor(panelIdx) {
 // 写入/读取 冲突色
 function setConflictColorOverride(panelIdx, color, alphaByKey) {
   
-  if (App?.modKeys?.alt && App?._pendingConflictEdit && !App._isConfirmingAltColor) {
+  if ((App?.modKeys?.alt || App?.uiPref?.area) && App?._pendingConflictEdit && !App._isConfirmingAltColor) {
     // 未经确认：忽略任何写入请求（防外部监听或意外调用）
     return;
   }
@@ -2796,7 +2798,7 @@ function propagateCountryColorToAllPanels(countryId, color) {
 
 // —— 覆盖色：写入（按 MSU → 透明度 基线为该国每个 hex 建立 alphaMap）——
 function setCountryColorOverride(panelIdx, countryId, color, alphaByKey) {
-  if (App?.modKeys?.alt && App?._pendingColorEdit && !App._isConfirmingAltColor) {
+  if ((App?.modKeys?.alt || App?.uiPref?.area) && App?._pendingColorEdit && !App._isConfirmingAltColor) {
     return;
   }
 
@@ -2968,6 +2970,53 @@ function refreshColorOverridesForCurrentAggregation() {
 
   App.panelCountryColors = nextPanelColors;
   App.panelConflictColors = nextConflictColors;
+}
+
+function isHexKeyVisible(key) {
+  if (!App.visibleCountries) return true;
+  const [p, qr] = String(key || '').split('|');
+  const [q, r] = String(qr || '').split(',');
+  const bucket = getBucket(Number(p), q, r);
+  return !!(bucket && bucket.countries && Array.from(bucket.countries).some(cid => App.visibleCountries.has(normalizeCountryId(cid))));
+}
+
+function refreshAfterVisibleCountriesChange() {
+  App._pendingColorEdit = null;
+  App._pendingConflictEdit = null;
+  App.hoveredTooltipBucket = null;
+  App.highlightedHexKeys?.clear?.();
+  App.alphaCacheByHex = new Map();
+  App.borderCacheByHex = new Map();
+  App._hexStyleByKey = new Map();
+
+  const filterKeySet = (set) => new Set(Array.from(set || []).filter(isHexKeyVisible));
+  App.persistentHexKeys = filterKeySet(App.persistentHexKeys);
+  App.highlightedHexKeys = filterKeySet(App.highlightedHexKeys);
+  App.excludedHexKeys = filterKeySet(App.excludedHexKeys);
+
+  if (App.visibleCountries && App.selectedRouteIds?.size) {
+    const keptRoutes = new Set();
+    (App._lastLinks || []).forEach(link => {
+      const rid = linkKey(link);
+      if (!rid || !App.selectedRouteIds.has(rid)) return;
+      const hasVisiblePoint = (link.path || []).some((pt, i) => {
+        const pIdx = resolvePanelIdxForPathPoint(pt, link, i);
+        return isHexKeyVisible(pkey(pIdx, pt.q, pt.r));
+      });
+      if (hasVisiblePoint) keptRoutes.add(rid);
+    });
+    App.selectedRouteIds = keptRoutes;
+    recomputePersistentFromRoutesPreservingExtras();
+    App.persistentHexKeys = filterKeySet(App.persistentHexKeys);
+  }
+
+  recomputeMsuAlphaForAllPanels();
+  refreshColorOverridesForCurrentAggregation();
+  drawOverlayLinesFromLinks(App._lastLinks, App.allHexDataByPanel, App.hexMapsByPanel, !!(App.flightStart || App.flightDraft));
+  updateHexStyles?.();
+  emitSelectionPayload?.();
+  emitSemanticColorSnapshot();
+  publishToStepAnalysis?.();
 }
 
 /* =========================
@@ -4033,6 +4082,7 @@ function deleteFlightById(routeId) {
     function forceGroupDefault() {
       App.uiPref.route = false;
       App.uiPref.connectArmed = false;
+      App.uiPref.area = false;
       App.insertMode = null;
       App.flightStart = null;
       App.modKeys = { ...(App.modKeys||{}), ctrl:false, meta:false, shift:false, alt:false };
@@ -4074,10 +4124,33 @@ function deleteFlightById(routeId) {
       const connectActive = !!App.insertMode;
       const connectArmed  = isConnectArmedNow(App.modKeys.ctrl, App.modKeys.shift);
       const routeActive   = isRouteMode(App.modKeys.ctrl || App.modKeys.meta);
-      setVisualState({ connectActive, connectArmed, routeActive, altActive: !!App.modKeys.alt });
+      setVisualState({ connectActive, connectArmed, routeActive, altActive: !!(App.modKeys.alt || App.uiPref.area) });
 
     }
-    function toggleAlt() { setAlt(!(App.modKeys && App.modKeys.alt)); }
+    function setAreaMode(val) {
+      App.uiPref.area = !!val;
+      if (val) {
+        App.uiPref.route = false;
+        App.uiPref.connectArmed = false;
+        App.insertMode = null;
+        App.flightStart = null;
+        App.modKeys = { ...(App.modKeys || {}), ctrl: false, meta: false, shift: false };
+      } else {
+        App._pendingColorEdit = null;
+        App._pendingConflictEdit = null;
+      }
+      if (App.hoveredHex) {
+        const { panelIdx, q, r } = App.hoveredHex;
+        App.highlightedHexKeys = val
+          ? computeHoverOrCountryPreview(panelIdx, q, r, { withAlt: true })
+          : ModeUI.computeHoverPreview(panelIdx, q, r, {});
+      } else {
+        App.highlightedHexKeys?.clear?.();
+      }
+      updateHexStyles?.();
+      computeAndApply();
+    }
+    function toggleAlt() { setAreaMode(!(App.uiPref && App.uiPref.area)); }
 
     // 绑定按钮点击
     btnAlt?.addEventListener?.('click', (e) => {
@@ -4087,8 +4160,8 @@ function deleteFlightById(routeId) {
     });
 
     // 选中/多选按钮被点击时，关闭 Alt 以保持互斥
-    btnSel?.addEventListener?.('click', () => setAlt(false));
-    btnRoute?.addEventListener?.('click', () => setAlt(false));
+    btnSel?.addEventListener?.('click', () => setAreaMode(false));
+    btnRoute?.addEventListener?.('click', () => setAreaMode(false));
 
     // 键盘监听（mac 上 Option 就是 Alt）
     window.addEventListener('keydown', (e) => {
@@ -4262,7 +4335,7 @@ function deleteFlightById(routeId) {
       // 允许“按钮绿灯 Route”在没有 Ctrl 的情况下保持绿色
       const routeActive  = !connectActive && !connectArmed && ( ctrlLike || App.uiPref.route );
 
-      const altActive = !!(App.modKeys && App.modKeys.alt);
+      const altActive = !!(App.modKeys && (App.modKeys.alt || App.uiPref.area));
 
       setVisualState({ connectActive, connectArmed, routeActive, altActive });
 
@@ -4271,7 +4344,7 @@ function deleteFlightById(routeId) {
         const { panelIdx, q, r } = App.hoveredHex;
         const ctrlLike = overrides ? !!(overrides.ctrl || overrides.meta) : !!(App.modKeys.ctrl || App.modKeys.meta);
         const shift    = overrides ? !!overrides.shift : !!App.modKeys.shift;
-        const alt      = overrides ? !!overrides.alt   : !!App.modKeys.alt;
+        const alt      = overrides ? !!overrides.alt   : !!(App.modKeys.alt || App.uiPref.area);
         App.highlightedHexKeys = alt
           ? computeHoverOrCountryPreview(panelIdx, q, r, { withCtrl: ctrlLike, withShift: shift, withAlt: alt })
           : ModeUI.computeHoverPreview(panelIdx, q, r, { withCtrl: ctrlLike, withShift: shift });
@@ -4300,6 +4373,7 @@ function deleteFlightById(routeId) {
             publishToStepAnalysis();
           }
           // 点 Route：关掉 Connect 黄灯，点亮 Route 绿灯
+          App.uiPref.area = false;
           App.uiPref.connectArmed = false;
           App.uiPref.route = true;
           seedSelectedRoutesFromPersistent();
@@ -4491,7 +4565,7 @@ function deleteFlightById(routeId) {
           App.highlightedHexKeys = computeHoverOrCountryPreview(panelIdx, q, r, {
             withCtrl: (App.modKeys.ctrl || App.modKeys.meta),
             withShift: App.modKeys.shift,
-            withAlt:  App.modKeys.alt
+            withAlt:  !!(App.modKeys.alt || App.uiPref.area)
           });
           updateHexStyles();
         }
@@ -4516,9 +4590,7 @@ function deleteFlightById(routeId) {
     // 窗口失焦时：清干净修饰键 + 关闭 Route/Connect 偏好，并回到 Group
     const onBlur = () => {
       App.modKeys = { ctrl:false, meta:false, shift:false, alt:false };
-      App.uiPref.route = false;
-      App.uiPref.connectArmed = false;
-      ModeUI.forceGroupDefault();
+      ModeUI.computeAndApply();
     };
 
     window.addEventListener('blur', onBlur);
@@ -4950,7 +5022,7 @@ const mode = getPanelLayoutMode(panelIdx);
 
             const withCtrl  = isCtrlLike(event);
             const withShift = !!event.shiftKey;
-            const withAlt   = !!event.altKey;
+            const withAlt   = !!(event.altKey || App.uiPref.area);
 
             App.highlightedHexKeys = computeHoverOrCountryPreview(
               panelIdx, d.q, d.r,
@@ -5036,7 +5108,7 @@ const mode = getPanelLayoutMode(panelIdx);
               handleSingleClick(panelIdx, d.q, d.r, withCtrl, withShift);
             }, STYLE.CLICK_DELAY);
             // 统一：点击时抛出“该 hex 的完整（含多国）数据”
-            if (!(App.modKeys && App.modKeys.alt)) {      // ← Alt 流程：仅预览，不抛事件
+            if (!(App.modKeys && (App.modKeys.alt || App.uiPref.area))) {      // ← Alt 流程：仅预览，不抛事件
               emitHexClick(panelIdx, d.q, d.r, d);
             }
 
@@ -5045,7 +5117,7 @@ const mode = getPanelLayoutMode(panelIdx);
             if (App._clickTimer) { clearTimeout(App._clickTimer); App._clickTimer = null; }
             handleDoubleClick(panelIdx, d.q, d.r, event);
           }).on('contextmenu', (event, d) => {
-              if (!App.modKeys.alt) return;
+              if (!(App.modKeys.alt || App.uiPref.area)) return;
               event.preventDefault();
 
               const panelIdx = d.panelIdx ?? d.panel_index ?? 0;
@@ -5852,6 +5924,9 @@ function updateHexStyles() {
 
       let boost = Math.max(0, Math.min(1, overlayOpacity)); // overlayOpacity 改名更贴切也可
       let finalOpacity = baseOpacity + (1 - baseOpacity) * boost;
+      if (isSelected) {
+        finalOpacity = Math.max(finalOpacity, STYLE.OPACITY_SELECTED_MIN ?? 0.96);
+      }
 
       // —— gallery 论文筛选：隔离选中论文的 HSU（filteredOut 已在 .each 开头按 visibleCountries 算好）——
       if (filteredOut) {
@@ -5895,6 +5970,7 @@ function updateHexStyles() {
       // 普通选中态：在非冲突模式下也给边框加一点强调
       if (!conflictMode && isSelected) {
         path.attr('stroke-width', Math.max(Number(path.attr('stroke-width')) || App.config.hex.borderWidth, App.config.hex.borderWidth * 1.6));
+        path.attr('stroke-opacity', 1);
       }
       try { applySpotlight(panelIdx); } catch(e) { console.warn(e); }
 
@@ -6390,7 +6466,7 @@ function updateHexStyles() {
     const k = pkey(panelIdx, q, r);
 
     // -------- Alt：只“预览”冲突块或整国，不进入选集，也不 emit --------
-    if (App.modKeys && App.modKeys.alt) {
+    if (App.modKeys && (App.modKeys.alt || App.uiPref.area)) {
       const conflict = isConflictHex(panelIdx, q, r);
       // 清除任何待上色状态
       App._pendingConflictEdit = null;
@@ -7351,6 +7427,81 @@ function releaseSelectionSnapshot(selection = {}) {
   publishToStepAnalysis();
 }
 
+function getPanelDomRectState(panelIdx) {
+  const node = App.playgroundEl?.querySelector?.(`.subspace[data-index="${panelIdx}"]`);
+  const st = App.panelStates?.[panelIdx] || {};
+  return {
+    left: Number.isFinite(parseFloat(node?.style?.left)) ? parseFloat(node.style.left) : (st.left ?? STYLE.SUBSPACE_DEFAULT_LEFT),
+    top: Number.isFinite(parseFloat(node?.style?.top)) ? parseFloat(node.style.top) : (st.top ?? STYLE.SUBSPACE_DEFAULT_TOP),
+    width: Number.isFinite(parseFloat(node?.style?.width)) ? parseFloat(node.style.width) : (st.width ?? STYLE.SUBSPACE_MIN_W),
+    height: Number.isFinite(parseFloat(node?.style?.height)) ? parseFloat(node.style.height) : (st.height ?? STYLE.SUBSPACE_MIN_H),
+    zoom: st.zoom
+  };
+}
+
+function findDuplicatePanelState(srcIdx, newIndex) {
+  const srcState = getPanelDomRectState(srcIdx);
+  const gap = STYLE.SUBSPACE_GAP;
+  const step = 28;
+  let left = srcState.left + step;
+  let top = srcState.top + step;
+  const existing = Array.from(App.playgroundEl?.querySelectorAll?.('.subspace') || [])
+    .map(node => ({
+      left: parseFloat(node.style.left || '0'),
+      top: parseFloat(node.style.top || '0'),
+      width: parseFloat(node.style.width || STYLE.SUBSPACE_MIN_W),
+      height: parseFloat(node.style.height || STYLE.SUBSPACE_MIN_H)
+    }));
+
+  const overlaps = (a, b) =>
+    a.left < b.left + b.width + gap &&
+    a.left + a.width + gap > b.left &&
+    a.top < b.top + b.height + gap &&
+    a.top + a.height + gap > b.top;
+
+  const candidate = () => ({ left, top, width: srcState.width, height: srcState.height });
+  for (let i = 0; i < 24 && existing.some(rect => overlaps(candidate(), rect)); i++) {
+    left += step;
+    top += step;
+  }
+
+  if (existing.some(rect => overlaps(candidate(), rect))) {
+    const maxBottom = existing.reduce((m, rect) => Math.max(m, rect.top + rect.height), STYLE.SUBSPACE_DEFAULT_TOP);
+    left = STYLE.SUBSPACE_DEFAULT_LEFT + (newIndex % 3) * (srcState.width + gap);
+    top = maxBottom + gap;
+  }
+
+  return {
+    left: Math.max(0, left),
+    top: Math.max(0, top),
+    width: srcState.width,
+    height: srcState.height,
+    zoom: srcState.zoom,
+    userMoved: true,
+    userResized: true
+  };
+}
+
+function updatePlaygroundBoundsForPanels() {
+  const nodes = Array.from(App.playgroundEl?.querySelectorAll?.('.subspace') || []);
+  let maxRight = App.playgroundEl?.clientWidth || 0;
+  let maxBottom = App.playgroundEl?.clientHeight || 0;
+  nodes.forEach(node => {
+    const left = parseFloat(node.style.left || '0');
+    const top = parseFloat(node.style.top || '0');
+    const width = parseFloat(node.style.width || STYLE.SUBSPACE_MIN_W);
+    const height = parseFloat(node.style.height || STYLE.SUBSPACE_MIN_H);
+    maxRight = Math.max(maxRight, left + width + STYLE.SUBSPACE_GAP);
+    maxBottom = Math.max(maxBottom, top + height + STYLE.SUBSPACE_GAP);
+  });
+  if (App.playgroundEl?.style) {
+    App.playgroundEl.style.minWidth = `${Math.max(maxRight, App.playgroundEl.clientWidth || 0)}px`;
+    App.playgroundEl.style.minHeight = `${Math.max(maxBottom, App.playgroundEl.clientHeight || 0)}px`;
+  }
+  App.globalOverlayEl?.setAttribute?.('width', Math.max(maxRight, App.playgroundEl?.clientWidth || 0));
+  App.globalOverlayEl?.setAttribute?.('height', Math.max(maxBottom, App.playgroundEl?.clientHeight || 0));
+}
+
 function _duplicateSubspaceByIndex(srcIdx) {
   if (!App.currentData?.subspaces?.[srcIdx]) return;
   const src = App.currentData.subspaces[srcIdx];
@@ -7364,13 +7515,20 @@ function _duplicateSubspaceByIndex(srcIdx) {
   // 2) 挂到数据上
   const newIndex = App.currentData.subspaces.length;
   App.currentData.subspaces.push(cloned);
+  if (App.baseSemanticData?.subspaces?.[srcIdx]) {
+    const baseClone = JSON.parse(JSON.stringify(App.baseSemanticData.subspaces[srcIdx]));
+    baseClone.subspaceName = cloned.subspaceName;
+    App.baseSemanticData.subspaces.push(baseClone);
+  }
 
   // Copy layout mode from source panel
   setPanelLayoutMode(newIndex, getPanelLayoutMode(srcIdx));
+  App.panelStates[newIndex] = findDuplicatePanelState(srcIdx, newIndex);
 
   // 3) 渲染这个新面板
   createSubspaceElement(cloned, newIndex);
   renderHexGridFromData(newIndex, cloned, App.config.hex.radius);
+  refreshColorOverridesForCurrentAggregation();
 
   // ★ 新增：复制出来的面板 Alt 只影响自己
   App.altIsolatedPanels.add(newIndex);
@@ -7381,7 +7539,9 @@ function _duplicateSubspaceByIndex(srcIdx) {
   drawOverlayLinesFromLinks(App._lastLinks, App.allHexDataByPanel, App.hexMapsByPanel, !!App.flightStart);
   updateHexStyles();
   observePanelResize();
-  applyResponsiveLayout(true);
+  updatePlaygroundBoundsForPanels();
+  emitSemanticColorSnapshot();
+  publishToStepAnalysis();
 }
 
 function _deleteSubspaceByIndex(idx) {
@@ -7462,8 +7622,8 @@ function _deleteSubspaceByIndex(idx) {
 
   publishToStepAnalysis();
 
-  // ★ 强制响应式重排（忽略 userMoved/userResized）
-  applyResponsiveLayout(true);
+  // 删除后只更新画布边界，不强制重排其它子空间，保留用户当前布局。
+  updatePlaygroundBoundsForPanels();
 
   // ★ 恢复滚动位置（下一帧，待高度稳定后）
   requestAnimationFrame(() => {
@@ -7759,7 +7919,7 @@ function _deleteSubspaceByIndex(idx) {
         } else {
           App.visibleCountries = null;   // null = 显示全部
         }
-        updateHexStyles?.();
+        refreshAfterVisibleCountriesChange();
         return { handled: true };
       },
 
@@ -7854,39 +8014,16 @@ function _deleteSubspaceByIndex(idx) {
         if (opts.reflow) applyResponsiveLayout?.(true);
       },
 
-
-      /**
-       * 只显示给定索引的子空间；若传空数组 => 全部隐藏
-       * @param {number[]} indices
-       * @param {{reflow?: boolean}} opts
-       */
-      showOnlySubspaces(indices = [], opts = { reflow: true }) {
-        const set = new Set(indices || []);
-        const nodes = App.playgroundEl.querySelectorAll('.subspace');
-
-        nodes.forEach(n => {
-          const idx = Number(n.dataset.index || -1);
-          n.style.display = (set.size > 0 && set.has(idx)) ? '' : 'none';
-        });
-
-        // 只针对可见面板重绘连线/样式
-        const visibleIdx = [...set];
-        const links = (App._lastLinks || []).filter(l => {
-          // 如果你的 Link 有 panel 信息，可在此根据 visibleIdx 过滤；没有就直接保留
-          return true;
-        });
-        drawOverlayLinesFromLinks(links, App.allHexDataByPanel, App.hexMapsByPanel, !!(App.flightStart || App.flightDraft));
-        updateHexStyles?.();
-        if (opts.reflow) applyResponsiveLayout?.(true);
-      },
-
       /**
        * 显示全部子空间
        * @param {{reflow?: boolean}} opts
        */
       showAllSubspaces(opts = { reflow: true }) {
         const nodes = App.playgroundEl.querySelectorAll('.subspace');
-        nodes.forEach(n => n.style.display = '');
+        nodes.forEach(n => {
+          n.style.display = '';
+          n.dataset.visible = '1';
+        });
 
         drawOverlayLinesFromLinks(App._lastLinks, App.allHexDataByPanel, App.hexMapsByPanel, !!(App.flightStart || App.flightDraft));
         updateHexStyles?.();

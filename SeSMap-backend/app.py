@@ -29,16 +29,23 @@ except Exception:
 PROMPT_MSU_SUMMARY = os.getenv("PROMPT_MSU_SUMMARY", """
 You generate evidence-grounded summaries for selected MSUs in SeSMap.
 
+Selection shape comes first:
+- Every request states a SELECTION SHAPE. Obey it literally; never contradict it.
+- A single HSU has no traversal. Do not write "path", "route", "flight", "trajectory", "journey", "steps", or "hops" for it.
+- Only a user-drawn connection between HSUs may be called a Flight. Never call anything else a Flight, and never call a Flight a "path" or "route".
+- Connected HSUs that are not a user-drawn Flight are just "the selected evidence".
+
 Rules:
-- Use only the user-provided MSU sentences, HSU labels, and subspace names.
+- Use only the user-provided MSU sentences, HSU labels, subspace names, and paper labels.
 - Treat paper/source labels as first-class evidence boundaries when they are present.
-- Preserve the selected path order, but synthesize instead of listing every hop.
+- When the request supplies an order, preserve it, but synthesize instead of listing every hop.
 - Use exact subspace names when they are provided; never output generic labels such as "Subspace 0".
-- Explain how the focus changes when the path crosses subspaces.
-- If multiple papers/sources are selected, compare them explicitly: what each source contributes, where they agree, and where their evidence differs.
+- Explain how the focus changes across subspaces only when the selection actually spans more than one.
+- If several papers are represented, compare them explicitly: what each source contributes, where they agree, and where their evidence differs.
+- If only one paper is represented, do not compare papers and do not imply a second source.
 - Do not merge claims across papers unless the selected MSUs support that comparison.
 - No markdown, no code fences, no unsupported claims, no filler phrases.
-- Output ONLY strict JSON: {"RouteSummary":"..."}.
+- Output ONLY strict JSON: {"EvidenceSummary":"..."}.
 """).strip()
 
 PROMPT_STEP_TITLE = os.getenv("PROMPT_STEP_TITLE", """

@@ -106,7 +106,7 @@ onMounted(()=> nextTick(autoResize))
 
 /* 鼠标悬停到 chat-dock：展开提示 + 整体高度略增 */
 .chat-dock:hover .dock-hints{
-  max-height:48px;           /* 展开高度（够放一行提示） */
+  max-height:90px;           /* 展开高度（约三行提示，其余滚动查看） */
   opacity:1;
   transform: translateY(0);
 }
@@ -153,7 +153,8 @@ onMounted(()=> nextTick(autoResize))
 /* 列表容器：默认隐藏滚动条与滚动能力；在 hover 时再开放滚动 */
 .hint-list{
   flex: 1 1 auto;
-  max-height: 40px;            /* 与 .chat-dock:hover .dock-hints 的 max-height 协同 */
+  /* 3 行胶囊：3 × 21px + 2 × 6px 间距 = 75px，正好不切半行 */
+  max-height: 75px;            /* 与 .chat-dock:hover .dock-hints 的 max-height 协同 */
   overflow: hidden;            /* 默认不滚动 */
   padding-right: 2px;          /* 给滚动条预留一丝空间，避免挤压内容 */
   overscroll-behavior: contain;

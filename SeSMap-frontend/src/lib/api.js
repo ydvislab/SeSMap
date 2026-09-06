@@ -166,8 +166,112 @@ export async function sendQueryToLLM(query, llm = 'ChatGPT', opts = {}) {
 }
 
 
+const cleanSubspaceName = (name, idx) => {
+  const raw = String(name || '').trim();
+  if (!raw || /^subspace\s+\d+$/i.test(raw)) return `Unnamed Subspace ${idx}`;
+  return raw;
+};
+
+const paperLabelOf = (item) =>
+  item?.paper || item?.paperLabel || item?.source || item?.paperId || 'Unknown paper';
+
+// 保存到 Stepwise 的 link.type 决定这次选择到底是什么形状：
+//   single      -> 单个 HSU，没有任何走向可言
+//   flight      -> 用户自己连出来的跨子空间航线（论文里提出的 Flight）
+//   road/river  -> 数据自带的连线，被选中的是其中一段，不能叫 Flight
+const TRAVERSAL_TERMS = { flight: 'Flight' };
+
+function describeSelectionShape(hops, context = {}) {
+  const linkType = String(context.linkType || '').toLowerCase();
+
+  const hsuKeys = [];
+  const subspaces = [];
+  const papers = [];
+  let msuCount = 0;
+
+  hops.forEach(hop => {
+    if (hop.hsu && !hsuKeys.includes(hop.hsu)) hsuKeys.push(hop.hsu);
+    const name = cleanSubspaceName(hop.subspace, hop.panelIdx);
+    if (!subspaces.includes(name)) subspaces.push(name);
+    const evidence = Array.isArray(hop.evidence) && hop.evidence.length
+      ? hop.evidence
+      : (hop.sentences || []).map(text => ({ text }));
+    msuCount += evidence.length;
+    evidence.forEach(item => {
+      const paper = paperLabelOf(item);
+      if (!papers.includes(paper)) papers.push(paper);
+    });
+  });
+
+  const hsuCount = hsuKeys.length || hops.length;
+  // 只有真正跨了 2 个以上 HSU 才算“走过一段”，link.type 为 single 时永远不算
+  const isTraversal = hsuCount > 1 && linkType !== 'single';
+
+  return {
+    linkType,
+    hsuCount,
+    msuCount,
+    subspaces,
+    papers,
+    isTraversal,
+    // 只有用户连出来的航线才配叫 Flight，其余一律用中性说法
+    traversalTerm: isTraversal ? (TRAVERSAL_TERMS[linkType] || null) : null,
+    crossSubspace: subspaces.length > 1,
+    multiPaper: papers.length > 1
+  };
+}
+
+// 根据选择形状给出“这次到底该写什么”的指令，避免单点也被写成一条路径
+function buildShapeInstructions(shape) {
+  const lines = [];
+  const subject = shape.traversalTerm ? `the selected ${shape.traversalTerm}` : 'the selected evidence';
+
+  if (!shape.isTraversal) {
+    const where = shape.subspaces[0] ? `the "${shape.subspaces[0]}" subspace` : 'one subspace';
+    lines.push(`- TOPOLOGY: the user selected ONE HSU in ${where}. There is no Flight, no traversal, no ordering, and no direction.`);
+    lines.push('- Describe what this single semantic neighborhood actually contains: its topic plus the specific methods, configurations, measurements, or findings carried by the selected MSUs.');
+    lines.push('- Explain how the selected MSUs relate to one another inside this HSU (elaboration, precondition, cause and effect, method and result, or contrast).');
+    lines.push('- Never describe the selection as a "path", "route", "flight", "trajectory", "journey", "steps", "hops", "moves", "traverses", "starts from", or "leads to". Nothing was traversed.');
+  } else if (shape.traversalTerm) {
+    lines.push(`- TOPOLOGY: the user drew a ${shape.traversalTerm} over ${shape.hsuCount} HSUs. The hops below are in the order the user connected them.`);
+    lines.push(`- Call it "the selected ${shape.traversalTerm}". Never call it a path, route, trajectory, chain, or line.`);
+    lines.push(`- Follow the ${shape.traversalTerm} order to show how the focus develops, but synthesize; do not narrate every hop one by one.`);
+  } else {
+    lines.push(`- TOPOLOGY: the user selected ${shape.hsuCount} connected HSUs. This is an existing connection in the map, not a user-drawn Flight.`);
+    lines.push('- Call it "the selected evidence". Never call it a path, route, flight, trajectory, or journey.');
+    lines.push('- Describe what the connected HSUs jointly cover and how their content differs, without narrating movement between them.');
+  }
+
+  if (shape.isTraversal) {
+    lines.push(shape.crossSubspace
+      ? `- The selection crosses ${shape.subspaces.length} subspaces (${shape.subspaces.map(n => `"${n}"`).join(' -> ')}). Say what each named subspace contributes and how the focus shifts between them.`
+      : `- The selection stays inside one subspace ("${shape.subspaces[0]}"). Do not claim any cross-subspace transition; compare the HSUs within that one subspace instead.`);
+  } else if (shape.crossSubspace) {
+    lines.push(`- The selected MSUs carry more than one subspace label (${shape.subspaces.map(n => `"${n}"`).join(', ')}). Name them, but do not turn that into a transition story.`);
+  }
+
+  if (shape.multiPaper) {
+    lines.push(`- PROVENANCE: ${shape.papers.length} papers are represented (${shape.papers.map(n => `"${n}"`).join(', ')}). State what each paper contributes and whether their evidence is similar, complementary, or divergent.`);
+    lines.push('- Preserve source boundaries: never merge claims from different papers into one statement, and never attribute one paper\'s finding to another.');
+    if (!shape.isTraversal) {
+      lines.push('- Because several papers land in the same HSU, explain what makes them semantically adjacent here.');
+    }
+  } else {
+    lines.push(`- PROVENANCE: all selected MSUs come from a single paper ("${shape.papers[0] || 'Unknown paper'}"). Do not compare papers, do not imply a second source, and do not mention that only one paper is present.`);
+    lines.push('- Instead, show how that paper\'s own evidence develops across the selected MSUs.');
+  }
+
+  return lines.join('\n');
+}
+
+function targetWordRange(shape) {
+  if (!shape.isTraversal) return shape.msuCount <= 2 ? '45-75 words' : '60-100 words';
+  return shape.crossSubspace || shape.multiPaper ? '90-140 words' : '70-110 words';
+}
+
 // 新增：总结MSU句子的函数（修正版：不再用 task:'subspace'）
-export async function summarizeMsuSentences(hopsOrGroups) {
+// context: { linkType: 'single'|'flight'|'road'|'river', ... } 由 LinkCard 按当前卡片的 link 传入
+export async function summarizeMsuSentences(hopsOrGroups, context = {}) {
   // ---------- 规范化 hops ----------
   const normalize = (arr) => {
     const hasHopShape = arr?.some(x => 'step' in x || 'panelIdx' in x || 'subspace' in x);
@@ -194,11 +298,7 @@ export async function summarizeMsuSentences(hopsOrGroups) {
     }));
   };
   const hops = normalize(hopsOrGroups);
-  const cleanSubspaceName = (name, idx) => {
-    const raw = String(name || '').trim();
-    if (!raw || /^subspace\s+\d+$/i.test(raw)) return `Unnamed Subspace ${idx}`;
-    return raw;
-  };
+  const shape = describeSelectionShape(hops, context);
 
   // ---------- Legend & Ordered Hops ----------
   const legendMap = new Map();
@@ -247,45 +347,61 @@ export async function summarizeMsuSentences(hopsOrGroups) {
   const hopsBlock = hops
     .sort((a,b) => (a.step||0) - (b.step||0))
     .map(h => [
-      `Step ${h.step} | HSU ${h.hsu} | Subspace "${cleanSubspaceName(h.subspace, h.panelIdx)}" (panelIdx ${h.panelIdx}):`,
+      // 单点选择没有先后可言，标题里就不要出现 Step，免得模型编出一段行程
+      `${shape.isTraversal ? `Hop ${h.step} | ` : ''}HSU ${h.hsu} | Subspace "${cleanSubspaceName(h.subspace, h.panelIdx)}" (panelIdx ${h.panelIdx}):`,
       ...formatEvidence(h)
     ].join('\n'))
     .join('\n\n');
 
-  // ---------- 提示词：只返回 RouteSummary + 禁止代码块 ----------
-  const prompt = `
-You are given selected HSUs along one or more links in a semantic map.
-Each hop belongs to a named subspace and contains user-selected MSU evidence. Each MSU may also include a paper/source label.
+  const shapeBlock = [
+    `- selection_kind: ${shape.isTraversal ? (shape.traversalTerm ? 'user-drawn Flight' : 'connected HSUs') : 'single HSU'}`,
+    `- hsu_count: ${shape.hsuCount}`,
+    `- selected_msu_count: ${shape.msuCount}`,
+    `- subspaces: ${shape.subspaces.map(n => `"${n}"`).join(', ') || '(none)'}`,
+    `- papers: ${shape.papers.map(n => `"${n}"`).join(', ') || '(none)'}`
+  ].join('\n');
 
-TASK
-Write a useful analytical summary for a user reviewing cross-subspace evidence. Use a layered synthesis: identify the selected topic, explain what each named subspace contributes, and compare how different papers/sources support, extend, or conflict with each other.
+  // ---------- 提示词：按选择形状分支 + 只返回 EvidenceSummary ----------
+  const shapeInstructions = buildShapeInstructions(shape);
+  const wordRange = targetWordRange(shape);
+
+  const prompt = `
+You are summarizing a saved selection from a SeSMap semantic subspace map.
+Papers are laid out as regions, MSUs are minimal semantic units, and an HSU is one aggregated cell of MSUs.
+A Flight is a connection the user draws between HSUs; it is the only thing that may be called a Flight.
+
+SELECTION SHAPE (ground truth - never contradict this)
+${shapeBlock}
+
+WHAT THIS SELECTION IS, AND WHAT TO WRITE
+${shapeInstructions}
 
 CONTENT RULES (Strict)
-1) Evidence-only: use ONLY facts, terms, and subspace names from the MSUs or LEGEND.
-2) Use exact subspace display names from LEGEND, such as "Background", "Method", "Experiment", "Result", or "Conclusion" when present.
-3) Never write generic labels like "Subspace 0", "Subspace 1", or "panelIdx" in the final text.
-4) Do not enumerate every hop. Synthesize by subspace and by paper/source.
-5) Make the summary valuable: identify the selected path's topic, how the focus develops across subspaces, and the strongest evidence.
-6) If multiple papers/sources appear, explicitly compare them. Mention what each paper contributes and whether their evidence is similar, complementary, or different.
-7) Preserve source boundaries: do not merge claims from different papers unless the MSUs support the comparison.
-8) No meta/fillers: avoid “overall”, “in summary”, “the text says”, “this suggests”, “it highlights”, “it indicates”.
-9) One paragraph, coherent and neutral.
+1) Evidence-only: use ONLY facts, terms, and subspace names from the MSUs or LEGEND. Never add outside knowledge.
+2) Use the exact subspace display names from LEGEND, such as "Background", "Method", "Experiment", "Result", or "Conclusion" when present.
+3) Never name the internal containers or ids: no "HSU", "MSU", "cell", "node", "neighborhood", "Subspace 0", "panelIdx", coordinates, or numeric ids. Write about the evidence, not the structure that holds it.
+   Incorrect: "The selected HSU in the 'method' subspace combines evidence from two papers."
+   Correct:   "Within the method subspace, two papers converge on fuel injection strategies."
+4) Never describe the UI, the selection gesture, the map, or the act of selecting. Describe the evidence.
+5) Preserve domain terms, named methods, datasets, metrics, and measurements exactly as written in the MSUs. A banned word inside a domain term stays (for example "trajectory-based visualization" is a method name, not a description of the selection).
+6) No meta or filler: avoid "overall", "in summary", "the text says", "this suggests", "it highlights", "it indicates", "the selection shows".
+7) One paragraph, coherent and neutral. No bullets, no markdown, no code fences.
 
-OUTPUT FORMAT (Very Important)
-- Return a SINGLE JSON object with EXACTLY ONE key: "RouteSummary".
-- The value must be a compact paragraph of 80–130 words (no bullets, no markdown, no code fences, no extra text).
-
-LEGEND (panel index → subspace name):
+LEGEND (panel index -> subspace name):
 ${legendLines || '(none)'}
 
 EVIDENCE GROUPED BY PAPER/SOURCE:
 ${paperBlock || '(none)'}
 
-ORDERED HOPS (do not reorder; source of truth):
+${shape.isTraversal ? 'ORDERED HOPS (do not reorder; source of truth):' : 'SELECTED EVIDENCE (source of truth):'}
 ${hopsBlock || '(none)'}
 
+OUTPUT FORMAT (Very Important)
+- Return a SINGLE JSON object with EXACTLY ONE key: "EvidenceSummary".
+- The value must be a compact paragraph of ${wordRange} (no bullets, no markdown, no code fences, no extra text).
+
 REQUIRED OUTPUT:
-{"RouteSummary": "<80-130 words; evidence-based paragraph organized by named subspace transitions>"}
+{"EvidenceSummary": "<${wordRange}; evidence-based paragraph that matches the SELECTION SHAPE above>"}
   `.trim();
 
   // ---------- 请求（改动点：task 用 'literature'；按内容类型分流） ----------
@@ -336,14 +452,15 @@ REQUIRED OUTPUT:
       // 3) 尝试 JSON.parse
       try {
         const obj = JSON.parse(s);
-        if (obj && typeof obj.RouteSummary === 'string' && obj.RouteSummary.trim()) {
-          return obj.RouteSummary.trim();
-        }
+        const summaryKey = ['EvidenceSummary', 'RouteSummary'].find(
+          k => typeof obj?.[k] === 'string' && obj[k].trim()
+        );
+        if (summaryKey) return obj[summaryKey].trim();
         if (Array.isArray(obj) && obj.length) {
           const units = obj.map(x => (typeof x?.unit === 'string' ? x.unit.trim() : '')).filter(Boolean);
           if (units.length) return units.join('; ');
         }
-        const candidate = obj.summary || obj.Summary || obj.routeSummary || obj.abstract || obj.text;
+        const candidate = obj.summary || obj.Summary || obj.evidenceSummary || obj.routeSummary || obj.abstract || obj.text;
         if (typeof candidate === 'string' && candidate.trim()) return candidate.trim();
         return JSON.stringify(obj);
       } catch {

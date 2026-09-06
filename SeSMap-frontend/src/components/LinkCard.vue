@@ -633,7 +633,11 @@ const summarizeSelected = async () => {
   try {
     llmLoading.value = true;
     // 把“有序 hops”传给 API
-    const answer = await summarizeMsuSentences(hops);
+    // 把当前卡片的形状告诉 api：single / flight / road / river 决定总结怎么写
+    const answer = await summarizeMsuSentences(hops, {
+      linkType: props.link?.type || '',
+      pathLength: Array.isArray(props.link?.path) ? props.link.path.length : 0
+    });
     llmSummary.value =
       typeof answer === 'string' ? answer :
       answer?.text ?? answer?.summary ?? answer?.payload?.text ?? answer?.payload?.summary ??
