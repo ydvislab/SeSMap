@@ -11,7 +11,8 @@
     "2d_coord": [
       -3.94171892488559,
       -1.5159365909872289
-    ]
+    ],
+    "paragraph_info": "Cite as: Phys. Fluids 33, 055130 (2021); https://doi.org/10.1063/5.0048229"
   },
   {
     "idx": 1,
@@ -25,7 +26,8 @@
     "2d_coord": [
       -2.6987308321614525,
       -2.4772725235237725
-    ]
+    ],
+    "paragraph_info": "Cite as: Phys. Fluids 33, 055130 (2021); https://doi.org/10.1063/5.0048229"
   },
   {
     "idx": 2,
@@ -39,7 +41,8 @@
     "2d_coord": [
       -3.1535309251458603,
       -2.6620167010888838
-    ]
+    ],
+    "paragraph_info": "Submitted: 20 February 2021 . Accepted: 30 April 2021 . Published Online: 25 May 2021"
   },
   {
     "idx": 3,
@@ -53,7 +56,8 @@
     "2d_coord": [
       -3.2894851698208876,
       -2.7133663592797963
-    ]
+    ],
+    "paragraph_info": "Submitted: 20 February 2021 . Accepted: 30 April 2021 . Published Online: 25 May 2021"
   },
   {
     "idx": 4,
@@ -67,7 +71,8 @@
     "2d_coord": [
       -3.082678573827533,
       -2.8017104927464307
-    ]
+    ],
+    "paragraph_info": "Submitted: 20 February 2021 . Accepted: 30 April 2021 . Published Online: 25 May 2021"
   },
   {
     "idx": 5,
@@ -81,12 +86,14 @@
     "2d_coord": [
       -2.122322836754536,
       -1.8010095808325768
-    ]
+    ],
+    "paragraph_info": "Wen Shi (时文 ), Ye Tian (田野 ), Jialing Le (乐嘉陵 ), and Fuyu Zhong (钟富宇 )"
   },
   {
     "type": "figure",
     "para_id": 3,
-    "paper_id": 0
+    "paper_id": 0,
+    "paragraph_info": "images/75f49c7247b8cf4bece0556bf10894babbb8613dae2f39927026e8b4c96767fa.jpg"
   },
   {
     "idx": 7,
@@ -100,7 +107,8 @@
     "2d_coord": [
       -3.8275994838359417,
       -1.5123321989366456
-    ]
+    ],
+    "paragraph_info": "Modeling thermodynamic trends of rotating detonation engines Physics of Fluids 32, 126102 (2020); https://doi.org/10.1063/5.0023972"
   },
   {
     "idx": 8,
@@ -114,7 +122,8 @@
     "2d_coord": [
       -2.584679900865676,
       -2.3575740372545573
-    ]
+    ],
+    "paragraph_info": "Modeling thermodynamic trends of rotating detonation engines Physics of Fluids 32, 126102 (2020); https://doi.org/10.1063/5.0023972"
   },
   {
     "idx": 13,
@@ -128,7 +137,8 @@
     "2d_coord": [
       -3.948043992507017,
       -1.5391525368243106
-    ]
+    ],
+    "paragraph_info": "Physics of Fluids 33, 065111 (2021); https://doi.org/10.1063/5.0052453"
   },
   {
     "idx": 14,
@@ -142,7 +152,8 @@
     "2d_coord": [
       -3.8974198274825436,
       -1.5307927715373257
-    ]
+    ],
+    "paragraph_info": "Cite as: Phys. Fluids 33, 055130 (2021); doi: 10.1063/5.0048229 <sub>Submitted: 20 February 2021</sub> . <sub>Accepted: 30 April 2021</sub> . Published Online: 25 May 2021"
   },
   {
     "idx": 15,
@@ -156,7 +167,8 @@
     "2d_coord": [
       -3.1535309251458603,
       -2.6620167010888838
-    ]
+    ],
+    "paragraph_info": "Cite as: Phys. Fluids 33, 055130 (2021); doi: 10.1063/5.0048229 <sub>Submitted: 20 February 2021</sub> . <sub>Accepted: 30 April 2021</sub> . Published Online: 25 May 2021"
   },
   {
     "idx": 16,
@@ -170,7 +182,8 @@
     "2d_coord": [
       -3.2894851698208876,
       -2.7133663592797963
-    ]
+    ],
+    "paragraph_info": "Cite as: Phys. Fluids 33, 055130 (2021); doi: 10.1063/5.0048229 <sub>Submitted: 20 February 2021</sub> . <sub>Accepted: 30 April 2021</sub> . Published Online: 25 May 2021"
   },
   {
     "idx": 17,
@@ -184,12 +197,14 @@
     "2d_coord": [
       -3.082678573827533,
       -2.8017104927464307
-    ]
+    ],
+    "paragraph_info": "Cite as: Phys. Fluids 33, 055130 (2021); doi: 10.1063/5.0048229 <sub>Submitted: 20 February 2021</sub> . <sub>Accepted: 30 April 2021</sub> . Published Online: 25 May 2021"
   },
   {
     "type": "figure",
     "para_id": 9,
-    "paper_id": 0
+    "paper_id": 0,
+    "paragraph_info": "images/f563650e1586be3319f6b0cb469ff19e90724576f5f10d537802e652ab58bba3.jpg"
   },
   {
     "idx": 18,
@@ -203,7 +218,8 @@
     "2d_coord": [
       -2.1203716716953145,
       -1.8034736628648798
-    ]
+    ],
+    "paragraph_info": "Wen Shi (时文), Ye Tian (田野),<sup>a)</sup> Jialing Le (乐嘉陵), and Fuyu Zhong (钟富宇)"
   },
   {
     "idx": 19,
@@ -217,7 +233,8 @@
     "2d_coord": [
       -0.41094938946439014,
       0.9957895365793722
-    ]
+    ],
+    "paragraph_info": "Science and Technology on Scramjet Laboratory, China Aerodynamics Research and Development Center, Mianyang 621000, China"
   },
   {
     "idx": 20,
@@ -231,7 +248,8 @@
     "2d_coord": [
       -0.3748332892364315,
       0.9491022209335076
-    ]
+    ],
+    "paragraph_info": "Science and Technology on Scramjet Laboratory, China Aerodynamics Research and Development Center, Mianyang 621000, China"
   },
   {
     "idx": 34,
@@ -245,7 +263,8 @@
     "2d_coord": [
       -2.7888029861549675,
       -2.133691847837069
-    ]
+    ],
+    "paragraph_info": "Published under an exclusive license by AIP Publishing. https://doi.org/10.1063/5.0048229"
   },
   {
     "idx": 35,
@@ -259,7 +278,8 @@
     "2d_coord": [
       -2.6622323970786193,
       -2.4417254963576376
-    ]
+    ],
+    "paragraph_info": "Published under an exclusive license by AIP Publishing. https://doi.org/10.1063/5.0048229"
   },
   {
     "idx": 96,
@@ -273,12 +293,14 @@
     "2d_coord": [
       -0.597090004572916,
       1.1720425430059624
-    ]
+    ],
+    "paragraph_info": "Experiments were conducted at the China Aerodynamics Research and Development Center’s (CARDC) pulse combustion wind tunnel, as shown in Fig. 1. The direct-connected facility used nozzles instead of inlets to expedite research and reduce cost. The oxygen-rich air mixes with $\\mathrm { H } _ { 2 }$ in a heater. Under the control of a quickly acting valve, the supply oxygen-rich air and H<sub>2</sub> can be precisely limited to be shorter than 1 ms."
   },
   {
     "type": "figure",
     "para_id": 25,
-    "paper_id": 0
+    "paper_id": 0,
+    "paragraph_info": "images/2660133ad8329261ea8c71a2465850f0e557fdaa7c78477fc94d5fcc225916bb.jpg"
   },
   {
     "idx": 107,
@@ -292,7 +314,8 @@
     "2d_coord": [
       -0.5989049451646401,
       1.1760788437221381
-    ]
+    ],
+    "paragraph_info": "FIG 1 Schematic of a direct-connected pulse combustion wind tunnel."
   },
   {
     "idx": 121,
@@ -306,17 +329,20 @@
     "2d_coord": [
       -0.49840314087122867,
       -0.35840515523409106
-    ]
+    ],
+    "paragraph_info": "The flow structures and the process of flame formation were obtained by pressure transducers and non-connect optical measurements, including schlieren images, instantaneous CH luminosity images, and OH-PLIF. The distribution of wall pressure at the centerline on the top wall of the combustor was measured along the streamwise direction by pressure transducers at a range of sampling frequency of 10 kHz, pressure ranging from 0 to 700 kPa, and a maximum measurement error of 0.5%. A total of 45 channels were used. The experimental arrangements of the optical measurements are shown in Fig. 4. Quartz glasses were mounted on the sidewall and the bottom wall for optical access."
   },
   {
     "type": "figure",
     "para_id": 30,
-    "paper_id": 0
+    "paper_id": 0,
+    "paragraph_info": "images/a5b1a7ccc416cf8cf41fafa225e5b357b11e403c9bb7dc353e9b729946740b4b.jpg"
   },
   {
     "type": "figure",
     "para_id": 33,
-    "paper_id": 0
+    "paper_id": 0,
+    "paragraph_info": "images/97cc3ae8df834eca9032ffd9ea8ef710b3bb7558c6876e66876f3b344048e3ac.jpg"
   },
   {
     "idx": 131,
@@ -330,22 +356,26 @@
     "2d_coord": [
       0.9189443482413138,
       1.352997498426346
-    ]
+    ],
+    "paragraph_info": "FIG 3 Schematic of fuel injection and spark."
   },
   {
     "type": "figure",
     "para_id": 35,
-    "paper_id": 0
+    "paper_id": 0,
+    "paragraph_info": "images/69e4e89347ae8e8ecc88a593680a01e9677d2741775dd3c3d8c5f0acfd50e868.jpg"
   },
   {
     "type": "figure",
     "para_id": 37,
-    "paper_id": 0
+    "paper_id": 0,
+    "paragraph_info": "images/a999666d7d28a5ba1dfdff34ecbb6120782f500f96f07decceaeee81b9925095.jpg"
   },
   {
     "type": "figure",
     "para_id": 38,
-    "paper_id": 0
+    "paper_id": 0,
+    "paragraph_info": "images/cc73eb379cc70d16c0b3072626bde9c68739a11fe72d922b7cc030113bfdcc43.jpg"
   },
   {
     "idx": 132,
@@ -359,7 +389,8 @@
     "2d_coord": [
       -1.185337375894036,
       -0.8413633866326593
-    ]
+    ],
+    "paragraph_info": "FIG<sub>.</sub> 5<sub>.</sub> Operating sequence of tests: (a) hydrogen and ethylene; (b) single fuel."
   },
   {
     "idx": 144,
@@ -373,12 +404,14 @@
     "2d_coord": [
       -0.8557528053886633,
       -0.6748962512675653
-    ]
+    ],
+    "paragraph_info": "Figure 5(b) provides the operational sequence when pure hydrogen or ethylene was used. The spark plug operated at $t = 0 . 0 7$ and 0.155 s and the total test duration was approximately 0.25 s. Images of OH from $t = 0 . 0 7$ to 0.25 s were used to analyze the dynamic evolution of the pure hydrogen or the ethylene flame. The parameters of injection for various cases are listed in Table I. Gaseous fuel was choked at the exit of the injection tube. Multiple cases based on different fuel injection strategies were investigated."
   },
   {
     "type": "figure",
     "para_id": 43,
-    "paper_id": 0
+    "paper_id": 0,
+    "paragraph_info": "images/e1851bd8952c570f2bb1e83d3946d65452eb7dc236eeb5b49caf712c2b7e3d9e.jpg"
   },
   {
     "idx": 158,
@@ -392,7 +425,8 @@
     "2d_coord": [
       -0.837069950180993,
       -0.6631046795434418
-    ]
+    ],
+    "paragraph_info": "TABLE I Location and parameters of fuel injection for different cases."
   },
   {
     "idx": 176,
@@ -406,22 +440,26 @@
     "2d_coord": [
       -1.1863285866433628,
       -0.41154202877279045
-    ]
+    ],
+    "paragraph_info": "As shown in Fig. 7(a), the structure of internal flow without injection was simple and included a shear layer and expansion waves at the cavity step, oblique shocks S1 and S2, and the corresponding reflected shocks. Unstable oscillations in internal flow were introduced above, and other characteristics of the oscillation are discussed in Sec. III. In"
   },
   {
     "type": "figure",
     "para_id": 48,
-    "paper_id": 0
+    "paper_id": 0,
+    "paragraph_info": "images/f377afb240b39712d2e52a896d275f1a67ffbdf9a8eb9c484f863674053bc5f8.jpg"
   },
   {
     "type": "figure",
     "para_id": 49,
-    "paper_id": 0
+    "paper_id": 0,
+    "paragraph_info": "images/aa46ca319c1686901e4e0bce88f7e9c8836027461739ed99a662e1850fd31492.jpg"
   },
   {
     "type": "figure",
     "para_id": 50,
-    "paper_id": 0
+    "paper_id": 0,
+    "paragraph_info": "images/6fe0c69dc74045f5b5ce321789e31fe9acb44d614a5184531d9206e5bb160725.jpg"
   },
   {
     "idx": 177,
@@ -435,42 +473,50 @@
     "2d_coord": [
       -1.1784385163684932,
       1.452187916026065
-    ]
+    ],
+    "paragraph_info": "FIG 7 Internal structures of supersonic flow under various injection strategies: (a) non-reacting flow; (b) hydrogen injected at Jet-1 location; and (c) hydrogen injected at Jet-2 location."
   },
   {
     "type": "figure",
     "para_id": 58,
-    "paper_id": 0
+    "paper_id": 0,
+    "paragraph_info": "images/2d3896a2abbf815080837314fde63a0492ae4a3207784569104743c0c360f4ba.jpg"
   },
   {
     "type": "figure",
     "para_id": 60,
-    "paper_id": 0
+    "paper_id": 0,
+    "paragraph_info": "images/21ba2735054e9a8fd29a079375b3b6d4a90c728d324a153c0dd812134ca69596.jpg"
   },
   {
     "type": "figure",
     "para_id": 68,
-    "paper_id": 0
+    "paper_id": 0,
+    "paragraph_info": "images/5a6ff555a95e2ab93f8ee5e736752e6254ef987f86b7abdb9f33324d639101f8.jpg"
   },
   {
     "type": "figure",
     "para_id": 70,
-    "paper_id": 0
+    "paper_id": 0,
+    "paragraph_info": "images/9c97f588a18f3b4de6c2558ffcdbbc803322db7a23f206f401dbc758e7ff8a65.jpg"
   },
   {
     "type": "figure",
     "para_id": 74,
-    "paper_id": 0
+    "paper_id": 0,
+    "paragraph_info": "images/70931420fafe4609193913cb4a2b6b7928383bc9414ef897803daf66830aed16.jpg"
   },
   {
     "type": "figure",
     "para_id": 77,
-    "paper_id": 0
+    "paper_id": 0,
+    "paragraph_info": "images/38cb770a0a28f3a34d5ed85d9e22097e80ee16b6f1af21d96ad0e890b0de8467.jpg"
   },
   {
     "type": "figure",
     "para_id": 80,
-    "paper_id": 0
+    "paper_id": 0,
+    "paragraph_info": "images/65e5aa9bb4bca0c580c679b4e3e6953c57ebb0c6f791074451d1bc9b5845d891.jpg"
   },
   {
     "idx": 258,
@@ -484,7 +530,8 @@
     "2d_coord": [
       -1.7570753503198215,
       -0.6191556812546126
-    ]
+    ],
+    "paragraph_info": "FIG<sub>.</sub> 14<sub>.</sub> CH image processing in case 6: (a) CH image; (b) gray image; and (c) gray image with edge."
   },
   {
     "idx": 259,
@@ -498,7 +545,8 @@
     "2d_coord": [
       -1.9563648634914177,
       -0.643364866531732
-    ]
+    ],
+    "paragraph_info": "FIG<sub>.</sub> 14<sub>.</sub> CH image processing in case 6: (a) CH image; (b) gray image; and (c) gray image with edge."
   },
   {
     "idx": 260,
@@ -512,7 +560,8 @@
     "2d_coord": [
       -2.017537804239111,
       -0.6395322072627322
-    ]
+    ],
+    "paragraph_info": "FIG<sub>.</sub> 14<sub>.</sub> CH image processing in case 6: (a) CH image; (b) gray image; and (c) gray image with edge."
   },
   {
     "idx": 261,
@@ -526,32 +575,38 @@
     "2d_coord": [
       -2.009677900062764,
       -0.6410448452611864
-    ]
+    ],
+    "paragraph_info": "FIG<sub>.</sub> 14<sub>.</sub> CH image processing in case 6: (a) CH image; (b) gray image; and (c) gray image with edge."
   },
   {
     "type": "figure",
     "para_id": 82,
-    "paper_id": 0
+    "paper_id": 0,
+    "paragraph_info": "images/06b400dc613d28bb6c9132c1e318ecc9abaddf9e8a2597a365c3d643da6bc903.jpg"
   },
   {
     "type": "figure",
     "para_id": 87,
-    "paper_id": 0
+    "paper_id": 0,
+    "paragraph_info": "images/3958c44c672458914daf8c6288e082ae4abdac30f39a8dd7639ed0bd4ef5ce8d.jpg"
   },
   {
     "type": "figure",
     "para_id": 89,
-    "paper_id": 0
+    "paper_id": 0,
+    "paragraph_info": "images/dedbee1391cb73fe9603339239f0a5563c9b038a8870597a1ea8ee70695cd413.jpg"
   },
   {
     "type": "figure",
     "para_id": 94,
-    "paper_id": 0
+    "paper_id": 0,
+    "paragraph_info": "images/3fe2c0a61ad1c9e8c4ec8e8c91872b3a89b3422cb03dc77f3721075f5fbdd604.jpg"
   },
   {
     "type": "figure",
     "para_id": 96,
-    "paper_id": 0
+    "paper_id": 0,
+    "paragraph_info": "images/7893ee37e06d0a55609d0e715df168f517c12f0e3af02f67e9e0e96313b17d2a.jpg"
   },
   {
     "idx": 284,
@@ -565,57 +620,68 @@
     "2d_coord": [
       0.8036830476732131,
       2.3629983328492146
-    ]
+    ],
+    "paragraph_info": "A combined analysis by using the FFT and schlieren images shows that although some dominant frequencies lower than 100 Hz can be observed in Fig. 20, they were obtained when the experimental equipment was working and are thus excluded. The dominant frequencies of internal flow before the injection of gaseous fuel were 413.2, 446.8, and 456.1 Hz. The small difference among the dominant frequencies in different cases indicates that the operation of the directconnected facility was stable and repeatable. After the injection of gaseous fuel, cold flow oscillation appeared to have been suppressed in case 2 because the dominant frequency moved from 446.8 to 33.4–250.4 Hz. In the other cases, the dominant frequency was barely affected by fuel injection. When the fuel was injected at Jet-2, the oblique shock S1 was generated ahead of the injection and attached to the bottom wall of the combustor. The point of attachment of S1 was close to the separation caused by S2. Thus, the existence of S1 enhanced the separation at the bottom wall and stabilized cold flow by suppressing unstable interactions between the shock and the separation in the cavity. When fuel was injected at Jet-1, the oblique shock S1 was reflected at the bottom wall of the combustor and interacted with the separation in the cavity. The influence of oblique shock S1 was lost in the complex internal flow of the cavity. Thus, the change in the dominant frequency of oscillation was small. The location of fuel injection thus significantly impacts the stability of cold flow. For the combined injection of hydrogen and ethylene in stage b of case 6, the results of FFT are not discussed here because unstable combustion occurred without a dominant frequency."
   },
   {
     "type": "figure",
     "para_id": 100,
-    "paper_id": 0
+    "paper_id": 0,
+    "paragraph_info": "images/ba658907c867cea8a4566312dd3e8497a8d53dfda44b29523b64087071642afd.jpg"
   },
   {
     "type": "figure",
     "para_id": 101,
-    "paper_id": 0
+    "paper_id": 0,
+    "paragraph_info": "images/b3051d8da9e31a158f29987eaf86971c0710b7171fb69551a3d38c53f9facaa6.jpg"
   },
   {
     "type": "figure",
     "para_id": 102,
-    "paper_id": 0
+    "paper_id": 0,
+    "paragraph_info": "images/efa668315e9923206e3ec15d43914e0ccdf971857e8b784651741d3d9139d29a.jpg"
   },
   {
     "type": "figure",
     "para_id": 103,
-    "paper_id": 0
+    "paper_id": 0,
+    "paragraph_info": "images/6049188b91aa71726da1127c4737beef79ac61d0425ff7ed6ae8462f20698c22.jpg"
   },
   {
     "type": "figure",
     "para_id": 104,
-    "paper_id": 0
+    "paper_id": 0,
+    "paragraph_info": "images/6f6783da8687b0036ea8fa5f887c31bfc4aa0b1abca0123284d857418230629e.jpg"
   },
   {
     "type": "figure",
     "para_id": 105,
-    "paper_id": 0
+    "paper_id": 0,
+    "paragraph_info": "images/f62f76f8e13bcf3f7b153379050788e29681d409299e5abffc7e7015ab807135.jpg"
   },
   {
     "type": "figure",
     "para_id": 106,
-    "paper_id": 0
+    "paper_id": 0,
+    "paragraph_info": "images/e385a4db923838da2307469b49fc5967a993dffde4b0e94a53174a6b558b579f.jpg"
   },
   {
     "type": "figure",
     "para_id": 108,
-    "paper_id": 0
+    "paper_id": 0,
+    "paragraph_info": "images/a54afdb4e78caad8e5102689b54c7fa3980f5ee37f51bc020ab9d5c3b7c4eb26.jpg"
   },
   {
     "type": "figure",
     "para_id": 110,
-    "paper_id": 0
+    "paper_id": 0,
+    "paragraph_info": "images/701c9e6cb4d7c90b2a452a9a36e7991b6e0cb15071b60f4d7c15a083df095a4b.jpg"
   },
   {
     "type": "figure",
     "para_id": 115,
-    "paper_id": 0
+    "paper_id": 0,
+    "paragraph_info": "images/0b220303ca169aa16a255e0702aa87bb309800794f73878ac4e40ac10684419f.jpg"
   },
   {
     "idx": 337,
@@ -629,7 +695,8 @@
     "2d_coord": [
       -2.4663777303601173,
       -1.264609389951606
-    ]
+    ],
+    "paragraph_info": "This project was supported by the National Nature Science Foundation of China (Grant No. 51706237) and the CARDC Fundamental and Frontier Technology Research Fund."
   },
   {
     "idx": 338,
@@ -643,7 +710,8 @@
     "2d_coord": [
       -2.529801225608689,
       -1.23198475778253
-    ]
+    ],
+    "paragraph_info": "This project was supported by the National Nature Science Foundation of China (Grant No. 51706237) and the CARDC Fundamental and Frontier Technology Research Fund."
   },
   {
     "idx": 339,
@@ -657,7 +725,8 @@
     "2d_coord": [
       -2.472171256787708,
       -2.10374581552977
-    ]
+    ],
+    "paragraph_info": "The data that support the findings of this study are available from the corresponding author upon reasonable request."
   },
   {
     "idx": 340,
@@ -671,7 +740,8 @@
     "2d_coord": [
       -0.2297569231308981,
       1.6665310393338233
-    ]
+    ],
+    "paragraph_info": "<sup>1</sup>H. B. Wang, Z. G. Wang, M. B. Sun, and H. Y. Wu, “Combustion modes of hydrogen jet combustion in a cavity-based supersonic combustor,” Int. J. Hydrogen Energy 38, 12078–12089 (2013)."
   },
   {
     "idx": 341,
@@ -685,7 +755,8 @@
     "2d_coord": [
       -4.026784778588849,
       -1.841565626678891
-    ]
+    ],
+    "paragraph_info": "<sup>1</sup>H. B. Wang, Z. G. Wang, M. B. Sun, and H. Y. Wu, “Combustion modes of hydrogen jet combustion in a cavity-based supersonic combustor,” Int. J. Hydrogen Energy 38, 12078–12089 (2013)."
   },
   {
     "idx": 342,
@@ -699,7 +770,8 @@
     "2d_coord": [
       -0.22589432230937925,
       1.6686744391006376
-    ]
+    ],
+    "paragraph_info": "<sup>2</sup>C. Y. Liu, Z. G. Wang, M. B. Sun, H. B. Wang, and P. B. Li, “Characteristics of a cavity-stabilized hydrogen jet flame in a model scramjet combustor,” AIAA J. 57, 1624–1635 (2019)."
   },
   {
     "idx": 343,
@@ -713,7 +785,8 @@
     "2d_coord": [
       -3.636199586630503,
       -2.05972341876166
-    ]
+    ],
+    "paragraph_info": "<sup>2</sup>C. Y. Liu, Z. G. Wang, M. B. Sun, H. B. Wang, and P. B. Li, “Characteristics of a cavity-stabilized hydrogen jet flame in a model scramjet combustor,” AIAA J. 57, 1624–1635 (2019)."
   },
   {
     "idx": 348,
@@ -727,7 +800,8 @@
     "2d_coord": [
       -3.2897846501242864,
       -2.112282749559847
-    ]
+    ],
+    "paragraph_info": "<sup>4</sup>R. A. Baurle and D. R. Eklund, “Analysis of dual-mode hydrocarbon scramjet operation at Mach 4–6.5,” J. Propul. Power 18, 990–1002 (2002)."
   },
   {
     "idx": 350,
@@ -741,7 +815,8 @@
     "2d_coord": [
       -4.15875382723624,
       -1.8937074138447096
-    ]
+    ],
+    "paragraph_info": "<sup>5</sup>R. Moradi, A. Mahyari, M. B. Gerdroodbary, A. Abdollahi, and Y. Amini, “Shape effect of cavity flameholder on mixing zone of hydrogen jet at supersonic flow,” Int. J. Hydrogen Energy 43, 16364–16372 (2018)."
   },
   {
     "idx": 351,
@@ -755,7 +830,8 @@
     "2d_coord": [
       -0.3726987197499009,
       1.6750250150740695
-    ]
+    ],
+    "paragraph_info": "<sup>6</sup>S. J. Beresh, J. L. Wagner, B. O. M. Pruett, J. F. Henfling, and R. W. Spillers, “Supersonic flow over a finite-width rectangular cavity,” AIAA J. 53, 296–310 (2015)."
   },
   {
     "idx": 352,
@@ -769,7 +845,8 @@
     "2d_coord": [
       -3.6770535702035483,
       -2.061566794548859
-    ]
+    ],
+    "paragraph_info": "<sup>6</sup>S. J. Beresh, J. L. Wagner, B. O. M. Pruett, J. F. Henfling, and R. W. Spillers, “Supersonic flow over a finite-width rectangular cavity,” AIAA J. 53, 296–310 (2015)."
   },
   {
     "idx": 355,
@@ -783,7 +860,8 @@
     "2d_coord": [
       -3.887646375008385,
       -2.2217396511897745
-    ]
+    ],
+    "paragraph_info": "<sup>7</sup>K. Sathiyamoorthy, T. H. Danish, J. Srinivas, and P. Manjunath, “Experimental investigation of supersonic combustion in a strut-cavity based combustor,” Acta Astronaut. 148, 285–293 (2018)"
   },
   {
     "idx": 356,
@@ -797,7 +875,8 @@
     "2d_coord": [
       -0.2733668569322439,
       1.6431979842735087
-    ]
+    ],
+    "paragraph_info": "<sup>8</sup>Y. X. Yang, Y. X. Zhang, J. F. Yu, M. B. Sun, H. B. Wang, and Z. G. Wang, “Rear-wall-expansion effect of cavity flameholder on supersonic combustion,” J. Propul. Power 35, 1029–1033 (2019)."
   },
   {
     "idx": 357,
@@ -811,7 +890,8 @@
     "2d_coord": [
       -3.274935660712058,
       -2.144019622675699
-    ]
+    ],
+    "paragraph_info": "<sup>8</sup>Y. X. Yang, Y. X. Zhang, J. F. Yu, M. B. Sun, H. B. Wang, and Z. G. Wang, “Rear-wall-expansion effect of cavity flameholder on supersonic combustion,” J. Propul. Power 35, 1029–1033 (2019)."
   },
   {
     "idx": 359,
@@ -825,7 +905,8 @@
     "2d_coord": [
       -4.000566077609586,
       -2.210630418543776
-    ]
+    ],
+    "paragraph_info": "<sup>9</sup>C. Y. Liu, Y. H. Zhao, Z. G. Wang, H. B. Wang, and M. B. Sun, “Dynamics and mixing mechanism of transverse jet injection into a supersonic combustor with cavity flameholder,” Acta Astronaut. 136, 90–100 (2017)."
   },
   {
     "idx": 361,
@@ -839,7 +920,8 @@
     "2d_coord": [
       -3.7732685231629635,
       -1.6481485261025182
-    ]
+    ],
+    "paragraph_info": "<sup>10</sup>M. Sun and Z. Hu, “Mixing in near-wall regions downstream of a sonic jet in a supersonic crossflow at Mach 2.7,” Phys. Fluids 30, 106102 (2018)."
   },
   {
     "idx": 363,
@@ -853,7 +935,8 @@
     "2d_coord": [
       -2.0756024556363855,
       -1.9616024436829844
-    ]
+    ],
+    "paragraph_info": "<sup>11</sup>C. Liu, J. Yu, Z. Wang, M. Sun, H. Wang, and H. Grosshans, “Characteristics of hydrogen jet combustion in a high-enthalpy supersonic crossflow,” Phys. Fluids 31, 046105 (2019)."
   },
   {
     "idx": 364,
@@ -867,7 +950,8 @@
     "2d_coord": [
       -3.7759780203253914,
       -1.646175591396625
-    ]
+    ],
+    "paragraph_info": "<sup>11</sup>C. Liu, J. Yu, Z. Wang, M. Sun, H. Wang, and H. Grosshans, “Characteristics of hydrogen jet combustion in a high-enthalpy supersonic crossflow,” Phys. Fluids 31, 046105 (2019)."
   },
   {
     "idx": 367,
@@ -881,7 +965,8 @@
     "2d_coord": [
       -3.56580027196046,
       -1.2172151778612956
-    ]
+    ],
+    "paragraph_info": "<sup>12</sup>A. S. Potturi and J. R. Edwards, “Large-eddy/Reynolds-averaged Navier–Stokes simulation of cavity-stabilized ethylene combustion,” Combust. Flame 162, 1176–1192 (2015)."
   },
   {
     "idx": 369,
@@ -895,7 +980,8 @@
     "2d_coord": [
       -3.4724169343454423,
       -1.2636440597189742
-    ]
+    ],
+    "paragraph_info": "<sup>13</sup>J. A. Fulton, J. R. Edwards, A. Cutler, J. McDaniel, and C. Goyne, “Turbulence/ chemistry interactions in a ramp-stabilized supersonic hydrogen–air diffusion flame,” Combust. Flame 174, 152–165 (2016)."
   },
   {
     "idx": 372,
@@ -909,7 +995,8 @@
     "2d_coord": [
       -3.4653409852836967,
       -1.26724393704483
-    ]
+    ],
+    "paragraph_info": "<sup>14</sup>L. Ma, Q. C. Lei, Y. Wu, W. J. Xu, T. M. Ombrello, and C. D. Carter, “From ignition to stable combustion in a cavity flameholder studied via 3D tomographic chemiluminescence at 20k Hz,” Combust. Flame 165, 1–10 (2016)."
   },
   {
     "idx": 376,
@@ -923,7 +1010,8 @@
     "2d_coord": [
       -3.5429016590534688,
       -1.3497783038364441
-    ]
+    ],
+    "paragraph_info": "<sup>16</sup>M. B. Sun, H. Geng, J. H. Liang, and Z. G. Wang, “Mixing characteristics in a supersonic combustor with gaseous fuel injection upstream of a cavity flameholder,” Flow Turbul. Combust. 82, 271–286 (2009)."
   },
   {
     "idx": 378,
@@ -937,7 +1025,8 @@
     "2d_coord": [
       -3.5989350053346048,
       -1.899610758450444
-    ]
+    ],
+    "paragraph_info": "<sup>17</sup>A. Ben-Yakar, M. Kamel, C. Morris, and, and R. K. Hanson, “Experimental investigation of H transverse jet combustion in hypervelocity flows,” in Joint Propulsion Conference and Exhibit (1997)."
   },
   {
     "idx": 382,
@@ -951,7 +1040,8 @@
     "2d_coord": [
       -3.7316189541722706,
       -1.6523650053782708
-    ]
+    ],
+    "paragraph_info": "<sup>19</sup>A. Ben-Yakar, M. G. Munga, and R. K. Hanson, “Time evolution and mixing characteristics of hydrogen and ethylene transverse jets in supersonic crossflows,” Phys. Fluids 18, 026101 (2006)."
   },
   {
     "idx": 384,
@@ -965,7 +1055,8 @@
     "2d_coord": [
       -3.3333768431704023,
       -1.4648989960418712
-    ]
+    ],
+    "paragraph_info": "<sup>20</sup>H. B. Wang, Z. G. Wang, M. B. Sun, and N. Qin, “Combustion characteristics in a supersonic combustor with hydrogen injection upstream of cavity flameholder,” Proc. Combust. Inst. 34, 2073–2082 (2013)."
   },
   {
     "idx": 386,
@@ -979,7 +1070,8 @@
     "2d_coord": [
       -3.4705757119946896,
       -1.7892717069707416
-    ]
+    ],
+    "paragraph_info": "<sup>21</sup>M. B. Colket and L. J. Spadaccini, “Scramjet fuels autoignition study,” J. Propul. Power 17, 315–323 (2001)."
   },
   {
     "idx": 388,
@@ -993,7 +1085,8 @@
     "2d_coord": [
       -3.5019219228287524,
       -1.9799041800591628
-    ]
+    ],
+    "paragraph_info": "<sup>22</sup>S. H. Yang, Y. Tian, and, and L. Li, “Flow oscillation in a scramjet combustor with air-throttling,” in 21st AIAA International Space Planes and Hypersonics Technologies Conference (2017)."
   },
   {
     "idx": 389,
@@ -1007,7 +1100,8 @@
     "2d_coord": [
       -0.4069546501143586,
       1.5768917271097735
-    ]
+    ],
+    "paragraph_info": "<sup>23</sup>J. Li, L. W. Zhang, J. Y. Choi, V. Yang, and K. C. Lin, “Ignition transients in a scramjet engine with air throttling part 1: Nonreacting flow,” J. Propul. Power 30, 438–448 (2014)."
   },
   {
     "idx": 390,
@@ -1021,7 +1115,8 @@
     "2d_coord": [
       -3.2804573288059804,
       -2.137297060746694
-    ]
+    ],
+    "paragraph_info": "<sup>23</sup>J. Li, L. W. Zhang, J. Y. Choi, V. Yang, and K. C. Lin, “Ignition transients in a scramjet engine with air throttling part 1: Nonreacting flow,” J. Propul. Power 30, 438–448 (2014)."
   },
   {
     "idx": 391,
@@ -1035,7 +1130,8 @@
     "2d_coord": [
       -0.40649566202193727,
       1.5747884126261456
-    ]
+    ],
+    "paragraph_info": "<sup>24</sup>J. Li, L. W. Zhang, J. Y. Choi, and V. Yang, “Ignition transients in a scramjet engine with air throttling part II: Reacting flow,” J. Propul. Power 31, 79–88 (2015)."
   },
   {
     "idx": 392,
@@ -1049,7 +1145,8 @@
     "2d_coord": [
       -3.209029822657399,
       -2.1742425580996145
-    ]
+    ],
+    "paragraph_info": "<sup>24</sup>J. Li, L. W. Zhang, J. Y. Choi, and V. Yang, “Ignition transients in a scramjet engine with air throttling part II: Reacting flow,” J. Propul. Power 31, 79–88 (2015)."
   },
   {
     "idx": 394,
@@ -1063,7 +1160,8 @@
     "2d_coord": [
       -3.56469393938334,
       -1.978596825225967
-    ]
+    ],
+    "paragraph_info": "<sup>25</sup>G. B. Goodwin, R. F. Johnson, and, and D. A. Kessler, “Premixed ethylene-air combustion in a dual-mode scramjet cavity combustor with a turbulent inflow,” in AIAA Propulsion and Energy 2019 Forum (2019)."
   },
   {
     "idx": 396,
@@ -1077,7 +1175,8 @@
     "2d_coord": [
       -3.7725405388817634,
       -2.0880862875978683
-    ]
+    ],
+    "paragraph_info": "<sup>26</sup>Y. Tian, S. H. Yang, and J. L. Le, “Study on the effect of air throttling on flame stabilization of an ethylene fueled scramjet combustor,” Int. J. Aerosp. Eng. 2015, 504684."
   },
   {
     "idx": 398,
@@ -1091,7 +1190,8 @@
     "2d_coord": [
       -3.6690628251179493,
       -2.1656558252876956
-    ]
+    ],
+    "paragraph_info": "<sup>27</sup>Y. Tian, S. H. Yang, and J. L. Le, “Study on flame stabilization of a hydrogen and kerosene fueled combustor,” Aerosp. Sci. Technol. 59, 183–185 (2016)."
   },
   {
     "idx": 401,
@@ -1105,7 +1205,8 @@
     "2d_coord": [
       -3.497759001232716,
       -1.3342295918751252
-    ]
+    ],
+    "paragraph_info": "<sup>29</sup>Y. Tian, S. H. Yang, J. L. Le, and F. Y. Zhong, “Investigation of combustion process of a kerosene fueled combustor with air throttling,” Combust. Flame 179, 74–85 (2017)."
   },
   {
     "idx": 402,
@@ -1119,7 +1220,8 @@
     "2d_coord": [
       -0.10200985621219172,
       1.646826044426451
-    ]
+    ],
+    "paragraph_info": "<sup>30</sup>Y. Ju and T. Nioka, “Ignition simulation of methane/hydrogen mixtures in a supersonic mixing layer,” Combust. Flame 102, 462–470 (1995)."
   },
   {
     "idx": 403,
@@ -1133,7 +1235,8 @@
     "2d_coord": [
       -3.371635633653131,
       -1.1689723343320664
-    ]
+    ],
+    "paragraph_info": "<sup>30</sup>Y. Ju and T. Nioka, “Ignition simulation of methane/hydrogen mixtures in a supersonic mixing layer,” Combust. Flame 102, 462–470 (1995)."
   },
   {
     "idx": 405,
@@ -1147,12 +1250,14 @@
     "2d_coord": [
       -3.4705757119946896,
       -1.7892717069707416
-    ]
+    ],
+    "paragraph_info": "<sup>31</sup>G. Yu, J. G. Li, X. Y. Chang, L. H. Chen, and C. J. Sung, “Investigation of kerosene combustion characteristics with pilot hydrogen in model supersonic combustors,” J. Propul. Power 17, 1263–1272 (2001)."
   },
   {
     "type": "figure",
     "para_id": 156,
-    "paper_id": 1
+    "paper_id": 1,
+    "paragraph_info": "images/9c0bcd0d77f71d1b182860100004262f75d622c0070f15a814ca317513d446ec.jpg"
   },
   {
     "idx": 406,
@@ -1166,7 +1271,8 @@
     "2d_coord": [
       -2.392891478849152,
       -1.5249498968809714
-    ]
+    ],
+    "paragraph_info": "<sup>a</sup> Institutefor Energy Research,Jiangsu University, Zhenjiang, 212013, China"
   },
   {
     "idx": 407,
@@ -1180,7 +1286,8 @@
     "2d_coord": [
       -0.4026246820440989,
       0.9844655808891398
-    ]
+    ],
+    "paragraph_info": "<sup>b</sup> Science and Technology on Scramjet Laboratory, China Aerodynamics Research and Development Center, Mianyang, 621000, China"
   },
   {
     "idx": 408,
@@ -1194,7 +1301,8 @@
     "2d_coord": [
       -2.7502628877173474,
       -2.5302836004143843
-    ]
+    ],
+    "paragraph_info": "Article history:"
   },
   {
     "idx": 409,
@@ -1208,7 +1316,8 @@
     "2d_coord": [
       -3.1366829773978364,
       -2.8372616242077724
-    ]
+    ],
+    "paragraph_info": "Available online 18 May 2023"
   },
   {
     "idx": 495,
@@ -1222,7 +1331,8 @@
     "2d_coord": [
       -2.8743458640065405,
       -0.13003173817921743
-    ]
+    ],
+    "paragraph_info": "( k = 1 , ~ N s - 1 )\\tag{4}"
   },
   {
     "idx": 530,
@@ -1236,7 +1346,8 @@
     "2d_coord": [
       -2.897196683636958,
       -0.02480999036823327
-    ]
+    ],
+    "paragraph_info": "\\tau _ { c } = \\sum _ { r = 1 } ^ { N r } \\frac { N r \\cdot c _ { t o t } } { \\sum _ { s = 1 } ^ { N s , R H S } \\nu _ { s , r } \\tilde { K } _ { f , r } }\\tag{9}"
   },
   {
     "idx": 536,
@@ -1250,32 +1361,38 @@
     "2d_coord": [
       -2.8973838588265823,
       -0.028567404225109016
-    ]
+    ],
+    "paragraph_info": "\\tau _ { m } = C _ { m i x } \\sqrt { \\frac { \\mu + \\mu _ { t } } { \\bar { \\rho } \\tilde { \\varepsilon } } }\\tag{10}"
   },
   {
     "type": "figure",
     "para_id": 202,
-    "paper_id": 1
+    "paper_id": 1,
+    "paragraph_info": "images/6281f2016a556fc4f4e33e1e2cd12355f3896ab7d4d194d1a9da19de1e69c007.jpg"
   },
   {
     "type": "figure",
     "para_id": 214,
-    "paper_id": 1
+    "paper_id": 1,
+    "paragraph_info": "images/25acc37a285bcb6a537010fb58d5215dedb208a4aed1a16bd460148960a04825.jpg"
   },
   {
     "type": "figure",
     "para_id": 216,
-    "paper_id": 1
+    "paper_id": 1,
+    "paragraph_info": "images/88b585a4729e3dabe8355956d0951de1d80a4a29492e25c6ec6644c0f12ad8cb.jpg"
   },
   {
     "type": "figure",
     "para_id": 219,
-    "paper_id": 1
+    "paper_id": 1,
+    "paragraph_info": "images/4c7fff91c0def6cf58f69f5be5c018186e8b70b25140784def81bd7334bd1639.jpg"
   },
   {
     "type": "figure",
     "para_id": 220,
-    "paper_id": 1
+    "paper_id": 1,
+    "paragraph_info": "images/ce110358a080a503d23f2d9a3cdc3bc26b8a2f1246e716d0c78794e5d94b7286.jpg"
   },
   {
     "idx": 610,
@@ -1289,17 +1406,20 @@
     "2d_coord": [
       0.07739529149930724,
       -0.8565327249070326
-    ]
+    ],
+    "paragraph_info": "Fig. 3. Comparison of computational pressure profiles on the upper wall of case 1 (left) and case 2 (right) with Tian’s experimental results [5]."
   },
   {
     "type": "figure",
     "para_id": 225,
-    "paper_id": 1
+    "paper_id": 1,
+    "paragraph_info": "images/3fa7d1b846d5a84039178bd0bb93a0fdd3d05573703a694de5f7a7247c30aefb.jpg"
   },
   {
     "type": "figure",
     "para_id": 228,
-    "paper_id": 1
+    "paper_id": 1,
+    "paragraph_info": "images/159d4075bfe50bd7c918e044a6e30df8e23a70fc0ca9110af41a7d396704d2eb.jpg"
   },
   {
     "idx": 646,
@@ -1313,27 +1433,32 @@
     "2d_coord": [
       0.3232967422993368,
       0.21615156087955492
-    ]
+    ],
+    "paragraph_info": "Fig. 6 shows pictures of the flow field and flame structures that have been overlapped in order to highlight the combustion stabilization mode. The fuel-jet core in case 1 has a branch due to the strong entrainment, and a significant amount of hydrogen collects in the corner to maintain the upstream flame’s fuel supply. The downstream flame receives radicals and a hot environment from the cavity recirculation zone, which is located at the rear of the shear-layer. This process is known as cavity shear-layer stabilized combustion. The cold jet penetrates the shear-layer and causes local extinction, in contrast to the outcomes of injection upstream of the cavity [9]. But the whole flame remains stable, since it is mainly held by the vortex interactions with the cavity rather than the streamwise transportation. In case 2, a significant corner recirculation zone is also generated. Nevertheless, its jet momentum is higher and the recirculation velocity is lower than in case 1. In order to prevent hydrogen from being heavily entrained into the corner, hot products collect instead, acting as an ignitor. It is im portant to note that the cavity lacks a primary recirculation zone, which may be the result of interactions between the fuel jet and low-speed separated flow in a configuration with a large length to depth ratio $( \\mathrm { L } / \\mathrm { D } = 1 1 ) .$ Similarly, it can be inferred as cavity assisted jet-wake stabilized combustion, though it is susceptible to the flow oscillation."
   },
   {
     "type": "figure",
     "para_id": 236,
-    "paper_id": 1
+    "paper_id": 1,
+    "paragraph_info": "images/854424219742d50e7ad6025c59502b96219469b48613d0584ff7111aa5cdc24e.jpg"
   },
   {
     "type": "figure",
     "para_id": 237,
-    "paper_id": 1
+    "paper_id": 1,
+    "paragraph_info": "images/b15f3fa503c42538874003af5ddc639403484827dd391bb88a745f9f9de6a2de.jpg"
   },
   {
     "type": "figure",
     "para_id": 239,
-    "paper_id": 1
+    "paper_id": 1,
+    "paragraph_info": "images/6872a20034c7100a324a7f2129a64cdf8f529bbc319d645196193be842bdd0bb.jpg"
   },
   {
     "type": "figure",
     "para_id": 241,
-    "paper_id": 1
+    "paper_id": 1,
+    "paragraph_info": "images/da573bad8247251751bf6f66286d4ca0eda53cb18ad32648aa8c2fa3f9986194.jpg"
   },
   {
     "idx": 685,
@@ -1347,7 +1472,8 @@
     "2d_coord": [
       0.7819607308850947,
       1.398235655839621
-    ]
+    ],
+    "paragraph_info": "Fig. 7. Schematics of flame stabilization mechanism in the cavity-floor direct-injection scramjet."
   },
   {
     "idx": 708,
@@ -1361,42 +1487,50 @@
     "2d_coord": [
       -2.8721177523560693,
       -0.06014499648447851
-    ]
+    ],
+    "paragraph_info": "\\dot { q } _ { m , s u p } = \\int \\frac { 1 + s i g n \\left( M a - 1 \\right) } { 2 } \\rho u _ { x } d A"
   },
   {
     "type": "figure",
     "para_id": 252,
-    "paper_id": 1
+    "paper_id": 1,
+    "paragraph_info": "images/0a92f34c3bc5fc361aa19ed3e74db53c57611ea7187cc4148dae6163bc6f8810.jpg"
   },
   {
     "type": "figure",
     "para_id": 253,
-    "paper_id": 1
+    "paper_id": 1,
+    "paragraph_info": "images/a4618d6711d06e4a6e78aebbea8b19b9cb5ae52ab12465e887eb077dc9700d4a.jpg"
   },
   {
     "type": "figure",
     "para_id": 254,
-    "paper_id": 1
+    "paper_id": 1,
+    "paragraph_info": "images/264f52794db9b50670033900b9a461b2ba95844562ac69bab59e128d99951f43.jpg"
   },
   {
     "type": "figure",
     "para_id": 255,
-    "paper_id": 1
+    "paper_id": 1,
+    "paragraph_info": "images/b9da6845c77f056fead65f3feebd6d9f316617bdb91ab79255822abf36aeb71d.jpg"
   },
   {
     "type": "figure",
     "para_id": 256,
-    "paper_id": 1
+    "paper_id": 1,
+    "paragraph_info": "images/c90a24b7a95b85b9d57c79c8d901942144bc9493b4e4bf7a88d5b8bdbf21676c.jpg"
   },
   {
     "type": "figure",
     "para_id": 257,
-    "paper_id": 1
+    "paper_id": 1,
+    "paragraph_info": "images/b07c7256ad84edff4fa420bdc0211db1dca58a77c6518b0bf665ece96b6d899a.jpg"
   },
   {
     "type": "figure",
     "para_id": 259,
-    "paper_id": 1
+    "paper_id": 1,
+    "paragraph_info": "images/57e14b2d7fbfb49a249826dae13f1b944870a9a416926f688e0210c874aa42d8.jpg"
   },
   {
     "idx": 745,
@@ -1410,27 +1544,32 @@
     "2d_coord": [
       3.5481119161576213,
       1.3578921440800968
-    ]
+    ],
+    "paragraph_info": "Fig. 11 depicts the developmental process of the low-energy stream. Examining the recirculation zone of the cavity in the lefthand figures reveals that the low-speed separated flow is inadequate to establish recirculation downstream of the jet as the separation zone advances. The first three snapshots exhibit an evident recirculation, which corroborates the aforementioned cavity stabilized mode. When combined with the flame structure shown in Fig. 10, it is apparent that the jet-wake stabilized mode is established when the cavity recirculation zone completely disappears. Furthermore, when observing the pressure evolution, it is found that the boundary layer separates from the wall due to the adverse pressure gradient when shock waves propagate upstream, and return to attach to the wall when normal shock is generated at the separation point upon downstream propagation."
   },
   {
     "type": "figure",
     "para_id": 263,
-    "paper_id": 1
+    "paper_id": 1,
+    "paragraph_info": "images/7ece88752d39342e1d8093adb3bcdbb845456ddaf2dc9b6ff7130fac9da2ec05.jpg"
   },
   {
     "type": "figure",
     "para_id": 264,
-    "paper_id": 1
+    "paper_id": 1,
+    "paragraph_info": "images/e5bdd9a5aa65f3b3ea122156c41b28a1a8355c46d8c6cfe754d8dee4afbe1ec2.jpg"
   },
   {
     "type": "figure",
     "para_id": 266,
-    "paper_id": 1
+    "paper_id": 1,
+    "paragraph_info": "images/68480a588911ae4c601501480514585f2759528c677ae663f45518c2d53ed7fb.jpg"
   },
   {
     "type": "figure",
     "para_id": 267,
-    "paper_id": 1
+    "paper_id": 1,
+    "paragraph_info": "images/52214df74bec3ce8d579c91c3be60ee8bf91535ad7c313debd0bbac3fe914484.jpg"
   },
   {
     "idx": 762,
@@ -1444,37 +1583,44 @@
     "2d_coord": [
       1.082970691719856,
       0.619945098879648
-    ]
+    ],
+    "paragraph_info": "Fig. 12 presents the temporal evolutions of pressure signals and flame flashback distance. Notably, the pressure waveform measured in the cavity (P1) exhibits a high-frequency oscillation, which can be attributed to the acoustic motion in the subsonic region [22]. Additionally, the pressure response recorded in the tail of the isolator (P2) depicts the upstream propagation of backpressure. Based on the severity of the flame flashback, the entire process can be categorized into three stages. In stage #1, the pressure in the cavity rapidly increases with an increase in injection pressure. Although a weak backpressure is observed in the isolator, a severe flashback phenomenon is observed, which is also evident in the early stage of Fig. 10. This phenomenon is mainly associated with the sudden disturbance of the jet to shear-layer under stronger penetrability. In stage #2, the pressure tendency in the cavity remains relatively stable, and the combustor is in a state of energy accumulation by heat-release. The propagation abilities of backpressure and flame flashback are both weak, while the frequency is notably higher due to unsteady heat-release. In the critical stage of mode transition (stage #3), long-term and large-amplitude pressure responses can be detected in the isolator, indicating the establishment of a large-area separation zone. Furthermore, multiple reciprocating oscillations of the separated flow and continuous severe flame flashback phenomenon can be observed. The obvious large-amplitude oscillation mode with a rapid-growing trend is monitored in the cavity, which is caused by the continuous pressurization and depressurization cycles. It can be inferred that the transient thermal choking occurs in this stage, and the intensive heat-release plays a significant role in promoting the mode transition in this stage."
   },
   {
     "type": "figure",
     "para_id": 271,
-    "paper_id": 1
+    "paper_id": 1,
+    "paragraph_info": "images/a8be3dcfe4e9179c0257b47689ae67c352001b84d1fb5c8942bb361acdc9ef60.jpg"
   },
   {
     "type": "figure",
     "para_id": 273,
-    "paper_id": 1
+    "paper_id": 1,
+    "paragraph_info": "images/cf47b8dc3c8170c2362b46170ac6cafe4ec224224a318b6e2ba2458ad7deb53f.jpg"
   },
   {
     "type": "figure",
     "para_id": 275,
-    "paper_id": 1
+    "paper_id": 1,
+    "paragraph_info": "images/4b28f59a4718294d2f3fbac43c5339faae2c50ddda8371b8c83412fdf690811e.jpg"
   },
   {
     "type": "figure",
     "para_id": 280,
-    "paper_id": 1
+    "paper_id": 1,
+    "paragraph_info": "images/de6c07311766a358ce6793179559668a18163530a290d9f5227a567c01fb7427.jpg"
   },
   {
     "type": "figure",
     "para_id": 283,
-    "paper_id": 1
+    "paper_id": 1,
+    "paragraph_info": "images/adccd66949cf0059e86b0f9931eeea2aad92d3f71f41b574cc4cf25c31f4aca7.jpg"
   },
   {
     "type": "figure",
     "para_id": 285,
-    "paper_id": 1
+    "paper_id": 1,
+    "paragraph_info": "images/713081959ca086a684fcec61bacacacf9c8687b801e57ad6577a0794a5d22e2f.jpg"
   },
   {
     "idx": 819,
@@ -1488,7 +1634,8 @@
     "2d_coord": [
       -2.770269916529868,
       -0.25254713905867776
-    ]
+    ],
+    "paragraph_info": "\\mathbf { a } _ { i } ( t ) = \\Phi _ { i } ^ { T } ( x , y ) \\boldsymbol { \\psi } ( x , y , t )\\tag{18}"
   },
   {
     "idx": 823,
@@ -1502,7 +1649,8 @@
     "2d_coord": [
       -0.23925247496551016,
       -0.8960811662800855
-    ]
+    ],
+    "paragraph_info": "Fig. 15(a) presents a comparison of the frequency between POMs and flame oscillation modes, as discussed previously. It is convincing that the most energetic POM (mode #1) is in close proximity to the dominant flame mode. Similar consistency is also observed in the lower-frequency modes. The spatial structures of the first three POMs are depicted in Fig. 15(b). In mode #1, the rapid exchange of momentum generates a pair of counter-rotating vortices when the high-speed jet penetrates the low-speed separated flow. The upstream vortex, which directly interacts with the fuel jet, explains the periodic variation in the penetration depth of the jet, while the downstream vortex determines the oscillation characteristics of the flame. In mode #2, a similar but larger counter-rotating vortex pair is generated, and the upstream vortex extends to the tail of the isolator. Mode #3 embodies the coherent structures that are related to the largest-amplitude flame oscillation. A single large vortex can be observed at the cavity exit, which occupies the entire height and entrains the flame into the cavity floor, consistent with the previous analyses. The vortex is generated by the sudden contraction of the channel when entering the expansion section. Therefore, it is expected that low-frequency oscillations of this kind can be suppressed by optimizing the dimensional parameters of the combustor."
   },
   {
     "idx": 863,
@@ -1516,7 +1664,8 @@
     "2d_coord": [
       -2.6298125638947494,
       -2.8043853987425216
-    ]
+    ],
+    "paragraph_info": "No data was used for the research described in the article."
   },
   {
     "idx": 864,
@@ -1530,7 +1679,8 @@
     "2d_coord": [
       -2.3986234010153025,
       -1.5367069241204379
-    ]
+    ],
+    "paragraph_info": "The authors thank the support of the Natural Science Foundation of China (NSFC) under Grant No. 91741117, and the High-tech Research Key Laboratory of Zhenjiang (No. SS2018002). The computation work was performed at the HPC Center of Jiangsu University, and blastFoam code is open-source by Synthetik Applied Technologies LLC (https://www.synthetik-technologies.com)."
   },
   {
     "idx": 865,
@@ -1544,7 +1694,8 @@
     "2d_coord": [
       -2.4326245919662717,
       -0.965997287888013
-    ]
+    ],
+    "paragraph_info": "The authors thank the support of the Natural Science Foundation of China (NSFC) under Grant No. 91741117, and the High-tech Research Key Laboratory of Zhenjiang (No. SS2018002). The computation work was performed at the HPC Center of Jiangsu University, and blastFoam code is open-source by Synthetik Applied Technologies LLC (https://www.synthetik-technologies.com)."
   },
   {
     "idx": 867,
@@ -1558,7 +1709,8 @@
     "2d_coord": [
       -3.7619198915201975,
       -2.363559741384107
-    ]
+    ],
+    "paragraph_info": "[1] W. Huang, Z.B. Du, L. Yan, R. Moradi, Flame propagation and stabilization in dual-mode scramjet combustors: a survey, Prog. Aeronaut. Sci. 101 (2018) 13–30."
   },
   {
     "idx": 870,
@@ -1572,7 +1724,8 @@
     "2d_coord": [
       -3.7656782966384625,
       -2.0845508477067587
-    ]
+    ],
+    "paragraph_info": "[3] F.W. Barnes, C. Segal, Cavity-based flameholding for chemically-reacting supersonic flows, Prog. Aeronaut. Sci. 76 (2015) 24–41."
   },
   {
     "idx": 872,
@@ -1586,7 +1739,8 @@
     "2d_coord": [
       -2.0254146086995704,
       -1.9043954089926534
-    ]
+    ],
+    "paragraph_info": "[4] W. Huang, L. Yan, J.G. Tan, Survey on the mode transition technique in combined cycle propulsion systems, Aerosp. Sci. Technol. 39 (2014) 685–691."
   },
   {
     "idx": 873,
@@ -1600,7 +1754,8 @@
     "2d_coord": [
       -3.549830775539276,
       -2.2007010339598834
-    ]
+    ],
+    "paragraph_info": "[4] W. Huang, L. Yan, J.G. Tan, Survey on the mode transition technique in combined cycle propulsion systems, Aerosp. Sci. Technol. 39 (2014) 685–691."
   },
   {
     "idx": 875,
@@ -1614,7 +1769,8 @@
     "2d_coord": [
       -4.106248097247328,
       -1.9471535460272391
-    ]
+    ],
+    "paragraph_info": "[5] Y. Tian, S. Yang, J. Le, T. Su, M. Yue, F. Zhong, X. Tian, Investigation of combustion and flame stabilization modes in a hydrogen fueled scramjet combustor, Int. J. Hydrog. Energy 41 (2016) 19218–19230."
   },
   {
     "idx": 878,
@@ -1628,7 +1784,8 @@
     "2d_coord": [
       -3.6694578919744965,
       -2.2421196658488203
-    ]
+    ],
+    "paragraph_info": "[6] C. Zhang, J. Chang, J. Ma, W. Bao, D. Yu, J. Tang, Effect of Mach number and equivalence ratio on the pressure rising variation during combustion mode transition in a dual-mode combustor, Aerosp. Sci. Technol. 72 (2018) 516–524."
   },
   {
     "idx": 881,
@@ -1642,7 +1799,8 @@
     "2d_coord": [
       -4.100602312013102,
       -1.898410799341825
-    ]
+    ],
+    "paragraph_info": "[7] W. Huang, L. Yan, Numerical investigation on the ram–scram transition mechanism in a strut-based dual-mode scramjet combustor, Int. J. Hydrog. Energy 41 (2016) 4799–4807."
   },
   {
     "idx": 883,
@@ -1656,7 +1814,8 @@
     "2d_coord": [
       -2.9951558186060967,
       -2.296784500088079
-    ]
+    ],
+    "paragraph_info": "[8] L. Yan, L. Liao, Y.S. Meng, S.B. Li, W. Huang, Investigation on the mode transition of a typical three-dimensional scramjet combustor equipped with a strut, Energy 208 (2020) 118419."
   },
   {
     "idx": 885,
@@ -1670,7 +1829,8 @@
     "2d_coord": [
       -4.044809567626201,
       -1.847991721684127
-    ]
+    ],
+    "paragraph_info": "[9] H. Wang, Z. Wang, M. Sun, H. Wu, Combustion modes of hydrogen jet combustion in a cavity-based supersonic combustor, Int. J. Hydrog. Energy 38 (2013) 12078–12089."
   },
   {
     "idx": 888,
@@ -1684,7 +1844,8 @@
     "2d_coord": [
       -3.250617605663167,
       -1.5044628969268696
-    ]
+    ],
+    "paragraph_info": "[10] Y. Yuan, T. Zhang, W. Yao, X. Fan, P. Zhang, Characterization of flame stabilization modes in an ethylene-fueled supersonic combustor using time-resolved CH\\* chemiluminescence, Proc. Combust. Inst. 36 (2017) 2919–2925."
   },
   {
     "idx": 895,
@@ -1698,7 +1859,8 @@
     "2d_coord": [
       -3.6295663159783933,
       -2.3038422461256367
-    ]
+    ],
+    "paragraph_info": "[13] S.A. Mecklem, W.O. Landsberg, D. Curran, A. Veeraragavan, Combustion enhancement via tandem cavities within a Mach 8 scramjet combustor, Aerosp. Sci. Technol. 124 (2022) 107551."
   },
   {
     "idx": 899,
@@ -1712,7 +1874,8 @@
     "2d_coord": [
       -3.6244547977902792,
       -2.3408566956380312
-    ]
+    ],
+    "paragraph_info": "[15] E. Hassan, T.M. Ombrello, D.M. Peterson, Computational and experimental investigation of ignition in a Mach 2 cavity-based flameholder, Aerosp. Sci. Technol. 115 (2021) 106756"
   },
   {
     "idx": 900,
@@ -1726,7 +1889,8 @@
     "2d_coord": [
       -2.8750763924165312,
       -2.28309147679958
-    ]
+    ],
+    "paragraph_info": "[15] E. Hassan, T.M. Ombrello, D.M. Peterson, Computational and experimental investigation of ignition in a Mach 2 cavity-based flameholder, Aerosp. Sci. Technol. 115 (2021) 106756"
   },
   {
     "idx": 902,
@@ -1740,7 +1904,8 @@
     "2d_coord": [
       -3.8354314025955882,
       -2.1227139526376875
-    ]
+    ],
+    "paragraph_info": "[16] H. Ouyang, W. Liu, M. Sun, The large-amplitude combustion oscillation in a single-side expansion scramjet combustor, Acta Astronaut. 117 (2015) 90–98."
   },
   {
     "idx": 905,
@@ -1754,7 +1919,8 @@
     "2d_coord": [
       -3.65358325521252,
       -2.289119318359919
-    ]
+    ],
+    "paragraph_info": "[17] G. Zhao, M. Sun, J. Wu, X. Cui, H. Wang, Investigation of flame flashback phenomenon in a supersonic crossflow with ethylene injection upstream of cavity flameholder, Aerosp. Sci. Technol. 87 (2019) 190–206."
   },
   {
     "idx": 907,
@@ -1768,7 +1934,8 @@
     "2d_coord": [
       -3.652792758052455,
       -1.843712446691711
-    ]
+    ],
+    "paragraph_info": "[18] M.L. Fotia, J.F. Driscoll, Ram-scram transition and flame/shock-train interactions in a model scramjet experiment, J. Propuls. Power 29 (2013) 261–273."
   },
   {
     "idx": 910,
@@ -1782,7 +1949,8 @@
     "2d_coord": [
       -4.044809567626201,
       -1.847991721684127
-    ]
+    ],
+    "paragraph_info": "[19] H. Wang, Z. Wang, M. Sun, N. Qin, Large-Eddy/Reynolds-averaged Navier–Stokes simulation of combustion oscillations in a cavity-based supersonic combustor, Int. J. Hydrog. Energy 38 (2013) 5918–5927."
   },
   {
     "idx": 914,
@@ -1796,7 +1964,8 @@
     "2d_coord": [
       -3.721341764197491,
       -2.387905599691612
-    ]
+    ],
+    "paragraph_info": "[21] Q. Liu, D. Baccarella, T. Lee, Review of combustion stabilization for hypersonic airbreathing propulsion, Prog. Aeronaut. Sci. 119 (2020) 100636."
   },
   {
     "idx": 915,
@@ -1810,7 +1979,8 @@
     "2d_coord": [
       -2.772563993805421,
       -2.256935897925571
-    ]
+    ],
+    "paragraph_info": "[21] Q. Liu, D. Baccarella, T. Lee, Review of combustion stabilization for hypersonic airbreathing propulsion, Prog. Aeronaut. Sci. 119 (2020) 100636."
   },
   {
     "idx": 919,
@@ -1824,7 +1994,8 @@
     "2d_coord": [
       -3.665600629280352,
       -1.5544707242048492
-    ]
+    ],
+    "paragraph_info": "[23] N.T. Clemens, V. Narayanaswamy, Low-frequency unsteadiness of shock wave/turbulent boundary layer interactions, Annu. Rev. Fluid Mech. 46 (2014) 469–492."
   },
   {
     "idx": 921,
@@ -1838,7 +2009,8 @@
     "2d_coord": [
       -0.5083336819405149,
       1.8624075704079317
-    ]
+    ],
+    "paragraph_info": "[24] S.J. Laurence, D. Lieber, J.M. Schramm, K. Hannemann, J. Larsson, Incipient thermal choking and stable shock-train formation in the heat-release region of a scramjet combustor. Part I: shock-tunnel experiments, Combust. Flame 162 (2015) 921–931."
   },
   {
     "idx": 922,
@@ -1852,7 +2024,8 @@
     "2d_coord": [
       -3.562095656993776,
       -1.2195135831770858
-    ]
+    ],
+    "paragraph_info": "[24] S.J. Laurence, D. Lieber, J.M. Schramm, K. Hannemann, J. Larsson, Incipient thermal choking and stable shock-train formation in the heat-release region of a scramjet combustor. Part I: shock-tunnel experiments, Combust. Flame 162 (2015) 921–931."
   },
   {
     "idx": 925,
@@ -1866,7 +2039,8 @@
     "2d_coord": [
       -3.8687238719547756,
       -2.2203017797690037
-    ]
+    ],
+    "paragraph_info": "[25] J. Zhang, J. Chang, C. Kong, H. Qiu, W. Bao, Flame oscillation characteristics in a kerosene fueled dual mode combustor equipped with thin strut flameholder, Acta Astronaut. 161 (2019) 222–233."
   },
   {
     "idx": 928,
@@ -1880,7 +2054,8 @@
     "2d_coord": [
       -3.8640593935399394,
       -1.592897735317573
-    ]
+    ],
+    "paragraph_info": "[26] Z. Wang, J. Chang, G. Wu, D. Yu, Experimental investigation of shock train behavior in a supersonic isolator, Phys. Fluids 33 (2021) 046103."
   },
   {
     "idx": 930,
@@ -1894,7 +2069,8 @@
     "2d_coord": [
       -4.100602312013102,
       -1.898410799341825
-    ]
+    ],
+    "paragraph_info": "[27] Q. Yang, J. Chang, W. Bao, J. Deng, A mechanism of combustion mode transition for hydrogen fueled scramjet, Int. J. Hydrog. Energy 39 (2014) 9791–9797."
   },
   {
     "idx": 933,
@@ -1908,7 +2084,8 @@
     "2d_coord": [
       -3.358428879375501,
       -1.508032676087876
-    ]
+    ],
+    "paragraph_info": "[28] N. Kato, S. Im, Flame dynamics under various backpressures in a model scramjet with and without a cavity flameholder, Proc. Combust. Inst. (2020) 3861–3868."
   },
   {
     "idx": 935,
@@ -1922,7 +2099,8 @@
     "2d_coord": [
       -3.2510386589780795,
       -1.506960497370028
-    ]
+    ],
+    "paragraph_info": "[29] C. Aguilera, K.H. Yu, Scramjet to ramjet transition in a dual-mode combustor with fin-guided injection, Proc. Combust. Inst. 36 (2017) 2911–2918."
   },
   {
     "idx": 936,
@@ -1936,7 +2114,8 @@
     "2d_coord": [
       -0.2830223935800265,
       1.579099427501494
-    ]
+    ],
+    "paragraph_info": "[30] M.B. Sun, Z. Cai, Y. Wang, G. Zhao, Y. Sun, P. Li, M. Wan, L. Li, Overview on the research progress of unsteady supersonic combustion, Acta Aerodyn. Sin. 38 (2019) 532–551."
   },
   {
     "idx": 938,
@@ -1950,7 +2129,8 @@
     "2d_coord": [
       -3.7525974767359878,
       -2.2354198143532926
-    ]
+    ],
+    "paragraph_info": "[30] M.B. Sun, Z. Cai, Y. Wang, G. Zhao, Y. Sun, P. Li, M. Wan, L. Li, Overview on the research progress of unsteady supersonic combustion, Acta Aerodyn. Sin. 38 (2019) 532–551."
   },
   {
     "idx": 945,
@@ -1964,7 +2144,8 @@
     "2d_coord": [
       -2.0296304118297632,
       -2.383009175509938
-    ]
+    ],
+    "paragraph_info": "[33] P.J. Vonk, M. Safdari, M.D. Brandyberry, A new OpenFOAM solver for compressible multi-fluid flow with application to high-explosive detonation, in: 4th OpenFOAM User Conference, Cologne, 2016."
   },
   {
     "idx": 950,
@@ -1978,7 +2159,8 @@
     "2d_coord": [
       -3.1379037957705522,
       -1.9082507102902109
-    ]
+    ],
+    "paragraph_info": "[35] A. Yoshizawa, K. Horiuti, A statistically-derived subgrid-scale kinetic energy model for the large-eddy simulation of turbulent flows, J. Phys. Soc. Jpn. 54 (1985) 2834–2839."
   },
   {
     "idx": 952,
@@ -1992,7 +2174,8 @@
     "2d_coord": [
       -3.4004008258287115,
       -1.9942092905728313
-    ]
+    ],
+    "paragraph_info": "[36] W.W. Kim, S. Menon, A new dynamic one-equation subgrid-scale model for large eddy simulations, in: 33rd Aerosp. Sci. Meet. & Exhib.Reno, 1995, p. 356."
   },
   {
     "idx": 953,
@@ -2006,7 +2189,8 @@
     "2d_coord": [
       -3.389184852330049,
       -1.1118413659129007
-    ]
+    ],
+    "paragraph_info": "[37] A. Karlsson, Modeling Auto-Ignition, Flame Propagation and Combustion in Non-Stationary Turbulent Sprays, 1995."
   },
   {
     "idx": 955,
@@ -2020,7 +2204,8 @@
     "2d_coord": [
       -3.3064706822471113,
       -1.1899461036976906
-    ]
+    ],
+    "paragraph_info": "[38] N. Marinov, C. Westbrook, W. Pitz, Detailed and global chemical kinetics model for hydrogen, Transp. Phenom. Combust. 1 (1996) 118–129."
   },
   {
     "idx": 962,
@@ -2034,7 +2219,8 @@
     "2d_coord": [
       -4.179198809647786,
       -1.8987593908147202
-    ]
+    ],
+    "paragraph_info": "[40] Z. Huang, G. He, S. Wang, F. Qin, X. Wei, L. Shi, Simulations of combustion oscillation and flame dynamics in a strut-based supersonic combustor, Int. J. Hydrog. Energy 42 (2017) 8278–8287."
   },
   {
     "idx": 964,
@@ -2048,7 +2234,8 @@
     "2d_coord": [
       -3.4212376040740726,
       -1.8503878092258383
-    ]
+    ],
+    "paragraph_info": "[41] N. Nordin, Detailed chemistry spray combustion model for the KIVA code, in: User’s Group Meeting at the SAE Congress, 2001."
   },
   {
     "idx": 966,
@@ -2062,7 +2249,8 @@
     "2d_coord": [
       -1.789704892405465,
       -2.495876199217329
-    ]
+    ],
+    "paragraph_info": "[42] R.J. Spiteri, S.J. Ruuth, A new class of optimal high-order strong-stabilitypreserving time discretization methods, SIAM J. Numer. Anal. 40 (2002) 469–491."
   },
   {
     "idx": 969,
@@ -2076,7 +2264,8 @@
     "2d_coord": [
       -3.855780798453986,
       -1.7301348326741885
-    ]
+    ],
+    "paragraph_info": "[43] W. Xie, R. Zhang, J. Lai, H. Li, An accurate and robust HLLC-type Riemann solver for the compressible Euler system at various Mach numbers, Int. J. Numer. Methods Fluids 89 (2019) 430–463."
   },
   {
     "idx": 970,
@@ -2090,7 +2279,8 @@
     "2d_coord": [
       -1.8728177638146515,
       0.03354983823829848
-    ]
+    ],
+    "paragraph_info": "[44] G. Wanner, E. Hairer, Solving Ordinary Differential Equations II, Springer Berlin Heidelberg, New York, 1996."
   },
   {
     "idx": 971,
@@ -2104,7 +2294,8 @@
     "2d_coord": [
       -3.2496226695823958,
       -1.1942290725557931
-    ]
+    ],
+    "paragraph_info": "[44] G. Wanner, E. Hairer, Solving Ordinary Differential Equations II, Springer Berlin Heidelberg, New York, 1996."
   },
   {
     "idx": 978,
@@ -2118,7 +2309,8 @@
     "2d_coord": [
       -3.6539361622205297,
       -1.7376894720514455
-    ]
+    ],
+    "paragraph_info": "[47] T.S. Lund, X. Wu, K.D. Squires, Generation of turbulent inflow data for spatiallydeveloping boundary layer simulations, J. Comput. Phys. 140 (1998) 233–258."
   },
   {
     "idx": 980,
@@ -2132,7 +2324,8 @@
     "2d_coord": [
       -3.4585452538359327,
       -1.9786332166434673
-    ]
+    ],
+    "paragraph_info": "[49] N. Hass, K. Cabell, A. Storch, M. Gruber, HIFiRE direct-connect rig (HDCR) phase I scramjet test results from the NASA Langley arc-heated scramjet test facility, in: 17th AIAA International Space Planes and Hypersonic Systems and Technologies Conference, 2011, p. 2248."
   },
   {
     "idx": 986,
@@ -2146,7 +2339,8 @@
     "2d_coord": [
       -3.351644778230781,
       -1.3605453750720384
-    ]
+    ],
+    "paragraph_info": "[51] R. Bilger, S. Stårner, R. Kee, On reduced mechanisms for methane-air combustion in nonpremixed flames, Combust. Flame 80 (1990) 135–149."
   },
   {
     "idx": 988,
@@ -2160,7 +2354,8 @@
     "2d_coord": [
       -4.000566077609586,
       -2.210630418543776
-    ]
+    ],
+    "paragraph_info": "[52] C. Liu, Y. Zhao, Z. Wang, H. Wang, M. Sun, Dynamics and mixing mechanism of transverse jet injection into a supersonic combustor with cavity flameholder, Acta Astronaut. 136 (2017) 90–100."
   },
   {
     "idx": 992,
@@ -2174,7 +2369,8 @@
     "2d_coord": [
       -2.628902856128477,
       -2.790495095664417
-    ]
+    ],
+    "paragraph_info": "Yifei Jia<sup>1,2†</sup>, Shiyu Cheng<sup>1†</sup>, Yu Dong<sup>1</sup>, Guan Li<sup>1,2</sup>, Dong Tian<sup>1,2</sup>, Ruixiao Peng<sup>1,2</sup>, Xuyi Lu<sup>1,2</sup>, Yu Wang<sup>2,3</sup>, Wei Yao<sup>3\\*</sup>, Guihua Shan<sup>1,2,4\\*</sup>"
   },
   {
     "idx": 993,
@@ -2188,7 +2384,8 @@
     "2d_coord": [
       -2.1871396059631567,
       -1.4381543139958508
-    ]
+    ],
+    "paragraph_info": "<sup>1</sup>Computer Network Information Center, Chinese Academy of Sciences, Beijing, China."
   },
   {
     "idx": 994,
@@ -2202,7 +2399,8 @@
     "2d_coord": [
       -2.079721581872519,
       -1.4227864646433102
-    ]
+    ],
+    "paragraph_info": "<sup>2</sup>University of Chinese Academy of Sciences (UCAS), Beijing, China. <sup>3</sup>Institute of Mechanics, Chinese Academy of Sciences, Beijing, China. <sup>4</sup>Hangzhou Institute for Advanced Study, UCAS, Hangzhou, 310024, China."
   },
   {
     "idx": 995,
@@ -2216,7 +2414,8 @@
     "2d_coord": [
       -2.162908233016645,
       -1.4353109950864422
-    ]
+    ],
+    "paragraph_info": "<sup>2</sup>University of Chinese Academy of Sciences (UCAS), Beijing, China. <sup>3</sup>Institute of Mechanics, Chinese Academy of Sciences, Beijing, China. <sup>4</sup>Hangzhou Institute for Advanced Study, UCAS, Hangzhou, 310024, China."
   },
   {
     "idx": 996,
@@ -2230,7 +2429,8 @@
     "2d_coord": [
       -2.063121504958134,
       -1.4237151298387616
-    ]
+    ],
+    "paragraph_info": "<sup>2</sup>University of Chinese Academy of Sciences (UCAS), Beijing, China. <sup>3</sup>Institute of Mechanics, Chinese Academy of Sciences, Beijing, China. <sup>4</sup>Hangzhou Institute for Advanced Study, UCAS, Hangzhou, 310024, China."
   },
   {
     "idx": 997,
@@ -2244,7 +2444,8 @@
     "2d_coord": [
       -1.6914211992919872,
       -1.9863974486959497
-    ]
+    ],
+    "paragraph_info": "\\*Corresponding author(s). E-mail(s): weiyao@imech.ac.cn; sgh@cnic.cn; Contributing authors: yfjia@cnic.cn; chengshiyu@cnic.cn; dongyu@cnic.cn; liguan@cnic.cn; tiandong@cnic.cn; rxpeng@cnic.cn; luxuyi@cnic.cn; yuwang@imech.ac.cn; <sup>†</sup>These authors contributed equally to this work."
   },
   {
     "idx": 1016,
@@ -2258,7 +2459,8 @@
     "2d_coord": [
       1.887926862597663,
       -1.7259247834609266
-    ]
+    ],
+    "paragraph_info": "Keywords: Visual Analytics, Temporal Flow Field, Scientific Data Simulation, Vision Transformer."
   },
   {
     "idx": 1017,
@@ -2272,7 +2474,8 @@
     "2d_coord": [
       1.956037188249735,
       -1.6876270576472159
-    ]
+    ],
+    "paragraph_info": "Keywords: Visual Analytics, Temporal Flow Field, Scientific Data Simulation, Vision Transformer."
   },
   {
     "idx": 1018,
@@ -2286,7 +2489,8 @@
     "2d_coord": [
       -1.552863674831557,
       -1.1471993218798437
-    ]
+    ],
+    "paragraph_info": "Keywords: Visual Analytics, Temporal Flow Field, Scientific Data Simulation, Vision Transformer."
   },
   {
     "idx": 1019,
@@ -2300,7 +2504,8 @@
     "2d_coord": [
       1.970951234669619,
       -2.6156972671033865
-    ]
+    ],
+    "paragraph_info": "Keywords: Visual Analytics, Temporal Flow Field, Scientific Data Simulation, Vision Transformer."
   },
   {
     "idx": 1053,
@@ -2314,27 +2519,32 @@
     "2d_coord": [
       -1.6637878718431793,
       -2.0158335907287284
-    ]
+    ],
+    "paragraph_info": "We summarize our contributions as follows:"
   },
   {
     "type": "figure",
     "para_id": 401,
-    "paper_id": 2
+    "paper_id": 2,
+    "paragraph_info": "images/91bfd420c7f54805120ba9f648305a6b60818b51277892a0e216d5faeee167ab.jpg"
   },
   {
     "type": "figure",
     "para_id": 413,
-    "paper_id": 2
+    "paper_id": 2,
+    "paragraph_info": "images/8fd4442e886fef94ad5a173dcaa50bcbaf63354d7e03e2ce0da28d05d577b75a.jpg"
   },
   {
     "type": "figure",
     "para_id": 425,
-    "paper_id": 2
+    "paper_id": 2,
+    "paragraph_info": "images/5b66560c7c97ff1f4e70bafb6ce12d6daa78ed5ea7bf0d547518fc3f536c895d.jpg"
   },
   {
     "type": "figure",
     "para_id": 438,
-    "paper_id": 2
+    "paper_id": 2,
+    "paragraph_info": "images/0127f3de12a9b4d1266859d8548f89703fdd1f00ab6f5326a31002421ea33a67.jpg"
   },
   {
     "idx": 1391,
@@ -2348,7 +2558,8 @@
     "2d_coord": [
       0.46714042121703553,
       -2.3114765088299047
-    ]
+    ],
+    "paragraph_info": "Report View (Figure 4(d)) displays the description of the currently selected frame in the scatter plot. Descriptions may be VLM-generated or manually annotated."
   },
   {
     "idx": 1419,
@@ -2362,7 +2573,8 @@
     "2d_coord": [
       0.12539427905842637,
       0.39250489594741317
-    ]
+    ],
+    "paragraph_info": "Case Study 1 focused on pressure field evolution and combustion mode interpretation and was performed by E3, a postdoctoral researcher specializing in reactive flow diagnostics. Case Study 2 explored the classification of combustion modes based on OH field trajectories and was conducted by E4, a senior simulation engineer engaged in engine configuration evaluation."
   },
   {
     "idx": 1421,
@@ -2376,7 +2588,8 @@
     "2d_coord": [
       -0.08047957571692343,
       0.44050356811429997
-    ]
+    ],
+    "paragraph_info": "Case Study 1 focused on pressure field evolution and combustion mode interpretation and was performed by E3, a postdoctoral researcher specializing in reactive flow diagnostics. Case Study 2 explored the classification of combustion modes based on OH field trajectories and was conducted by E4, a senior simulation engineer engaged in engine configuration evaluation."
   },
   {
     "idx": 1447,
@@ -2390,7 +2603,8 @@
     "2d_coord": [
       0.03347063533725184,
       -0.2346906503075135
-    ]
+    ],
+    "paragraph_info": "In a separate analysis, we focused on case (a) to study stable scramjet combustion. As shown in Figure 6(a), the trajectory remained within a tight cluster throughout the simulation. A zoomed-in view was shown in Figure 6(a1), while frame snapshots were shown in (af). In this case, the pressure surges consistently occured between the isolator and cavity, and remained stationary—indicative of stable scramjet operation. According to InternViT-based clustering results, trajectories corresponding to stable scramjet combustion always remained within small round clusters, such as circles (a)–(d) in Figure 6. In contrast, ramjet cases typically originated from such clusters and terminated in larger clusters such as (e), which aggregated stable ramjet frames."
   },
   {
     "idx": 1448,
@@ -2404,17 +2618,20 @@
     "2d_coord": [
       0.05271660619428994,
       -0.11947159182696439
-    ]
+    ],
+    "paragraph_info": "In a separate analysis, we focused on case (a) to study stable scramjet combustion. As shown in Figure 6(a), the trajectory remained within a tight cluster throughout the simulation. A zoomed-in view was shown in Figure 6(a1), while frame snapshots were shown in (af). In this case, the pressure surges consistently occured between the isolator and cavity, and remained stationary—indicative of stable scramjet operation. According to InternViT-based clustering results, trajectories corresponding to stable scramjet combustion always remained within small round clusters, such as circles (a)–(d) in Figure 6. In contrast, ramjet cases typically originated from such clusters and terminated in larger clusters such as (e), which aggregated stable ramjet frames."
   },
   {
     "type": "figure",
     "para_id": 464,
-    "paper_id": 2
+    "paper_id": 2,
+    "paragraph_info": "images/4da1af406442eaa69a0a7f104351f973c8f8ad48c80c69d505a7c8aced32b645.jpg"
   },
   {
     "type": "figure",
     "para_id": 465,
-    "paper_id": 2
+    "paper_id": 2,
+    "paragraph_info": "images/7e5b9d77b456e977cfe94f98192732ab1745fce3d38bb9885b820316e776736e.jpg"
   },
   {
     "idx": 1468,
@@ -2428,12 +2645,14 @@
     "2d_coord": [
       -3.658104172074149,
       0.04276765774194809
-    ]
+    ],
+    "paragraph_info": "c2f1.3h20.10 (Diff 174.08) (b1)"
   },
   {
     "type": "figure",
     "para_id": 467,
-    "paper_id": 2
+    "paper_id": 2,
+    "paragraph_info": "images/d8a7b12db68b9f39178a971ff2b29cea95b1bd3ced61a8a9034d7e9246e7b888.jpg"
   },
   {
     "idx": 1469,
@@ -2447,37 +2666,44 @@
     "2d_coord": [
       -3.657072709572878,
       0.04291973898058886
-    ]
+    ],
+    "paragraph_info": "c2f1.3h2o.11 (Diff: 203.78) (c1)"
   },
   {
     "type": "figure",
     "para_id": 469,
-    "paper_id": 2
+    "paper_id": 2,
+    "paragraph_info": "images/75652daf70603956e9e3e68924fc5df9d8ffa20fa296c3cab5c5378b5867f0e2.jpg"
   },
   {
     "type": "figure",
     "para_id": 470,
-    "paper_id": 2
+    "paper_id": 2,
+    "paragraph_info": "images/6a14f6c83bcd9f972bf13b4746b19b2731e235d418c8332134f64bbe48fbc9ac.jpg"
   },
   {
     "type": "figure",
     "para_id": 472,
-    "paper_id": 2
+    "paper_id": 2,
+    "paragraph_info": "images/9560ecb5b5a59abf5ab1b1d8d187883b2a6ef451a05f84171123ca470e63fcbb.jpg"
   },
   {
     "type": "figure",
     "para_id": 476,
-    "paper_id": 2
+    "paper_id": 2,
+    "paragraph_info": "images/bbb0b85a3033a080bcdf12114957127bffe5c9e97ba4a4a756ccacb81e31b82d.jpg"
   },
   {
     "type": "figure",
     "para_id": 479,
-    "paper_id": 2
+    "paper_id": 2,
+    "paragraph_info": "images/e30248128d52999d6d9c881da173c6bf7e2ef817e0de54766bf9abb8bdad061b.jpg"
   },
   {
     "type": "figure",
     "para_id": 480,
-    "paper_id": 2
+    "paper_id": 2,
+    "paragraph_info": "images/62c65dae651819a20dc67fb6ac99c67bc2b695a53f6217428fe8eee7182b7307.jpg"
   },
   {
     "idx": 1575,
@@ -2491,7 +2717,8 @@
     "2d_coord": [
       2.6915709899132483,
       -1.3741097971107252
-    ]
+    ],
+    "paragraph_info": "The code and demonstration video are available at: https://github.com/JYF98/ temporalflowviz"
   },
   {
     "idx": 1576,
@@ -2505,7 +2732,8 @@
     "2d_coord": [
       2.6925639270356836,
       -1.3677075070176883
-    ]
+    ],
+    "paragraph_info": "The code and demonstration video are available at: https://github.com/JYF98/ temporalflowviz"
   },
   {
     "idx": 1577,
@@ -2519,7 +2747,8 @@
     "2d_coord": [
       -2.391026450721855,
       -1.2879502431728136
-    ]
+    ],
+    "paragraph_info": "We thank all reviewers for their constructive comments. This work was supported by the Strategic Priority Research Program of Chinese Academy of Sciences (Grant No. XDB0500103), the National Natural Science Foundation of China (No. 62202446), and the Beijing Natural Science Foundation (No.4254090)."
   },
   {
     "idx": 1578,
@@ -2533,7 +2762,8 @@
     "2d_coord": [
       -2.4553645602707954,
       -1.2714102071092201
-    ]
+    ],
+    "paragraph_info": "We thank all reviewers for their constructive comments. This work was supported by the Strategic Priority Research Program of Chinese Academy of Sciences (Grant No. XDB0500103), the National Natural Science Foundation of China (No. 62202446), and the Beijing Natural Science Foundation (No.4254090)."
   },
   {
     "idx": 1579,
@@ -2547,7 +2777,8 @@
     "2d_coord": [
       -2.441045658264523,
       -1.2876603431213753
-    ]
+    ],
+    "paragraph_info": "We thank all reviewers for their constructive comments. This work was supported by the Strategic Priority Research Program of Chinese Academy of Sciences (Grant No. XDB0500103), the National Natural Science Foundation of China (No. 62202446), and the Beijing Natural Science Foundation (No.4254090)."
   },
   {
     "idx": 1580,
@@ -2561,7 +2792,8 @@
     "2d_coord": [
       -0.5806423028007639,
       -2.5652612250255005
-    ]
+    ],
+    "paragraph_info": "Bae, J., Helldin, T., Riveiro, M., Nowaczyk, S., Bouguelia, M.-R., Falkman, G.: Interactive clustering: A comprehensive review. ACM Comput. Surv. 53(1) (2020) https://doi.org/10.1145/3340960"
   },
   {
     "idx": 1581,
@@ -2575,7 +2807,8 @@
     "2d_coord": [
       -3.2130451847835566,
       -2.4322878063395157
-    ]
+    ],
+    "paragraph_info": "Bae, J., Helldin, T., Riveiro, M., Nowaczyk, S., Bouguelia, M.-R., Falkman, G.: Interactive clustering: A comprehensive review. ACM Comput. Surv. 53(1) (2020) https://doi.org/10.1145/3340960"
   },
   {
     "idx": 1585,
@@ -2589,7 +2822,8 @@
     "2d_coord": [
       -2.0441982750105847,
       -2.6860703335776672
-    ]
+    ],
+    "paragraph_info": "Bostock, M., Ogievetsky, V., Heer, J.: D3 data-driven documents. IEEE Transactions on Visualization and Computer Graphics 17(12), 2301–2309 (2011) https://doi.org/ 10.1109/TVCG.2011.185"
   },
   {
     "idx": 1586,
@@ -2603,7 +2837,8 @@
     "2d_coord": [
       -3.226375147584066,
       -1.7602674736035555
-    ]
+    ],
+    "paragraph_info": "Bostock, M., Ogievetsky, V., Heer, J.: D3 data-driven documents. IEEE Transactions on Visualization and Computer Graphics 17(12), 2301–2309 (2011) https://doi.org/ 10.1109/TVCG.2011.185"
   },
   {
     "idx": 1587,
@@ -2617,7 +2852,8 @@
     "2d_coord": [
       -2.485987329910785,
       -2.3752080048005944
-    ]
+    ],
+    "paragraph_info": "Bostock, M., Ogievetsky, V., Heer, J.: D3 data-driven documents. IEEE Transactions on Visualization and Computer Graphics 17(12), 2301–2309 (2011) https://doi.org/ 10.1109/TVCG.2011.185"
   },
   {
     "idx": 1589,
@@ -2631,7 +2867,8 @@
     "2d_coord": [
       -3.6732351963352095,
       -1.5447128991605992
-    ]
+    ],
+    "paragraph_info": "Curran, E., Heiser, W., Pratt, D.: Fluid phenomena in scramjet combustion systems. Annual Review of Fluid Mechanics 28, 323–360 (2003) https://doi.org/10.1146/ annurev.fl.28.010196.001543"
   },
   {
     "idx": 1592,
@@ -2645,7 +2882,8 @@
     "2d_coord": [
       -2.1191826549324864,
       -3.005958554753783
-    ]
+    ],
+    "paragraph_info": "Cai, D., He, X., Wang, X., Bao, H., Han, J.: Locality preserving nonnegative matrix factorization. In: Proceedings of the 21st International Joint Conference on Artificial Intelligence. IJCAI’09, pp. 1010–1015. Morgan Kaufmann Publishers Inc., San Francisco, CA, USA (2009)"
   },
   {
     "idx": 1593,
@@ -2659,7 +2897,8 @@
     "2d_coord": [
       -2.9577574888251856,
       -2.042234743265942
-    ]
+    ],
+    "paragraph_info": "Cai, D., He, X., Wang, X., Bao, H., Han, J.: Locality preserving nonnegative matrix factorization. In: Proceedings of the 21st International Joint Conference on Artificial Intelligence. IJCAI’09, pp. 1010–1015. Morgan Kaufmann Publishers Inc., San Francisco, CA, USA (2009)"
   },
   {
     "idx": 1596,
@@ -2673,7 +2912,8 @@
     "2d_coord": [
       -1.9636219908677803,
       -3.0278046236606855
-    ]
+    ],
+    "paragraph_info": "Chen, J., Huang, H., Ye, H., Peng, Z., Li, C., Wang, C.: Salientime: user-driven selection of salient time steps for large-scale geospatial data visualization. In: Proceedings of the 2024 CHI Conference on Human Factors in Computing Systems, pp. 1–19 (2024)"
   },
   {
     "idx": 1600,
@@ -2687,7 +2927,8 @@
     "2d_coord": [
       -1.6639171681028082,
       -2.6560750497278867
-    ]
+    ],
+    "paragraph_info": "Chidananda Gowda, K., Krishna, G.: Agglomerative clustering using the concept of mutual nearest neighbourhood. Pattern Recognition 10(2), 105–112 (1978) https: //doi.org/10.1016/0031-3203(78)90018-3"
   },
   {
     "idx": 1601,
@@ -2701,7 +2942,8 @@
     "2d_coord": [
       -2.589551180606524,
       -2.200461343119808
-    ]
+    ],
+    "paragraph_info": "Chidananda Gowda, K., Krishna, G.: Agglomerative clustering using the concept of mutual nearest neighbourhood. Pattern Recognition 10(2), 105–112 (1978) https: //doi.org/10.1016/0031-3203(78)90018-3"
   },
   {
     "idx": 1604,
@@ -2715,7 +2957,8 @@
     "2d_coord": [
       -1.8785024378746833,
       -2.891856685428516
-    ]
+    ],
+    "paragraph_info": "Chen, Z., Wu, J., Wang, W., Su, W., Chen, G., Xing, S., Zhong, M., Zhang, Q., Zhu, X., Lu, L., et al.: Internvl: Scaling up vision foundation models and aligning for generic visual-linguistic tasks. In: Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pp. 24185–24198 (2024)"
   },
   {
     "idx": 1606,
@@ -2729,7 +2972,8 @@
     "2d_coord": [
       -0.6788559415107462,
       -3.200937202846491
-    ]
+    ],
+    "paragraph_info": "Chen, Y., Zhao, Y., Li, X., Zhang, J., Long, J., Zhou, F.: An open dataset of data lineage graphs for data governance research. Visual Informatics 8(1), 1–5 (2024) https://doi.org/10.1016/j.visinf.2024.01.001"
   },
   {
     "idx": 1609,
@@ -2743,7 +2987,8 @@
     "2d_coord": [
       -1.6180862325823444,
       -3.012744049209292
-    ]
+    ],
+    "paragraph_info": "Dosovitskiy, A., Beyer, L., Kolesnikov, A., Weissenborn, D., Zhai, X., Unterthiner, T., Dehghani, M., Minderer, M., Heigold, G., Gelly, S., Others: An image is worth 16x16 words: Transformers for image recognition at scale. In: International Conference on Learning Representations (2021)"
   },
   {
     "idx": 1610,
@@ -2757,7 +3002,8 @@
     "2d_coord": [
       -2.170324550165931,
       -2.93514769679078
-    ]
+    ],
+    "paragraph_info": "Dosovitskiy, A., Beyer, L., Kolesnikov, A., Weissenborn, D., Zhai, X., Unterthiner, T., Dehghani, M., Minderer, M., Heigold, G., Gelly, S., Others: An image is worth 16x16 words: Transformers for image recognition at scale. In: International Conference on Learning Representations (2021)"
   },
   {
     "idx": 1612,
@@ -2771,7 +3017,8 @@
     "2d_coord": [
       -1.8701017246067606,
       -2.857298793407212
-    ]
+    ],
+    "paragraph_info": "Dalal, N., Triggs, B.: Histograms of oriented gradients for human detection. In: 2005 IEEE Computer Society Conference on Computer Vision and Pattern Recognition (CVPR’05), vol. 1, pp. 886–893 (2005). IEEE"
   },
   {
     "idx": 1613,
@@ -2785,7 +3032,8 @@
     "2d_coord": [
       -3.012583464271501,
       -1.8320634992260227
-    ]
+    ],
+    "paragraph_info": "Dalal, N., Triggs, B.: Histograms of oriented gradients for human detection. In: 2005 IEEE Computer Society Conference on Computer Vision and Pattern Recognition (CVPR’05), vol. 1, pp. 886–893 (2005). IEEE"
   },
   {
     "idx": 1616,
@@ -2799,7 +3047,8 @@
     "2d_coord": [
       -2.1502226616942024,
       -2.6996544562333464
-    ]
+    ],
+    "paragraph_info": "Eirich, J., Bonart, J., J¨ackle, D., Sedlmair, M., Schmid, U., Fischbach, K., Schreck, T., Bernard, J.: Irvine: A design study on analyzing correlation patterns of electrical engines. IEEE Transactions on Visualization and Computer Graphics 28(1), 11–21 (2021)"
   },
   {
     "idx": 1618,
@@ -2813,7 +3062,8 @@
     "2d_coord": [
       -1.6635163769564814,
       -2.8639362596155973
-    ]
+    ],
+    "paragraph_info": "Ester, M., Kriegel, H.-P., Sander, J., Xu, X.: A density-based algorithm for discovering clusters in large spatial databases with noise. In: Proceedings of the Second International Conference on Knowledge Discovery and Data Mining (KDD), pp. 226–231 (1996)"
   },
   {
     "idx": 1622,
@@ -2827,7 +3077,8 @@
     "2d_coord": [
       -3.4188135945066933,
       -2.3322248155788374
-    ]
+    ],
+    "paragraph_info": "He, Z., Chen, C., Wu, Y., Tian, X., Chu, Q., Huang, Z., Zhang, W.: Real-time interactive parallel visualization of large-scale flow-field data. Applied Sciences 13(16), 9092 (2023) https://doi.org/10.3390/app13169092"
   },
   {
     "idx": 1624,
@@ -2841,7 +3092,8 @@
     "2d_coord": [
       -1.6136013878325024,
       -2.543354959788898
-    ]
+    ],
+    "paragraph_info": "Huang, D., Lai, J., Wang, C.-D.: Ensemble clustering using factor graph. Pattern Recognition 50, 131–142 (2016) https://doi.org/10.1016/j.patcog.2015.08.015"
   },
   {
     "idx": 1625,
@@ -2855,7 +3107,8 @@
     "2d_coord": [
       -2.5359843671882745,
       -2.2015757960782856
-    ]
+    ],
+    "paragraph_info": "Huang, D., Lai, J., Wang, C.-D.: Ensemble clustering using factor graph. Pattern Recognition 50, 131–142 (2016) https://doi.org/10.1016/j.patcog.2015.08.015"
   },
   {
     "idx": 1627,
@@ -2869,7 +3122,8 @@
     "2d_coord": [
       -1.8845117609407969,
       -2.899035644984514
-    ]
+    ],
+    "paragraph_info": "He, K., Zhang, X., Ren, S., Sun, J.: Deep residual learning for image recognition. Proceedings of the IEEE conference on computer vision and pattern recognition, 770–778 (2016)"
   },
   {
     "idx": 1628,
@@ -2883,7 +3137,8 @@
     "2d_coord": [
       -2.8854889663876895,
       -1.8235143891201655
-    ]
+    ],
+    "paragraph_info": "He, K., Zhang, X., Ren, S., Sun, J.: Deep residual learning for image recognition. Proceedings of the IEEE conference on computer vision and pattern recognition, 770–778 (2016)"
   },
   {
     "idx": 1629,
@@ -2897,7 +3152,8 @@
     "2d_coord": [
       1.311924110562458,
       -2.5483654833773204
-    ]
+    ],
+    "paragraph_info": "Krizhevsky, A., Sutskever, I., Hinton, G.E.: Imagenet classification with deep convolutional neural networks. In: Advances in Neural Information Processing Systems, pp. 1097–1105 (2012)"
   },
   {
     "idx": 1634,
@@ -2911,7 +3167,8 @@
     "2d_coord": [
       -2.5985261400872752,
       -2.1836643781762706
-    ]
+    ],
+    "paragraph_info": "Ladeinde, F.: A Critical Review of Scramjet Combustion Simulation (Invited), (2009). https://doi.org/10.2514/6.2009-127 . https://arc.aiaa.org/doi/abs/10.2514/6.2009- 127"
   },
   {
     "idx": 1635,
@@ -2925,7 +3182,8 @@
     "2d_coord": [
       -2.64387559923404,
       -2.1442423490955864
-    ]
+    ],
+    "paragraph_info": "Ladeinde, F.: A Critical Review of Scramjet Combustion Simulation (Invited), (2009). https://doi.org/10.2514/6.2009-127 . https://arc.aiaa.org/doi/abs/10.2514/6.2009- 127"
   },
   {
     "idx": 1638,
@@ -2939,7 +3197,8 @@
     "2d_coord": [
       -2.1242660059804144,
       -3.0272070382785805
-    ]
+    ],
+    "paragraph_info": "Li, C.Y., Liang, X., Hu, Z., Xing, E.P.: Knowledge-driven encode, retrieve, paraphrase for medical image report generation. Proceedings of the AAAI Conference on Artificial Intelligence 33(01), 6666–6673 (2019) https://doi.org/10.1609/aaai. v33i01.33016666"
   },
   {
     "idx": 1639,
@@ -2953,7 +3212,8 @@
     "2d_coord": [
       -3.1694035629495017,
       -1.8054134895894385
-    ]
+    ],
+    "paragraph_info": "Li, C.Y., Liang, X., Hu, Z., Xing, E.P.: Knowledge-driven encode, retrieve, paraphrase for medical image report generation. Proceedings of the AAAI Conference on Artificial Intelligence 33(01), 6666–6673 (2019) https://doi.org/10.1609/aaai. v33i01.33016666"
   },
   {
     "idx": 1640,
@@ -2967,7 +3227,8 @@
     "2d_coord": [
       -2.60789889227685,
       -2.3416791963974672
-    ]
+    ],
+    "paragraph_info": "Li, C.Y., Liang, X., Hu, Z., Xing, E.P.: Knowledge-driven encode, retrieve, paraphrase for medical image report generation. Proceedings of the AAAI Conference on Artificial Intelligence 33(01), 6666–6673 (2019) https://doi.org/10.1609/aaai. v33i01.33016666"
   },
   {
     "idx": 1643,
@@ -2981,7 +3242,8 @@
     "2d_coord": [
       -2.043829376335888,
       -2.6839590841233054
-    ]
+    ],
+    "paragraph_info": "Li, G., Liu, Y., Shan, G., Cheng, S., Cao, W., Wang, J., Wang, K.-C.: Paramsdrag: Interactive parameter space exploration via image-space dragging. IEEE Transactions on Visualization and Computer Graphics 31(1), 624–634 (2025) https: //doi.org/10.1109/TVCG.2024.3456338"
   },
   {
     "idx": 1644,
@@ -2995,7 +3257,8 @@
     "2d_coord": [
       -3.4958505411924867,
       -2.5902563828347156
-    ]
+    ],
+    "paragraph_info": "Li, G., Liu, Y., Shan, G., Cheng, S., Cao, W., Wang, J., Wang, K.-C.: Paramsdrag: Interactive parameter space exploration via image-space dragging. IEEE Transactions on Visualization and Computer Graphics 31(1), 624–634 (2025) https: //doi.org/10.1109/TVCG.2024.3456338"
   },
   {
     "idx": 1645,
@@ -3009,7 +3272,8 @@
     "2d_coord": [
       -2.5097901988794966,
       -2.3680717299147473
-    ]
+    ],
+    "paragraph_info": "Li, G., Liu, Y., Shan, G., Cheng, S., Cao, W., Wang, J., Wang, K.-C.: Paramsdrag: Interactive parameter space exploration via image-space dragging. IEEE Transactions on Visualization and Computer Graphics 31(1), 624–634 (2025) https: //doi.org/10.1109/TVCG.2024.3456338"
   },
   {
     "idx": 1648,
@@ -3023,7 +3287,8 @@
     "2d_coord": [
       -3.367391845106237,
       -2.5019048616367097
-    ]
+    ],
+    "paragraph_info": "Li, J., Li, D., Savarese, S., Hoi, S.: BLIP-2: Bootstrapping Language-Image Pretraining with Frozen Image Encoders and Large Language Models (2023). https: //arxiv.org/abs/2301.12597"
   },
   {
     "idx": 1650,
@@ -3037,7 +3302,8 @@
     "2d_coord": [
       -1.851542577661553,
       -2.7583729660384897
-    ]
+    ],
+    "paragraph_info": "Lowe, D.G.: Distinctive image features from scale-invariant keypoints. International journal of computer vision 60(2), 91–110 (2004)"
   },
   {
     "idx": 1653,
@@ -3051,7 +3317,8 @@
     "2d_coord": [
       -3.235084245606156,
       -2.5414617852198567
-    ]
+    ],
+    "paragraph_info": "McInnes, L., Healy, J., Melville, J.: UMAP: Uniform Manifold Approximation and Projection for Dimension Reduction (2020). https://arxiv.org/abs/1802.03426"
   },
   {
     "idx": 1654,
@@ -3065,7 +3332,8 @@
     "2d_coord": [
       -2.5486859301774034,
       -1.9051906845938849
-    ]
+    ],
+    "paragraph_info": "McInnes, L., Healy, J., Melville, J.: UMAP: Uniform Manifold Approximation and Projection for Dimension Reduction (2020). https://arxiv.org/abs/1802.03426"
   },
   {
     "idx": 1661,
@@ -3079,7 +3347,8 @@
     "2d_coord": [
       -3.886436096597803,
       -1.5782583983642338
-    ]
+    ],
+    "paragraph_info": "Shi, W., Tian, Y., Le, J., Zhong, F.: Efect of pilot hydrogen on the formation of dynamic flame in an ethylene-fueled scramjet with a cavity. Physics of Fluids 33(5) (2021)"
   },
   {
     "idx": 1662,
@@ -3093,7 +3362,8 @@
     "2d_coord": [
       -2.051528273504461,
       -2.086464817371515
-    ]
+    ],
+    "paragraph_info": "Team, G., Kamath, A., Ferret, J., Pathak, S., Vieillard, N., Merhej, R., Perrin, S., Matejovicova, T., Ram´e, A., Rivi\\`ere, M., et al.: Gemma 3 technical report. arXiv preprint arXiv:2503.19786 (2025)"
   },
   {
     "idx": 1663,
@@ -3107,7 +3377,8 @@
     "2d_coord": [
       -2.5067619587242516,
       -1.951038535060125
-    ]
+    ],
+    "paragraph_info": "Team, G., Kamath, A., Ferret, J., Pathak, S., Vieillard, N., Merhej, R., Perrin, S., Matejovicova, T., Ram´e, A., Rivi\\`ere, M., et al.: Gemma 3 technical report. arXiv preprint arXiv:2503.19786 (2025)"
   },
   {
     "idx": 1668,
@@ -3121,7 +3392,8 @@
     "2d_coord": [
       -1.6569792380279753,
       -2.599686137882105
-    ]
+    ],
+    "paragraph_info": "Vincent, P., Larochelle, H., Bengio, Y., Manzagol, P.-A.: Stacked denoising autoencoders: Learning useful representations in a deep network with a local denoising criterion. Journal of machine learning research 11, 3371–3408 (2010)"
   },
   {
     "idx": 1671,
@@ -3135,7 +3407,8 @@
     "2d_coord": [
       -3.3146898537534466,
       -2.4185479940856593
-    ]
+    ],
+    "paragraph_info": "Wu, C., Chen, Y., Dong, Y., Zhou, F., Zhao, Y., Liang, C.J.: Vizoptics: Getting insights into optics via interactive visual analysis. Computers and Electrical Engineering 107, 108624 (2023)"
   },
   {
     "idx": 1676,
@@ -3149,7 +3422,8 @@
     "2d_coord": [
       -2.0858658346262997,
       -1.9646039147676937
-    ]
+    ],
+    "paragraph_info": "Wang, S., Seidman, J.H., Sankaran, S., Wang, H., Pappas, G.J., Perdikaris, P.: CViT: Continuous Vision Transformer for Operator Learning (2025). https://arxiv.org/ abs/2405.13998"
   },
   {
     "idx": 1677,
@@ -3163,7 +3437,8 @@
     "2d_coord": [
       -3.4976114417628374,
       -2.587114955283456
-    ]
+    ],
+    "paragraph_info": "Wang, S., Seidman, J.H., Sankaran, S., Wang, H., Pappas, G.J., Perdikaris, P.: CViT: Continuous Vision Transformer for Operator Learning (2025). https://arxiv.org/ abs/2405.13998"
   },
   {
     "idx": 1678,
@@ -3177,7 +3452,8 @@
     "2d_coord": [
       -2.5482387086806404,
       -1.905634085286056
-    ]
+    ],
+    "paragraph_info": "Wang, S., Seidman, J.H., Sankaran, S., Wang, H., Pappas, G.J., Perdikaris, P.: CViT: Continuous Vision Transformer for Operator Learning (2025). https://arxiv.org/ abs/2405.13998"
   },
   {
     "idx": 1680,
@@ -3191,7 +3467,8 @@
     "2d_coord": [
       -2.0444243390260146,
       -2.743886445676682
-    ]
+    ],
+    "paragraph_info": "Wang, M., Tao, J., Ma, J., Shen, Y., Wang, C.: Flowvisual: A visualization app for teaching and understanding 3d flow field concepts. In: Proceedings of the IEEE Pacific Visualization Symposium, pp. 133–140 (2016). IEEE"
   },
   {
     "idx": 1682,
@@ -3205,7 +3482,8 @@
     "2d_coord": [
       -1.8615916138008244,
       -2.948462851300576
-    ]
+    ],
+    "paragraph_info": "Wang, J., Wang, J., Ke, Q., Zeng, G., Li, S.: Fast approximate k-means via cluster closures. In: 2012 IEEE Conference on Computer Vision and Pattern Recognition, pp. 3037–3044 (2012). https://doi.org/10.1109/CVPR.2012.6248034"
   },
   {
     "idx": 1683,
@@ -3219,7 +3497,8 @@
     "2d_coord": [
       -0.6531145372650261,
       -2.675620524361556
-    ]
+    ],
+    "paragraph_info": "Wang, J., Wang, J., Ke, Q., Zeng, G., Li, S.: Fast approximate k-means via cluster closures. In: 2012 IEEE Conference on Computer Vision and Pattern Recognition, pp. 3037–3044 (2012). https://doi.org/10.1109/CVPR.2012.6248034"
   },
   {
     "idx": 1685,
@@ -3233,7 +3512,8 @@
     "2d_coord": [
       -2.1809301144782363,
       -2.5414210158874693
-    ]
+    ],
+    "paragraph_info": "Wang, J., Wang, J., Song, J., Xu, X.-S., Shen, H.T., Li, S.: Optimized cartesian kmeans. IEEE Transactions on Knowledge and Data Engineering 27(1), 180–192 (2015) https://doi.org/10.1109/TKDE.2014.2324592"
   },
   {
     "idx": 1686,
@@ -3247,7 +3527,8 @@
     "2d_coord": [
       -2.52925024000195,
       -2.3280214700477466
-    ]
+    ],
+    "paragraph_info": "Wang, J., Wang, J., Song, J., Xu, X.-S., Shen, H.T., Li, S.: Optimized cartesian kmeans. IEEE Transactions on Knowledge and Data Engineering 27(1), 180–192 (2015) https://doi.org/10.1109/TKDE.2014.2324592"
   },
   {
     "idx": 1688,
@@ -3261,7 +3542,8 @@
     "2d_coord": [
       -2.022189016839537,
       -2.904283123216206
-    ]
+    ],
+    "paragraph_info": "Wang, W.-T., Wu, Y.-L., Tang, C.-Y., Hor, M.-K.: Adaptive density-based spatial clustering of applications with noise (dbscan) according to data. In: 2015 International Conference on Machine Learning and Cybernetics (ICMLC), vol. 1, pp. 445–451 (2015). https://doi.org/10.1109/ICMLC.2015.7340962"
   },
   {
     "idx": 1689,
@@ -3275,7 +3557,8 @@
     "2d_coord": [
       -2.8814975917615615,
       -1.8268968756099033
-    ]
+    ],
+    "paragraph_info": "Wang, W.-T., Wu, Y.-L., Tang, C.-Y., Hor, M.-K.: Adaptive density-based spatial clustering of applications with noise (dbscan) according to data. In: 2015 International Conference on Machine Learning and Cybernetics (ICMLC), vol. 1, pp. 445–451 (2015). https://doi.org/10.1109/ICMLC.2015.7340962"
   },
   {
     "idx": 1690,
@@ -3289,7 +3572,8 @@
     "2d_coord": [
       -2.531447095212989,
       -2.4176685804326894
-    ]
+    ],
+    "paragraph_info": "Wang, W.-T., Wu, Y.-L., Tang, C.-Y., Hor, M.-K.: Adaptive density-based spatial clustering of applications with noise (dbscan) according to data. In: 2015 International Conference on Machine Learning and Cybernetics (ICMLC), vol. 1, pp. 445–451 (2015). https://doi.org/10.1109/ICMLC.2015.7340962"
   },
   {
     "idx": 1693,
@@ -3303,7 +3587,8 @@
     "2d_coord": [
       -3.3894007398303145,
       -2.4522108761322072
-    ]
+    ],
+    "paragraph_info": "Wang, S., Zhao, Z., Ouyang, X., Wang, Q., Shen, D.: ChatCAD: Interactive Computer-Aided Diagnosis on Medical Image using Large Language Models (2023). https: //arxiv.org/abs/2302.07257"
   },
   {
     "idx": 1698,
@@ -3317,7 +3602,8 @@
     "2d_coord": [
       -1.6559907531309244,
       -2.7910119632407895
-    ]
+    ],
+    "paragraph_info": "Zelnik-Manor, L., Perona, P.: Self-tuning spectral clustering. In: Neural Information Processing Systems (2004). https://api.semanticscholar.org/CorpusID:17066951"
   },
   {
     "idx": 1699,
@@ -3331,7 +3617,8 @@
     "2d_coord": [
       -2.8379938980526758,
       -2.2834980756447303
-    ]
+    ],
+    "paragraph_info": "Zelnik-Manor, L., Perona, P.: Self-tuning spectral clustering. In: Neural Information Processing Systems (2004). https://api.semanticscholar.org/CorpusID:17066951"
   },
   {
     "idx": 1703,
@@ -3345,7 +3632,8 @@
     "2d_coord": [
       -1.9703697473154853,
       -2.6532991780697097
-    ]
+    ],
+    "paragraph_info": "Zhao, X., Wang, X., Zou, X., Liang, H., Bai, G., Zhang, N., Huang, X., Zhou, F., Zhao, Y.: Graph visualization eficiency of popular web-based libraries. Visual Computing for Industry, Biomedicine, and Art 8(1), 12 (2025) https://doi.org/10.1186/ s42492-025-00193-y"
   },
   {
     "idx": 1704,
@@ -3359,6 +3647,7 @@
     "2d_coord": [
       -3.472810183967139,
       -2.555423776654239
-    ]
+    ],
+    "paragraph_info": "Zhao, X., Wang, X., Zou, X., Liang, H., Bai, G., Zhang, N., Huang, X., Zhou, F., Zhao, Y.: Graph visualization eficiency of popular web-based libraries. Visual Computing for Industry, Biomedicine, and Art 8(1), 12 (2025) https://doi.org/10.1186/ s42492-025-00193-y"
   }
 ]

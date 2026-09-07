@@ -31,6 +31,7 @@
               class="subcards__item"
               :style="{ height: `${lk.height || getInitialLinkHeight(lk, step.nodes || [])}px` }"
               draggable="true"
+              @mousedown.capture="onCardMouseDown(i, j, $event)"
               @dragstart="onDragStart(i, j, $event)"
               @dragover="onDragOver(i, j, $event)"
               @drop="onDrop(i, j, $event)"
@@ -508,11 +509,40 @@ function onTitleKey(i, evt) {
 }
 
 /** ====== 子卡片拖拽换序（每个 Step 内） ====== */
-const dragging = reactive({ from: null, to: null });
+const dragging = reactive({ from: null, to: null, selectionOrigin: null });
+
+function isEvidenceSynthesisTarget(target) {
+  return Boolean(target?.closest?.('.section-resize-handle, .subcard__llm'))
+}
+
+function onCardMouseDown(stepIdx, linkIdx, e) {
+  // A draggable ancestor may become the dragstart target even when the user
+  // began the gesture on its descendant. Remember the origin before that can
+  // happen so selecting text in Evidence Synthesis never starts card sorting.
+  dragging.selectionOrigin = isEvidenceSynthesisTarget(e.target)
+    ? { i: stepIdx, j: linkIdx }
+    : null
+}
+
+function hasEvidenceSynthesisSelection() {
+  const selection = window.getSelection?.()
+  if (!selection || selection.isCollapsed || !selection.rangeCount) return false
+  const range = selection.getRangeAt(0)
+  const container = range.commonAncestorContainer
+  const element = container.nodeType === Node.ELEMENT_NODE
+    ? container
+    : container.parentElement
+  return isEvidenceSynthesisTarget(element)
+}
 
 function onDragStart(stepIdx, linkIdx, e) {
-  if (e.target?.closest?.('.section-resize-handle')) {
+  // The Evidence Synthesis area deliberately supports drag-to-select text.
+  // Never turn that gesture into a native drag of the whole saved card.
+  const startedInEvidence = dragging.selectionOrigin?.i === stepIdx
+    && dragging.selectionOrigin?.j === linkIdx
+  if (startedInEvidence || isEvidenceSynthesisTarget(e.target) || hasEvidenceSynthesisSelection()) {
     e.preventDefault()
+    dragging.selectionOrigin = null
     return
   }
   dragging.from = { i: stepIdx, j: linkIdx };
@@ -537,7 +567,9 @@ function onDrop(stepIdx, linkIdx, e) {
   }
   dragging.from = dragging.to = null;
 }
-function onDragEnd() { dragging.from = dragging.to = null; }
+function onDragEnd() {
+  dragging.from = dragging.to = dragging.selectionOrigin = null
+}
  /** ========== NEW：按 HSU 分组   路径排序 ========== */
  function groupHSUs(nodes, links) {
    const keyOf = (n) => `${n.panelIdx}|${n.q},${n.r}`

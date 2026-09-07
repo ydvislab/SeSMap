@@ -11,7 +11,8 @@
     "2d_coord": [
       2.6814396383651586,
       0.903922567478216
-    ]
+    ],
+    "paragraph_info": "Circular genome visualizations are essential for exploring structural variants and gene regulation. However, existing tools often require complex scripting and manual configuration, making the process time-consuming, error-prone, and difficult to learn. To address these challenges, we introduce AuraGenome, a large language model (LLM)-powered framework for rapid, reusable, and scalable generation of multilayered circular genome visualizations. AuraGenome combines a semanticdriven multiagent workflow with an interactive visual analytics system. The workflow employs seven specialized LLM-driven agents, each assigned distinct roles, such as intent recognition, layout planning, and code generation, to transform raw genomic data into tailored visualizations. The system supports multiple coordinated views tailored for genomic data, offering ring, radial, and chord-based layouts to represent multilayered circular genome visualizations. In addition to enabling interactions and configuration reuse, the system supports realtime refinement and high-quality report export. We validate its effectiveness through two case studies and a comprehensive user study. AuraGenome is available at https://github.com/Darius18/AuraGenome."
   },
   {
     "idx": 44,
@@ -25,7 +26,8 @@
     "2d_coord": [
       -1.08828555700354,
       0.5348143593020863
-    ]
+    ],
+    "paragraph_info": "To address these challenges, we present AuraGenome, an LLM-powered framework that enables genomics experts to rapidly generate, flexibly customize, and efficiently reuse multilayered circular genome visualizations. AuraGenome is grounded in task-specific requirements, identified through close collaboration with genomics experts to reflect real-world workflow needs. Based on the requirements, we conducted feasibility studies using LLMs for D3-based genome visualizations and selected GPT-4o and DeepSeek-R1 as the foundation of a semantics-driven multiagent workflow. This workflow decomposes complex visualization tasks into modular steps—such as intent recognition, layout recommendation, code generation, validation, explanation, and refinement."
   },
   {
     "idx": 52,
@@ -39,7 +41,8 @@
     "2d_coord": [
       -0.8517278874334249,
       1.3747823085860416
-    ]
+    ],
+    "paragraph_info": "Built atop this workflow, the interactive visual analytics system supports generation and editing of circular genome visualizations in three distinct layouts—ring, radial, and chord—with multilayer composition and domain-specific operations. A layer-aware reuse mechanism further enables tracing, adapting, and repurposing visualization steps to support efficient iteration and narrative report construction. We validate AuraGenome through two real-world case studies and both quantitative and qualitative user evaluations. In sum, the main contributions are summarized as follows."
   },
   {
     "idx": 53,
@@ -53,7 +56,8 @@
     "2d_coord": [
       -0.7764490666284852,
       1.3672237738243005
-    ]
+    ],
+    "paragraph_info": "Built atop this workflow, the interactive visual analytics system supports generation and editing of circular genome visualizations in three distinct layouts—ring, radial, and chord—with multilayer composition and domain-specific operations. A layer-aware reuse mechanism further enables tracing, adapting, and repurposing visualization steps to support efficient iteration and narrative report construction. We validate AuraGenome through two real-world case studies and both quantitative and qualitative user evaluations. In sum, the main contributions are summarized as follows."
   },
   {
     "idx": 61,
@@ -67,7 +71,8 @@
     "2d_coord": [
       2.6636745154646295,
       0.9000216407658354
-    ]
+    ],
+    "paragraph_info": "3) A comprehensive evaluation through two case studies and mixed-method user studies, demonstrating the framework’s effectiveness in enhancing usability and efficiency."
   },
   {
     "idx": 62,
@@ -81,7 +86,8 @@
     "2d_coord": [
       2.8039249222487554,
       0.8510676355889253
-    ]
+    ],
+    "paragraph_info": "3) A comprehensive evaluation through two case studies and mixed-method user studies, demonstrating the framework’s effectiveness in enhancing usability and efficiency."
   },
   {
     "idx": 71,
@@ -95,7 +101,8 @@
     "2d_coord": [
       -2.558504153162674,
       -0.09881592643801135
-    ]
+    ],
+    "paragraph_info": "In bioinformatics, circular layouts have proven to be a highly effective visualization approach. In a study on the collinearity of the bZIP gene family in poplar, Zhao et al.<sup>3</sup> employed a circular layout analysis method to explore gene functions and regulatory mechanisms by visualizing gene density, homologous blocks, and the distribution of segmental duplicated gene pairs. Peng et al.<sup>4</sup> utilized circular layouts to depict plasmid structures carrying various genes, alongside sequence alignment results of other Enterobacteriaceae bacteria sharing similar plasmid backbones, thereby illustrating plasmid gene structures, multidrug resistance regions, and homology. Garcia et al.<sup>5</sup> in their study of the Lima bean genome, used circular layouts to display multiple features to understand genome organization and evolution. Similarly, Zhang et al.<sup>6</sup> adopted circular layouts to present genome characteristics in tea tree research, visualizing genetic diversity and evolutionary history. Despite their widespread use, these circular layouts largely rely on manual design, limiting their efficiency and general applicability."
   },
   {
     "idx": 72,
@@ -109,7 +116,8 @@
     "2d_coord": [
       -1.6850009376389063,
       0.4644078969850306
-    ]
+    ],
+    "paragraph_info": "In bioinformatics, circular layouts have proven to be a highly effective visualization approach. In a study on the collinearity of the bZIP gene family in poplar, Zhao et al.<sup>3</sup> employed a circular layout analysis method to explore gene functions and regulatory mechanisms by visualizing gene density, homologous blocks, and the distribution of segmental duplicated gene pairs. Peng et al.<sup>4</sup> utilized circular layouts to depict plasmid structures carrying various genes, alongside sequence alignment results of other Enterobacteriaceae bacteria sharing similar plasmid backbones, thereby illustrating plasmid gene structures, multidrug resistance regions, and homology. Garcia et al.<sup>5</sup> in their study of the Lima bean genome, used circular layouts to display multiple features to understand genome organization and evolution. Similarly, Zhang et al.<sup>6</sup> adopted circular layouts to present genome characteristics in tea tree research, visualizing genetic diversity and evolutionary history. Despite their widespread use, these circular layouts largely rely on manual design, limiting their efficiency and general applicability."
   },
   {
     "idx": 73,
@@ -123,7 +131,8 @@
     "2d_coord": [
       -2.6639042505490735,
       -0.10624916444846146
-    ]
+    ],
+    "paragraph_info": "In bioinformatics, circular layouts have proven to be a highly effective visualization approach. In a study on the collinearity of the bZIP gene family in poplar, Zhao et al.<sup>3</sup> employed a circular layout analysis method to explore gene functions and regulatory mechanisms by visualizing gene density, homologous blocks, and the distribution of segmental duplicated gene pairs. Peng et al.<sup>4</sup> utilized circular layouts to depict plasmid structures carrying various genes, alongside sequence alignment results of other Enterobacteriaceae bacteria sharing similar plasmid backbones, thereby illustrating plasmid gene structures, multidrug resistance regions, and homology. Garcia et al.<sup>5</sup> in their study of the Lima bean genome, used circular layouts to display multiple features to understand genome organization and evolution. Similarly, Zhang et al.<sup>6</sup> adopted circular layouts to present genome characteristics in tea tree research, visualizing genetic diversity and evolutionary history. Despite their widespread use, these circular layouts largely rely on manual design, limiting their efficiency and general applicability."
   },
   {
     "idx": 74,
@@ -137,7 +146,8 @@
     "2d_coord": [
       -2.69354835076792,
       -0.1328026584541192
-    ]
+    ],
+    "paragraph_info": "In bioinformatics, circular layouts have proven to be a highly effective visualization approach. In a study on the collinearity of the bZIP gene family in poplar, Zhao et al.<sup>3</sup> employed a circular layout analysis method to explore gene functions and regulatory mechanisms by visualizing gene density, homologous blocks, and the distribution of segmental duplicated gene pairs. Peng et al.<sup>4</sup> utilized circular layouts to depict plasmid structures carrying various genes, alongside sequence alignment results of other Enterobacteriaceae bacteria sharing similar plasmid backbones, thereby illustrating plasmid gene structures, multidrug resistance regions, and homology. Garcia et al.<sup>5</sup> in their study of the Lima bean genome, used circular layouts to display multiple features to understand genome organization and evolution. Similarly, Zhang et al.<sup>6</sup> adopted circular layouts to present genome characteristics in tea tree research, visualizing genetic diversity and evolutionary history. Despite their widespread use, these circular layouts largely rely on manual design, limiting their efficiency and general applicability."
   },
   {
     "idx": 75,
@@ -151,7 +161,8 @@
     "2d_coord": [
       -2.685002188792342,
       -0.12383261647199048
-    ]
+    ],
+    "paragraph_info": "In bioinformatics, circular layouts have proven to be a highly effective visualization approach. In a study on the collinearity of the bZIP gene family in poplar, Zhao et al.<sup>3</sup> employed a circular layout analysis method to explore gene functions and regulatory mechanisms by visualizing gene density, homologous blocks, and the distribution of segmental duplicated gene pairs. Peng et al.<sup>4</sup> utilized circular layouts to depict plasmid structures carrying various genes, alongside sequence alignment results of other Enterobacteriaceae bacteria sharing similar plasmid backbones, thereby illustrating plasmid gene structures, multidrug resistance regions, and homology. Garcia et al.<sup>5</sup> in their study of the Lima bean genome, used circular layouts to display multiple features to understand genome organization and evolution. Similarly, Zhang et al.<sup>6</sup> adopted circular layouts to present genome characteristics in tea tree research, visualizing genetic diversity and evolutionary history. Despite their widespread use, these circular layouts largely rely on manual design, limiting their efficiency and general applicability."
   },
   {
     "idx": 76,
@@ -165,7 +176,8 @@
     "2d_coord": [
       -2.544588935361341,
       -0.05029458292678278
-    ]
+    ],
+    "paragraph_info": "In bioinformatics, circular layouts have proven to be a highly effective visualization approach. In a study on the collinearity of the bZIP gene family in poplar, Zhao et al.<sup>3</sup> employed a circular layout analysis method to explore gene functions and regulatory mechanisms by visualizing gene density, homologous blocks, and the distribution of segmental duplicated gene pairs. Peng et al.<sup>4</sup> utilized circular layouts to depict plasmid structures carrying various genes, alongside sequence alignment results of other Enterobacteriaceae bacteria sharing similar plasmid backbones, thereby illustrating plasmid gene structures, multidrug resistance regions, and homology. Garcia et al.<sup>5</sup> in their study of the Lima bean genome, used circular layouts to display multiple features to understand genome organization and evolution. Similarly, Zhang et al.<sup>6</sup> adopted circular layouts to present genome characteristics in tea tree research, visualizing genetic diversity and evolutionary history. Despite their widespread use, these circular layouts largely rely on manual design, limiting their efficiency and general applicability."
   },
   {
     "idx": 77,
@@ -179,7 +191,8 @@
     "2d_coord": [
       -2.5647945040321702,
       -0.09102219540693585
-    ]
+    ],
+    "paragraph_info": "In bioinformatics, circular layouts have proven to be a highly effective visualization approach. In a study on the collinearity of the bZIP gene family in poplar, Zhao et al.<sup>3</sup> employed a circular layout analysis method to explore gene functions and regulatory mechanisms by visualizing gene density, homologous blocks, and the distribution of segmental duplicated gene pairs. Peng et al.<sup>4</sup> utilized circular layouts to depict plasmid structures carrying various genes, alongside sequence alignment results of other Enterobacteriaceae bacteria sharing similar plasmid backbones, thereby illustrating plasmid gene structures, multidrug resistance regions, and homology. Garcia et al.<sup>5</sup> in their study of the Lima bean genome, used circular layouts to display multiple features to understand genome organization and evolution. Similarly, Zhang et al.<sup>6</sup> adopted circular layouts to present genome characteristics in tea tree research, visualizing genetic diversity and evolutionary history. Despite their widespread use, these circular layouts largely rely on manual design, limiting their efficiency and general applicability."
   },
   {
     "idx": 78,
@@ -193,7 +206,8 @@
     "2d_coord": [
       -2.5748755942641086,
       -0.09943002648699206
-    ]
+    ],
+    "paragraph_info": "In bioinformatics, circular layouts have proven to be a highly effective visualization approach. In a study on the collinearity of the bZIP gene family in poplar, Zhao et al.<sup>3</sup> employed a circular layout analysis method to explore gene functions and regulatory mechanisms by visualizing gene density, homologous blocks, and the distribution of segmental duplicated gene pairs. Peng et al.<sup>4</sup> utilized circular layouts to depict plasmid structures carrying various genes, alongside sequence alignment results of other Enterobacteriaceae bacteria sharing similar plasmid backbones, thereby illustrating plasmid gene structures, multidrug resistance regions, and homology. Garcia et al.<sup>5</sup> in their study of the Lima bean genome, used circular layouts to display multiple features to understand genome organization and evolution. Similarly, Zhang et al.<sup>6</sup> adopted circular layouts to present genome characteristics in tea tree research, visualizing genetic diversity and evolutionary history. Despite their widespread use, these circular layouts largely rely on manual design, limiting their efficiency and general applicability."
   },
   {
     "idx": 178,
@@ -207,7 +221,8 @@
     "2d_coord": [
       2.4679146266301677,
       0.7718479729460745
-    ]
+    ],
+    "paragraph_info": "To construct an effective multiagent workflow for genomic visualizations, we first conducted a prestudy evaluating the capabilities of LLMs on domain-specific tasks. We created a benchmark dataset, GenoVis-300, containing 300 natural language prompts derived from real genomics use cases. These prompts spanned six key task types: data parsing, chart recommendation, D3.js code generation, code modification, explanation, and style adjustment. We listed three LLMs—GPT-4o-2024-11-20, GPT-o1-2024-12-27, and DeepSeek-R1- 671B as candidates—to evaluate across five criteria relevant to the AuraGenome workflow: semantic understanding, code accuracy, instruction following, response efficiency, and output interpretability."
   },
   {
     "idx": 184,
@@ -221,7 +236,8 @@
     "2d_coord": [
       -0.41353920966549407,
       1.5058168600356892
-    ]
+    ],
+    "paragraph_info": "FIGURE 2 Comparison of LLM output assessments across five evaluation dimensions in GenoVis-300 dataset."
   },
   {
     "idx": 413,
@@ -235,7 +251,8 @@
     "2d_coord": [
       -0.792631834769382,
       1.3783951492974502
-    ]
+    ],
+    "paragraph_info": "To evaluate the practical effectiveness and generalizability of the AuraGenome framework, we conducted two real-world case studies involving distinct genomic analysis tasks. These studies serve to validate both the multiagent workflow and the visual analytics system in supporting domain-specific generation, exploration, and reuse of circular genome visualizations."
   },
   {
     "idx": 414,
@@ -249,7 +266,8 @@
     "2d_coord": [
       -1.1139768225240112,
       1.349631139964431
-    ]
+    ],
+    "paragraph_info": "To evaluate the practical effectiveness and generalizability of the AuraGenome framework, we conducted two real-world case studies involving distinct genomic analysis tasks. These studies serve to validate both the multiagent workflow and the visual analytics system in supporting domain-specific generation, exploration, and reuse of circular genome visualizations."
   },
   {
     "idx": 422,
@@ -263,7 +281,8 @@
     "2d_coord": [
       -0.9276553713236977,
       1.3719013308604715
-    ]
+    ],
+    "paragraph_info": "The system requirements were originally derived through iterative co-design sessions with eight genomics experts. To ensure objective evaluation, the following case studies were carried out by a separate group of two extra experts—denoted as $E _ { A }$ and $E _ { B }$ (mean experience: 10.3 years)—who were not involved in previous sections. These experts applied AuraGenome to authentic genomic analysis scenarios, enabling us to assess its usability and effectiveness in real-world contexts while minimizing evaluative bias."
   },
   {
     "idx": 451,
@@ -277,7 +296,8 @@
     "2d_coord": [
       -0.8254828118341624,
       1.3747939389120727
-    ]
+    ],
+    "paragraph_info": "To evaluate the reusability and task adaptability of AuraGenome, we conducted a second case study involving expert $\\scriptstyle { E _ { B } } ,$ who aimed to replicate and extend insights from a widely cited study in Nature<sup>20</sup> that mapped the somatic mutation landscape of the COLO-829 melanoma genome. Building on the workflow established by $E _ { A }$ , this case demonstrates that how the Sequence Log View facilitates the inheritance and contextual reuse of prior visualization logic."
   },
   {
     "idx": 452,
@@ -291,7 +311,8 @@
     "2d_coord": [
       -2.722853609751514,
       1.8793204014963738
-    ]
+    ],
+    "paragraph_info": "To evaluate the reusability and task adaptability of AuraGenome, we conducted a second case study involving expert $\\scriptstyle { E _ { B } } ,$ who aimed to replicate and extend insights from a widely cited study in Nature<sup>20</sup> that mapped the somatic mutation landscape of the COLO-829 melanoma genome. Building on the workflow established by $E _ { A }$ , this case demonstrates that how the Sequence Log View facilitates the inheritance and contextual reuse of prior visualization logic."
   },
   {
     "idx": 459,
@@ -305,7 +326,8 @@
     "2d_coord": [
       -2.5840096570525115,
       1.9302821358478548
-    ]
+    ],
+    "paragraph_info": "Instead of initiating a new pipeline from scratch, $E _ { B }$ accessed the sequence log from Case 1 and created a new root node branching from an earlier step [see Figure 7(a)]. Although the visual outputs were independent, the new workflow retained structural and contextual linkage to its source, allowing $E _ { B }$ to reuse layout strategies and code components. Upon uploading a new mutation dataset for the COLO-829 genome,"
   },
   {
     "idx": 469,
@@ -319,7 +341,8 @@
     "2d_coord": [
       2.03468544631024,
       -0.9562112836140494
-    ]
+    ],
+    "paragraph_info": "Following $E _ { B }$ uploaded the mutation dataset, AuraGenome automatically rendered two tracks: an orange bar chart encoding zygosity information and a chord layout representing chromosomal rearrangements. $E _ { B }$ subsequently uploaded an additional dataset with insertion and deletion events and issued a natural language instruction to display validated entries using a dual-color scheme. The system accurately filtered and visualized these mutations according to the user’s intent."
   },
   {
     "idx": 483,
@@ -333,7 +356,8 @@
     "2d_coord": [
       -0.7875200090277046,
       1.3807013911544528
-    ]
+    ],
+    "paragraph_info": "To evaluate the effectiveness and usability of the AuraGenome, we conducted an in-lab user study focusing on system learnability, user experience across disciplines, and its utility in real analysis tasks."
   },
   {
     "idx": 484,
@@ -347,7 +371,8 @@
     "2d_coord": [
       2.830878014497841,
       0.8513931375729843
-    ]
+    ],
+    "paragraph_info": "To evaluate the effectiveness and usability of the AuraGenome, we conducted an in-lab user study focusing on system learnability, user experience across disciplines, and its utility in real analysis tasks."
   },
   {
     "idx": 485,
@@ -361,7 +386,8 @@
     "2d_coord": [
       2.493128621874157,
       0.7853557843918846
-    ]
+    ],
+    "paragraph_info": "To evaluate the effectiveness and usability of the AuraGenome, we conducted an in-lab user study focusing on system learnability, user experience across disciplines, and its utility in real analysis tasks."
   },
   {
     "idx": 486,
@@ -375,7 +401,8 @@
     "2d_coord": [
       2.7282714790249085,
       0.8203938837553061
-    ]
+    ],
+    "paragraph_info": "To evaluate the effectiveness and usability of the AuraGenome, we conducted an in-lab user study focusing on system learnability, user experience across disciplines, and its utility in real analysis tasks."
   },
   {
     "idx": 487,
@@ -389,7 +416,8 @@
     "2d_coord": [
       -0.782984063123766,
       1.4358760816232816
-    ]
+    ],
+    "paragraph_info": "To evaluate the effectiveness and usability of the AuraGenome, we conducted an in-lab user study focusing on system learnability, user experience across disciplines, and its utility in real analysis tasks."
   },
   {
     "idx": 488,
@@ -403,7 +431,8 @@
     "2d_coord": [
       3.2847458942471848,
       1.008239693828775
-    ]
+    ],
+    "paragraph_info": "In total, 12 participants with a background in biology (average experience: 4 1.5 years) were recruited for the experiment, including 10 bioinformatics researchers $( P _ { 1 } { - } P _ { 1 0 } )$ and two wet-lab researchers $( P _ { 1 1 }$ and $P _ { 1 2 } )$ . Each participant was instructed to complete the same visualization task: constructing a multilayered circular chart using the provided genomic variation data (e.g., chromosome location, mutation type, and zygosity). The task was performed using both Circos and AuraGenome. Performance was evaluated through quantitative analysis of task completion time, accuracy, and a posttask questionnaire. Additional qualitative feedback was collected via follow-up interviews."
   },
   {
     "idx": 489,
@@ -417,7 +446,8 @@
     "2d_coord": [
       -1.1851680422301927,
       1.5762764357444983
-    ]
+    ],
+    "paragraph_info": "In total, 12 participants with a background in biology (average experience: 4 1.5 years) were recruited for the experiment, including 10 bioinformatics researchers $( P _ { 1 } { - } P _ { 1 0 } )$ and two wet-lab researchers $( P _ { 1 1 }$ and $P _ { 1 2 } )$ . Each participant was instructed to complete the same visualization task: constructing a multilayered circular chart using the provided genomic variation data (e.g., chromosome location, mutation type, and zygosity). The task was performed using both Circos and AuraGenome. Performance was evaluated through quantitative analysis of task completion time, accuracy, and a posttask questionnaire. Additional qualitative feedback was collected via follow-up interviews."
   },
   {
     "idx": 490,
@@ -431,7 +461,8 @@
     "2d_coord": [
       3.3183785164341932,
       1.0189885988860017
-    ]
+    ],
+    "paragraph_info": "In total, 12 participants with a background in biology (average experience: 4 1.5 years) were recruited for the experiment, including 10 bioinformatics researchers $( P _ { 1 } { - } P _ { 1 0 } )$ and two wet-lab researchers $( P _ { 1 1 }$ and $P _ { 1 2 } )$ . Each participant was instructed to complete the same visualization task: constructing a multilayered circular chart using the provided genomic variation data (e.g., chromosome location, mutation type, and zygosity). The task was performed using both Circos and AuraGenome. Performance was evaluated through quantitative analysis of task completion time, accuracy, and a posttask questionnaire. Additional qualitative feedback was collected via follow-up interviews."
   },
   {
     "idx": 529,
@@ -445,7 +476,8 @@
     "2d_coord": [
       2.833694491395067,
       0.5340752450198557
-    ]
+    ],
+    "paragraph_info": "To complement the quantitative results, we collected open-ended feedback from 12 participants through posttask interviews and questionnaires. We summarized them for further thematic analysis. The result revealed four recurring reflections about AuraGenome’s usability, functionality, and areas for growth."
   },
   {
     "idx": 584,
@@ -459,7 +491,8 @@
     "2d_coord": [
       -0.8523618999553711,
       1.3840762104161146
-    ]
+    ],
+    "paragraph_info": "In this article, we presented AuraGenome, an LLMpowered framework for generating rapid, reusable, and scalable circular genome visualizations. By integrating multiagent collaboration with interactive visual analytics, AuraGenome enables natural language-driven visualization generation, significantly improving both efficiency and output quality. Two real-world case studies and a comprehensive user study demonstrate its effectiveness in enhancing task performance and reducing cognitive load in genomic research workflows."
   },
   {
     "idx": 585,
@@ -473,7 +506,8 @@
     "2d_coord": [
       -0.8471676178377097,
       1.3287556935516645
-    ]
+    ],
+    "paragraph_info": "In this article, we presented AuraGenome, an LLMpowered framework for generating rapid, reusable, and scalable circular genome visualizations. By integrating multiagent collaboration with interactive visual analytics, AuraGenome enables natural language-driven visualization generation, significantly improving both efficiency and output quality. Two real-world case studies and a comprehensive user study demonstrate its effectiveness in enhancing task performance and reducing cognitive load in genomic research workflows."
   },
   {
     "idx": 796,
@@ -487,7 +521,8 @@
     "2d_coord": [
       -2.8358688070274924,
       -1.287047820414132
-    ]
+    ],
+    "paragraph_info": "To address the challenge in displaying large volumes of genomic rearrangement data we have developed Circos, which applies the circular ideogram layout to display of relationships between genomic intervals. This approach builds on the established use of circular maps in which concept relationships extracted from text are displayed (Zytkow and Rauch 1999). Circos’ initial application was to visualize end-sequence profiling (Volik et al. 2003) and fingerprint profiling (Krzywinski et al. 2007) of cancer genomes."
   },
   {
     "idx": 797,
@@ -501,7 +536,8 @@
     "2d_coord": [
       -2.8393158216335537,
       -1.2811558124913398
-    ]
+    ],
+    "paragraph_info": "To address the challenge in displaying large volumes of genomic rearrangement data we have developed Circos, which applies the circular ideogram layout to display of relationships between genomic intervals. This approach builds on the established use of circular maps in which concept relationships extracted from text are displayed (Zytkow and Rauch 1999). Circos’ initial application was to visualize end-sequence profiling (Volik et al. 2003) and fingerprint profiling (Krzywinski et al. 2007) of cancer genomes."
   },
   {
     "idx": 819,
@@ -515,7 +551,8 @@
     "2d_coord": [
       -2.9392022358376884,
       1.85968031230528
-    ]
+    ],
+    "paragraph_info": "To illustrate how Circos’ functionality can be applied to comparative and personal genomics, we present a series of image archetypes (Figures 1-4) with data that are being used as part of a multipatient whole-genome analysis (unpublished; see Methods) of genomic rearrangements in follicular lymphoma, a common B-cell malignancy. These images range in resolution from whole-genome (3 Gb), to a fingerprint-map contig (10 Mb), to a single Bacterial Artificial Chromosome (BAC) clone (100kb), and finally to a sequence contig (10kb). A second image series (Figures 5-7) demonstrates how axis breaks and ideogram magnification can be used to zoom in on regions of interest. Batch image generation is demonstrated in Figure 8, which comprises 39 images that illustrate synteny between the dog and human genomes. The configuration and data files to create each figure are available in Supplementary Materials."
   },
   {
     "idx": 821,
@@ -529,7 +566,8 @@
     "2d_coord": [
       -3.15495845324538,
       1.2693311783611056
-    ]
+    ],
+    "paragraph_info": "To illustrate how Circos’ functionality can be applied to comparative and personal genomics, we present a series of image archetypes (Figures 1-4) with data that are being used as part of a multipatient whole-genome analysis (unpublished; see Methods) of genomic rearrangements in follicular lymphoma, a common B-cell malignancy. These images range in resolution from whole-genome (3 Gb), to a fingerprint-map contig (10 Mb), to a single Bacterial Artificial Chromosome (BAC) clone (100kb), and finally to a sequence contig (10kb). A second image series (Figures 5-7) demonstrates how axis breaks and ideogram magnification can be used to zoom in on regions of interest. Batch image generation is demonstrated in Figure 8, which comprises 39 images that illustrate synteny between the dog and human genomes. The configuration and data files to create each figure are available in Supplementary Materials."
   },
   {
     "idx": 822,
@@ -543,7 +581,8 @@
     "2d_coord": [
       0.260704134996275,
       -1.7732843475264366
-    ]
+    ],
+    "paragraph_info": "To illustrate how Circos’ functionality can be applied to comparative and personal genomics, we present a series of image archetypes (Figures 1-4) with data that are being used as part of a multipatient whole-genome analysis (unpublished; see Methods) of genomic rearrangements in follicular lymphoma, a common B-cell malignancy. These images range in resolution from whole-genome (3 Gb), to a fingerprint-map contig (10 Mb), to a single Bacterial Artificial Chromosome (BAC) clone (100kb), and finally to a sequence contig (10kb). A second image series (Figures 5-7) demonstrates how axis breaks and ideogram magnification can be used to zoom in on regions of interest. Batch image generation is demonstrated in Figure 8, which comprises 39 images that illustrate synteny between the dog and human genomes. The configuration and data files to create each figure are available in Supplementary Materials."
   },
   {
     "idx": 823,
@@ -557,7 +596,8 @@
     "2d_coord": [
       -3.0345601233334456,
       1.0471672072943963
-    ]
+    ],
+    "paragraph_info": "To illustrate how Circos’ functionality can be applied to comparative and personal genomics, we present a series of image archetypes (Figures 1-4) with data that are being used as part of a multipatient whole-genome analysis (unpublished; see Methods) of genomic rearrangements in follicular lymphoma, a common B-cell malignancy. These images range in resolution from whole-genome (3 Gb), to a fingerprint-map contig (10 Mb), to a single Bacterial Artificial Chromosome (BAC) clone (100kb), and finally to a sequence contig (10kb). A second image series (Figures 5-7) demonstrates how axis breaks and ideogram magnification can be used to zoom in on regions of interest. Batch image generation is demonstrated in Figure 8, which comprises 39 images that illustrate synteny between the dog and human genomes. The configuration and data files to create each figure are available in Supplementary Materials."
   },
   {
     "idx": 844,
@@ -571,7 +611,8 @@
     "2d_coord": [
       -3.2764518188566027,
       1.7125968997457925
-    ]
+    ],
+    "paragraph_info": "A BAC-based fingerprint map was generated for each primary tumor sample and each BAC was annotated with fingerprint-based alignments to the human reference sequence (see Methods). In this manner, the fingerprint map, which is typically composed of 1000’s of contigs, was used to identify large-scale structural changes in the tumor genomes. Figure 2 demonstrates three such large-scale changes at the magnification level of a single fingerprint map contig (1-10Mb). Each contig (Figure 2 A) was selected from the map of a different sample (patients 10, 13 and 21) and contains at least two BAC clones whose alignments (Figure 2 F) indicate a rearrangement breakpoint captured within the BACs."
   },
   {
     "idx": 970,
@@ -585,7 +626,8 @@
     "2d_coord": [
       2.9762683272701356,
       1.405966697064725
-    ]
+    ],
+    "paragraph_info": "Several utility tools are bundled with Circos to help analyze, filter and format data. filterlinks parses a link file and selects only those links that pass positional criteria. orderchr applies simulated annealing to a link data set to generate an ideogram order that minimizes (or maximizes) the number of links that cross in the image. bundlelinks is used to identify links that are corroborated by other adjacent links (used for Figure 8). binlinks is used to generate density tracks, suitable for scatter/line/histogram tracks, based on the number of links within a sliding window. tableviewer is a collection of tools that is used to parse tabular data and generate data and configuration files for visualizing tables with Circos."
   },
   {
     "idx": 1004,
@@ -599,7 +641,8 @@
     "2d_coord": [
       -3.024322009114439,
       1.8292067863047028
-    ]
+    ],
+    "paragraph_info": "Figure 4. Detailed sequence alignments of sequence contigs from nine follicular lymphoma tumor samples (see Figure 3, track C) that were found to span translocations. Each of the contigs is represented by a colored segment (A) with a label that encodes the patient and contig number (e.g. p25/676 refers to patient 25, sequence contig 676). Sequence alignments of the contig are shown as ribbons (B) to regions of chromosome 14 (C, 105.396-105.403 Mb and 105.436-"
   },
   {
     "idx": 1176,
@@ -613,7 +656,8 @@
     "2d_coord": [
       2.7077623807331443,
       -2.1977778751427266
-    ]
+    ],
+    "paragraph_info": "Visual representations based on circular shapes are frequently used in visualization applications. One example are circos plots within bioinformatics, which bend graphs into a wheel of information with connective lines running through the center like spokes. The results are aesthetically appealing and impressive visualizations that fit long data sequences into a small quadratic space. However, the authors’ experiences are that when asked, a visualization researcher would generally advise against making visualizations with radial layouts. Upon reviewing the literature we found that there is evidence that circular layouts are preferable in some cases, but we found no clear evidence for what layout is preferable for matrices and connective data in particular, which both are common data types in circos plots. In this work, we thus performed a user study to compare circular and linear layouts. The tasks are inspired by genomics data, but our results generalize to many other application areas, involving comparison and connective data. To build the prototype we utilized Gosling, a grammar for visualizing genomics data. We contribute empirical evidence on the suitedness of linear versus circular layouts, adding to the specific and general knowledge concerning perception ofcircular graphs. In addition, we contribute a case study evaluation ofthe grammar Gosling as a rapid prototyping language, confirming its utility and providing guidance on suitable areas for future development."
   },
   {
     "idx": 1181,
@@ -627,7 +671,8 @@
     "2d_coord": [
       -0.9736264913844787,
       -0.7128042866197472
-    ]
+    ],
+    "paragraph_info": "Visual representations based on circular shapes are frequently used in visualization applications. One example are circos plots within bioinformatics, which bend graphs into a wheel of information with connective lines running through the center like spokes. The results are aesthetically appealing and impressive visualizations that fit long data sequences into a small quadratic space. However, the authors’ experiences are that when asked, a visualization researcher would generally advise against making visualizations with radial layouts. Upon reviewing the literature we found that there is evidence that circular layouts are preferable in some cases, but we found no clear evidence for what layout is preferable for matrices and connective data in particular, which both are common data types in circos plots. In this work, we thus performed a user study to compare circular and linear layouts. The tasks are inspired by genomics data, but our results generalize to many other application areas, involving comparison and connective data. To build the prototype we utilized Gosling, a grammar for visualizing genomics data. We contribute empirical evidence on the suitedness of linear versus circular layouts, adding to the specific and general knowledge concerning perception ofcircular graphs. In addition, we contribute a case study evaluation ofthe grammar Gosling as a rapid prototyping language, confirming its utility and providing guidance on suitable areas for future development."
   },
   {
     "idx": 1242,
@@ -641,7 +686,8 @@
     "2d_coord": [
       -1.1329389715843283,
       1.336901253716767
-    ]
+    ],
+    "paragraph_info": "The suitability of visualization designs is of course dependent on the type of task at hand. In our experiments, the tasks were designed to resemble future real-world situations in clinical genomics. The taxonomy by Nusrat et al. [NHG19] concerns visualization tasks in genomics. This is an extension and adaptation of the more generic taxonomy of Brehmer et al. [BM13], where the motives from the means and the goal are disentangled by dividing the tasks into why, how, and what. Another relevant work is from Andrienko and Andrienko [AA06] where tasks are categorized as elementary or synoptic, where the synoptic tasks relate to trends and tendencies of a reference set while elementary tasks pertain only to one element."
   },
   {
     "idx": 1279,
@@ -655,7 +701,8 @@
     "2d_coord": [
       2.83805134355299,
       0.8523552969058794
-    ]
+    ],
+    "paragraph_info": "The empirical results were elicited through a user study with 22 participants. To achieve consistency, the study sessions were conducted by the same session manager and the experiments used the same monitor. Participants were guided through the study through a web-based interface, built-in typescript with React, and a Python backend for file serving."
   },
   {
     "idx": 1290,
@@ -669,7 +716,8 @@
     "2d_coord": [
       2.6778247057633573,
       1.0759317934350832
-    ]
+    ],
+    "paragraph_info": "A study session started with the participant being provided with a brief introduction to the study and then a short introduction to the basic biology knowledge needed to understand the context of the tasks (see Figure 1). The participant was then introduced to one of the two tasks, with some background for the task and a simple example to illustrate the idea. Then the participant practiced the task with one of the conditions, with the possibility to see the correct answer for each case. The participants mostly discovered the interactions, but, if asked, the session manager detailed which were available. Next, the test was started where the participant worked through 9 cases. Practice and test for the second condition then ensued, followed by the same procedure for the second task. Task order and condition order were varied between participants to compensate for learning and fatigue effects."
   },
   {
     "idx": 1307,
@@ -683,7 +731,8 @@
     "2d_coord": [
       2.304731955935664,
       2.0257146583805907
-    ]
+    ],
+    "paragraph_info": "One of the experiment tasks simulated detection of contamination events, which is a quality control step in some genomics labs."
   },
   {
     "idx": 1320,
@@ -697,7 +746,8 @@
     "2d_coord": [
       0.5777736000025511,
       -1.0369967524712502
-    ]
+    ],
+    "paragraph_info": "The variants of one sample can be visualized as a vector, as in Figure 4, where each purple bar indicates the presence of a variant, encoding the concentration by opacity. By stacking the variant vectors of all samples processed in parallel, it is possible to detect similarities and thus contamination events. The corresponding visualization designs for this task in the user study are shown in Figures 5 and 6. Users could pan and zoom using mouse interactions, and display a tooltip on hover."
   },
   {
     "idx": 1339,
@@ -711,7 +761,8 @@
     "2d_coord": [
       -2.663980508609779,
       0.9003180698777127
-    ]
+    ],
+    "paragraph_info": "The second task was to determine for a specified chromosome which (other) chromosome it had the most interactions with. Interactions can represent a number of biological features. The example provided to the study participants was that two regions are located in close proximity when the DNA is unwound in the cell between cell divisions."
   },
   {
     "idx": 1348,
@@ -725,7 +776,8 @@
     "2d_coord": [
       3.087124256896197,
       0.27111715201745107
-    ]
+    ],
+    "paragraph_info": "In the visualization the chromosomes are spread along the main axis, and each chromosome is represented by a color-coded segment whose length represents its size (see Figures 8 and 9). Interaction between two positions was encoded with a blue arc connecting the positions. On hover, the hovered connections were highlighted and a tooltip showed which chromosomes they connected, and the visualization supported panning and zooming. Since we wanted to evaluate whether useful information could be extracted from the graph rather than the exact answer, we accepted the top three most interacting chromosomes, or more if there was a tie."
   },
   {
     "idx": 1349,
@@ -739,7 +791,8 @@
     "2d_coord": [
       -2.662841896875802,
       0.9092042510879326
-    ]
+    ],
+    "paragraph_info": "In the visualization the chromosomes are spread along the main axis, and each chromosome is represented by a color-coded segment whose length represents its size (see Figures 8 and 9). Interaction between two positions was encoded with a blue arc connecting the positions. On hover, the hovered connections were highlighted and a tooltip showed which chromosomes they connected, and the visualization supported panning and zooming. Since we wanted to evaluate whether useful information could be extracted from the graph rather than the exact answer, we accepted the top three most interacting chromosomes, or more if there was a tie."
   },
   {
     "idx": 1393,
@@ -753,7 +806,8 @@
     "2d_coord": [
       -2.6665090455881355,
       0.90066278014568
-    ]
+    ],
+    "paragraph_info": "Figure 8: The linear layout for the connective data as visualized in the user study. Chromosomes span the horizontal axis. The task is to select one of three chromosomes that have the most interactions with chr2. Correct answers are chr19, chr17, chr14, or chr13. There are four answers due to a tie in the number of interactions."
   },
   {
     "idx": 1518,
@@ -767,7 +821,8 @@
     "2d_coord": [
       3.1086025463043123,
       -0.27834455840790756
-    ]
+    ],
+    "paragraph_info": "Time spent: Rapid prototyping, by definition, requires that the developer can accomplish their visions quickly. The design diary entries reflect a rapid initial pace, decreasing as the prototype matured. Towards the end of the design process, entries in the diary point out the spending of long time periods on making refinements, attempting to add features, and doing debugging, perhaps indicating that the design reached the limits of the grammar’s specificity."
   },
   {
     "idx": 1607,
@@ -781,7 +836,8 @@
     "2d_coord": [
       -2.392326381394268,
       0.2697233492609813
-    ]
+    ],
+    "paragraph_info": "We performed a user study comparing linear and circular layouts for two comparative tasks inspired by genomics. For matrix data, we found the linear layout to lead to higher accuracy, while there was no difference for interconnection data. For both datatypes, the results weakly indicate that linear layout resulted in shorter task completion times. We contribute a strengthened and expanded understanding of when linear layouts are preferable over circular ones. In addition, we contribute an evaluation of the Gosling grammar as a tool for rapid prototyping."
   },
   {
     "idx": 1778,
@@ -795,7 +851,8 @@
     "2d_coord": [
       0.18859399157151624,
       1.2633265869988786
-    ]
+    ],
+    "paragraph_info": "To address these issues, we designed and developed GenoREC, a novel recommendation system for interactive genomic data visualizations based on specifications about data and tasks. The core contribution of GenoREC is a knowledge-based recommendation model, consisting of a set of decision rules that we summarized based on empirical knowledge and published visualization practices. As shown in Figure 1B, the recommendation of individual visualizations is decomposed into six design components based on the taxonomy proposed by Nusrat et al. [38]. For each component, we enumerate the design space and craft rules to describe the design decisions. In addition to the recommendation model, we contribute a web application that allows genomics data analysts to describe their data and task specifications and explore the corresponding recommended visualizations. The output of GenoREC is a specification for Gosling [29], a grammar-based genomics visualization toolkit. The specification can be used by genomics analysts to customize the recommended visualization for the further use. In this work, we primarily focus on the evaluation of GenoREC’s recommendation model. The results of our user study demonstrate that GenoREC’s recommendations are helpful for analysts working in the space of genomics data analysis."
   },
   {
     "idx": 1882,
@@ -809,7 +866,8 @@
     "2d_coord": [
       0.42600590168371755,
       2.0528799922908996
-    ]
+    ],
+    "paragraph_info": "and “Connection,” are automatically defined by the system based on the file format. After the selection, Ada notices that the system recommends her two tracks stacked in a linear and circular layout (Fig. 3A). The recommended visualizations allow Ada to see an overview of the genetic features from the two files. These features are visually aligned in the same genomic axis to help her analyze the features concurrently. Next, Ada adds a BIGWIG file description. The updated recommendation removes the circular layout recommendation and shows two linear tracks. The first option uses a bar mark for the quantitative data and the second option uses a line mark for the same data (Fig. 3B). Ada finds both visualizations useful because they support looking up high and low values of the BIG-WIG file and analyzing genes in the corresponding BED and VCF tracks."
   },
   {
     "idx": 2082,
@@ -823,7 +881,8 @@
     "2d_coord": [
       0.02064380685338938,
       1.4080248880815167
-    ]
+    ],
+    "paragraph_info": "GenoREC was evaluated in a two-phase user study. First, we gathered qualitative feedback from domain experts (i.e., people who have experience in genomics and visualization) to validate the recommendation output and the user interface design. Second, we conducted a quantitative evaluation where we measured the utility of GenoREC’s recommendation given a set of data and analysis task combinations. The Harvard Institutional Review Board determined that these studies did not require research approval under federal regulations."
   },
   {
     "idx": 2083,
@@ -837,7 +896,8 @@
     "2d_coord": [
       2.5950617949145083,
       0.4815828750072633
-    ]
+    ],
+    "paragraph_info": "GenoREC was evaluated in a two-phase user study. First, we gathered qualitative feedback from domain experts (i.e., people who have experience in genomics and visualization) to validate the recommendation output and the user interface design. Second, we conducted a quantitative evaluation where we measured the utility of GenoREC’s recommendation given a set of data and analysis task combinations. The Harvard Institutional Review Board determined that these studies did not require research approval under federal regulations."
   },
   {
     "idx": 2084,
@@ -851,7 +911,8 @@
     "2d_coord": [
       2.614378187084406,
       0.4907267597574365
-    ]
+    ],
+    "paragraph_info": "GenoREC was evaluated in a two-phase user study. First, we gathered qualitative feedback from domain experts (i.e., people who have experience in genomics and visualization) to validate the recommendation output and the user interface design. Second, we conducted a quantitative evaluation where we measured the utility of GenoREC’s recommendation given a set of data and analysis task combinations. The Harvard Institutional Review Board determined that these studies did not require research approval under federal regulations."
   },
   {
     "idx": 2085,
@@ -865,7 +926,8 @@
     "2d_coord": [
       0.1955839068427278,
       1.2792262785829425
-    ]
+    ],
+    "paragraph_info": "GenoREC was evaluated in a two-phase user study. First, we gathered qualitative feedback from domain experts (i.e., people who have experience in genomics and visualization) to validate the recommendation output and the user interface design. Second, we conducted a quantitative evaluation where we measured the utility of GenoREC’s recommendation given a set of data and analysis task combinations. The Harvard Institutional Review Board determined that these studies did not require research approval under federal regulations."
   },
   {
     "idx": 2095,
@@ -879,7 +941,8 @@
     "2d_coord": [
       2.5271958774416374,
       0.5327065157395463
-    ]
+    ],
+    "paragraph_info": "Participants and Procedure: For the formative study, we recruited five domain experts. The participants had worked at the intersection of genomics and visualization with experience ranging from 8–20 years. The study was designed as a semi-structured interview and it lasted an hour. In the study, we presented participants with three different data analysis scenarios in the form of a short paragraph of text. For example, “given a set of BED files with human and mouse genome, identify regions where the data is highly conserved”. Participants were asked to describe an appropriate visualization for each scenario. Then, they were asked to use GenoREC and comment on the accuracy of the recommended visualization. As the last part of the study at the end of the interview, participants were encouraged to provide feedback on the user interface."
   },
   {
     "idx": 2114,
@@ -893,7 +956,8 @@
     "2d_coord": [
       2.976938120975738,
       1.0358309943157666
-    ]
+    ],
+    "paragraph_info": "In the second part of the study, executed after feedback from the qualitative study, we conducted a controlled within-subject quantitative study to measure the difference in utility between GenoREC’s top-ranked visualizations and mid-ranked visualizations for a given set of datasets and analysis tasks. While the qualitative study gave us feedback on the accuracy of the recommendation, we still wanted to evaluate if the recommendation would be useful for a broader group of people working in genomics. Since GenoREC’s recommendation model considers best practices from visualization research and domain knowledge based on common data features and tasks, we hypothesized that participants will find GenoREC’s top-ranked recommendation to be more useful than a mid-ranked visualization."
   },
   {
     "idx": 2115,
@@ -907,7 +971,8 @@
     "2d_coord": [
       0.2105048717334779,
       1.4935422986978277
-    ]
+    ],
+    "paragraph_info": "In the second part of the study, executed after feedback from the qualitative study, we conducted a controlled within-subject quantitative study to measure the difference in utility between GenoREC’s top-ranked visualizations and mid-ranked visualizations for a given set of datasets and analysis tasks. While the qualitative study gave us feedback on the accuracy of the recommendation, we still wanted to evaluate if the recommendation would be useful for a broader group of people working in genomics. Since GenoREC’s recommendation model considers best practices from visualization research and domain knowledge based on common data features and tasks, we hypothesized that participants will find GenoREC’s top-ranked recommendation to be more useful than a mid-ranked visualization."
   },
   {
     "idx": 2120,
@@ -921,7 +986,8 @@
     "2d_coord": [
       0.12716579930528646,
       1.602989269925417
-    ]
+    ],
+    "paragraph_info": "Fig. 7. Utility ratings for GenoREC and Alternate stimulus across all participants and scenarios. Scenarios where GenoREC’s responses were significantly higher than the alternate stimulus, are marked with \\*."
   },
   {
     "idx": 2140,
@@ -935,7 +1001,8 @@
     "2d_coord": [
       2.7000454782108014,
       1.123574823670844
-    ]
+    ],
+    "paragraph_info": "Evaluation Scenarios and Stimuli: There were a total of nine data and task scenarios (Scenario 1–9) in the study. The scenarios are designed to provide a comprehensive coverage of three factors: features, attributes, and tasks. For example, in Scenario 1, the feature combinations are point and sparse with no connection, the attribute used is categorical, and it is an identify task. We ensured that the scenarios cover all feature types (point, segment, contiguous, sparse, and network) and attributes (quantitative, categorical, and text) at least once. Finally, we ensured that tasks were balanced among identify, compare, and overview."
   },
   {
     "idx": 2142,
@@ -949,7 +1016,8 @@
     "2d_coord": [
       2.2867957219678874,
       1.698903626977492
-    ]
+    ],
+    "paragraph_info": "Evaluation Scenarios and Stimuli: There were a total of nine data and task scenarios (Scenario 1–9) in the study. The scenarios are designed to provide a comprehensive coverage of three factors: features, attributes, and tasks. For example, in Scenario 1, the feature combinations are point and sparse with no connection, the attribute used is categorical, and it is an identify task. We ensured that the scenarios cover all feature types (point, segment, contiguous, sparse, and network) and attributes (quantitative, categorical, and text) at least once. Finally, we ensured that tasks were balanced among identify, compare, and overview."
   },
   {
     "idx": 2167,
@@ -963,7 +1031,8 @@
     "2d_coord": [
       0.5366355531821827,
       -1.143952244179462
-    ]
+    ],
+    "paragraph_info": "Along with the description, the participant saw one of the two visualization options at a time. In each scenario, the data and task description remained the same for both visualization options. Participants were asked to perform the task with the visualization and then answer the following question: “I would use this visualization for the analysis of the data given the task description.” The responses were recorded on a 1–5 scale as shown in Fig. 7. The stimuli shown in the scenarios were randomized to account for any learning effect. During the study, participants were not required to provide feedback, but many participants followed a think-aloud method where they explained the reason behind their ratings. We recorded this feedback as transcribed notes and used it for further analysis of the responses."
   },
   {
     "idx": 2168,
@@ -977,7 +1046,8 @@
     "2d_coord": [
       2.5681605431204835,
       1.1650401849293617
-    ]
+    ],
+    "paragraph_info": "Along with the description, the participant saw one of the two visualization options at a time. In each scenario, the data and task description remained the same for both visualization options. Participants were asked to perform the task with the visualization and then answer the following question: “I would use this visualization for the analysis of the data given the task description.” The responses were recorded on a 1–5 scale as shown in Fig. 7. The stimuli shown in the scenarios were randomized to account for any learning effect. During the study, participants were not required to provide feedback, but many participants followed a think-aloud method where they explained the reason behind their ratings. We recorded this feedback as transcribed notes and used it for further analysis of the responses."
   },
   {
     "idx": 2169,
@@ -991,7 +1061,8 @@
     "2d_coord": [
       0.5754277724541229,
       -1.09921381724047
-    ]
+    ],
+    "paragraph_info": "Along with the description, the participant saw one of the two visualization options at a time. In each scenario, the data and task description remained the same for both visualization options. Participants were asked to perform the task with the visualization and then answer the following question: “I would use this visualization for the analysis of the data given the task description.” The responses were recorded on a 1–5 scale as shown in Fig. 7. The stimuli shown in the scenarios were randomized to account for any learning effect. During the study, participants were not required to provide feedback, but many participants followed a think-aloud method where they explained the reason behind their ratings. We recorded this feedback as transcribed notes and used it for further analysis of the responses."
   },
   {
     "idx": 2170,
@@ -1005,7 +1076,8 @@
     "2d_coord": [
       3.3289010018450895,
       1.3913714854497579
-    ]
+    ],
+    "paragraph_info": "Along with the description, the participant saw one of the two visualization options at a time. In each scenario, the data and task description remained the same for both visualization options. Participants were asked to perform the task with the visualization and then answer the following question: “I would use this visualization for the analysis of the data given the task description.” The responses were recorded on a 1–5 scale as shown in Fig. 7. The stimuli shown in the scenarios were randomized to account for any learning effect. During the study, participants were not required to provide feedback, but many participants followed a think-aloud method where they explained the reason behind their ratings. We recorded this feedback as transcribed notes and used it for further analysis of the responses."
   },
   {
     "idx": 2187,
@@ -1019,7 +1091,8 @@
     "2d_coord": [
       2.9106354937473227,
       -2.086547885470516
-    ]
+    ],
+    "paragraph_info": "1, we compared a linear layout with a focus+context (GenoREC) to a circular layout (alternate) in an identify task (as described in the “Procedure” description). We learned that some analysts did not like the circular layout from the participant feedback. Multiple participants (P5, P6, P7, and P10) explicitly noted that they do not prefer to use circular layouts. P7 mentioned that they generally avoid using circular layouts for their genomics visualization. An additional reason for preferring GenoREC’s recommendation was the focus+context interaction. The focus+context interaction simplified the task of navigating to a specific genome region. For Scenario 8, GenoREC recommended a visualization stacked alignment, and the alternate recommendation overlayed the tracks into a single view. Participants found the overlayed tracks overwhelming and did not add any benefits to the stacked layout."
   },
   {
     "idx": 2193,
@@ -1033,7 +1106,8 @@
     "2d_coord": [
       0.05940407926880997,
       0.9318895139586911
-    ]
+    ],
+    "paragraph_info": "1, we compared a linear layout with a focus+context (GenoREC) to a circular layout (alternate) in an identify task (as described in the “Procedure” description). We learned that some analysts did not like the circular layout from the participant feedback. Multiple participants (P5, P6, P7, and P10) explicitly noted that they do not prefer to use circular layouts. P7 mentioned that they generally avoid using circular layouts for their genomics visualization. An additional reason for preferring GenoREC’s recommendation was the focus+context interaction. The focus+context interaction simplified the task of navigating to a specific genome region. For Scenario 8, GenoREC recommended a visualization stacked alignment, and the alternate recommendation overlayed the tracks into a single view. Participants found the overlayed tracks overwhelming and did not add any benefits to the stacked layout."
   },
   {
     "idx": 2194,
@@ -1047,7 +1121,8 @@
     "2d_coord": [
       1.9864436767522555,
       -2.3766500293574557
-    ]
+    ],
+    "paragraph_info": "1, we compared a linear layout with a focus+context (GenoREC) to a circular layout (alternate) in an identify task (as described in the “Procedure” description). We learned that some analysts did not like the circular layout from the participant feedback. Multiple participants (P5, P6, P7, and P10) explicitly noted that they do not prefer to use circular layouts. P7 mentioned that they generally avoid using circular layouts for their genomics visualization. An additional reason for preferring GenoREC’s recommendation was the focus+context interaction. The focus+context interaction simplified the task of navigating to a specific genome region. For Scenario 8, GenoREC recommended a visualization stacked alignment, and the alternate recommendation overlayed the tracks into a single view. Participants found the overlayed tracks overwhelming and did not add any benefits to the stacked layout."
   },
   {
     "idx": 2198,
@@ -1061,7 +1136,8 @@
     "2d_coord": [
       -2.389985672151638,
       0.2931958898542095
-    ]
+    ],
+    "paragraph_info": "Scenarios for which GenoREC’s recommendation did not perform better: For Scenario 3 (p = 0.08) and Scenario 7 (p = 0.35), we did not find a large difference between the GenoREC and the alternate stimuli. For Scenario 3, we observed that participants found both GenoREC (median = 5) and alternate stimulus (median = 4) useful. In this scenario, participants were asked to perform an overview task (look for patterns) using a linear track with contiguous partition (GenoREC’s stimulus) and a circular track with segregated partition, i.e., one circle per chromosome (alternate stimulus). P2 mentioned that a circular segregated layout allowed them to see more granular data, which supported them in searching visual patterns. The most surprising results came from scenario 7, where the interquartile range of GenoREC (IQR = 2, Q1 = 2, Q3 = 4) was less than the alternate stimulus (IQR = 2, Q1 = 3, Q3 = 5) based on the summary. In this scenario, GenoREC presented two circular tracks stacked (similar to Fig. 3A Option 2), and participants had to perform a correlation task. We expected participants would use an overview strategy. However, they preferred to interact with the tracks and zoom into specific regions of the circular tracks. As discussed in the feedback from Scenario 1, circular tracks are not effective for tasks in which users have to focus on a local region. Based on this result, we learned that users could solve correlation tasks through an overview or a region-based focus approach. Therefore, GenoREC’s model should provide users with features that allow them to focus on specific regions for correlation tasks."
   },
   {
     "idx": 2201,
@@ -1075,7 +1151,8 @@
     "2d_coord": [
       -2.405568048935284,
       0.304982260016804
-    ]
+    ],
+    "paragraph_info": "Scenarios for which GenoREC’s recommendation did not perform better: For Scenario 3 (p = 0.08) and Scenario 7 (p = 0.35), we did not find a large difference between the GenoREC and the alternate stimuli. For Scenario 3, we observed that participants found both GenoREC (median = 5) and alternate stimulus (median = 4) useful. In this scenario, participants were asked to perform an overview task (look for patterns) using a linear track with contiguous partition (GenoREC’s stimulus) and a circular track with segregated partition, i.e., one circle per chromosome (alternate stimulus). P2 mentioned that a circular segregated layout allowed them to see more granular data, which supported them in searching visual patterns. The most surprising results came from scenario 7, where the interquartile range of GenoREC (IQR = 2, Q1 = 2, Q3 = 4) was less than the alternate stimulus (IQR = 2, Q1 = 3, Q3 = 5) based on the summary. In this scenario, GenoREC presented two circular tracks stacked (similar to Fig. 3A Option 2), and participants had to perform a correlation task. We expected participants would use an overview strategy. However, they preferred to interact with the tracks and zoom into specific regions of the circular tracks. As discussed in the feedback from Scenario 1, circular tracks are not effective for tasks in which users have to focus on a local region. Based on this result, we learned that users could solve correlation tasks through an overview or a region-based focus approach. Therefore, GenoREC’s model should provide users with features that allow them to focus on specific regions for correlation tasks."
   },
   {
     "idx": 2450,
@@ -1089,7 +1166,8 @@
     "2d_coord": [
       2.3731534678508153,
       0.7174541505716548
-    ]
+    ],
+    "paragraph_info": "Abstract— Circular glyphs are used across disparate fields to represent multidimensional data. However, although these glyphs are extremely effective, creating them is often laborious, even for those with professional design skills. This paper presents GlyphCreator an interactive tool for the example-based generation of circular glyphs. Given an example circular glyph and multidimensional input data, GlyphCreator promptly generates a list of design candidates, any of which can be edited to satisfy the requirements of a particular representation. To develop GlyphCreator, we first derive a design space of circular glyphs by summarizing relationships between different visual elements. With this design space, we build a circular glyph dataset and develop a deep learning model for glyph parsing. The model can deconstruct a circular glyph bitmap into a series of visual elements. Next, we introduce an interface that helps users bind the input data attributes to visual elements and customize visual styles. We evaluate the parsing model through a quantitative experiment, demonstrate the use of GlyphCreator through two use scenarios, and validate its effectiveness through user interviews."
   },
   {
     "idx": 2451,
@@ -1103,7 +1181,8 @@
     "2d_coord": [
       -0.2563644908398211,
       -3.1208405957529988
-    ]
+    ],
+    "paragraph_info": "Abstract— Circular glyphs are used across disparate fields to represent multidimensional data. However, although these glyphs are extremely effective, creating them is often laborious, even for those with professional design skills. This paper presents GlyphCreator an interactive tool for the example-based generation of circular glyphs. Given an example circular glyph and multidimensional input data, GlyphCreator promptly generates a list of design candidates, any of which can be edited to satisfy the requirements of a particular representation. To develop GlyphCreator, we first derive a design space of circular glyphs by summarizing relationships between different visual elements. With this design space, we build a circular glyph dataset and develop a deep learning model for glyph parsing. The model can deconstruct a circular glyph bitmap into a series of visual elements. Next, we introduce an interface that helps users bind the input data attributes to visual elements and customize visual styles. We evaluate the parsing model through a quantitative experiment, demonstrate the use of GlyphCreator through two use scenarios, and validate its effectiveness through user interviews."
   },
   {
     "idx": 2510,
@@ -1117,7 +1196,8 @@
     "2d_coord": [
       -0.25599390671723177,
       -3.1098122214950576
-    ]
+    ],
+    "paragraph_info": "• We develop GlyphCreator, a system for automatically creating circular glyphs, and demonstrate it through a usage scenario. We also validate its usability through user interviews."
   },
   {
     "idx": 2511,
@@ -1131,7 +1211,8 @@
     "2d_coord": [
       -0.34697841321432193,
       -3.2097810420433435
-    ]
+    ],
+    "paragraph_info": "• We develop GlyphCreator, a system for automatically creating circular glyphs, and demonstrate it through a usage scenario. We also validate its usability through user interviews."
   },
   {
     "idx": 2563,
@@ -1145,7 +1226,8 @@
     "2d_coord": [
       -0.3111536535236443,
       -2.6643272267237306
-    ]
+    ],
+    "paragraph_info": "Therefore, the question of how to design a good glyph is an important problem for researchers. Ward [59] proposed a glyph generation pipeline that includes mapping data with visual elements and layout options. Borgo et al. [3] provided a state-of-the-art approach that focuses on glyph-based visualization and summarized design guidelines and techniques. Fuchs et al. [20] extended the guidelines from a different perspective by reviewing experimental studies, and obtained a deeper understanding of the glyph design space. Researchers have also explored glyph design in specific fields. Ropinski et al. [48, 49] built a glyph taxonomy and conducted a survey on medical visualization. In the biological field, Maguire et al. [17] proposed a systematic approach for glyph design and demonstrated the approach through biological experiments."
   },
   {
     "idx": 2649,
@@ -1159,7 +1241,8 @@
     "2d_coord": [
       0.6023728761548232,
       -3.0203685164005796
-    ]
+    ],
+    "paragraph_info": "We divided all visual elements into four categories; namely, chart, shape, label, and icon. Chart uses graphic figures for data visualization, such as pie charts or line charts [23]. When acting as a visual element in a glyph, it is not necessary for a chart to show all the components it normally would, such as axes or a legend. Shape refers to a basic geometric object, such as a line, a circle, or a polygon. Icon refers to a small pictogram or ideogram. Label refers to a text label. After examining all circular glyphs in the dataset, we further discovered diverse patterns in the dominant chart category and categorized them into two sub-categories: circular and variant charts. Circular charts, like donut charts and pie charts, use a polar coordinate system. Others, such as heatmaps and boxplots, need to be transformed in order to achieve a circular shape and be placed in a polar coordinate system."
   },
   {
     "idx": 2657,
@@ -1173,7 +1256,8 @@
     "2d_coord": [
       1.2892289060972093,
       -2.980931257987461
-    ]
+    ],
+    "paragraph_info": "Without knowing the data underlying the image, we distinguished the visual elements based on their relative positions. If C1 is satisfied, the entire circular glyph can be placed within a polar coordinate system. Therefore, we focused on parameters R and θ to locate each visual element. If several visual elements have the same sub-category and their R values are almost the same, they can be regarded as the same layer. For instance, in Fig. 1(d1), the three peripheral circles are regarded as one layer. Then, we divided a circular glyph into several layers. After examining all the collected circular glyph images, we classified all layers into three regions: interior, intermediate, and exterior. As a result, we have obtained a design space that covers the full collected circular glyph dataset, as shown in Fig. 4."
   },
   {
     "idx": 2674,
@@ -1187,7 +1271,8 @@
     "2d_coord": [
       1.277888759595759,
       -2.984173058338038
-    ]
+    ],
+    "paragraph_info": "• Exterior. The exterior represents the outside layer of one circular glyph. The exterior layer can be classified into three categories: shape, chart, and icon. In the shape type, circles (90/120) are mostly used, whereas variant charts (12/21), such as boxplots and bar charts, are often used in the chart type. For example, in Fig. 1(d1), the three circles are included in the exterior as the same layer. The modified dashboard in Fig. 1(b1), the circle in Fig. 1(g1) and the variant bar chart in Fig. 1(a1) also denote exterior layers."
   },
   {
     "idx": 2675,
@@ -1201,7 +1286,8 @@
     "2d_coord": [
       1.23963656120548,
       -2.9945482508846264
-    ]
+    ],
+    "paragraph_info": "• Exterior. The exterior represents the outside layer of one circular glyph. The exterior layer can be classified into three categories: shape, chart, and icon. In the shape type, circles (90/120) are mostly used, whereas variant charts (12/21), such as boxplots and bar charts, are often used in the chart type. For example, in Fig. 1(d1), the three circles are included in the exterior as the same layer. The modified dashboard in Fig. 1(b1), the circle in Fig. 1(g1) and the variant bar chart in Fig. 1(a1) also denote exterior layers."
   },
   {
     "idx": 2763,
@@ -1215,7 +1301,8 @@
     "2d_coord": [
       1.1246055966696795,
       2.343329445023206
-    ]
+    ],
+    "paragraph_info": "Model Architecture. Given an RGB circular glyph bitmap $I _ { c } \\in$ $R ^ { W \\times H \\times 3 }$ , where R refers to the bitmap, W,H refers to the width and height, 3 refers to three color channels, the model aims to predict the center position of glyph $\\left( x _ { c } , y _ { c } \\right)$ and bounding boxes $\\{ B _ { \\nu s } \\}$ of all visual elements. We used a fully-convolutional network to obtain the feature map F from the input image I. The output prediction was downsampled by an output stride r. We selected the stacked hourglass network, up-convolutional residual networks (ResNet [22, 66]), and deep layer aggregation (DLA [70]) as candidates. After the experiment in Sec. 5.3, we employed the hourglass network as the backbone."
   },
   {
     "idx": 2767,
@@ -1229,7 +1316,8 @@
     "2d_coord": [
       1.0703894494506254,
       0.4170121053501121
-    ]
+    ],
+    "paragraph_info": "CenterNet [72], a network for object detection, approaches this goal through center localization and size regression by modeling an object as a single point. With feature map F extracted by the backbone, CenterNet produces a heatmap for each category using a Gaussian kernel for localization. For regression, CenterNet predicts the height and width of the object and the offset to recover the error due to output stride r. Our task includes object detection and center detection. We used a similar strategy for object detection for all categories in Fig. 4(a) and considered the label Center for center detection. Focused on the position of the center, we aim to obtain the heatmap of Center. The size prediction and the offset are not necessary. Therefore, for each object K with category $c _ { k }$ , the objective loss is"
   },
   {
     "idx": 2768,
@@ -1243,7 +1331,8 @@
     "2d_coord": [
       1.172113335436443,
       0.4287997468438921
-    ]
+    ],
+    "paragraph_info": "CenterNet [72], a network for object detection, approaches this goal through center localization and size regression by modeling an object as a single point. With feature map F extracted by the backbone, CenterNet produces a heatmap for each category using a Gaussian kernel for localization. For regression, CenterNet predicts the height and width of the object and the offset to recover the error due to output stride r. Our task includes object detection and center detection. We used a similar strategy for object detection for all categories in Fig. 4(a) and considered the label Center for center detection. Focused on the position of the center, we aim to obtain the heatmap of Center. The size prediction and the offset are not necessary. Therefore, for each object K with category $c _ { k }$ , the objective loss is"
   },
   {
     "idx": 2769,
@@ -1257,7 +1346,8 @@
     "2d_coord": [
       1.0736366153458734,
       0.39495041276850856
-    ]
+    ],
+    "paragraph_info": "CenterNet [72], a network for object detection, approaches this goal through center localization and size regression by modeling an object as a single point. With feature map F extracted by the backbone, CenterNet produces a heatmap for each category using a Gaussian kernel for localization. For regression, CenterNet predicts the height and width of the object and the offset to recover the error due to output stride r. Our task includes object detection and center detection. We used a similar strategy for object detection for all categories in Fig. 4(a) and considered the label Center for center detection. Focused on the position of the center, we aim to obtain the heatmap of Center. The size prediction and the offset are not necessary. Therefore, for each object K with category $c _ { k }$ , the objective loss is"
   },
   {
     "idx": 2780,
@@ -1271,7 +1361,8 @@
     "2d_coord": [
       1.5528516132469028,
       2.3147671535716343
-    ]
+    ],
+    "paragraph_info": "where $L _ { h }$ is the loss of the heatmap, $L _ { s i z e }$ is the loss at the center point, and $L _ { o f f }$ is the offset loss. These definitions are similar to those in CenterNet [72], and we refer readers to the description of CenterNet [72] for additional details. We scaled the loss by two constants $\\lambda _ { s i z e }$ and $\\lambda _ { o f f } .$ and set $\\lambda _ { s i z e } = 0 . 1$ and $\\lambda _ { s i z e } = 1$ in all our experiments. Total loss L is composed of individual loss $L _ { k }$ for each object."
   },
   {
     "idx": 2781,
@@ -1285,7 +1376,8 @@
     "2d_coord": [
       1.5471144150591225,
       2.3166171758783705
-    ]
+    ],
+    "paragraph_info": "where $L _ { h }$ is the loss of the heatmap, $L _ { s i z e }$ is the loss at the center point, and $L _ { o f f }$ is the offset loss. These definitions are similar to those in CenterNet [72], and we refer readers to the description of CenterNet [72] for additional details. We scaled the loss by two constants $\\lambda _ { s i z e }$ and $\\lambda _ { o f f } .$ and set $\\lambda _ { s i z e } = 0 . 1$ and $\\lambda _ { s i z e } = 1$ in all our experiments. Total loss L is composed of individual loss $L _ { k }$ for each object."
   },
   {
     "idx": 2821,
@@ -1299,7 +1391,8 @@
     "2d_coord": [
       1.3153888957321875,
       -1.7540780177013306
-    ]
+    ],
+    "paragraph_info": "Finally, we obtained all layers, together with their category and distance. We sorted all distances by value and assigned the smallest to the interior, the largest to the exterior, and the middle to the intermediate."
   },
   {
     "idx": 2907,
@@ -1313,7 +1406,8 @@
     "2d_coord": [
       2.6399428567109977,
       1.292571394951752
-    ]
+    ],
+    "paragraph_info": "This section presents two usage scenarios, user interviews, and a quantitative experiment to demonstrate the effectiveness of GlyphCreator."
   },
   {
     "idx": 2908,
@@ -1327,7 +1421,8 @@
     "2d_coord": [
       2.842875886772873,
       0.6824232554182849
-    ]
+    ],
+    "paragraph_info": "This section presents two usage scenarios, user interviews, and a quantitative experiment to demonstrate the effectiveness of GlyphCreator."
   },
   {
     "idx": 2909,
@@ -1341,7 +1436,8 @@
     "2d_coord": [
       -0.30329559845790266,
       -3.1438458515060117
-    ]
+    ],
+    "paragraph_info": "This section presents two usage scenarios, user interviews, and a quantitative experiment to demonstrate the effectiveness of GlyphCreator."
   },
   {
     "idx": 2911,
@@ -1355,7 +1451,8 @@
     "2d_coord": [
       -0.20433047929750903,
       -3.070165523040698
-    ]
+    ],
+    "paragraph_info": "This section presents two usage scenarios using different datasets. The first scenario demonstrates the entire process of creating tailored glyphs with GlyphCreator as performed by a junior visualization researcher, Lucy. Lucy’s job is to implement a system for analyzing the worldwide distribution of cancer. The dataset [42] that she is using comprises the incidence (new cases), mortality (deaths), prevalence, and region of each type of cancer in 2020. To see how GlyphCreator helps Lucy design and use circular glyphs, we lay out her workflow step by step."
   },
   {
     "idx": 2912,
@@ -1369,7 +1466,8 @@
     "2d_coord": [
       0.30060414611208686,
       -2.0343383631035477
-    ]
+    ],
+    "paragraph_info": "This section presents two usage scenarios using different datasets. The first scenario demonstrates the entire process of creating tailored glyphs with GlyphCreator as performed by a junior visualization researcher, Lucy. Lucy’s job is to implement a system for analyzing the worldwide distribution of cancer. The dataset [42] that she is using comprises the incidence (new cases), mortality (deaths), prevalence, and region of each type of cancer in 2020. To see how GlyphCreator helps Lucy design and use circular glyphs, we lay out her workflow step by step."
   },
   {
     "idx": 2960,
@@ -1383,7 +1481,8 @@
     "2d_coord": [
       0.11636927322796413,
       -2.3171042668408637
-    ]
+    ],
+    "paragraph_info": "Ultimately, she exported the circular glyph in code form, which can be easily read by her system. With the export file in JavaScript format, Lucy called on the function DrawGlyph in her system by providing the specified variables: the center point of the expected circular glyph location, the glyph size, and, most crucially, the data in a JSON format. Moreover, by iterating the functions using the data of different regions, such as Asia and Europe, Lucy drew six circular glyphs corresponding to six continents in one map with ease. The result is shown in Fig. 9. Now familiar with the system workflow, Lucy went on to design other versions by making different choices about the inner circle."
   },
   {
     "idx": 2974,
@@ -1397,7 +1496,8 @@
     "2d_coord": [
       -2.6396215052188188,
       2.1727522088447166
-    ]
+    ],
+    "paragraph_info": "Fig. 9. Two visualizations based on the tailored glyphs created by GlyphCreator using the worldwide cancer dataset (a) and the UK Used Car Dataset of Skoda (b)."
   },
   {
     "idx": 2975,
@@ -1411,7 +1511,8 @@
     "2d_coord": [
       1.4360980805467503,
       2.5384204891222635
-    ]
+    ],
+    "paragraph_info": "Fig. 9. Two visualizations based on the tailored glyphs created by GlyphCreator using the worldwide cancer dataset (a) and the UK Used Car Dataset of Skoda (b)."
   },
   {
     "idx": 2986,
@@ -1425,7 +1526,8 @@
     "2d_coord": [
       -0.3485195397859618,
       -3.2198684428785858
-    ]
+    ],
+    "paragraph_info": "To evaluate the effectiveness and usability of GlyphCreator, we conducted semi-structured interviews with four end users who were familiar with data visualization. The first user (U1) was a senior researcher who graduated from a professional design school. He also studied visualization and visual analysis for four years. The second user (U2) worked as a senior visualization researcher for three years. However, he did not have systematic design training. The third user (U3) was a student majoring in computer science and had little prior experience in visualization, all of which was obtained from an Information Visualization course (eight weeks, four lectures per week). These three users (U1, U2, U3) evaluated the workflow of GlyphCreator and discussed its potential applications. The fourth user (U4) was a professional UI/UX designer who worked for a visualization group. Based on her visualization knowledge and design experience, she evaluated the output circular glyphs generated by GlyphCreator. She also compared the system with various commercial design tools (e.g., Adobe AI/PS)."
   },
   {
     "idx": 2993,
@@ -1439,7 +1541,8 @@
     "2d_coord": [
       -0.31480906300249484,
       -3.2480445321677798
-    ]
+    ],
+    "paragraph_info": "To evaluate the effectiveness and usability of GlyphCreator, we conducted semi-structured interviews with four end users who were familiar with data visualization. The first user (U1) was a senior researcher who graduated from a professional design school. He also studied visualization and visual analysis for four years. The second user (U2) worked as a senior visualization researcher for three years. However, he did not have systematic design training. The third user (U3) was a student majoring in computer science and had little prior experience in visualization, all of which was obtained from an Information Visualization course (eight weeks, four lectures per week). These three users (U1, U2, U3) evaluated the workflow of GlyphCreator and discussed its potential applications. The fourth user (U4) was a professional UI/UX designer who worked for a visualization group. Based on her visualization knowledge and design experience, she evaluated the output circular glyphs generated by GlyphCreator. She also compared the system with various commercial design tools (e.g., Adobe AI/PS)."
   },
   {
     "idx": 2995,
@@ -1453,7 +1556,8 @@
     "2d_coord": [
       0.0887443211681834,
       -3.0847645486492223
-    ]
+    ],
+    "paragraph_info": "To evaluate the effectiveness and usability of GlyphCreator, we conducted semi-structured interviews with four end users who were familiar with data visualization. The first user (U1) was a senior researcher who graduated from a professional design school. He also studied visualization and visual analysis for four years. The second user (U2) worked as a senior visualization researcher for three years. However, he did not have systematic design training. The third user (U3) was a student majoring in computer science and had little prior experience in visualization, all of which was obtained from an Information Visualization course (eight weeks, four lectures per week). These three users (U1, U2, U3) evaluated the workflow of GlyphCreator and discussed its potential applications. The fourth user (U4) was a professional UI/UX designer who worked for a visualization group. Based on her visualization knowledge and design experience, she evaluated the output circular glyphs generated by GlyphCreator. She also compared the system with various commercial design tools (e.g., Adobe AI/PS)."
   },
   {
     "idx": 2996,
@@ -1467,7 +1571,8 @@
     "2d_coord": [
       -0.41806022326444237,
       -3.142062974320411
-    ]
+    ],
+    "paragraph_info": "To evaluate the effectiveness and usability of GlyphCreator, we conducted semi-structured interviews with four end users who were familiar with data visualization. The first user (U1) was a senior researcher who graduated from a professional design school. He also studied visualization and visual analysis for four years. The second user (U2) worked as a senior visualization researcher for three years. However, he did not have systematic design training. The third user (U3) was a student majoring in computer science and had little prior experience in visualization, all of which was obtained from an Information Visualization course (eight weeks, four lectures per week). These three users (U1, U2, U3) evaluated the workflow of GlyphCreator and discussed its potential applications. The fourth user (U4) was a professional UI/UX designer who worked for a visualization group. Based on her visualization knowledge and design experience, she evaluated the output circular glyphs generated by GlyphCreator. She also compared the system with various commercial design tools (e.g., Adobe AI/PS)."
   },
   {
     "idx": 3000,
@@ -1481,7 +1586,8 @@
     "2d_coord": [
       0.14208598940662664,
       -2.7870274488703854
-    ]
+    ],
+    "paragraph_info": "Each 60-minute interview began with a five-minute introduction to the system workflow. Afterward, we demonstrated GlyphCreator by going through a three-minute example case. We let users become thoroughly familiar with our system through free exploration. They were then asked to generate two circular glyphs using a given reference image and data. Afterwards, a semi-structured interview was conducted to obtain opinions on the usability and quality of our system. In the interview, the users were asked to demonstrate how to use the system to create circular glyphs. We asked about their previous experience with glyph creation. We also asked them to freely share their thoughts and suggestions about the glyphs and the system as a whole, and to point out any causes of confusion."
   },
   {
     "idx": 3002,
@@ -1495,7 +1601,8 @@
     "2d_coord": [
       0.2779790275065564,
       -3.3041759699832762
-    ]
+    ],
+    "paragraph_info": "Each 60-minute interview began with a five-minute introduction to the system workflow. Afterward, we demonstrated GlyphCreator by going through a three-minute example case. We let users become thoroughly familiar with our system through free exploration. They were then asked to generate two circular glyphs using a given reference image and data. Afterwards, a semi-structured interview was conducted to obtain opinions on the usability and quality of our system. In the interview, the users were asked to demonstrate how to use the system to create circular glyphs. We asked about their previous experience with glyph creation. We also asked them to freely share their thoughts and suggestions about the glyphs and the system as a whole, and to point out any causes of confusion."
   },
   {
     "idx": 3003,
@@ -1509,7 +1616,8 @@
     "2d_coord": [
       -0.3463799940482958,
       -3.2979775241584166
-    ]
+    ],
+    "paragraph_info": "Each 60-minute interview began with a five-minute introduction to the system workflow. Afterward, we demonstrated GlyphCreator by going through a three-minute example case. We let users become thoroughly familiar with our system through free exploration. They were then asked to generate two circular glyphs using a given reference image and data. Afterwards, a semi-structured interview was conducted to obtain opinions on the usability and quality of our system. In the interview, the users were asked to demonstrate how to use the system to create circular glyphs. We asked about their previous experience with glyph creation. We also asked them to freely share their thoughts and suggestions about the glyphs and the system as a whole, and to point out any causes of confusion."
   },
   {
     "idx": 3004,
@@ -1523,7 +1631,8 @@
     "2d_coord": [
       -0.3355635582309864,
       -3.347099124334605
-    ]
+    ],
+    "paragraph_info": "Each 60-minute interview began with a five-minute introduction to the system workflow. Afterward, we demonstrated GlyphCreator by going through a three-minute example case. We let users become thoroughly familiar with our system through free exploration. They were then asked to generate two circular glyphs using a given reference image and data. Afterwards, a semi-structured interview was conducted to obtain opinions on the usability and quality of our system. In the interview, the users were asked to demonstrate how to use the system to create circular glyphs. We asked about their previous experience with glyph creation. We also asked them to freely share their thoughts and suggestions about the glyphs and the system as a whole, and to point out any causes of confusion."
   },
   {
     "idx": 3005,
@@ -1537,7 +1646,8 @@
     "2d_coord": [
       3.347717584410218,
       0.2746763143010236
-    ]
+    ],
+    "paragraph_info": "Each 60-minute interview began with a five-minute introduction to the system workflow. Afterward, we demonstrated GlyphCreator by going through a three-minute example case. We let users become thoroughly familiar with our system through free exploration. They were then asked to generate two circular glyphs using a given reference image and data. Afterwards, a semi-structured interview was conducted to obtain opinions on the usability and quality of our system. In the interview, the users were asked to demonstrate how to use the system to create circular glyphs. We asked about their previous experience with glyph creation. We also asked them to freely share their thoughts and suggestions about the glyphs and the system as a whole, and to point out any causes of confusion."
   },
   {
     "idx": 3012,
@@ -1551,7 +1661,8 @@
     "2d_coord": [
       0.08799277544060582,
       -2.723573896807328
-    ]
+    ],
+    "paragraph_info": "The users liked the entire workflow design. Regarding the glyph generation process, U1 and U2 began from the data, whereas U3 started with the reference images. All three users (U1, U2, and U3) said they read papers to find glyph designs that could meet their needs. U1, who has solid design skills, regularly collects good glyph designs in case they come in handy. The three users are used to designing and implementing glyphs through programming. Based on their previous design experience, they expressed the need for a system for generating circular glyphs because it could reduce the iteration time. Due to an indispensable reference image, they agreed with our input, including data and image. U4 focused on the workflow of GlyphCreator. Comparing GlyphCreator with professional design tools, she commented, “GlyphCreator is more intelligent and efficient. I only needed several minutes to learn how to use the system.” She also pointed out several possible improvements to the interface, such as adding hints on three columns in the Options view. We further improved our interface by providing it with a user-friendly, built-in user guide."
   },
   {
     "idx": 3018,
@@ -1565,7 +1676,8 @@
     "2d_coord": [
       -0.3610710343120491,
       -3.080318844752231
-    ]
+    ],
+    "paragraph_info": "The users liked the entire workflow design. Regarding the glyph generation process, U1 and U2 began from the data, whereas U3 started with the reference images. All three users (U1, U2, and U3) said they read papers to find glyph designs that could meet their needs. U1, who has solid design skills, regularly collects good glyph designs in case they come in handy. The three users are used to designing and implementing glyphs through programming. Based on their previous design experience, they expressed the need for a system for generating circular glyphs because it could reduce the iteration time. Due to an indispensable reference image, they agreed with our input, including data and image. U4 focused on the workflow of GlyphCreator. Comparing GlyphCreator with professional design tools, she commented, “GlyphCreator is more intelligent and efficient. I only needed several minutes to learn how to use the system.” She also pointed out several possible improvements to the interface, such as adding hints on three columns in the Options view. We further improved our interface by providing it with a user-friendly, built-in user guide."
   },
   {
     "idx": 3042,
@@ -1579,7 +1691,8 @@
     "2d_coord": [
       0.4576494281493769,
       -2.9426282153372507
-    ]
+    ],
+    "paragraph_info": "Our model was implemented using PyTorch [43] with four types of CNN backbone, namely, ResNet-18 [22], ResNet-101 [66], DLA-34 [70] and Hourglass-104 [27]. We used the Hourglass-104 network as the standard and modified both the ResNets and DLA-34 by using deformable convolution layers. To evaluate the performance of parsing a circular glyph, we adopted the average precision (AP) [18] value from the precision/recall curve to access two tasks, namely, what and where. Each detection was considered true or false based on the area that overlapped with the ground truth bounding boxes. Overlap area was calculated by the formula: $\\begin{array} { r } { I o U = \\frac { a r e a ( B _ { p } \\cap B _ { g t } ) } { a r e a ( B _ { p } \\cup B _ { g t } ) } } \\end{array}$ , where $B _ { p }$ is the predicted bounding box and $B _ { g t }$ is the ground truth bounding box. If IoU exceeded a threshold, then we considered the detection as a true one. Without test augmentation, we evaluated our object detection performance on our circular glyph dataset, which contained 8k training images and 2k validation images. We reported the average precision over all IoU thresholds (AP) and AP at thresholds of $0 . { \\bar { 5 } } ( { \\bar { A } } P _ { 5 0 } )$ and $0 . 7 5 \\left( A P _ { 7 5 } \\right)$ . Table 1 shows results with different backbones. According to the definition, a high AP value denotes a good detection model."
   },
   {
     "idx": 3047,
@@ -1593,7 +1706,8 @@
     "2d_coord": [
       0.5610386887540176,
       -2.965911468842847
-    ]
+    ],
+    "paragraph_info": "Table 1. Average precision of detecting visual elements using different backbones in the circular glyph dataset."
   },
   {
     "idx": 3053,
@@ -1607,7 +1721,8 @@
     "2d_coord": [
       1.0176627761758863,
       2.205227092649456
-    ]
+    ],
+    "paragraph_info": "Table 1 shows the results with different backbones. The running time was tested on a local machine, with Intel(R) Xeon(R) Platinum 8260 CPU, Tesla V100 GPU, PyTorch 1.5.0, and CUDA 10.2. Considering that all backbones take less than 0.1 seconds to deal with one image, we selected the best one. Among all backbones, Hourglass-104 had the highest accuracy with a relatively good speed. Therefore, we chose the Hourglass-104 backbone for model training."
   },
   {
     "idx": 3109,
@@ -1621,7 +1736,8 @@
     "2d_coord": [
       2.369640150054042,
       0.7189222202582162
-    ]
+    ],
+    "paragraph_info": "In this paper, we introduce GlyphCreator, an automatic system for generating circular glyphs based on an example-based method. We collected existing circular glyphs and created a design space of circular glyphs to analyze the relationship among different visual elements. With this design space, we built a circular glyph dataset and proposed a framework that includes a deconstruction model to obtain the layout of circular glyphs. By utilizing the uploaded circular glyph reference image and multi-dimensional data in GlyphCreator, users can bind the data with the layout in a straightforward manner and generate a new circular glyph after revising the style. We evaluated the deconstruction model through a quantitative experiment. We also demonstrated the expressiveness and usability of our approach through a usage scenario and user interviews. We believe that our work provides a new idea for automatically generating glyphs in all visualizations via a two-way method, a loop of visualization and AI. In the future, we plan to extend this pipeline by analyzing other glyphs and expand the authoring tools of GlyphCreator to support other creative designs."
   },
   {
     "idx": 3110,
@@ -1635,7 +1751,8 @@
     "2d_coord": [
       2.775164739354241,
       0.6561010966020645
-    ]
+    ],
+    "paragraph_info": "In this paper, we introduce GlyphCreator, an automatic system for generating circular glyphs based on an example-based method. We collected existing circular glyphs and created a design space of circular glyphs to analyze the relationship among different visual elements. With this design space, we built a circular glyph dataset and proposed a framework that includes a deconstruction model to obtain the layout of circular glyphs. By utilizing the uploaded circular glyph reference image and multi-dimensional data in GlyphCreator, users can bind the data with the layout in a straightforward manner and generate a new circular glyph after revising the style. We evaluated the deconstruction model through a quantitative experiment. We also demonstrated the expressiveness and usability of our approach through a usage scenario and user interviews. We believe that our work provides a new idea for automatically generating glyphs in all visualizations via a two-way method, a loop of visualization and AI. In the future, we plan to extend this pipeline by analyzing other glyphs and expand the authoring tools of GlyphCreator to support other creative designs."
   },
   {
     "idx": 3313,
@@ -1649,7 +1766,8 @@
     "2d_coord": [
       2.3124550567732856,
       0.540339305659794
-    ]
+    ],
+    "paragraph_info": "The combination of diverse data types and analysis tasks in genomics has resulted in the development of a wide range of visualization techniques and tools. However, most existing tools are tailored to a specific problem or data type and offer limited customization, making it challenging to optimize visualizations for new analysis tasks or datasets. To address this challenge, we designed Gosling—a grammar for interactive and scalable genomics data visualization. Gosling balances expressiveness for comprehensive multi-scale genomics data visualizations with accessibility for domain scientists. Our accompanying JavaScript toolkit called Gosling.js provides scalable and interactive rendering. Gosling.js is built on top of an existing platform for web-based genomics data visualization to further simplify the visualization of common genomics data formats. We demonstrate the expressiveness of the grammar through a variety of real-world examples. Furthermore, we show how Gosling supports the design of novel genomics visualizations. An online editor and examples of Gosling.js, its source code, and documentation are available at https://gosling.js.org."
   },
   {
     "idx": 3365,
@@ -1663,7 +1781,8 @@
     "2d_coord": [
       2.311672566426247,
       0.5393316579793626
-    ]
+    ],
+    "paragraph_info": "To provide a unified approach that addresses those limitations, we designed Gosling— short for “Grammar Of Scalable Linked Interactive Nucleotide Graphics”—a grammar for interactive and scalable genomics data visualization in eukaryotic and prokaryotic species. Gosling balances expressiveness for comprehensive multi-scale genomics data visualizations with accessibility for domain scientists. Our accompanying JavaScript toolkit called Gosling.js provides scalable and interactive rendering. Gosling.js is built on top of an existing platform for web-based genomics data visualization [34] to provide access to common genomics data formats. We demonstrate the expressiveness of the grammar through various usage scenarios and show how Gosling supports the design of novel genomics visualizations using semantic zooming [58]."
   },
   {
     "idx": 3708,
@@ -1677,7 +1796,8 @@
     "2d_coord": [
       -0.8604595292980327,
       -0.9044146142780166
-    ]
+    ],
+    "paragraph_info": "To show how Gosling can be used to create a wide range of genomics data visualizations, we present a series of published visualizations that we reproduced and extended using Gosling. Interactive versions of all visualizations in this paper are available at https://gosling.js.org."
   },
   {
     "idx": 3726,
@@ -1691,7 +1811,8 @@
     "2d_coord": [
       -1.2627904836076658,
       -0.4626310767103682
-    ]
+    ],
+    "paragraph_info": "At the view level, Gosling affords the composition of complex Multiview visualizations with coordinated interactivity. For example, Fig. 12 shows comparative visualizations of two genomic interaction matrices using Gosling [35]. The two matrices are linked to show the same genomic regions when zooming and panning, enabling effective visual comparison. Moreover, interactive brushes allow users to create a variety of overview+detail visualizations. For instance, following the example of overview+detail visualizations in genome browsers [67, 79, 89, 90], users can place an overview visualization in the form of an ideogram at the top and link it to additional views below through an interactive brush (Fig. 9). It is also possible to add two interactive brushes to a circular overview and link them to two linear views, enabling comparative analysis of two local regions connected by long-range interactions (Fig. 13A). Since Gosling can be applied to genomes of any species, one can use data of a SARS-CoV2 reference sequence [86] along with gene and protein annotations and recombination sites [21] to author visualizations as found in the WashU Virus Browser [21] (Fig. 1G). Moreover, the expressiveness of Gosling allows users to easily create interactive versions of static figures [11] (Fig. 13B)."
   },
   {
     "idx": 3732,
@@ -1705,7 +1826,8 @@
     "2d_coord": [
       -1.8951858087494644,
       2.121889355807671
-    ]
+    ],
+    "paragraph_info": "At the view level, Gosling affords the composition of complex Multiview visualizations with coordinated interactivity. For example, Fig. 12 shows comparative visualizations of two genomic interaction matrices using Gosling [35]. The two matrices are linked to show the same genomic regions when zooming and panning, enabling effective visual comparison. Moreover, interactive brushes allow users to create a variety of overview+detail visualizations. For instance, following the example of overview+detail visualizations in genome browsers [67, 79, 89, 90], users can place an overview visualization in the form of an ideogram at the top and link it to additional views below through an interactive brush (Fig. 9). It is also possible to add two interactive brushes to a circular overview and link them to two linear views, enabling comparative analysis of two local regions connected by long-range interactions (Fig. 13A). Since Gosling can be applied to genomes of any species, one can use data of a SARS-CoV2 reference sequence [86] along with gene and protein annotations and recombination sites [21] to author visualizations as found in the WashU Virus Browser [21] (Fig. 1G). Moreover, the expressiveness of Gosling allows users to easily create interactive versions of static figures [11] (Fig. 13B)."
   },
   {
     "idx": 3791,
@@ -1719,7 +1841,8 @@
     "2d_coord": [
       2.3937397633419635,
       0.6297694028019523
-    ]
+    ],
+    "paragraph_info": "Our work on Gosling to date has focused on supporting the creation of the wide range of the genomic visualization techniques captured in the taxonomy of Nusrat et al. [53]. While Gosling covers almost the entire taxonomy, Gosling currently lacks support for two rarely used layout techniques: space-filling curves and spatial 3D layouts. In some cases, it makes sense to map the genome sequence onto a space-filling curve (e.g., Hilbert curve [2,27]) to produce a compact overview of the genome. Further, some examples have been published in which the genome was mapped onto (simulated) 3D spatial coordinates [81], for example, to visualize genome folding [16] and to provide an illustration of the genome’s plasticity. While the Gosling grammar can easily be extended to support these two layouts, the utility of these layouts in the context of a grammar is limited as they do not afford alignment with other tracks. We will explore support for space-filling and 3D layouts in the future. Another limitation of Gosling concerning the taxonomy by Nusrat et al. [53] is that it currently only supports mapping to the entire genome sequence. It does not support sequence abstraction, i.e., it is not possible to filter out regions, such as intragenic regions, or to scale genomic regions of different lengths to a unit length. We intend to add support for such functionality in the future. Finally, we plan to conduct a controlled user study with members of our target audience to assess the grammar’s learnability and overall ease-of-use."
   },
   {
     "idx": 3796,
@@ -1733,7 +1856,8 @@
     "2d_coord": [
       2.3223654115934482,
       0.5569280116601083
-    ]
+    ],
+    "paragraph_info": "Our goal was to address the shortcomings of existing approaches for genomics visualization, particularly concerning customizability. We show that we have reached this goal by demonstrating the capabilities of the grammar and the proposed toolkit through a series of examples that represent the wide spectrum of visual representations and interactions supported by Gosling. We showed that developing a domain-specific grammar and an accompanying toolkit can potentially overcome several critical limitations of generalpurpose visualization grammars. This work encourages the development of visualization grammars for other domains with unique domain-specific data types, visual representations, and analysis tasks."
   },
   {
     "idx": 4378,
@@ -1747,7 +1871,8 @@
     "2d_coord": [
       2.945864088204803,
       0.1625689648517347
-    ]
+    ],
+    "paragraph_info": "Genomics data is essential in biological and medical domains, and bioinformatics analysts often manually create circos plots to analyze the data and extract valuable insights. However, creating circos plots is complex, as it requires careful design for multiple track attributes and positional relationships between them. Typically, analysts often seek inspiration from existing circos plots, and they have to iteratively adjust and refine the plot to achieve a satisfactory final design, making the process both tedious and time-intensive. To address these challenges, we propose IntelliCircos, an AI-powered interactive authoring tool that streamlines the process from initial visual design to the final implementation of circos plots. Specifically, we build a new dataset containing 4396 circos plots with corresponding annotations and configurations, which are extracted and labeled from published papers. With the dataset, we further identify track combination patterns, and utilize Large Language Mode (LLM) to provide domain-specific design recommendations and configuration references to navigate the design ofcircos plots We conduct a user study with 8 bioinformatics analysts to evaluate IntelliCircos, and the results demonstrate its usability and effectiveness in authoring circos plots."
   },
   {
     "idx": 4427,
@@ -1761,7 +1886,8 @@
     "2d_coord": [
       2.9199579477546598,
       0.1603605213233423
-    ]
+    ],
+    "paragraph_info": "We present a usage scenario to illustrate the usage of IntelliCircos, and further conducted a user study with 8 participants to evaluate its effectiveness and usability. The results demonstrate that IntelliCircos can effectively assist users in the design of circos plot and greatly simplifies the implementation of circos plot. The major contributions of this paper can be summarized as follows:"
   },
   {
     "idx": 4437,
@@ -1775,7 +1901,8 @@
     "2d_coord": [
       2.8591699428471884,
       0.14377143863230638
-    ]
+    ],
+    "paragraph_info": "• A user study to demonstrate the effectiveness and usability of IntelliCircos revealing its advantages and limitations."
   },
   {
     "idx": 4438,
@@ -1789,7 +1916,8 @@
     "2d_coord": [
       2.850673743049314,
       0.13625495197237014
-    ]
+    ],
+    "paragraph_info": "• A user study to demonstrate the effectiveness and usability of IntelliCircos revealing its advantages and limitations."
   },
   {
     "idx": 4439,
@@ -1803,7 +1931,8 @@
     "2d_coord": [
       2.9821161559942593,
       0.08682187565571194
-    ]
+    ],
+    "paragraph_info": "• A user study to demonstrate the effectiveness and usability of IntelliCircos revealing its advantages and limitations."
   },
   {
     "idx": 4551,
@@ -1817,7 +1946,8 @@
     "2d_coord": [
       1.6893013257985936,
       -2.5475293714947136
-    ]
+    ],
+    "paragraph_info": "To support our recommendation method, we built a circos plot dataset including three modalities: circos plots (bitmaps), annotations (natural language), and configurations (structured files). We constructed the dataset through a three-step workflow: paper collection, illustration-annotation pair extraction, and illustration labeling. We then conducted a track combination analysis to identify common patterns. The workflow and analysis details are as follows:"
   },
   {
     "idx": 4580,
@@ -1831,7 +1961,8 @@
     "2d_coord": [
       -1.5384271223037962,
       -1.568239345280284
-    ]
+    ],
+    "paragraph_info": "Illustration Labeling. Inspired by the Circos configuration format and XML (Extensible Markup Language) syntax, we use the syntax in Figure 2 to label illustrations. This syntax offers a structured representation to capture the core elements of circos plots, i.e., structures and track types. While it conceals implementation details to minimize the burden and cost of dataset annotation. To facilitate this process, we developed a web-based labeling tool and enlisted five annotators with visualization experience. Each circos plot was labeled by two annotators. On average, each annotator labeled approximately 1,800 illustrations, and the entire process took six weeks."
   },
   {
     "idx": 4583,
@@ -1845,7 +1976,8 @@
     "2d_coord": [
       -1.256364896768446,
       -1.8889099412296584
-    ]
+    ],
+    "paragraph_info": "Track Combination Analysis. We conducted a detailed analysis of the track combinations used in circos plots within our dataset. First, we examined the number of rings (Figure 3 (A)) and tracks types (Figure 3 (B)) per plot. The results show that many plots use more than five rings, indicating complex requirements for track combination and ordering. Next, we analyzed the number of tracks per ring (Figure 3 (C)), revealing that multiple tracks are typically stacked rather than synthesized within the same ring. Figure 3 (D)"
   },
   {
     "idx": 4584,
@@ -1859,7 +1991,8 @@
     "2d_coord": [
       1.5492692687572502,
       -2.995080514874327
-    ]
+    ],
+    "paragraph_info": "Track Combination Analysis. We conducted a detailed analysis of the track combinations used in circos plots within our dataset. First, we examined the number of rings (Figure 3 (A)) and tracks types (Figure 3 (B)) per plot. The results show that many plots use more than five rings, indicating complex requirements for track combination and ordering. Next, we analyzed the number of tracks per ring (Figure 3 (C)), revealing that multiple tracks are typically stacked rather than synthesized within the same ring. Figure 3 (D)"
   },
   {
     "idx": 4585,
@@ -1873,7 +2006,8 @@
     "2d_coord": [
       1.6135652383710264,
       -2.6888603400437834
-    ]
+    ],
+    "paragraph_info": "Track Combination Analysis. We conducted a detailed analysis of the track combinations used in circos plots within our dataset. First, we examined the number of rings (Figure 3 (A)) and tracks types (Figure 3 (B)) per plot. The results show that many plots use more than five rings, indicating complex requirements for track combination and ordering. Next, we analyzed the number of tracks per ring (Figure 3 (C)), revealing that multiple tracks are typically stacked rather than synthesized within the same ring. Figure 3 (D)"
   },
   {
     "idx": 4588,
@@ -1887,7 +2021,8 @@
     "2d_coord": [
       1.6702956946174559,
       -2.739377202652988
-    ]
+    ],
+    "paragraph_info": "Track Combination Analysis. We conducted a detailed analysis of the track combinations used in circos plots within our dataset. First, we examined the number of rings (Figure 3 (A)) and tracks types (Figure 3 (B)) per plot. The results show that many plots use more than five rings, indicating complex requirements for track combination and ordering. Next, we analyzed the number of tracks per ring (Figure 3 (C)), revealing that multiple tracks are typically stacked rather than synthesized within the same ring. Figure 3 (D)"
   },
   {
     "idx": 4765,
@@ -1901,7 +2036,8 @@
     "2d_coord": [
       -1.5747533820488648,
       -1.8122889766457324
-    ]
+    ],
+    "paragraph_info": "Then, Alex applied the recommendation results to the Circos Dashboard. She found the <line> track less readable for presenting homology scores, so she explored alternatives in the Reference Panel. Since the <histogram> track was highly recommended, she deleted the line track and clicked the histogram node to directly apply the design to the Circos Dashboard."
   },
   {
     "idx": 4767,
@@ -1915,7 +2051,8 @@
     "2d_coord": [
       2.3721241718590313,
       -0.04166902460960905
-    ]
+    ],
+    "paragraph_info": "Then, Alex applied the recommendation results to the Circos Dashboard. She found the <line> track less readable for presenting homology scores, so she explored alternatives in the Reference Panel. Since the <histogram> track was highly recommended, she deleted the line track and clicked the histogram node to directly apply the design to the Circos Dashboard."
   },
   {
     "idx": 4769,
@@ -1929,7 +2066,8 @@
     "2d_coord": [
       -1.609475592930825,
       -1.8071505385116147
-    ]
+    ],
+    "paragraph_info": "Then, Alex applied the recommendation results to the Circos Dashboard. She found the <line> track less readable for presenting homology scores, so she explored alternatives in the Reference Panel. Since the <histogram> track was highly recommended, she deleted the line track and clicked the histogram node to directly apply the design to the Circos Dashboard."
   },
   {
     "idx": 4775,
@@ -1943,7 +2081,8 @@
     "2d_coord": [
       2.921533071146466,
       0.16247634602054736
-    ]
+    ],
+    "paragraph_info": "To evaluate the usability and effectiveness of IntelliCircos, we conducted a user study with 8 participants $\\mathrm { ( P _ { 1 } - P _ { 8 } ) }$ . They were asked to use IntelliCircos to create circos plots and give both qualitative and quantitative feedback. The study setting is introduced in Section 8.1, and the results are presented in Section 8.2. We did not conduct a comparative study since there are no appropriate baselines. Existing tools like Circos and RCircos are often used by bioinformatics analysts. Also, these tools primarily assist in the implementation while overlooking the design process. In contrast, IntelliCircos supports both design and implementation, seamlessly integrating these two stages. It makes it difficult and unfair to compare IntelliCircos with existing tools. As a result, we opted for a qualitative assessment of users’ experiences with IntelliCircos, comparing it to their current practices."
   },
   {
     "idx": 4776,
@@ -1957,7 +2096,8 @@
     "2d_coord": [
       -1.3068991977548459,
       -2.503856225916567
-    ]
+    ],
+    "paragraph_info": "To evaluate the usability and effectiveness of IntelliCircos, we conducted a user study with 8 participants $\\mathrm { ( P _ { 1 } - P _ { 8 } ) }$ . They were asked to use IntelliCircos to create circos plots and give both qualitative and quantitative feedback. The study setting is introduced in Section 8.1, and the results are presented in Section 8.2. We did not conduct a comparative study since there are no appropriate baselines. Existing tools like Circos and RCircos are often used by bioinformatics analysts. Also, these tools primarily assist in the implementation while overlooking the design process. In contrast, IntelliCircos supports both design and implementation, seamlessly integrating these two stages. It makes it difficult and unfair to compare IntelliCircos with existing tools. As a result, we opted for a qualitative assessment of users’ experiences with IntelliCircos, comparing it to their current practices."
   },
   {
     "idx": 4790,
@@ -1971,7 +2111,8 @@
     "2d_coord": [
       -1.319823060767012,
       -2.492349831132844
-    ]
+    ],
+    "paragraph_info": "Task and Data. In our user study, participants were asked to create a circos plot using IntelliCircos. They were required to use the provided data as sufficient as possible. We utilized example data from CircosJS [Koc16], which includes track data for plotting alongside chromosomes, label data for annotation elements in different tracks, and link data to establish connections between pairs of genomic regions. This dataset meets the requirements of circos plots, including relationships and multi-layered annotations across various scales [Krz09], and its manageable size ensured the study did not last for too long."
   },
   {
     "idx": 4791,
@@ -1985,7 +2126,8 @@
     "2d_coord": [
       2.7837856567686377,
       1.1093134306647747
-    ]
+    ],
+    "paragraph_info": "Task and Data. In our user study, participants were asked to create a circos plot using IntelliCircos. They were required to use the provided data as sufficient as possible. We utilized example data from CircosJS [Koc16], which includes track data for plotting alongside chromosomes, label data for annotation elements in different tracks, and link data to establish connections between pairs of genomic regions. This dataset meets the requirements of circos plots, including relationships and multi-layered annotations across various scales [Krz09], and its manageable size ensured the study did not last for too long."
   },
   {
     "idx": 4882,
@@ -1999,7 +2141,8 @@
     "2d_coord": [
       3.2606429000600206,
       0.016045550136329773
-    ]
+    ],
+    "paragraph_info": "Streamlining the Creation Process from Design to Implementation. IntelliCircos simplifies the creation of circos plots by providing AI-generated recommendations and similar design references sourced from high-quality examples. The tool also automates the implementation of designs while offering customizable configuration options for fine-tuning the created visualization. One important lesson we learned was balancing simplicity and flexibility in the design-to-implementation workflow. Our findings revealed that most participants preferred the progressive recommendation approach over fully-automated suggestions or manual design, as it allowed them to iteratively refine the results to better align with their preferences. This highlights the importance of workflows that adapt to users’ evolving needs. Natural language input further simplified the design process by allowing users to intuitively express their requirements. However, early testing revealed challenges in formulating complex prompts. To address this, we integrated predefined templates and auto-completion features, which were wellreceived by the participants. This underscores the value of intuitive UI enhancements in reducing the learning curve. While tracklevel configuration provides flexibility for customization, participants found it cumbersome when many adjustments were needed. A promising future direction is to enable users to select circos plots as references, allowing the tool to learn from these examples and recommend similar designs that better align with user preferences, thereby reducing the need for manual adjustments."
   },
   {
     "idx": 4913,
@@ -2013,7 +2156,8 @@
     "2d_coord": [
       -1.3301379965299305,
       -2.486401884637886
-    ]
+    ],
+    "paragraph_info": "Evaluations. In our user study, participants were tasked to create circos plots using IntelliCircos to evaluate its support for plot creation. However, the evaluation process could be improved from several perspectives. First, while we assessed the usability and effectiveness of IntelliCircos’s main features, we did not evaluate AI assistance in terms of trust and perceived cognitive load, which is an interesting part to dive deeper for empirical insights as suggested by [YWVW19, GKC 23]. Examining these aspects would offer additional insights into the tool’s overall effectiveness. Second, this paper primarily focuses on the design and development of the tool, and as outlined in Section 8.1, we did not include a baseline comparison in our study. However, a thorough empirical investigation comparing different approaches (e.g., IntelliCircos and Circos software) could provide a broader understanding of their respective strengths and limitations. Third, the study’s participant pool was limited. Future work should involve a larger and more diverse group, including those not experienced creators to better assess the tool’s real-world value. Lastly, all questions in the questionnaire are positive. A better design approach would involve inverting the polarity of questions to validate participants’ responses."
   },
   {
     "idx": 4915,
@@ -2027,7 +2171,8 @@
     "2d_coord": [
       2.853279289399319,
       0.15081710897651202
-    ]
+    ],
+    "paragraph_info": "Evaluations. In our user study, participants were tasked to create circos plots using IntelliCircos to evaluate its support for plot creation. However, the evaluation process could be improved from several perspectives. First, while we assessed the usability and effectiveness of IntelliCircos’s main features, we did not evaluate AI assistance in terms of trust and perceived cognitive load, which is an interesting part to dive deeper for empirical insights as suggested by [YWVW19, GKC 23]. Examining these aspects would offer additional insights into the tool’s overall effectiveness. Second, this paper primarily focuses on the design and development of the tool, and as outlined in Section 8.1, we did not include a baseline comparison in our study. However, a thorough empirical investigation comparing different approaches (e.g., IntelliCircos and Circos software) could provide a broader understanding of their respective strengths and limitations. Third, the study’s participant pool was limited. Future work should involve a larger and more diverse group, including those not experienced creators to better assess the tool’s real-world value. Lastly, all questions in the questionnaire are positive. A better design approach would involve inverting the polarity of questions to validate participants’ responses."
   },
   {
     "idx": 4916,
@@ -2041,7 +2186,8 @@
     "2d_coord": [
       3.5683582620854897,
       0.7665344677990666
-    ]
+    ],
+    "paragraph_info": "Evaluations. In our user study, participants were tasked to create circos plots using IntelliCircos to evaluate its support for plot creation. However, the evaluation process could be improved from several perspectives. First, while we assessed the usability and effectiveness of IntelliCircos’s main features, we did not evaluate AI assistance in terms of trust and perceived cognitive load, which is an interesting part to dive deeper for empirical insights as suggested by [YWVW19, GKC 23]. Examining these aspects would offer additional insights into the tool’s overall effectiveness. Second, this paper primarily focuses on the design and development of the tool, and as outlined in Section 8.1, we did not include a baseline comparison in our study. However, a thorough empirical investigation comparing different approaches (e.g., IntelliCircos and Circos software) could provide a broader understanding of their respective strengths and limitations. Third, the study’s participant pool was limited. Future work should involve a larger and more diverse group, including those not experienced creators to better assess the tool’s real-world value. Lastly, all questions in the questionnaire are positive. A better design approach would involve inverting the polarity of questions to validate participants’ responses."
   },
   {
     "idx": 4919,
@@ -2055,7 +2201,8 @@
     "2d_coord": [
       3.6711999578835526,
       0.6304620428663983
-    ]
+    ],
+    "paragraph_info": "Evaluations. In our user study, participants were tasked to create circos plots using IntelliCircos to evaluate its support for plot creation. However, the evaluation process could be improved from several perspectives. First, while we assessed the usability and effectiveness of IntelliCircos’s main features, we did not evaluate AI assistance in terms of trust and perceived cognitive load, which is an interesting part to dive deeper for empirical insights as suggested by [YWVW19, GKC 23]. Examining these aspects would offer additional insights into the tool’s overall effectiveness. Second, this paper primarily focuses on the design and development of the tool, and as outlined in Section 8.1, we did not include a baseline comparison in our study. However, a thorough empirical investigation comparing different approaches (e.g., IntelliCircos and Circos software) could provide a broader understanding of their respective strengths and limitations. Third, the study’s participant pool was limited. Future work should involve a larger and more diverse group, including those not experienced creators to better assess the tool’s real-world value. Lastly, all questions in the questionnaire are positive. A better design approach would involve inverting the polarity of questions to validate participants’ responses."
   },
   {
     "idx": 4921,
@@ -2069,7 +2216,8 @@
     "2d_coord": [
       3.516152106423384,
       0.49400841869499873
-    ]
+    ],
+    "paragraph_info": "Evaluations. In our user study, participants were tasked to create circos plots using IntelliCircos to evaluate its support for plot creation. However, the evaluation process could be improved from several perspectives. First, while we assessed the usability and effectiveness of IntelliCircos’s main features, we did not evaluate AI assistance in terms of trust and perceived cognitive load, which is an interesting part to dive deeper for empirical insights as suggested by [YWVW19, GKC 23]. Examining these aspects would offer additional insights into the tool’s overall effectiveness. Second, this paper primarily focuses on the design and development of the tool, and as outlined in Section 8.1, we did not include a baseline comparison in our study. However, a thorough empirical investigation comparing different approaches (e.g., IntelliCircos and Circos software) could provide a broader understanding of their respective strengths and limitations. Third, the study’s participant pool was limited. Future work should involve a larger and more diverse group, including those not experienced creators to better assess the tool’s real-world value. Lastly, all questions in the questionnaire are positive. A better design approach would involve inverting the polarity of questions to validate participants’ responses."
   },
   {
     "idx": 4923,
@@ -2083,7 +2231,8 @@
     "2d_coord": [
       2.7217393938595316,
       0.2673164838949564
-    ]
+    ],
+    "paragraph_info": "Evaluations. In our user study, participants were tasked to create circos plots using IntelliCircos to evaluate its support for plot creation. However, the evaluation process could be improved from several perspectives. First, while we assessed the usability and effectiveness of IntelliCircos’s main features, we did not evaluate AI assistance in terms of trust and perceived cognitive load, which is an interesting part to dive deeper for empirical insights as suggested by [YWVW19, GKC 23]. Examining these aspects would offer additional insights into the tool’s overall effectiveness. Second, this paper primarily focuses on the design and development of the tool, and as outlined in Section 8.1, we did not include a baseline comparison in our study. However, a thorough empirical investigation comparing different approaches (e.g., IntelliCircos and Circos software) could provide a broader understanding of their respective strengths and limitations. Third, the study’s participant pool was limited. Future work should involve a larger and more diverse group, including those not experienced creators to better assess the tool’s real-world value. Lastly, all questions in the questionnaire are positive. A better design approach would involve inverting the polarity of questions to validate participants’ responses."
   },
   {
     "idx": 5305,
@@ -2097,7 +2246,8 @@
     "2d_coord": [
       -2.8093824667016887,
       -1.6196482115183715
-    ]
+    ],
+    "paragraph_info": "To demonstrate the utility of BioCircos.js in generating circular images of biological data, we attempted to reproduce published Circos plots using BioCircos.js. A study published in 2010 reported a comprehensive catalogue of somatic mutations from a human cancer genome (Pleasance et al., 2010). We obtained all necessary data from the supplementary materials, including insertions, deletions, substitutions, copy number variations, loss of heterozygosity (LOH), and rearrangements, and used BioCircos.js to reproduce the plot containing all mutations (Fig. 1A). For example, we reproduced substitutions using SCATTER modules, and rearrangements using the LINK modules. A detailed description of data tracks can be found in Pleasance et al. (2010)."
   },
   {
     "idx": 5308,
@@ -2111,6 +2261,7 @@
     "2d_coord": [
       -2.8470081187225165,
       -1.6151622017141627
-    ]
+    ],
+    "paragraph_info": "To demonstrate the utility of BioCircos.js in generating circular images of biological data, we attempted to reproduce published Circos plots using BioCircos.js. A study published in 2010 reported a comprehensive catalogue of somatic mutations from a human cancer genome (Pleasance et al., 2010). We obtained all necessary data from the supplementary materials, including insertions, deletions, substitutions, copy number variations, loss of heterozygosity (LOH), and rearrangements, and used BioCircos.js to reproduce the plot containing all mutations (Fig. 1A). For example, we reproduced substitutions using SCATTER modules, and rearrangements using the LINK modules. A detailed description of data tracks can be found in Pleasance et al. (2010)."
   }
 ]

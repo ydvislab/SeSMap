@@ -91,6 +91,11 @@ def aggregate(papers):
                         "category": m.get("category", "missing"),
                         "rank": m.get("rank", -1),
                         "type": "text", "para_id": para_id, "paper_id": paper_id,
+                        # Keep the original paragraph on every MSU.  The
+                        # Stepwise detail view resolves a MSU from this
+                        # database, so para_id alone is not enough once the
+                        # data is exported into the semantic-map package.
+                        "paragraph_info": p.get("paragraph", ""),
                     })
                     idx += 1
             para_id += 1
