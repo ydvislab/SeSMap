@@ -11,7 +11,8 @@
     "2d_coord": [
       -0.8193899587411299,
       0.9737968759286677
-    ]
+    ],
+    "paragraph_info": "Pilot hydrogen is used for the ignition of gaseous ethylene to improve combustion efficiency at low flight Mach numbers. The process of dynamic flame stabilization has been investigated experimentally in a scramjet equipped with a cavity by using a variety of fuel injection strategies involving the injection of pure hydrogen, pure ethylene, and combinations of fuels to understand the effects of pilot hydrogen on supersonic combustion. This study reports experiments conducted in a direct-connected facility that simulated flight conditions at a Mach number of 4, a total temperature of 953 K, and a total pressure of 0.82 MPa. The data were collected by using hydroxyl planar laser-induced fluorescence (OH-PLIF), methylene (CH), luminosity images, and 10-kHz static pressure transducers. The results show that the internal flow oscillated at a dominant frequency of approximately 450 Hz without fuel injection. Oscillation in internal flow was suppressed when pilot hydrogen was injected into the cavity, whereas the influence of other injection strategies was minor. The OH-PLIF images indicate that the pilot flame was unstable, with different locations and occupying different areas. The normalized pressure was apparently higher when pilot hydrogen was injected ahead of the cavity step. The pure ethylene flame was difficult to stabilize without the application of pilot hydrogen. Once the pilot hydrogen had been turned off, the ethylene flame moved toward the cavity ramp and its area expanded. Thus, pilot hydrogen is a precondition for the stabilization of the ethylene flame."
   },
   {
     "idx": 69,
@@ -25,7 +26,8 @@
     "2d_coord": [
       1.0931479337778456,
       1.4298836709642466
-    ]
+    ],
+    "paragraph_info": "To understand the interaction between the characteristics of injection and mixing to implement stable ignition, it is imperative to perform non-reacting experiments and numerical simulations. Vortex structures induced by transverse jets have been investigated using the planar laser-induced fluorescence (PLIF) measurements, which is among the most highly developed combustion laser diagnostic techniques for two-dimensional (2D) flame structure visualization. The zone of the flame was visualized by capturing various intermediates of OH, C<sub>2</sub>HO, H, and CH. Fuel flowed away from an open cavity of $L / D = 7$ owing to the lifting, counter-rotating vortex.<sup>16</sup> The mixing mechanism when fuel was injected into the supersonic air was then analyzed. The windward shear layer became unstable under the influence of a shear force induced by a velocity gradient, and large-scale vortices simultaneously broke and merged to enhance mixing. Flame ignition and stabilization have been investigated experimentally and numerically based on the evolution of single-injection-hole vortex structures.<sup>9</sup> The characteristics of the flame with the injection of hydrogen by a transverse jet upstream of a cavity under a flight Mach number of 10 have been investigated via high-speed schlieren imagery and PLIF. Eight successive schlieren images were taken at rates of $\\mathrm { i } 0 ^ { 5 } – 1 0 ^ { 7 }$ frames per second. Experimental analyses have revealed that autoignitiondominated combustion was achieved, and OH (hydroxyl) fluorescence first appeared in the recirculation zone located upstream of the location of injection.<sup>17–19</sup> The OH-PLIF images showed instantaneous structures of the hydrogen flame and demonstrated that the OH radical had spread from the shear layer to internal flow and ignited the entire hydrogen jet with an increase in the total injection pressure. This spread of combustion was dominated by diffusion and convection processes alongside heat release and complex interactions between the injection and the shear layer of the cavity,<sup>20</sup>"
   },
   {
     "idx": 70,
@@ -39,7 +41,8 @@
     "2d_coord": [
       0.35734100171626815,
       1.8910513098461235
-    ]
+    ],
+    "paragraph_info": "To understand the interaction between the characteristics of injection and mixing to implement stable ignition, it is imperative to perform non-reacting experiments and numerical simulations. Vortex structures induced by transverse jets have been investigated using the planar laser-induced fluorescence (PLIF) measurements, which is among the most highly developed combustion laser diagnostic techniques for two-dimensional (2D) flame structure visualization. The zone of the flame was visualized by capturing various intermediates of OH, C<sub>2</sub>HO, H, and CH. Fuel flowed away from an open cavity of $L / D = 7$ owing to the lifting, counter-rotating vortex.<sup>16</sup> The mixing mechanism when fuel was injected into the supersonic air was then analyzed. The windward shear layer became unstable under the influence of a shear force induced by a velocity gradient, and large-scale vortices simultaneously broke and merged to enhance mixing. Flame ignition and stabilization have been investigated experimentally and numerically based on the evolution of single-injection-hole vortex structures.<sup>9</sup> The characteristics of the flame with the injection of hydrogen by a transverse jet upstream of a cavity under a flight Mach number of 10 have been investigated via high-speed schlieren imagery and PLIF. Eight successive schlieren images were taken at rates of $\\mathrm { i } 0 ^ { 5 } – 1 0 ^ { 7 }$ frames per second. Experimental analyses have revealed that autoignitiondominated combustion was achieved, and OH (hydroxyl) fluorescence first appeared in the recirculation zone located upstream of the location of injection.<sup>17–19</sup> The OH-PLIF images showed instantaneous structures of the hydrogen flame and demonstrated that the OH radical had spread from the shear layer to internal flow and ignited the entire hydrogen jet with an increase in the total injection pressure. This spread of combustion was dominated by diffusion and convection processes alongside heat release and complex interactions between the injection and the shear layer of the cavity,<sup>20</sup>"
   },
   {
     "idx": 89,
@@ -53,7 +56,8 @@
     "2d_coord": [
       1.3940253273302465,
       2.407070391589327
-    ]
+    ],
+    "paragraph_info": "However, the turbulent dynamics of the flame of various injection strategies in a cavity-equipped scramjet require further investigation to provide insights into the mechanisms of flame stabilization, which is the main purpose of this paper. Therefore, a series of experiments using non-intrusive optical measurements were conducted to obtain the effects of pilot hydrogen on the formation of an ethylene flame and to determine whether the flame can be sustained without pilot hydrogen. This has not been investigated in past research. This study is significant because it gathers the characteristics of combustion involving oscillations in combustion that can be used to qualitatively evaluate fluctuations in heat release, and this can help us investigate the chemical reaction between hydrogen and ethylene."
   },
   {
     "idx": 90,
@@ -67,7 +71,8 @@
     "2d_coord": [
       1.5432931796921263,
       2.3115415525534058
-    ]
+    ],
+    "paragraph_info": "However, the turbulent dynamics of the flame of various injection strategies in a cavity-equipped scramjet require further investigation to provide insights into the mechanisms of flame stabilization, which is the main purpose of this paper. Therefore, a series of experiments using non-intrusive optical measurements were conducted to obtain the effects of pilot hydrogen on the formation of an ethylene flame and to determine whether the flame can be sustained without pilot hydrogen. This has not been investigated in past research. This study is significant because it gathers the characteristics of combustion involving oscillations in combustion that can be used to qualitatively evaluate fluctuations in heat release, and this can help us investigate the chemical reaction between hydrogen and ethylene."
   },
   {
     "idx": 95,
@@ -81,7 +86,8 @@
     "2d_coord": [
       -0.5041161865103676,
       1.103060832606776
-    ]
+    ],
+    "paragraph_info": "Experiments were conducted at the China Aerodynamics Research and Development Center’s (CARDC) pulse combustion wind tunnel, as shown in Fig. 1. The direct-connected facility used nozzles instead of inlets to expedite research and reduce cost. The oxygen-rich air mixes with $\\mathrm { H } _ { 2 }$ in a heater. Under the control of a quickly acting valve, the supply oxygen-rich air and H<sub>2</sub> can be precisely limited to be shorter than 1 ms."
   },
   {
     "idx": 115,
@@ -95,7 +101,8 @@
     "2d_coord": [
       1.1934702009468645,
       2.4133139822677023
-    ]
+    ],
+    "paragraph_info": "As shown in Fig. 3, there were two rows of fuel injection orifices, labeled Jet-1 and Jet-2; there were 20 orifices in total, 10 in each row. The diameter of each orifice was 1 mm, and they were straight and vertical with respect to the wall. The interval between them was about 9.5 mm, and the distance between each orifice and the sidewall was 27.3 mm. They were located 10 mm upstream and 25 mm downstream of the cavity step, respectively. During the experiments, roomtemperature hydrogen and ethylene were injected at sonic speed and an angle of 90\u0003 into the flow. The fuel was ignited by spark plugs located 75 mm downstream of the cavity step."
   },
   {
     "idx": 116,
@@ -109,7 +116,8 @@
     "2d_coord": [
       0.7906062256874098,
       3.4911243403787044
-    ]
+    ],
+    "paragraph_info": "As shown in Fig. 3, there were two rows of fuel injection orifices, labeled Jet-1 and Jet-2; there were 20 orifices in total, 10 in each row. The diameter of each orifice was 1 mm, and they were straight and vertical with respect to the wall. The interval between them was about 9.5 mm, and the distance between each orifice and the sidewall was 27.3 mm. They were located 10 mm upstream and 25 mm downstream of the cavity step, respectively. During the experiments, roomtemperature hydrogen and ethylene were injected at sonic speed and an angle of 90\u0003 into the flow. The fuel was ignited by spark plugs located 75 mm downstream of the cavity step."
   },
   {
     "idx": 117,
@@ -123,7 +131,8 @@
     "2d_coord": [
       0.6828448350717282,
       0.08168331940149762
-    ]
+    ],
+    "paragraph_info": "The flow structures and the process of flame formation were obtained by pressure transducers and non-connect optical measurements, including schlieren images, instantaneous CH luminosity images, and OH-PLIF. The distribution of wall pressure at the centerline on the top wall of the combustor was measured along the streamwise direction by pressure transducers at a range of sampling frequency of 10 kHz, pressure ranging from 0 to 700 kPa, and a maximum measurement error of 0.5%. A total of 45 channels were used. The experimental arrangements of the optical measurements are shown in Fig. 4. Quartz glasses were mounted on the sidewall and the bottom wall for optical access."
   },
   {
     "idx": 118,
@@ -137,7 +146,8 @@
     "2d_coord": [
       0.6265051938565028,
       0.3234262771529643
-    ]
+    ],
+    "paragraph_info": "The flow structures and the process of flame formation were obtained by pressure transducers and non-connect optical measurements, including schlieren images, instantaneous CH luminosity images, and OH-PLIF. The distribution of wall pressure at the centerline on the top wall of the combustor was measured along the streamwise direction by pressure transducers at a range of sampling frequency of 10 kHz, pressure ranging from 0 to 700 kPa, and a maximum measurement error of 0.5%. A total of 45 channels were used. The experimental arrangements of the optical measurements are shown in Fig. 4. Quartz glasses were mounted on the sidewall and the bottom wall for optical access."
   },
   {
     "idx": 133,
@@ -151,7 +161,8 @@
     "2d_coord": [
       1.3473123968749843,
       2.2744418705105507
-    ]
+    ],
+    "paragraph_info": "FIG<sub>.</sub> 5<sub>.</sub> Operating sequence of tests: (a) hydrogen and ethylene; (b) single fuel."
   },
   {
     "idx": 134,
@@ -165,7 +176,8 @@
     "2d_coord": [
       1.4339521576824537,
       2.236596438028626
-    ]
+    ],
+    "paragraph_info": "FIG<sub>.</sub> 5<sub>.</sub> Operating sequence of tests: (a) hydrogen and ethylene; (b) single fuel."
   },
   {
     "idx": 135,
@@ -179,7 +191,8 @@
     "2d_coord": [
       1.0763824884920445,
       2.2662715868522785
-    ]
+    ],
+    "paragraph_info": "Ethylene was injected at $t = 0 . 0 7 5 \\ s$ as shown in Fig. 5(a). Injections of hydrogen and ethylene were sustained around 0.26 and 0.285 s, respectively. Therefore, the static pressure obtained by the pressure transducers and schlieren images from t 0 to $0 . 0 7 5 s$ (stage a) could be analyzed to measure the effect of injection of pure hydrogen. Dynamic combustion from the injection of ethylene to stabilization was tracked from t 0.075 to 0.26 s (stage b), and the variation in the pure ethylene flame from $t = 0 . 2 6 \\mathrm { t o } 0 . 3 6 s$ (stage c) was captured."
   },
   {
     "idx": 136,
@@ -193,7 +206,8 @@
     "2d_coord": [
       1.0693564225269512,
       2.327193008704734
-    ]
+    ],
+    "paragraph_info": "Ethylene was injected at $t = 0 . 0 7 5 \\ s$ as shown in Fig. 5(a). Injections of hydrogen and ethylene were sustained around 0.26 and 0.285 s, respectively. Therefore, the static pressure obtained by the pressure transducers and schlieren images from t 0 to $0 . 0 7 5 s$ (stage a) could be analyzed to measure the effect of injection of pure hydrogen. Dynamic combustion from the injection of ethylene to stabilization was tracked from t 0.075 to 0.26 s (stage b), and the variation in the pure ethylene flame from $t = 0 . 2 6 \\mathrm { t o } 0 . 3 6 s$ (stage c) was captured."
   },
   {
     "idx": 141,
@@ -207,7 +221,8 @@
     "2d_coord": [
       2.0732666450229114,
       2.8292982560773146
-    ]
+    ],
+    "paragraph_info": "Figure 5(b) provides the operational sequence when pure hydrogen or ethylene was used. The spark plug operated at $t = 0 . 0 7$ and 0.155 s and the total test duration was approximately 0.25 s. Images of OH from $t = 0 . 0 7$ to 0.25 s were used to analyze the dynamic evolution of the pure hydrogen or the ethylene flame. The parameters of injection for various cases are listed in Table I. Gaseous fuel was choked at the exit of the injection tube. Multiple cases based on different fuel injection strategies were investigated."
   },
   {
     "idx": 142,
@@ -221,7 +236,8 @@
     "2d_coord": [
       -3.364616745765698,
       0.635414529538556
-    ]
+    ],
+    "paragraph_info": "Figure 5(b) provides the operational sequence when pure hydrogen or ethylene was used. The spark plug operated at $t = 0 . 0 7$ and 0.155 s and the total test duration was approximately 0.25 s. Images of OH from $t = 0 . 0 7$ to 0.25 s were used to analyze the dynamic evolution of the pure hydrogen or the ethylene flame. The parameters of injection for various cases are listed in Table I. Gaseous fuel was choked at the exit of the injection tube. Multiple cases based on different fuel injection strategies were investigated."
   },
   {
     "idx": 146,
@@ -235,7 +251,8 @@
     "2d_coord": [
       0.9469644741280984,
       1.470527001488625
-    ]
+    ],
+    "paragraph_info": "Figure 5(b) provides the operational sequence when pure hydrogen or ethylene was used. The spark plug operated at $t = 0 . 0 7$ and 0.155 s and the total test duration was approximately 0.25 s. Images of OH from $t = 0 . 0 7$ to 0.25 s were used to analyze the dynamic evolution of the pure hydrogen or the ethylene flame. The parameters of injection for various cases are listed in Table I. Gaseous fuel was choked at the exit of the injection tube. Multiple cases based on different fuel injection strategies were investigated."
   },
   {
     "idx": 159,
@@ -249,7 +266,8 @@
     "2d_coord": [
       -1.122443786327935,
       -1.1134798005594424
-    ]
+    ],
+    "paragraph_info": "<table><tr><td colspan=\"8\">Case</td></tr><tr><td>Parameter</td><td colspan=\"8\">Case 1 Case 2 Case 3 Case 4 Case 5</td></tr><tr><td>Injection location</td><td>Jet-1</td><td>Jet-2</td><td>Jet-2</td><td></td><td> $\\mathrm { J e t } - 2$ </td><td></td><td>Jet-2 Jet-1 Jet-2</td><td></td></tr><tr><td>Fuel</td><td> $\\mathrm { H } _ { 2 }$ </td><td> $\\mathrm { H } _ { 2 }$ </td><td> $\\mathrm { C _ { 2 } H _ { 4 } }$ </td><td></td><td> $\\mathrm { C _ { 2 } H _ { 4 } }$ </td><td> $\\mathrm { C _ { 2 } H _ { 4 } }$ </td><td> $\\mathrm { H } _ { 2 }$ </td><td> $\\mathrm { C _ { 2 } H _ { 4 } }$ </td></tr><tr><td> $\\phi$ </td><td> $0 . 3$  1</td><td>0.3 1</td><td>0.1</td><td></td><td>0.15 1</td><td>0.3 5</td><td>0.3</td><td>0.1</td></tr><tr><td>Number of experiments</td><td></td><td></td><td>8</td><td></td><td></td><td></td><td>1</td><td></td></tr><tr><td>Mass flow rate  $( \\mathrm { g } / \\mathrm { s } )$ </td><td>24.4</td><td>24.4</td><td>16.3</td><td></td><td>24.4</td><td>48.9</td><td>24.4</td><td>16.3</td></tr><tr><td> $T _ { t } \\left( \\mathrm { K } \\right)$ </td><td>300</td><td>300</td><td>300</td><td></td><td>300</td><td>300</td><td>300</td><td>300</td></tr><tr><td>Ma</td><td>1.0</td><td>1.0</td><td>1.0</td><td></td><td>1.0</td><td>1.0</td><td>1.0</td><td>1.0</td></tr><tr><td>Ignition</td><td>√</td><td>」</td><td>X</td><td></td><td>」</td><td>×</td><td>7</td><td>7</td></tr><tr><td>Flame stabilization</td><td>7</td><td>小</td><td>X</td><td></td><td></td><td>×</td><td>V</td><td>√</td></tr></table>"
   },
   {
     "idx": 160,
@@ -263,7 +281,8 @@
     "2d_coord": [
       0.7488281781927709,
       3.134051751868634
-    ]
+    ],
+    "paragraph_info": "<table><tr><td colspan=\"8\">Case</td></tr><tr><td>Parameter</td><td colspan=\"8\">Case 1 Case 2 Case 3 Case 4 Case 5</td></tr><tr><td>Injection location</td><td>Jet-1</td><td>Jet-2</td><td>Jet-2</td><td></td><td> $\\mathrm { J e t } - 2$ </td><td></td><td>Jet-2 Jet-1 Jet-2</td><td></td></tr><tr><td>Fuel</td><td> $\\mathrm { H } _ { 2 }$ </td><td> $\\mathrm { H } _ { 2 }$ </td><td> $\\mathrm { C _ { 2 } H _ { 4 } }$ </td><td></td><td> $\\mathrm { C _ { 2 } H _ { 4 } }$ </td><td> $\\mathrm { C _ { 2 } H _ { 4 } }$ </td><td> $\\mathrm { H } _ { 2 }$ </td><td> $\\mathrm { C _ { 2 } H _ { 4 } }$ </td></tr><tr><td> $\\phi$ </td><td> $0 . 3$  1</td><td>0.3 1</td><td>0.1</td><td></td><td>0.15 1</td><td>0.3 5</td><td>0.3</td><td>0.1</td></tr><tr><td>Number of experiments</td><td></td><td></td><td>8</td><td></td><td></td><td></td><td>1</td><td></td></tr><tr><td>Mass flow rate  $( \\mathrm { g } / \\mathrm { s } )$ </td><td>24.4</td><td>24.4</td><td>16.3</td><td></td><td>24.4</td><td>48.9</td><td>24.4</td><td>16.3</td></tr><tr><td> $T _ { t } \\left( \\mathrm { K } \\right)$ </td><td>300</td><td>300</td><td>300</td><td></td><td>300</td><td>300</td><td>300</td><td>300</td></tr><tr><td>Ma</td><td>1.0</td><td>1.0</td><td>1.0</td><td></td><td>1.0</td><td>1.0</td><td>1.0</td><td>1.0</td></tr><tr><td>Ignition</td><td>√</td><td>」</td><td>X</td><td></td><td>」</td><td>×</td><td>7</td><td>7</td></tr><tr><td>Flame stabilization</td><td>7</td><td>小</td><td>X</td><td></td><td></td><td>×</td><td>V</td><td>√</td></tr></table>"
   },
   {
     "idx": 161,
@@ -277,7 +296,8 @@
     "2d_coord": [
       1.3390090873950604,
       2.2641508975189417
-    ]
+    ],
+    "paragraph_info": "<table><tr><td colspan=\"8\">Case</td></tr><tr><td>Parameter</td><td colspan=\"8\">Case 1 Case 2 Case 3 Case 4 Case 5</td></tr><tr><td>Injection location</td><td>Jet-1</td><td>Jet-2</td><td>Jet-2</td><td></td><td> $\\mathrm { J e t } - 2$ </td><td></td><td>Jet-2 Jet-1 Jet-2</td><td></td></tr><tr><td>Fuel</td><td> $\\mathrm { H } _ { 2 }$ </td><td> $\\mathrm { H } _ { 2 }$ </td><td> $\\mathrm { C _ { 2 } H _ { 4 } }$ </td><td></td><td> $\\mathrm { C _ { 2 } H _ { 4 } }$ </td><td> $\\mathrm { C _ { 2 } H _ { 4 } }$ </td><td> $\\mathrm { H } _ { 2 }$ </td><td> $\\mathrm { C _ { 2 } H _ { 4 } }$ </td></tr><tr><td> $\\phi$ </td><td> $0 . 3$  1</td><td>0.3 1</td><td>0.1</td><td></td><td>0.15 1</td><td>0.3 5</td><td>0.3</td><td>0.1</td></tr><tr><td>Number of experiments</td><td></td><td></td><td>8</td><td></td><td></td><td></td><td>1</td><td></td></tr><tr><td>Mass flow rate  $( \\mathrm { g } / \\mathrm { s } )$ </td><td>24.4</td><td>24.4</td><td>16.3</td><td></td><td>24.4</td><td>48.9</td><td>24.4</td><td>16.3</td></tr><tr><td> $T _ { t } \\left( \\mathrm { K } \\right)$ </td><td>300</td><td>300</td><td>300</td><td></td><td>300</td><td>300</td><td>300</td><td>300</td></tr><tr><td>Ma</td><td>1.0</td><td>1.0</td><td>1.0</td><td></td><td>1.0</td><td>1.0</td><td>1.0</td><td>1.0</td></tr><tr><td>Ignition</td><td>√</td><td>」</td><td>X</td><td></td><td>」</td><td>×</td><td>7</td><td>7</td></tr><tr><td>Flame stabilization</td><td>7</td><td>小</td><td>X</td><td></td><td></td><td>×</td><td>V</td><td>√</td></tr></table>"
   },
   {
     "idx": 162,
@@ -291,7 +311,8 @@
     "2d_coord": [
       -3.548524547128576,
       0.33869365250378175
-    ]
+    ],
+    "paragraph_info": "<table><tr><td colspan=\"8\">Case</td></tr><tr><td>Parameter</td><td colspan=\"8\">Case 1 Case 2 Case 3 Case 4 Case 5</td></tr><tr><td>Injection location</td><td>Jet-1</td><td>Jet-2</td><td>Jet-2</td><td></td><td> $\\mathrm { J e t } - 2$ </td><td></td><td>Jet-2 Jet-1 Jet-2</td><td></td></tr><tr><td>Fuel</td><td> $\\mathrm { H } _ { 2 }$ </td><td> $\\mathrm { H } _ { 2 }$ </td><td> $\\mathrm { C _ { 2 } H _ { 4 } }$ </td><td></td><td> $\\mathrm { C _ { 2 } H _ { 4 } }$ </td><td> $\\mathrm { C _ { 2 } H _ { 4 } }$ </td><td> $\\mathrm { H } _ { 2 }$ </td><td> $\\mathrm { C _ { 2 } H _ { 4 } }$ </td></tr><tr><td> $\\phi$ </td><td> $0 . 3$  1</td><td>0.3 1</td><td>0.1</td><td></td><td>0.15 1</td><td>0.3 5</td><td>0.3</td><td>0.1</td></tr><tr><td>Number of experiments</td><td></td><td></td><td>8</td><td></td><td></td><td></td><td>1</td><td></td></tr><tr><td>Mass flow rate  $( \\mathrm { g } / \\mathrm { s } )$ </td><td>24.4</td><td>24.4</td><td>16.3</td><td></td><td>24.4</td><td>48.9</td><td>24.4</td><td>16.3</td></tr><tr><td> $T _ { t } \\left( \\mathrm { K } \\right)$ </td><td>300</td><td>300</td><td>300</td><td></td><td>300</td><td>300</td><td>300</td><td>300</td></tr><tr><td>Ma</td><td>1.0</td><td>1.0</td><td>1.0</td><td></td><td>1.0</td><td>1.0</td><td>1.0</td><td>1.0</td></tr><tr><td>Ignition</td><td>√</td><td>」</td><td>X</td><td></td><td>」</td><td>×</td><td>7</td><td>7</td></tr><tr><td>Flame stabilization</td><td>7</td><td>小</td><td>X</td><td></td><td></td><td>×</td><td>V</td><td>√</td></tr></table>"
   },
   {
     "idx": 163,
@@ -305,7 +326,8 @@
     "2d_coord": [
       -1.5024932866539868,
       1.0905161227122104
-    ]
+    ],
+    "paragraph_info": "<table><tr><td colspan=\"8\">Case</td></tr><tr><td>Parameter</td><td colspan=\"8\">Case 1 Case 2 Case 3 Case 4 Case 5</td></tr><tr><td>Injection location</td><td>Jet-1</td><td>Jet-2</td><td>Jet-2</td><td></td><td> $\\mathrm { J e t } - 2$ </td><td></td><td>Jet-2 Jet-1 Jet-2</td><td></td></tr><tr><td>Fuel</td><td> $\\mathrm { H } _ { 2 }$ </td><td> $\\mathrm { H } _ { 2 }$ </td><td> $\\mathrm { C _ { 2 } H _ { 4 } }$ </td><td></td><td> $\\mathrm { C _ { 2 } H _ { 4 } }$ </td><td> $\\mathrm { C _ { 2 } H _ { 4 } }$ </td><td> $\\mathrm { H } _ { 2 }$ </td><td> $\\mathrm { C _ { 2 } H _ { 4 } }$ </td></tr><tr><td> $\\phi$ </td><td> $0 . 3$  1</td><td>0.3 1</td><td>0.1</td><td></td><td>0.15 1</td><td>0.3 5</td><td>0.3</td><td>0.1</td></tr><tr><td>Number of experiments</td><td></td><td></td><td>8</td><td></td><td></td><td></td><td>1</td><td></td></tr><tr><td>Mass flow rate  $( \\mathrm { g } / \\mathrm { s } )$ </td><td>24.4</td><td>24.4</td><td>16.3</td><td></td><td>24.4</td><td>48.9</td><td>24.4</td><td>16.3</td></tr><tr><td> $T _ { t } \\left( \\mathrm { K } \\right)$ </td><td>300</td><td>300</td><td>300</td><td></td><td>300</td><td>300</td><td>300</td><td>300</td></tr><tr><td>Ma</td><td>1.0</td><td>1.0</td><td>1.0</td><td></td><td>1.0</td><td>1.0</td><td>1.0</td><td>1.0</td></tr><tr><td>Ignition</td><td>√</td><td>」</td><td>X</td><td></td><td>」</td><td>×</td><td>7</td><td>7</td></tr><tr><td>Flame stabilization</td><td>7</td><td>小</td><td>X</td><td></td><td></td><td>×</td><td>V</td><td>√</td></tr></table>"
   },
   {
     "idx": 164,
@@ -319,7 +341,8 @@
     "2d_coord": [
       -3.01738096427741,
       0.8374871440740214
-    ]
+    ],
+    "paragraph_info": "<table><tr><td colspan=\"8\">Case</td></tr><tr><td>Parameter</td><td colspan=\"8\">Case 1 Case 2 Case 3 Case 4 Case 5</td></tr><tr><td>Injection location</td><td>Jet-1</td><td>Jet-2</td><td>Jet-2</td><td></td><td> $\\mathrm { J e t } - 2$ </td><td></td><td>Jet-2 Jet-1 Jet-2</td><td></td></tr><tr><td>Fuel</td><td> $\\mathrm { H } _ { 2 }$ </td><td> $\\mathrm { H } _ { 2 }$ </td><td> $\\mathrm { C _ { 2 } H _ { 4 } }$ </td><td></td><td> $\\mathrm { C _ { 2 } H _ { 4 } }$ </td><td> $\\mathrm { C _ { 2 } H _ { 4 } }$ </td><td> $\\mathrm { H } _ { 2 }$ </td><td> $\\mathrm { C _ { 2 } H _ { 4 } }$ </td></tr><tr><td> $\\phi$ </td><td> $0 . 3$  1</td><td>0.3 1</td><td>0.1</td><td></td><td>0.15 1</td><td>0.3 5</td><td>0.3</td><td>0.1</td></tr><tr><td>Number of experiments</td><td></td><td></td><td>8</td><td></td><td></td><td></td><td>1</td><td></td></tr><tr><td>Mass flow rate  $( \\mathrm { g } / \\mathrm { s } )$ </td><td>24.4</td><td>24.4</td><td>16.3</td><td></td><td>24.4</td><td>48.9</td><td>24.4</td><td>16.3</td></tr><tr><td> $T _ { t } \\left( \\mathrm { K } \\right)$ </td><td>300</td><td>300</td><td>300</td><td></td><td>300</td><td>300</td><td>300</td><td>300</td></tr><tr><td>Ma</td><td>1.0</td><td>1.0</td><td>1.0</td><td></td><td>1.0</td><td>1.0</td><td>1.0</td><td>1.0</td></tr><tr><td>Ignition</td><td>√</td><td>」</td><td>X</td><td></td><td>」</td><td>×</td><td>7</td><td>7</td></tr><tr><td>Flame stabilization</td><td>7</td><td>小</td><td>X</td><td></td><td></td><td>×</td><td>V</td><td>√</td></tr></table>"
   },
   {
     "idx": 165,
@@ -333,7 +356,8 @@
     "2d_coord": [
       -1.3067522879753977,
       1.113328069091106
-    ]
+    ],
+    "paragraph_info": "<table><tr><td colspan=\"8\">Case</td></tr><tr><td>Parameter</td><td colspan=\"8\">Case 1 Case 2 Case 3 Case 4 Case 5</td></tr><tr><td>Injection location</td><td>Jet-1</td><td>Jet-2</td><td>Jet-2</td><td></td><td> $\\mathrm { J e t } - 2$ </td><td></td><td>Jet-2 Jet-1 Jet-2</td><td></td></tr><tr><td>Fuel</td><td> $\\mathrm { H } _ { 2 }$ </td><td> $\\mathrm { H } _ { 2 }$ </td><td> $\\mathrm { C _ { 2 } H _ { 4 } }$ </td><td></td><td> $\\mathrm { C _ { 2 } H _ { 4 } }$ </td><td> $\\mathrm { C _ { 2 } H _ { 4 } }$ </td><td> $\\mathrm { H } _ { 2 }$ </td><td> $\\mathrm { C _ { 2 } H _ { 4 } }$ </td></tr><tr><td> $\\phi$ </td><td> $0 . 3$  1</td><td>0.3 1</td><td>0.1</td><td></td><td>0.15 1</td><td>0.3 5</td><td>0.3</td><td>0.1</td></tr><tr><td>Number of experiments</td><td></td><td></td><td>8</td><td></td><td></td><td></td><td>1</td><td></td></tr><tr><td>Mass flow rate  $( \\mathrm { g } / \\mathrm { s } )$ </td><td>24.4</td><td>24.4</td><td>16.3</td><td></td><td>24.4</td><td>48.9</td><td>24.4</td><td>16.3</td></tr><tr><td> $T _ { t } \\left( \\mathrm { K } \\right)$ </td><td>300</td><td>300</td><td>300</td><td></td><td>300</td><td>300</td><td>300</td><td>300</td></tr><tr><td>Ma</td><td>1.0</td><td>1.0</td><td>1.0</td><td></td><td>1.0</td><td>1.0</td><td>1.0</td><td>1.0</td></tr><tr><td>Ignition</td><td>√</td><td>」</td><td>X</td><td></td><td>」</td><td>×</td><td>7</td><td>7</td></tr><tr><td>Flame stabilization</td><td>7</td><td>小</td><td>X</td><td></td><td></td><td>×</td><td>V</td><td>√</td></tr></table>"
   },
   {
     "idx": 181,
@@ -347,7 +371,8 @@
     "2d_coord": [
       1.3021361202094934,
       3.1574653879248418
-    ]
+    ],
+    "paragraph_info": "Fig. 7(b), the gaseous H at $\\phi = 0 . 3$ was injected at Jet-1. An oblique shock S1 was generated ahead of the location of hydrogen injection that was attached to the bottom wall of the combustor and was reflected near x 312 mm to form a new oblique shock S2. Complex interactions between the shocks and boundary layers occurred in the cavity, and complex oblique shock structures such as S3 and S5–S7 were generated. As shown in Fig. $7 ( \\mathrm { c } ) ,$ the gaseous $\\mathrm { H } _ { 2 }$ at $\\phi = 0 . 3$ was injected at Jet-2 and the oblique shock S1 was generated downstream of the cavity step and reflected at $x = 3 7 8 \\mathrm { m m }$ . Compared with the flow structure induced by the injection conditions for Jet-1, that induced by the injection conditions of Jet-2 was simpler."
   },
   {
     "idx": 186,
@@ -361,7 +386,8 @@
     "2d_coord": [
       1.254639052916144,
       3.169734494396273
-    ]
+    ],
+    "paragraph_info": "Fig. 7(b), the gaseous H at $\\phi = 0 . 3$ was injected at Jet-1. An oblique shock S1 was generated ahead of the location of hydrogen injection that was attached to the bottom wall of the combustor and was reflected near x 312 mm to form a new oblique shock S2. Complex interactions between the shocks and boundary layers occurred in the cavity, and complex oblique shock structures such as S3 and S5–S7 were generated. As shown in Fig. $7 ( \\mathrm { c } ) ,$ the gaseous $\\mathrm { H } _ { 2 }$ at $\\phi = 0 . 3$ was injected at Jet-2 and the oblique shock S1 was generated downstream of the cavity step and reflected at $x = 3 7 8 \\mathrm { m m }$ . Compared with the flow structure induced by the injection conditions for Jet-1, that induced by the injection conditions of Jet-2 was simpler."
   },
   {
     "idx": 197,
@@ -375,7 +401,8 @@
     "2d_coord": [
       1.191835416475154,
       3.229647627726266
-    ]
+    ],
+    "paragraph_info": "In case 2, gaseous $\\mathrm { H } _ { 2 }$ at $\\phi = 0 . 3$ was injected at Jet-2 located 25 mm downstream of the cavity step, as shown in Fig. 10. When the injection strategy changed from using Jet-1 to Jet-2, the location of the chemical reaction zone varied significantly. The shear layer was penetrated by the pillar of $\\mathrm { H } _ { 2 }$ and lifted toward the supersonic internal flow. According to the OH-PLIF images, the main chemical reaction zone was sustained in the shear layer at $y = 2 0 - 4 0$ mm, and there was no chemical reaction in the recirculation region near the cavity ramp."
   },
   {
     "idx": 198,
@@ -389,7 +416,8 @@
     "2d_coord": [
       0.8265490412146341,
       3.1624392464760835
-    ]
+    ],
+    "paragraph_info": "In case 2, gaseous $\\mathrm { H } _ { 2 }$ at $\\phi = 0 . 3$ was injected at Jet-2 located 25 mm downstream of the cavity step, as shown in Fig. 10. When the injection strategy changed from using Jet-1 to Jet-2, the location of the chemical reaction zone varied significantly. The shear layer was penetrated by the pillar of $\\mathrm { H } _ { 2 }$ and lifted toward the supersonic internal flow. According to the OH-PLIF images, the main chemical reaction zone was sustained in the shear layer at $y = 2 0 - 4 0$ mm, and there was no chemical reaction in the recirculation region near the cavity ramp."
   },
   {
     "idx": 206,
@@ -403,7 +431,8 @@
     "2d_coord": [
       0.25571227898219323,
       0.026984727334163013
-    ]
+    ],
+    "paragraph_info": "FIG 8 Flow structures from ignition to stabilization at different injection locations: (a) Schlieren images taken at different times of case 1 and (b) schlieren images taken at different times of case 2."
   },
   {
     "idx": 207,
@@ -417,7 +446,8 @@
     "2d_coord": [
       0.24346875003718896,
       0.02328603910120411
-    ]
+    ],
+    "paragraph_info": "FIG 8 Flow structures from ignition to stabilization at different injection locations: (a) Schlieren images taken at different times of case 1 and (b) schlieren images taken at different times of case 2."
   },
   {
     "idx": 208,
@@ -431,7 +461,8 @@
     "2d_coord": [
       1.6243838321594277,
       3.040351786776849
-    ]
+    ],
+    "paragraph_info": "FIG 9 OH-PLIF images of cavities with pure H at / 0.3 injected at Jet-1."
   },
   {
     "idx": 222,
@@ -445,7 +476,8 @@
     "2d_coord": [
       0.8051227519836984,
       2.1368197902635404
-    ]
+    ],
+    "paragraph_info": "In case 4, pure ethylene at / 0.15 was injected at Jet-2 for successful combustion. As shown in Fig. 12, the main chemical reaction zone was located around the ramp and bottom wall of the cavity but the flame was unstable."
   },
   {
     "idx": 241,
@@ -459,7 +491,8 @@
     "2d_coord": [
       2.525910770580421,
       2.184688185260072
-    ]
+    ],
+    "paragraph_info": "Due to instability, the area of the chemical reaction zone oscillated within the range of 448.3–1235 mm<sup>2</sup> from t 0.08 to t 0.25 s, except at t 0.105 and t 0.242 s. This is because of the delay effect of the solenoid valve, and the ethylene injection does not immediately enter or stop into the combustor. This corresponded to the expansion of the flame from the cavity ramp to the location of Jet-2. Attempts to stabilize the combustion of gaseous $\\mathrm { C _ { 2 } H _ { 4 } }$ failed using the equivalence ratios shown in Table I and used in the descriptions of cases 3 and 5. Therefore, stable combustion was difficult to achieve when ethylene was injected at Jet-2 within the supersonic internal flow at a low total temperature."
   },
   {
     "idx": 243,
@@ -473,7 +506,8 @@
     "2d_coord": [
       1.6201885637830484,
       3.0465167117970946
-    ]
+    ],
+    "paragraph_info": "FIG 10 OH-PLIF images of a cavity with pure H at / 0.3 injected at Jet-2."
   },
   {
     "idx": 244,
@@ -487,7 +521,8 @@
     "2d_coord": [
       1.230696620310897,
       3.1547625727213453
-    ]
+    ],
+    "paragraph_info": "FIG 10 OH-PLIF images of a cavity with pure H at / 0.3 injected at Jet-2."
   },
   {
     "idx": 248,
@@ -501,7 +536,8 @@
     "2d_coord": [
       -3.5838377816417673,
       0.3613430003875691
-    ]
+    ],
+    "paragraph_info": "FIG 12 Dynamic evolution of OH with pure C<sub>2</sub>H<sub>4</sub> at /  0.15 in case 4."
   },
   {
     "idx": 249,
@@ -515,7 +551,8 @@
     "2d_coord": [
       2.062539689422578,
       2.8245627202677457
-    ]
+    ],
+    "paragraph_info": "At t 0.133 s, the spark plug operated with the valves of $\\mathrm { H } _ { 2 }$ and C H open. At t 0.26 s, H injection stopped, and the single C H flame lasted for approximately 0.1 s. During this process, the evolutions of the x coordinate of the center of the CH region and the area of the chemical reaction zone are captured in Figs. 15 and 16, respectively."
   },
   {
     "idx": 250,
@@ -529,7 +566,8 @@
     "2d_coord": [
       1.0371844601767197,
       2.3503372661855377
-    ]
+    ],
+    "paragraph_info": "At t 0.133 s, the spark plug operated with the valves of $\\mathrm { H } _ { 2 }$ and C H open. At t 0.26 s, H injection stopped, and the single C H flame lasted for approximately 0.1 s. During this process, the evolutions of the x coordinate of the center of the CH region and the area of the chemical reaction zone are captured in Figs. 15 and 16, respectively."
   },
   {
     "idx": 265,
@@ -543,7 +581,8 @@
     "2d_coord": [
       0.10360681440090948,
       0.19279319172349094
-    ]
+    ],
+    "paragraph_info": "FIG<sub>.</sub> 18<sub>.</sub> Schlieren images and the CH region without H<sub>2</sub> pilot flame."
   },
   {
     "idx": 315,
@@ -557,7 +596,8 @@
     "2d_coord": [
       1.3507558751936193,
       2.487291167172886
-    ]
+    ],
+    "paragraph_info": "In this study, experiments were conducted to investigate the effects of pilot hydrogen on the performance of an ethylene-fueled scramjet equipped with a single cavity. The direct-connected CARDC facility was used to simulate a Mach number of 4 in flight conditions. In addition, optical measurements were performed by using schlieren images, OH-PLIF, CH luminosity images, and 10 kHz pressure transducers."
   },
   {
     "idx": 330,
@@ -571,7 +611,8 @@
     "2d_coord": [
       1.541370363496576,
       2.464384411574714
-    ]
+    ],
+    "paragraph_info": "With the assistance of pilot hydrogen, ethylene was ignited and the flame was stabilized. The maximum normalized pressure was approximately 3.22, 1.278 times that of pilot hydrogen. Furthermore, the ethylene flame remained stable when the pilot hydrogen was turned off. Its center moved from x 347.5 to x 384 mm when its area increased. Hence, the presence of pilot hydrogen not only improved performance, but also stabilized the ethylene flame. In all experiments, the combustion was drastic and unstable, but without a dominant frequency."
   },
   {
     "idx": 331,
@@ -585,7 +626,8 @@
     "2d_coord": [
       1.7314607612685844,
       2.4807606862595577
-    ]
+    ],
+    "paragraph_info": "With the assistance of pilot hydrogen, ethylene was ignited and the flame was stabilized. The maximum normalized pressure was approximately 3.22, 1.278 times that of pilot hydrogen. Furthermore, the ethylene flame remained stable when the pilot hydrogen was turned off. Its center moved from x 347.5 to x 384 mm when its area increased. Hence, the presence of pilot hydrogen not only improved performance, but also stabilized the ethylene flame. In all experiments, the combustion was drastic and unstable, but without a dominant frequency."
   },
   {
     "idx": 427,
@@ -599,7 +641,8 @@
     "2d_coord": [
       0.08625989939374828,
       1.7391135847277475
-    ]
+    ],
+    "paragraph_info": "A fixed-geometry DMSJ engine’s mode transition control is often achieved by altering the fuel injection regularity [4]. Tian et al. [5] experimentally studied the combustion mode in a hydrogenfueled direct-injection scramjet and found that the transition threshold equivalence ratio (ER) was 0.23 under Mach 4 flight conditions. Zhang et al. [6] investigated the transition process via an experiment with a continuous increase in equivalence ratio, and concluded that the large equivalence ratio slope would not lead to slope variation of pressure rising even at high Mach numbers. The mode transition process in a strut-based combustor with a combined injection strategy was numerically explored by Huang et al. [7], and it was reported that the airflow conditions and the jet to crossflow pressure ratio both had a large impact except the injection strategy. By varying the injection pressure, Yan et al. [8] compared the transition processes from scram to ram and from ram to scram. The results revealed that the transition from ram to scram was more challenging than from scram to ram, and the shock waves were still in the isolator when the combustor entered scram mode. Also, a lot of effort has been put into studying the mechanisms that stabilize combustion [5,9–11]. Three common stabilization modes may be distinguished [9] based on where the flame anchors: cavity shear-layer stabilized combustion, cavity assisted jet-wake stabilized combustion, and combined cavity shear-layer/recirculation stabilized combustion. The correlation between operating and stabilization modes of the DMSJ combustor was further investigated by Yuan et al. [10], who observed that the flame was stabilized in the cavity shear-layer at scram mode while in the jet-wake at ram mode."
   },
   {
     "idx": 429,
@@ -613,7 +656,8 @@
     "2d_coord": [
       0.9775229136543726,
       0.495028941822679
-    ]
+    ],
+    "paragraph_info": "A fixed-geometry DMSJ engine’s mode transition control is often achieved by altering the fuel injection regularity [4]. Tian et al. [5] experimentally studied the combustion mode in a hydrogenfueled direct-injection scramjet and found that the transition threshold equivalence ratio (ER) was 0.23 under Mach 4 flight conditions. Zhang et al. [6] investigated the transition process via an experiment with a continuous increase in equivalence ratio, and concluded that the large equivalence ratio slope would not lead to slope variation of pressure rising even at high Mach numbers. The mode transition process in a strut-based combustor with a combined injection strategy was numerically explored by Huang et al. [7], and it was reported that the airflow conditions and the jet to crossflow pressure ratio both had a large impact except the injection strategy. By varying the injection pressure, Yan et al. [8] compared the transition processes from scram to ram and from ram to scram. The results revealed that the transition from ram to scram was more challenging than from scram to ram, and the shock waves were still in the isolator when the combustor entered scram mode. Also, a lot of effort has been put into studying the mechanisms that stabilize combustion [5,9–11]. Three common stabilization modes may be distinguished [9] based on where the flame anchors: cavity shear-layer stabilized combustion, cavity assisted jet-wake stabilized combustion, and combined cavity shear-layer/recirculation stabilized combustion. The correlation between operating and stabilization modes of the DMSJ combustor was further investigated by Yuan et al. [10], who observed that the flame was stabilized in the cavity shear-layer at scram mode while in the jet-wake at ram mode."
   },
   {
     "idx": 431,
@@ -627,7 +671,8 @@
     "2d_coord": [
       0.818250274821837,
       0.8983125938235588
-    ]
+    ],
+    "paragraph_info": "A fixed-geometry DMSJ engine’s mode transition control is often achieved by altering the fuel injection regularity [4]. Tian et al. [5] experimentally studied the combustion mode in a hydrogenfueled direct-injection scramjet and found that the transition threshold equivalence ratio (ER) was 0.23 under Mach 4 flight conditions. Zhang et al. [6] investigated the transition process via an experiment with a continuous increase in equivalence ratio, and concluded that the large equivalence ratio slope would not lead to slope variation of pressure rising even at high Mach numbers. The mode transition process in a strut-based combustor with a combined injection strategy was numerically explored by Huang et al. [7], and it was reported that the airflow conditions and the jet to crossflow pressure ratio both had a large impact except the injection strategy. By varying the injection pressure, Yan et al. [8] compared the transition processes from scram to ram and from ram to scram. The results revealed that the transition from ram to scram was more challenging than from scram to ram, and the shock waves were still in the isolator when the combustor entered scram mode. Also, a lot of effort has been put into studying the mechanisms that stabilize combustion [5,9–11]. Three common stabilization modes may be distinguished [9] based on where the flame anchors: cavity shear-layer stabilized combustion, cavity assisted jet-wake stabilized combustion, and combined cavity shear-layer/recirculation stabilized combustion. The correlation between operating and stabilization modes of the DMSJ combustor was further investigated by Yuan et al. [10], who observed that the flame was stabilized in the cavity shear-layer at scram mode while in the jet-wake at ram mode."
   },
   {
     "idx": 433,
@@ -641,7 +686,8 @@
     "2d_coord": [
       0.7728302161011217,
       0.534860613767459
-    ]
+    ],
+    "paragraph_info": "A fixed-geometry DMSJ engine’s mode transition control is often achieved by altering the fuel injection regularity [4]. Tian et al. [5] experimentally studied the combustion mode in a hydrogenfueled direct-injection scramjet and found that the transition threshold equivalence ratio (ER) was 0.23 under Mach 4 flight conditions. Zhang et al. [6] investigated the transition process via an experiment with a continuous increase in equivalence ratio, and concluded that the large equivalence ratio slope would not lead to slope variation of pressure rising even at high Mach numbers. The mode transition process in a strut-based combustor with a combined injection strategy was numerically explored by Huang et al. [7], and it was reported that the airflow conditions and the jet to crossflow pressure ratio both had a large impact except the injection strategy. By varying the injection pressure, Yan et al. [8] compared the transition processes from scram to ram and from ram to scram. The results revealed that the transition from ram to scram was more challenging than from scram to ram, and the shock waves were still in the isolator when the combustor entered scram mode. Also, a lot of effort has been put into studying the mechanisms that stabilize combustion [5,9–11]. Three common stabilization modes may be distinguished [9] based on where the flame anchors: cavity shear-layer stabilized combustion, cavity assisted jet-wake stabilized combustion, and combined cavity shear-layer/recirculation stabilized combustion. The correlation between operating and stabilization modes of the DMSJ combustor was further investigated by Yuan et al. [10], who observed that the flame was stabilized in the cavity shear-layer at scram mode while in the jet-wake at ram mode."
   },
   {
     "idx": 438,
@@ -655,7 +701,8 @@
     "2d_coord": [
       0.6356708721348374,
       0.6929575349940209
-    ]
+    ],
+    "paragraph_info": "A fixed-geometry DMSJ engine’s mode transition control is often achieved by altering the fuel injection regularity [4]. Tian et al. [5] experimentally studied the combustion mode in a hydrogenfueled direct-injection scramjet and found that the transition threshold equivalence ratio (ER) was 0.23 under Mach 4 flight conditions. Zhang et al. [6] investigated the transition process via an experiment with a continuous increase in equivalence ratio, and concluded that the large equivalence ratio slope would not lead to slope variation of pressure rising even at high Mach numbers. The mode transition process in a strut-based combustor with a combined injection strategy was numerically explored by Huang et al. [7], and it was reported that the airflow conditions and the jet to crossflow pressure ratio both had a large impact except the injection strategy. By varying the injection pressure, Yan et al. [8] compared the transition processes from scram to ram and from ram to scram. The results revealed that the transition from ram to scram was more challenging than from scram to ram, and the shock waves were still in the isolator when the combustor entered scram mode. Also, a lot of effort has been put into studying the mechanisms that stabilize combustion [5,9–11]. Three common stabilization modes may be distinguished [9] based on where the flame anchors: cavity shear-layer stabilized combustion, cavity assisted jet-wake stabilized combustion, and combined cavity shear-layer/recirculation stabilized combustion. The correlation between operating and stabilization modes of the DMSJ combustor was further investigated by Yuan et al. [10], who observed that the flame was stabilized in the cavity shear-layer at scram mode while in the jet-wake at ram mode."
   },
   {
     "idx": 452,
@@ -669,7 +716,8 @@
     "2d_coord": [
       -0.8394280395541626,
       1.949849032548757
-    ]
+    ],
+    "paragraph_info": "Although a significant amount of research has been done on scramjet investigations using a variety of configurations and injection schemes [12–14], most publications currently in print concentrate on the quasi-steady state that represents stable flame, while limited research is available on the dynamic processes that represent unstable flame, such as ignition dynamics [15], thermalacoustic oscillation [16], flame flashback [17], and flow-induced unstable flame [18]. Therein, the flow instabilities may be attributed to the self-sustained cavity shear-layer oscillation [19], unsteady jets in supersonic crossflow [20], and separated boundary layers [21]. Wang et al. [19] have numerically found two flowrelated combustion oscillation mechanisms in the scramjet with hydrogen injected upstream of the cavity. One was the intermittent auto-ignition of mixture packets linked to the fuel jet, and the other was the unsteady flame propagation affected by the jet/cavity shear-layer interaction. In the simulation of a cavityfloor direct-injection scramjet, Sitaraman et al. [22] also noticed low-frequency heat release and pressure oscillations and attributed them to the periodic fluctuation of jet penetration brought on by the interaction with the shear layer. In a DMSJ engine, intensive heat release will alter the inflow conditions through the large-scale flow separation induced by upstream-propagating backpressure, which in turn modulates the flame stability downstream [23]. The possible interaction with fuel jets complicates the instability process even more. According to a series of well-known studies [5,9,24,25], once the heat release reached a high enough level, there was a noticeable unsteadiness. Wang et al. [26] experimentally studied the oscillation features of shock-train structures in an isolator with a choked throat, and found that the shock-train oscillation could propagate further downstream along the thicker boundary layer, resulting in drastic coherence and pressure fluctuations in downstream separated flow. Fotia et al. [18] carried out an experimental study on the hydrogen-fueled DMSJ engine and observed some low-frequency periodic oscillations of the flame position under the separated flow, which could be correlated with the upstream unsteady pre-combustion shock-train."
   },
   {
     "idx": 455,
@@ -683,7 +731,8 @@
     "2d_coord": [
       -0.19055855408403893,
       1.909011295241418
-    ]
+    ],
+    "paragraph_info": "Although a significant amount of research has been done on scramjet investigations using a variety of configurations and injection schemes [12–14], most publications currently in print concentrate on the quasi-steady state that represents stable flame, while limited research is available on the dynamic processes that represent unstable flame, such as ignition dynamics [15], thermalacoustic oscillation [16], flame flashback [17], and flow-induced unstable flame [18]. Therein, the flow instabilities may be attributed to the self-sustained cavity shear-layer oscillation [19], unsteady jets in supersonic crossflow [20], and separated boundary layers [21]. Wang et al. [19] have numerically found two flowrelated combustion oscillation mechanisms in the scramjet with hydrogen injected upstream of the cavity. One was the intermittent auto-ignition of mixture packets linked to the fuel jet, and the other was the unsteady flame propagation affected by the jet/cavity shear-layer interaction. In the simulation of a cavityfloor direct-injection scramjet, Sitaraman et al. [22] also noticed low-frequency heat release and pressure oscillations and attributed them to the periodic fluctuation of jet penetration brought on by the interaction with the shear layer. In a DMSJ engine, intensive heat release will alter the inflow conditions through the large-scale flow separation induced by upstream-propagating backpressure, which in turn modulates the flame stability downstream [23]. The possible interaction with fuel jets complicates the instability process even more. According to a series of well-known studies [5,9,24,25], once the heat release reached a high enough level, there was a noticeable unsteadiness. Wang et al. [26] experimentally studied the oscillation features of shock-train structures in an isolator with a choked throat, and found that the shock-train oscillation could propagate further downstream along the thicker boundary layer, resulting in drastic coherence and pressure fluctuations in downstream separated flow. Fotia et al. [18] carried out an experimental study on the hydrogen-fueled DMSJ engine and observed some low-frequency periodic oscillations of the flame position under the separated flow, which could be correlated with the upstream unsteady pre-combustion shock-train."
   },
   {
     "idx": 462,
@@ -697,7 +746,8 @@
     "2d_coord": [
       0.6078709951119607,
       0.9015130548208762
-    ]
+    ],
+    "paragraph_info": "Combustion mode transition is usually accompanied by the transient establishment of flow separation. The combustion instabilities associated with mode transition are typically more intense and severe due to the tendency toward cavity flame blowout [21]. Yang et al. [27] provided a mechanical model of the DMSJ engine to analyze the mode transition mechanisms. It was found that the mode transition was a nonlinear and unstable process with significant Mach number fluctuations that had an adverse effect on the scramjet’s stability. Kato et al. [28] conducted an experimental investigation on the flame behavior during scram to ram transition."
   },
   {
     "idx": 465,
@@ -711,7 +761,8 @@
     "2d_coord": [
       0.705914994948628,
       0.8437454418102209
-    ]
+    ],
+    "paragraph_info": "They have concluded that the flame fluctuated in the isolator due to the coupling between fluid dynamics and combustion and that the reversely propagating deflagration flame occurred when the thermal choke was established. In a DMSJ engine with fin-guided injection upstream of the cavity, the scram-to-ram transition was experimentally studied by Aguilera et al. [29]. The findings indicated that the transition process could be characterized by a series of flame oscillations driven by hopping cycles, which included transient thermal choking, flame flashback, cavity flame-holding, and detachment. The combustion flow field in a scramjet is inherently unstable and is characterized by the presence of temporal oscillations that have an impact on the fluid flow, mixing, and heat release. Although separation-driven supersonic combustion instability has not yet received enough attention [30], research on backpressure-induced unstable flames is very important in order to understand their physical mechanisms and impose appropriate controls."
   },
   {
     "idx": 597,
@@ -725,7 +776,8 @@
     "2d_coord": [
       -1.977038999217639,
       1.6686621262150174
-    ]
+    ],
+    "paragraph_info": "Furthermore, the Mach number distributions are verified by a 1-D pressure/Mach number response model [48] to the experimental pressure profiles"
   },
   {
     "idx": 686,
@@ -739,7 +791,8 @@
     "2d_coord": [
       2.3156986764768113,
       1.2568217540609181
-    ]
+    ],
+    "paragraph_info": "1 displaying it on the cavity side of the shear layer and case 2 on the inflow side of the flame head. Additionally, it is interesting to observe that the lean-premixed regime occurs in a narrow layer where the flame interacts with the incoming airstream. This occurrence can be attributed to the dilution effect of the downstream-developing rich-mixture, which is entrained by the counter-rotating streamwise vortex-pairs, as previously observed in Liu’s research [52]."
   },
   {
     "idx": 687,
@@ -753,7 +806,8 @@
     "2d_coord": [
       2.300887122102508,
       1.2265642741523453
-    ]
+    ],
+    "paragraph_info": "1 displaying it on the cavity side of the shear layer and case 2 on the inflow side of the flame head. Additionally, it is interesting to observe that the lean-premixed regime occurs in a narrow layer where the flame interacts with the incoming airstream. This occurrence can be attributed to the dilution effect of the downstream-developing rich-mixture, which is entrained by the counter-rotating streamwise vortex-pairs, as previously observed in Liu’s research [52]."
   },
   {
     "idx": 730,
@@ -767,7 +821,8 @@
     "2d_coord": [
       0.07933546228768175,
       -0.8608698020569442
-    ]
+    ],
+    "paragraph_info": "Fig. 8. Contours of (a) instantaneous modified flame index MFI with black isoline at stoichiometry, (b) instantaneous shock and vortex structures colored by temperature, and (c) time-averaged Mach number with black isoline at sonic speed of case 1 (left) and case 2 (right)."
   },
   {
     "idx": 753,
@@ -781,7 +836,8 @@
     "2d_coord": [
       0.48794249027674785,
       -0.5057581089868269
-    ]
+    ],
+    "paragraph_info": "Fig. 11. Instantaneous snapshots of streamwise velocity (left) with black isoline at $u _ { x } = 0 m / s ,$ and Mach number (right) with black isoline at sonic speed, in the center slice during mode transition."
   },
   {
     "idx": 754,
@@ -795,7 +851,8 @@
     "2d_coord": [
       -1.3981273993568812,
       1.3463573644260767
-    ]
+    ],
+    "paragraph_info": "Fig. 11. Instantaneous snapshots of streamwise velocity (left) with black isoline at $u _ { x } = 0 m / s ,$ and Mach number (right) with black isoline at sonic speed, in the center slice during mode transition."
   },
   {
     "idx": 755,
@@ -809,7 +866,8 @@
     "2d_coord": [
       0.468103919134889,
       -0.4681663219486804
-    ]
+    ],
+    "paragraph_info": "Fig. 11. Instantaneous snapshots of streamwise velocity (left) with black isoline at $u _ { x } = 0 m / s ,$ and Mach number (right) with black isoline at sonic speed, in the center slice during mode transition."
   },
   {
     "idx": 756,
@@ -823,7 +881,8 @@
     "2d_coord": [
       -1.3482927320133045,
       1.3359388846633773
-    ]
+    ],
+    "paragraph_info": "Fig. 11. Instantaneous snapshots of streamwise velocity (left) with black isoline at $u _ { x } = 0 m / s ,$ and Mach number (right) with black isoline at sonic speed, in the center slice during mode transition."
   },
   {
     "idx": 911,
@@ -837,7 +896,8 @@
     "2d_coord": [
       0.8664218996917749,
       1.986835846473426
-    ]
+    ],
+    "paragraph_info": "[20] S. Nakaya, H. Yamana, M. Tsue, Experimental investigation of ethylene/air combustion instability in a model scramjet combustor using image-based methods, Proc. Combust. Inst. 38 (2021) 3869–3880."
   },
   {
     "idx": 917,
@@ -851,7 +911,8 @@
     "2d_coord": [
       0.5300271052907035,
       1.8019957652103162
-    ]
+    ],
+    "paragraph_info": "[22] H. Sitaraman, S. Yellapantula, M.T.H. de Frahan, B. Perry, J. Rood, R. Grout, M. Day, Adaptive mesh based combustion simulations of direct fuel injection effects in a supersonic cavity flame-Holder, Combust. Flame 232 (2021) 111531."
   },
   {
     "idx": 959,
@@ -865,7 +926,8 @@
     "2d_coord": [
       0.2919819696281914,
       1.4646344648602683
-    ]
+    ],
+    "paragraph_info": "[40] Z. Huang, G. He, S. Wang, F. Qin, X. Wei, L. Shi, Simulations of combustion oscillation and flame dynamics in a strut-based supersonic combustor, Int. J. Hydrog. Energy 42 (2017) 8278–8287."
   },
   {
     "idx": 960,
@@ -879,7 +941,8 @@
     "2d_coord": [
       0.2778466992035844,
       1.4700281928111623
-    ]
+    ],
+    "paragraph_info": "[40] Z. Huang, G. He, S. Wang, F. Qin, X. Wei, L. Shi, Simulations of combustion oscillation and flame dynamics in a strut-based supersonic combustor, Int. J. Hydrog. Energy 42 (2017) 8278–8287."
   },
   {
     "idx": 972,
@@ -893,7 +956,8 @@
     "2d_coord": [
       1.1280223060745873,
       2.187310966707037
-    ]
+    ],
+    "paragraph_info": "[45] P. Xiong, D. Zheng, Y. Tan, Y. Tian, J. Le, Experimental study of ignition and combustion characteristics of ethylene in cavity-based supersonic combustor at low stagnation temperature and pressure, Aerosp. Sci. Technol. 109 (2021) 106414."
   },
   {
     "idx": 979,
@@ -907,7 +971,8 @@
     "2d_coord": [
       -0.3860477464797658,
       1.2592443143067127
-    ]
+    ],
+    "paragraph_info": "[49] N. Hass, K. Cabell, A. Storch, M. Gruber, HIFiRE direct-connect rig (HDCR) phase I scramjet test results from the NASA Langley arc-heated scramjet test facility, in: 17th AIAA International Space Planes and Hypersonic Systems and Technologies Conference, 2011, p. 2248."
   },
   {
     "idx": 1012,
@@ -921,7 +986,8 @@
     "2d_coord": [
       2.5839539786064565,
       -1.2316127718269565
-    ]
+    ],
+    "paragraph_info": "To bridge the gap between latent representations and expert reasoning, domain specialists annotate representative cluster centroids with descriptive labels. These annotations are used as contextual prompts for a vision-language model, which generates natural-language summaries for individual frames and full simulation cases. The system also supports parameter-based filtering, similarity-based case retrieval, and coordinated multi-view exploration to facilitate in-depth analysis. We demonstrate the efectiveness of TemporalFlowViz through two expertinformed case studies and expert feedback, showing TemporalFlowViz enhances hypothesis generation, supports interpretable pattern discovery, and enhances knowledge discovery in large-scale scramjet combustion analysis."
   },
   {
     "idx": 1067,
@@ -935,7 +1001,8 @@
     "2d_coord": [
       -1.3474032864156178,
       -1.4152831289561376
-    ]
+    ],
+    "paragraph_info": "• We conduct two expert-informed case studies and synthesize qualitative feedback to demonstrate the system’s efectiveness. Results show that TemporalFlowViz facilitates hypothesis generation, reveals parameter-sensitive combustion behavior, and enhances the interpretability and communicability of large-scale temporal simulation data."
   },
   {
     "idx": 1068,
@@ -949,7 +1016,8 @@
     "2d_coord": [
       -0.05442415328899831,
       -2.2110838063542837
-    ]
+    ],
+    "paragraph_info": "• We conduct two expert-informed case studies and synthesize qualitative feedback to demonstrate the system’s efectiveness. Results show that TemporalFlowViz facilitates hypothesis generation, reveals parameter-sensitive combustion behavior, and enhances the interpretability and communicability of large-scale temporal simulation data."
   },
   {
     "idx": 1077,
@@ -963,7 +1031,8 @@
     "2d_coord": [
       -0.9223424234867785,
       -3.0181075421854957
-    ]
+    ],
+    "paragraph_info": "Visualization techniques for flow fields have evolved to address the challenges of interpreting complex, high-dimensional fluid dynamics data. Domain-specific applications such as FlowVisual have tailored flow visualization for educational contexts, integrating 3D volume rendering and glyph techniques to teach fluid concepts (Wang et al. 2016). Znamenskaya’s panoramic visualization survey reviews methods for thermophysical flow fields, including refractive index methods and digital particle image velocimetry, emphasizing the need for scalable, quantitative analysis tools (Znamenskaya 2021). (Zhao et al. 2025) conduct an empirical experiment to evaluate the time costs and frame rates recorded of popular web-based libraries on visualizing hundreds of graph datasets. He et al. (2023) present a parallel visualization framework for large-scale flow-field data, combining grid-segmented data partitioning with optimized communication strategies to achieve real-time interactivity on millions of grid cells. (Chen et al. 2024) introduce an open dataset of DLGs (data lineage graph), including the DLG model, the dataset construction process, and applied areas. Complementary approaches, such as saliency-guided importance sampling (Bae et al. 2020), have been proposed to focus visualization efort on regions of greatest dynamical interest. Li et al. (2025) propose the ParamsDrag model to facilitate parameter space exploration through directly dragging structure-related features in the visualizations."
   },
   {
     "idx": 1163,
@@ -977,7 +1046,8 @@
     "2d_coord": [
       2.4365077224589418,
       -0.8825873381189551
-    ]
+    ],
+    "paragraph_info": "To support the parameter-aware analysis tasks described in the previous section, we constructed a dataset of scramjet combustion simulations in collaboration with domain experts. The dataset was generated using a specialized CFD (Computational Fluid Dynamics) platform developed for high-speed reactive flow modeling."
   },
   {
     "idx": 1164,
@@ -991,7 +1061,8 @@
     "2d_coord": [
       -0.41720629374233803,
       -3.1063890167453065
-    ]
+    ],
+    "paragraph_info": "To support the parameter-aware analysis tasks described in the previous section, we constructed a dataset of scramjet combustion simulations in collaboration with domain experts. The dataset was generated using a specialized CFD (Computational Fluid Dynamics) platform developed for high-speed reactive flow modeling."
   },
   {
     "idx": 1167,
@@ -1005,7 +1076,8 @@
     "2d_coord": [
       0.146530265021959,
       1.026352649671009
-    ]
+    ],
+    "paragraph_info": "The simulation campaign covers over 200 individual scramjet combustion cases, each conducted under a distinct combination of initial conditions. Each simulation case outputs a time series of flow field data recorded at regular time intervals, capturing the evolution of combustion dynamics from ignition to either a stable combustion state or an instability-induced shutdown. The total dataset includes approximately 3 terabytes of flow field data. Each case is defined by a unique combination of the following three initial condition parameters:"
   },
   {
     "idx": 1168,
@@ -1019,7 +1091,8 @@
     "2d_coord": [
       0.20474315735218102,
       1.173830716022631
-    ]
+    ],
+    "paragraph_info": "The simulation campaign covers over 200 individual scramjet combustion cases, each conducted under a distinct combination of initial conditions. Each simulation case outputs a time series of flow field data recorded at regular time intervals, capturing the evolution of combustion dynamics from ignition to either a stable combustion state or an instability-induced shutdown. The total dataset includes approximately 3 terabytes of flow field data. Each case is defined by a unique combination of the following three initial condition parameters:"
   },
   {
     "idx": 1231,
@@ -1033,7 +1106,8 @@
     "2d_coord": [
       -0.19209632093015644,
       -0.6320145749472561
-    ]
+    ],
+    "paragraph_info": "To test the hypothesis, we compared two preprocessing strategies: using the whole flow field frames versus applying a spatial crop around the isolator and cavity region. We kept the size and location of crop box fixed across all frames of a flow field channel (e.g. pressure field) to ensure comparability. Both inputs were passed through the same embedding extraction pipeline and then projected into the UMAP-reduced latent space."
   },
   {
     "idx": 1247,
@@ -1047,7 +1121,8 @@
     "2d_coord": [
       1.4817659690102842,
       -3.0934552880700594
-    ]
+    ],
+    "paragraph_info": "To evaluate how diferent ViT architectures capture combustion-related spatial features, we tested three pretrained models: BLIP2-opt-2.7b (Li et al. 2023), InternViT-6B-v2.5 (Chen et al. 2024), and AIMv2-1B (Fini et al. 2024). For each model, we extracted frame-level embeddings from the same cropped input images and visualized their latent distributions using dimensionality reduction method."
   },
   {
     "idx": 1256,
@@ -1061,7 +1136,8 @@
     "2d_coord": [
       0.2560953975195969,
       -1.3299077690223988
-    ]
+    ],
+    "paragraph_info": "Fig. 2 Comparison of UMAP-projected trajectories using pressure field embeddings from whole frames (top 2 graphs) versus cropped regions (bottom 2 graphs). Cropped inputs yield more compact clusters and clearer trajectory convergence."
   },
   {
     "idx": 1257,
@@ -1075,7 +1151,8 @@
     "2d_coord": [
       0.2554677700330284,
       -1.3280962699279717
-    ]
+    ],
+    "paragraph_info": "Fig. 2 Comparison of UMAP-projected trajectories using pressure field embeddings from whole frames (top 2 graphs) versus cropped regions (bottom 2 graphs). Cropped inputs yield more compact clusters and clearer trajectory convergence."
   },
   {
     "idx": 1294,
@@ -1089,7 +1166,8 @@
     "2d_coord": [
       -0.9223419691780657,
       -1.7711186828908883
-    ]
+    ],
+    "paragraph_info": "To quantify trajectory similarity, we have designed and iteratively refined a temporal dissimilarity metric in collaboration with domain experts. Experts evaluated various formulations based on their ability to capture perceptual and physically meaningful similarities—particularly in late-stage behavior related to convergence and stabilization."
   },
   {
     "idx": 1295,
@@ -1103,7 +1181,8 @@
     "2d_coord": [
       -0.9799397729421894,
       -1.553704041860225
-    ]
+    ],
+    "paragraph_info": "To quantify trajectory similarity, we have designed and iteratively refined a temporal dissimilarity metric in collaboration with domain experts. Experts evaluated various formulations based on their ability to capture perceptual and physically meaningful similarities—particularly in late-stage behavior related to convergence and stabilization."
   },
   {
     "idx": 1323,
@@ -1117,7 +1196,8 @@
     "2d_coord": [
       1.4136819932635483,
       -3.0802662722329517
-    ]
+    ],
+    "paragraph_info": "We compared two open-source VLMs for this task: InternVL2.5-38B and Gemma-3-27B (Team et al. 2025). While InternVL2.5 achieves strong performance on visionlanguage benchmarks, its deployment presented practical limitations, including high VRAM usage, limited quantization support, and a lack of pre-optimized deployment formats. In contrast, Gemma-3 ofers lightweight 4-bit and 8-bit quantizations and eficient image-to-text generation speed. It successfully processes multiple images in a single pass without out-of-memory failures, making it more suitable for our batchoriented visual analytics workflow. As a result, Gemma-3 is adopted in our workflow deployment."
   },
   {
     "idx": 1408,
@@ -1131,7 +1211,8 @@
     "2d_coord": [
       2.5034526554012446,
       -1.3753267206395319
-    ]
+    ],
+    "paragraph_info": "To validate the efectiveness of TemporalFlowViz in supporting real-world analytical workflows, we conducted two case studies involving independent exploration. These cases were designed to reflect practical use scenarios and to evaluate how well the system supports expert reasoning, pattern recognition, and semantic interpretation in combustion simulation analysis."
   },
   {
     "idx": 1409,
@@ -1145,7 +1226,8 @@
     "2d_coord": [
       -1.3725152005090475,
       -1.3832010846133962
-    ]
+    ],
+    "paragraph_info": "To validate the efectiveness of TemporalFlowViz in supporting real-world analytical workflows, we conducted two case studies involving independent exploration. These cases were designed to reflect practical use scenarios and to evaluate how well the system supports expert reasoning, pattern recognition, and semantic interpretation in combustion simulation analysis."
   },
   {
     "idx": 1410,
@@ -1159,7 +1241,8 @@
     "2d_coord": [
       -1.2532498955326061,
       -1.3923755524989245
-    ]
+    ],
+    "paragraph_info": "To validate the efectiveness of TemporalFlowViz in supporting real-world analytical workflows, we conducted two case studies involving independent exploration. These cases were designed to reflect practical use scenarios and to evaluate how well the system supports expert reasoning, pattern recognition, and semantic interpretation in combustion simulation analysis."
   },
   {
     "idx": 1411,
@@ -1173,7 +1256,8 @@
     "2d_coord": [
       1.5794935882594408,
       -0.4089792384407646
-    ]
+    ],
+    "paragraph_info": "To validate the efectiveness of TemporalFlowViz in supporting real-world analytical workflows, we conducted two case studies involving independent exploration. These cases were designed to reflect practical use scenarios and to evaluate how well the system supports expert reasoning, pattern recognition, and semantic interpretation in combustion simulation analysis."
   },
   {
     "idx": 1412,
@@ -1187,7 +1271,8 @@
     "2d_coord": [
       1.5376014184161766,
       -0.3791037316061017
-    ]
+    ],
+    "paragraph_info": "To validate the efectiveness of TemporalFlowViz in supporting real-world analytical workflows, we conducted two case studies involving independent exploration. These cases were designed to reflect practical use scenarios and to evaluate how well the system supports expert reasoning, pattern recognition, and semantic interpretation in combustion simulation analysis."
   },
   {
     "idx": 1413,
@@ -1201,7 +1286,8 @@
     "2d_coord": [
       1.5482618632209733,
       -0.39900292808167426
-    ]
+    ],
+    "paragraph_info": "To validate the efectiveness of TemporalFlowViz in supporting real-world analytical workflows, we conducted two case studies involving independent exploration. These cases were designed to reflect practical use scenarios and to evaluate how well the system supports expert reasoning, pattern recognition, and semantic interpretation in combustion simulation analysis."
   },
   {
     "idx": 1417,
@@ -1215,7 +1301,8 @@
     "2d_coord": [
       -1.7273672858419429,
       1.8490959729539818
-    ]
+    ],
+    "paragraph_info": "Case Study 1 focused on pressure field evolution and combustion mode interpretation and was performed by E3, a postdoctoral researcher specializing in reactive flow diagnostics. Case Study 2 explored the classification of combustion modes based on OH field trajectories and was conducted by E4, a senior simulation engineer engaged in engine configuration evaluation."
   },
   {
     "idx": 1418,
@@ -1229,7 +1316,8 @@
     "2d_coord": [
       2.0962043284791934,
       0.16857496844630154
-    ]
+    ],
+    "paragraph_info": "Case Study 1 focused on pressure field evolution and combustion mode interpretation and was performed by E3, a postdoctoral researcher specializing in reactive flow diagnostics. Case Study 2 explored the classification of combustion modes based on OH field trajectories and was conducted by E4, a senior simulation engineer engaged in engine configuration evaluation."
   },
   {
     "idx": 1420,
@@ -1243,7 +1331,8 @@
     "2d_coord": [
       2.009662698353663,
       0.13167508862448096
-    ]
+    ],
+    "paragraph_info": "Case Study 1 focused on pressure field evolution and combustion mode interpretation and was performed by E3, a postdoctoral researcher specializing in reactive flow diagnostics. Case Study 2 explored the classification of combustion modes based on OH field trajectories and was conducted by E4, a senior simulation engineer engaged in engine configuration evaluation."
   },
   {
     "idx": 1422,
@@ -1257,7 +1346,8 @@
     "2d_coord": [
       0.9852630620540576,
       0.6868607070717477
-    ]
+    ],
+    "paragraph_info": "In this case study, we analyzed how pressure field evolution and latent-space trajectories reflect combustion mode transitions, and how the system facilitated interpretation through trajectory-based comparison and automatic report generation."
   },
   {
     "idx": 1423,
@@ -1271,7 +1361,8 @@
     "2d_coord": [
       2.052098221417293,
       -0.0362043689237219
-    ]
+    ],
+    "paragraph_info": "In this case study, we analyzed how pressure field evolution and latent-space trajectories reflect combustion mode transitions, and how the system facilitated interpretation through trajectory-based comparison and automatic report generation."
   },
   {
     "idx": 1434,
@@ -1285,7 +1376,8 @@
     "2d_coord": [
       -1.6081409605530497,
       1.7658834397843692
-    ]
+    ],
+    "paragraph_info": "We filtered simulation cases using the Filtering Panel to constrain initial conditions such as pressure, temperature, and humidity. For three selected cases (a1–c1), we observed the spatiotemporal pressure evolution in Figure 5(a2–c2). The blue-red interface indicated a sharp pressure surge. In these cases, the surges appeared well before the cavity—indicative of ramjet-like behavior. As the simulation progressed, the surges either stabilized or oscillated within a narrow region. After 6 ms, the pressure fields remained largely stable in a2, b2, and c2, consistent with steady-state combustion. The first two frames in each series (a2–c2) showed surge positions between the isolator and cavity, a signature of early-stage scramjet ignition."
   },
   {
     "idx": 1440,
@@ -1299,7 +1391,8 @@
     "2d_coord": [
       0.5760185935102289,
       -1.2565968480391139
-    ]
+    ],
+    "paragraph_info": "By comparing the Temporal Trajectory View and the Similar Trajectories View, we confirmed that cases with similar trajectory shapes exhibited consistent pressure field evolution. In particular, cases (a1)–(c1) in Figure 5 followed highly similar combustion pathways: each began with unstable scramjet ignition and transitioned to stable ramjet combustion by approximately 6 ms. This demonstrated the efectiveness of latent trajectory analysis for understanding dynamic combustion behavior."
   },
   {
     "idx": 1506,
@@ -1313,7 +1406,8 @@
     "2d_coord": [
       0.34735765861685075,
       -0.737738893706309
-    ]
+    ],
+    "paragraph_info": "Fig. 8 Case Study 2: Clustering of OH Field Trajectories to Identify Combustion Modes. The temporal trajectory of the selected case was shown in region (s1), with its two most similar trajectories located at (s2) and (s3). The corresponding OH field images for these cases were displayed in (f1)–(f3). Two distinct combustion modes were identified: the red cluster corresponds to the shear layer combustion mode, characterized by narrow, stratified flame structures along the fuel–air interface (see circled regions in (d)–(e)); the yellow cluster corresponded to the jet-wake combustion mode, where the flame formed a wide, curved tail extending from the fuel inlet (see circled regions in (a)–(b)). The clustering results demonstrated that the system could efectively separate and characterize combustion behaviors across diferent cases, even when OH field trajectories fluctuated at steady state."
   },
   {
     "idx": 1507,
@@ -1327,7 +1421,8 @@
     "2d_coord": [
       0.25960783990081704,
       -0.9852796771989283
-    ]
+    ],
+    "paragraph_info": "Fig. 8 Case Study 2: Clustering of OH Field Trajectories to Identify Combustion Modes. The temporal trajectory of the selected case was shown in region (s1), with its two most similar trajectories located at (s2) and (s3). The corresponding OH field images for these cases were displayed in (f1)–(f3). Two distinct combustion modes were identified: the red cluster corresponds to the shear layer combustion mode, characterized by narrow, stratified flame structures along the fuel–air interface (see circled regions in (d)–(e)); the yellow cluster corresponded to the jet-wake combustion mode, where the flame formed a wide, curved tail extending from the fuel inlet (see circled regions in (a)–(b)). The clustering results demonstrated that the system could efectively separate and characterize combustion behaviors across diferent cases, even when OH field trajectories fluctuated at steady state."
   },
   {
     "idx": 1508,
@@ -1341,7 +1436,8 @@
     "2d_coord": [
       3.3755447506041656,
       1.3040476900477507
-    ]
+    ],
+    "paragraph_info": "Fig. 8 Case Study 2: Clustering of OH Field Trajectories to Identify Combustion Modes. The temporal trajectory of the selected case was shown in region (s1), with its two most similar trajectories located at (s2) and (s3). The corresponding OH field images for these cases were displayed in (f1)–(f3). Two distinct combustion modes were identified: the red cluster corresponds to the shear layer combustion mode, characterized by narrow, stratified flame structures along the fuel–air interface (see circled regions in (d)–(e)); the yellow cluster corresponded to the jet-wake combustion mode, where the flame formed a wide, curved tail extending from the fuel inlet (see circled regions in (a)–(b)). The clustering results demonstrated that the system could efectively separate and characterize combustion behaviors across diferent cases, even when OH field trajectories fluctuated at steady state."
   },
   {
     "idx": 1517,
@@ -1355,7 +1451,8 @@
     "2d_coord": [
       -1.1820729860699395,
       -1.6724091518795625
-    ]
+    ],
+    "paragraph_info": "In addition to the structured analyses presented in our case studies, we also conducted post-session interviews with the domain experts to gather broader impressions of system usability, interpretability, and analytical value. These sessions aimed to evaluate not only how well the system supported specific tasks, but also how experts perceived its potential for generalization to larger workflows and collaboration scenarios. The following summarizes key insights drawn from these expert reflections."
   },
   {
     "idx": 1518,
@@ -1369,7 +1466,8 @@
     "2d_coord": [
       -1.064097009220086,
       -1.6615609524087145
-    ]
+    ],
+    "paragraph_info": "In addition to the structured analyses presented in our case studies, we also conducted post-session interviews with the domain experts to gather broader impressions of system usability, interpretability, and analytical value. These sessions aimed to evaluate not only how well the system supported specific tasks, but also how experts perceived its potential for generalization to larger workflows and collaboration scenarios. The following summarizes key insights drawn from these expert reflections."
   },
   {
     "idx": 1519,
@@ -1383,7 +1481,8 @@
     "2d_coord": [
       -1.0965891229201437,
       -1.6954432774389843
-    ]
+    ],
+    "paragraph_info": "In addition to the structured analyses presented in our case studies, we also conducted post-session interviews with the domain experts to gather broader impressions of system usability, interpretability, and analytical value. These sessions aimed to evaluate not only how well the system supported specific tasks, but also how experts perceived its potential for generalization to larger workflows and collaboration scenarios. The following summarizes key insights drawn from these expert reflections."
   },
   {
     "idx": 1520,
@@ -1397,7 +1496,8 @@
     "2d_coord": [
       -1.095717622516608,
       -1.694133733648345
-    ]
+    ],
+    "paragraph_info": "In addition to the structured analyses presented in our case studies, we also conducted post-session interviews with the domain experts to gather broader impressions of system usability, interpretability, and analytical value. These sessions aimed to evaluate not only how well the system supported specific tasks, but also how experts perceived its potential for generalization to larger workflows and collaboration scenarios. The following summarizes key insights drawn from these expert reflections."
   },
   {
     "idx": 1565,
@@ -1411,6 +1511,7 @@
     "2d_coord": [
       2.59274485219683,
       -1.2295065843366837
-    ]
+    ],
+    "paragraph_info": "In this paper, we present TemporalFlowViz, a visual analytics workflow and system for expert-guided exploration, clustering, and interpretation of temporal flow-field data from scramjet combustion simulations. TemporalFlowViz combines ViT embeddings, interactive trajectory construction, density-based clustering, and expert-augmented semantic summarization to support interpretable analysis of high-dimensional, timesequenced combustion data. By allowing experts to annotate representative cluster centroids, which then condition a vision–language model for generating frame- and case-level descriptions, we establish a reusable semantic layer that transforms complex flow field patterns into interpretable textual narratives. This multimodal annotation pipeline enables automated reporting, similarity-driven retrieval, and collaborative analysis with minimal manual overhead. We demonstrate the utility of TemporalFlowViz through two expert-driven case studies focusing on pressure and OH field dynamics. These studies revealed the system’s ability to distinguish combustion modes, uncover evolution patterns, and support scalable interpretation across parameterized simulations. Expert feedback confirmed that the system accelerates hypothesis validation, reduces cognitive load, and facilitates knowledge sharing across teams. In summary, TemporalFlowViz represents a step toward deeply integrated, expert-informed visual analytics for scientific simulations—fusing deep learning, trajectory-based reasoning, and semantic interpretability into a unified framework for understanding combustion dynamics at scale."
   }
 ]

@@ -1,6 +1,6 @@
 <!-- src/components/LinkCard.vue -->
 <template>
-  <section class="subcard" :class="{ 'expanded': showOriginal }">
+  <section class="subcard">
     <!-- ⓪ Subspace(s) 标签 -->
     <div class="subcard__meta" v-if="subspaceTrail.length > 0">
       <div class="subcard__meta-main">
@@ -81,8 +81,13 @@
               MSU {{ msu.id }}
             </button>
 
-            <button class="show-original-btn" @click.stop="toggleOriginal">
-              {{ showOriginal ? 'Hide Details' : 'Show Details' }}
+            <button
+              class="show-original-btn"
+              type="button"
+              :aria-expanded="String(isOriginalVisible(msu.uid))"
+              @click.stop="toggleOriginal(msu.uid)"
+            >
+              {{ isOriginalVisible(msu.uid) ? 'Hide Details' : 'Show Details' }}
             </button>
           </div>
 
@@ -90,11 +95,13 @@
             <div class="msu-text">{{ msu.sentence }}</div>
 
             <!-- 展开显示的原文/上下文（字段兼容 + 调试兜底） -->
-            <div v-if="showOriginal" class="para-info">
+            <div v-if="isOriginalVisible(msu.uid)" class="para-info">
               <div v-if="msu.para_info && String(msu.para_info).trim().length" class="para-info-content">
                 {{ msu.para_info }}
               </div>
-              <pre v-else class="para-info-content para-info-raw">{{ formatRawForDebug(msu.raw) }}</pre>
+              <div v-else class="para-info-content para-info-empty">
+                Original source context is unavailable for this MSU.
+              </div>
             </div>
           </template>
         </div>
@@ -121,10 +128,19 @@
       :class="{ 'is-sized': llmHeight != null }"
       ref="llmRef"
       :style="llmPanelStyle"
+      @pointerdown.stop
+      @mousedown.stop
+      @dragstart.prevent.stop
     >
       <div v-if="llmSummary" class="llm-content">
         <span class="llm-label">Evidence Synthesis:</span>
-        <span class="llm-text">{{ llmSummary }}</span>
+        <span
+          ref="llmTextRef"
+          class="llm-text llm-text--selectable"
+          draggable="false"
+          v-html="synthesisHtml"
+          @mouseup="toggleSynthesisHighlight"
+        ></span>
       </div>
       <div v-else-if="llmLoading" class="llm-loading">
         LLM is summarizing...
@@ -173,15 +189,19 @@ const svgRef = ref(null)
 const hexScrollRef = ref(null)
 const sourceRef = ref(null)
 const llmRef = ref(null)
+const llmTextRef = ref(null)
 let mini = null
 let miniResizeObserver = null
 let offStepwiseMsuCandidates = null
 let offApplyStepwiseMsuFilter = null
 
-const showOriginal = ref(false)
 const llmSummary = ref('')
 const llmLoading = ref(false)
 const llmError = ref('')
+// Character ranges in llmSummary that the user has marked as evidence.
+// Keeping ranges rather than mutating the generated text makes highlighting
+// survive the Synthesis panel's resize and other Vue rerenders.
+const synthesisHighlights = ref([])
 let miniHeight = null
 const sourceHeight = ref(null)
 const llmHeight = ref(null)
@@ -219,6 +239,106 @@ const sourcePanelStyle = computed(() => (
 const llmPanelStyle = computed(() => (
   llmHeight.value == null ? {} : { height: `${llmHeight.value}px` }
 ))
+
+function escapeSynthesisHtml(value) {
+  return String(value || '')
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#039;')
+}
+
+function normalizeHighlightRanges(ranges, textLength) {
+  const sorted = (ranges || [])
+    .map(range => ({
+      start: Math.max(0, Math.min(textLength, Number(range?.start) || 0)),
+      end: Math.max(0, Math.min(textLength, Number(range?.end) || 0))
+    }))
+    .filter(range => range.end > range.start)
+    .sort((a, b) => a.start - b.start || a.end - b.end)
+
+  return sorted.reduce((merged, range) => {
+    const previous = merged[merged.length - 1]
+    if (previous && range.start <= previous.end) {
+      previous.end = Math.max(previous.end, range.end)
+    } else {
+      merged.push(range)
+    }
+    return merged
+  }, [])
+}
+
+const synthesisHtml = computed(() => {
+  const text = String(llmSummary.value || '')
+  const ranges = normalizeHighlightRanges(synthesisHighlights.value, text.length)
+  if (!ranges.length) return escapeSynthesisHtml(text)
+
+  let cursor = 0
+  let html = ''
+  ranges.forEach(({ start, end }) => {
+    html += escapeSynthesisHtml(text.slice(cursor, start))
+    html += `<mark class="evidence-highlight">${escapeSynthesisHtml(text.slice(start, end))}</mark>`
+    cursor = end
+  })
+  return html + escapeSynthesisHtml(text.slice(cursor))
+})
+
+function textOffsetWithin(root, node, offset) {
+  const prefix = document.createRange()
+  prefix.selectNodeContents(root)
+  prefix.setEnd(node, offset)
+  return prefix.toString().length
+}
+
+function selectionIsHighlighted(start, end, ranges) {
+  let cursor = start
+  for (const range of ranges) {
+    if (range.end <= cursor) continue
+    if (range.start > cursor) return false
+    cursor = Math.max(cursor, range.end)
+    if (cursor >= end) return true
+  }
+  return false
+}
+
+function removeHighlightRange(ranges, start, end) {
+  const remaining = []
+  ranges.forEach(range => {
+    if (range.end <= start || range.start >= end) {
+      remaining.push(range)
+      return
+    }
+    if (range.start < start) remaining.push({ start: range.start, end: start })
+    if (range.end > end) remaining.push({ start: end, end: range.end })
+  })
+  return remaining
+}
+
+function toggleSynthesisHighlight() {
+  const root = llmTextRef.value
+  const selection = window.getSelection()
+  if (!root || !selection?.rangeCount || selection.isCollapsed) return
+
+  const selectedRange = selection.getRangeAt(0)
+  // Only selections wholly inside the generated synthesis can be annotated;
+  // the "Evidence Synthesis" label itself remains immutable.
+  if (!root.contains(selectedRange.startContainer) || !root.contains(selectedRange.endContainer)) return
+
+  const textLength = String(llmSummary.value || '').length
+  const start = textOffsetWithin(root, selectedRange.startContainer, selectedRange.startOffset)
+  const end = textOffsetWithin(root, selectedRange.endContainer, selectedRange.endOffset)
+  if (end <= start || start < 0 || end > textLength) return
+
+  const current = normalizeHighlightRanges(synthesisHighlights.value, textLength)
+  synthesisHighlights.value = selectionIsHighlighted(start, end, current)
+    ? removeHighlightRange(current, start, end)
+    : normalizeHighlightRanges([...current, { start, end }], textLength)
+
+  // Remove the browser's blue selection after Vue has painted the persistent
+  // yellow annotation, leaving the text readable at its original colour.
+  nextTick(() => selection.removeAllRanges())
+}
 
 const clampSectionHeight = (target, value) => {
   const min = SECTION_MIN_HEIGHT[target] ?? 48
@@ -310,7 +430,10 @@ async function autoFitLlmSection() {
   emit('resize-card-delta', delta)
 }
 
-watch(llmSummary, (value) => { if (value) autoFitLlmSection() })
+watch(llmSummary, (value) => {
+  synthesisHighlights.value = []
+  if (value) autoFitLlmSection()
+})
 
 function stopSectionResize() {
   if (!sectionResize.active) return
@@ -338,8 +461,15 @@ const pickedNodeKey = ref(null)
 const msuListExpanded = ref(false)
 const MSU_PREVIEW_LIMIT = 8
 
-// 切换显示/隐藏原文
-const toggleOriginal = () => { showOriginal.value = !showOriginal.value }
+// Details belong to a single, stable MSU—not to the whole aggregated HSU/card.
+const detailMsus = ref(new Set())
+const isOriginalVisible = (uid) => detailMsus.value.has(uid)
+const toggleOriginal = (uid) => {
+  const next = new Set(detailMsus.value)
+  if (next.has(uid)) next.delete(uid)
+  else next.add(uid)
+  detailMsus.value = next
+}
 
 // 折叠状态：同样按 uid 记录，折叠后只保留标题行
 const collapsedMsus = ref(new Set())
@@ -398,18 +528,10 @@ const extractParaInfo = (rawMsu) => {
 
  if (direct) return direct
 
- // 3) 退化：把可用的元信息拼接出来（至少不至于空）
- const title = _asText(rawMsu.paper_title ?? rawMsu.paperTitle ?? rawMsu.title ?? rawMsu.doc_title ?? rawMsu.docTitle)
- const section = _asText(rawMsu.section_title ?? rawMsu.sectionTitle ?? rawMsu.section)
- const sent = _asText(rawMsu.sentence ?? rawMsu.text)
-
- const meta = [
- title ? `Title: ${title}` : null,
- section ? `Section: ${section}` : null
- ].filter(Boolean).join('\n')
-
- const combined = [meta, sent].filter(s => typeof s === 'string' && s.trim().length > 0).join('\n\n')
- return combined.trim() || null
+ // Never fall back to `sentence`/`text`: that is the MSU already shown in
+ // the card, rather than its source context. Showing it here disguises a
+ // missing source mapping as a valid detail record.
+ return null
 }
 
 const DEFAULT_PAPER_DOT = '#DCDCDC'
@@ -474,16 +596,6 @@ function colorForPaper(countryId, panelIdx) {
  if (globalColor) return globalColor
  return DEFAULT_PAPER_DOT
 }
-
-const formatRawForDebug = (obj, limit = 2000) => {
- try {
- const s = JSON.stringify(obj, null, 2)
- return s.length > limit ? (s.slice(0, limit)  + '\n…') : s
- } catch {
- return String(obj)
- }
-}
-
 
 // 已选择的数量
 const selectedCount = computed(() => selectedMsus.value.size)
@@ -665,7 +777,10 @@ const visibleMsuSentences = computed(() => (
 ))
 
 watch(pickedNodeKey, () => { msuListExpanded.value = false })
-watch(() => props.link, () => { msuListExpanded.value = false })
+watch(() => props.link, () => {
+  msuListExpanded.value = false
+  detailMsus.value = new Set()
+})
 
 function getSemanticMsuCandidates() {
   return (linkMsuSentences.value || []).map(msu => ({
@@ -1056,7 +1171,6 @@ onBeforeUnmount(() => {
 .msu-text { color: #374151; font-size: 11px; line-height: 1.5; }
 .para-info { margin-top: 8px; padding: 8px; background: #ffffff; border: 1px solid #e5e7eb; border-radius: 4px; }
 .para-info-content { color: #4b5563; font-size: 10px; line-height: 1.5; white-space: pre-wrap; }
-.para-info-raw { margin: 0; font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace; font-size: 10px; }
 
 /* Evidence Synthesis：始终排在 MSU 拖动条之下，吸收剩余空间，内容超长时自己滚动 */
 .subcard__llm{
@@ -1069,6 +1183,21 @@ onBeforeUnmount(() => {
 .llm-content { font-size: 11px; line-height: 1.45; color: #374151; padding: 7px 8px; background: #ffffff; border-radius: 5px; border-left: 3px solid #d8dee8; }
 .llm-label{ font-weight:700; color:#1f2937; margin-right:4px; }
 .llm-text{ color:#374151; }
+.llm-text--selectable{
+  cursor:text;
+  user-select:text;
+  -webkit-user-select:text;
+}
+/* The mark sits behind the glyphs: selection changes no text colour and
+   uses the requested pale-yellow evidence cue. */
+:deep(.evidence-highlight){
+  color:inherit;
+  background:#fff3b0;
+  border-radius:2px;
+  padding:0 .06em;
+  -webkit-box-decoration-break:clone;
+  box-decoration-break:clone;
+}
 .llm-loading { font-size: 11px; color: #6b7280; padding: 7px 8px; }
 .llm-error { font-size: 11px; color: #ef4444; padding: 6px; }
 

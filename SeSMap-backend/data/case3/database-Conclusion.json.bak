@@ -1,0 +1,3628 @@
+[
+  {
+    "idx": 24,
+    "MSU_id": 24,
+    "sentence": "Visualization plays a crucial role in helping researchers explore complex relationships.",
+    "category": "Conclusion",
+    "rank": 4,
+    "type": "text",
+    "para_id": 6,
+    "paper_id": 0,
+    "2d_coord": [
+      0.4928059378436551,
+      -0.8015030858121492
+    ]
+  },
+  {
+    "idx": 25,
+    "MSU_id": 25,
+    "sentence": "Visualization helps researchers uncover patterns.",
+    "category": "Conclusion",
+    "rank": 4,
+    "type": "text",
+    "para_id": 6,
+    "paper_id": 0,
+    "2d_coord": [
+      0.48455830457554877,
+      -0.8034946496575478
+    ]
+  },
+  {
+    "idx": 26,
+    "MSU_id": 26,
+    "sentence": "Visualization helps researchers effectively communicate findings.",
+    "category": "Conclusion",
+    "rank": 4,
+    "type": "text",
+    "para_id": 6,
+    "paper_id": 0,
+    "2d_coord": [
+      0.494629372436901,
+      -0.8173572449052332
+    ]
+  },
+  {
+    "idx": 33,
+    "MSU_id": 33,
+    "sentence": "These limitations highlight the demand for intelligent, automated visualization solutions tailored to the unique characteristics of circular genomic data.",
+    "category": "Conclusion",
+    "rank": 4,
+    "type": "text",
+    "para_id": 7,
+    "paper_id": 0,
+    "2d_coord": [
+      -1.0842463215467313,
+      0.6447648718518498
+    ]
+  },
+  {
+    "idx": 79,
+    "MSU_id": 79,
+    "sentence": "Circular layouts largely rely on manual design, limiting their efficiency and general applicability.",
+    "category": "Conclusion",
+    "rank": 4,
+    "type": "text",
+    "para_id": 15,
+    "paper_id": 0,
+    "2d_coord": [
+      2.969011602700324,
+      -1.7004692776487687
+    ]
+  },
+  {
+    "idx": 106,
+    "MSU_id": 106,
+    "sentence": "These approaches address basic visualization needs.",
+    "category": "Conclusion",
+    "rank": 3,
+    "type": "text",
+    "para_id": 19,
+    "paper_id": 0,
+    "2d_coord": [
+      0.43021277339466246,
+      -1.0429571297600229
+    ]
+  },
+  {
+    "idx": 107,
+    "MSU_id": 107,
+    "sentence": "These approaches mitigate limitations in semantic understanding and long-context reasoning.",
+    "category": "Conclusion",
+    "rank": 3,
+    "type": "text",
+    "para_id": 19,
+    "paper_id": 0,
+    "2d_coord": [
+      1.605713287706696,
+      0.5980988478606306
+    ]
+  },
+  {
+    "idx": 124,
+    "MSU_id": 124,
+    "sentence": "These findings informed the visual design and motivated the choice of a D3-based code to support extensibility and dynamic control.",
+    "category": "Conclusion",
+    "rank": 5,
+    "type": "text",
+    "para_id": 22,
+    "paper_id": 0,
+    "2d_coord": [
+      -0.25362553984051645,
+      -1.2135515053663477
+    ]
+  },
+  {
+    "idx": 132,
+    "MSU_id": 132,
+    "sentence": "Six key requirements for a genome visual analytics framework were distilled based on these findings.",
+    "category": "Conclusion",
+    "rank": 4,
+    "type": "text",
+    "para_id": 23,
+    "paper_id": 0,
+    "2d_coord": [
+      -1.2747254335912295,
+      0.48898800247260976
+    ]
+  },
+  {
+    "idx": 133,
+    "MSU_id": 133,
+    "sentence": "The requirements aim to enhance analytical efficiency, expressiveness, and usability.",
+    "category": "Conclusion",
+    "rank": 3,
+    "type": "text",
+    "para_id": 23,
+    "paper_id": 0,
+    "2d_coord": [
+      2.134838012415899,
+      -0.017455062503480192
+    ]
+  },
+  {
+    "idx": 142,
+    "MSU_id": 142,
+    "sentence": "This approach reduces manual trial-and-error.",
+    "category": "Conclusion",
+    "rank": 4,
+    "type": "text",
+    "para_id": 25,
+    "paper_id": 0,
+    "2d_coord": [
+      2.386674059579386,
+      -0.46635108593208807
+    ]
+  },
+  {
+    "idx": 146,
+    "MSU_id": 146,
+    "sentence": "The six core requirements ensure scalability, interpretability, and reproducibility in genomic data visualizations.",
+    "category": "Conclusion",
+    "rank": 4,
+    "type": "text",
+    "para_id": 27,
+    "paper_id": 0,
+    "2d_coord": [
+      -1.2902093886413541,
+      0.4780187215716288
+    ]
+  },
+  {
+    "idx": 195,
+    "MSU_id": 195,
+    "sentence": "These results guided our agent-model assignment strategy.",
+    "category": "Conclusion",
+    "rank": 3,
+    "type": "text",
+    "para_id": 39,
+    "paper_id": 0,
+    "2d_coord": [
+      1.5026569987205651,
+      0.7341381710961332
+    ]
+  },
+  {
+    "idx": 198,
+    "MSU_id": 198,
+    "sentence": "This division supports a modular workflow where each agent operates on tasks aligned with the LLM’s strengths.",
+    "category": "Conclusion",
+    "rank": 4,
+    "type": "text",
+    "para_id": 39,
+    "paper_id": 0,
+    "2d_coord": [
+      1.6000477458000952,
+      0.962625190215475
+    ]
+  },
+  {
+    "idx": 203,
+    "MSU_id": 203,
+    "sentence": "The modular design enables finer grained orchestration, greater controllability, and better task transparency.",
+    "category": "Conclusion",
+    "rank": 4,
+    "type": "text",
+    "para_id": 40,
+    "paper_id": 0,
+    "2d_coord": [
+      1.7875385185691772,
+      -0.09541459756681289
+    ]
+  },
+  {
+    "idx": 222,
+    "MSU_id": 222,
+    "sentence": "This agent bridges the gap between raw genomic data and visualization design.",
+    "category": "Conclusion",
+    "rank": 5,
+    "type": "text",
+    "para_id": 45,
+    "paper_id": 0,
+    "2d_coord": [
+      -1.21390305620812,
+      0.404584372147557
+    ]
+  },
+  {
+    "idx": 223,
+    "MSU_id": 223,
+    "sentence": "This agent enables prelayout planning.",
+    "category": "Conclusion",
+    "rank": 4,
+    "type": "text",
+    "para_id": 45,
+    "paper_id": 0,
+    "2d_coord": [
+      1.4750419076169101,
+      0.6806383299768851
+    ]
+  },
+  {
+    "idx": 228,
+    "MSU_id": 228,
+    "sentence": "The modularity improves maintainability.",
+    "category": "Conclusion",
+    "rank": 3,
+    "type": "text",
+    "para_id": 46,
+    "paper_id": 0,
+    "2d_coord": [
+      1.793626954622767,
+      -0.10071397681175866
+    ]
+  },
+  {
+    "idx": 229,
+    "MSU_id": 229,
+    "sentence": "The modularity supports downstream code reuse and refinement.",
+    "category": "Conclusion",
+    "rank": 3,
+    "type": "text",
+    "para_id": 46,
+    "paper_id": 0,
+    "2d_coord": [
+      1.8244469503811318,
+      -0.096716629046219
+    ]
+  },
+  {
+    "idx": 233,
+    "MSU_id": 233,
+    "sentence": "This design promotes continuity in the visualization process.",
+    "category": "Conclusion",
+    "rank": 3,
+    "type": "text",
+    "para_id": 47,
+    "paper_id": 0,
+    "2d_coord": [
+      0.8088038514872257,
+      -0.8183411610702002
+    ]
+  },
+  {
+    "idx": 234,
+    "MSU_id": 234,
+    "sentence": "This design avoids unintended side effects.",
+    "category": "Conclusion",
+    "rank": 3,
+    "type": "text",
+    "para_id": 47,
+    "paper_id": 0,
+    "2d_coord": [
+      2.282383836283397,
+      -0.5184339460438996
+    ]
+  },
+  {
+    "idx": 235,
+    "MSU_id": 235,
+    "sentence": "This design supports real-time iteration and visual feedback.",
+    "category": "Conclusion",
+    "rank": 4,
+    "type": "text",
+    "para_id": 47,
+    "paper_id": 0,
+    "2d_coord": [
+      1.6687536289071372,
+      -0.6161440348524518
+    ]
+  },
+  {
+    "idx": 334,
+    "MSU_id": 334,
+    "sentence": "Real-time adjustments promote iterative refinement.",
+    "category": "Conclusion",
+    "rank": 3,
+    "type": "text",
+    "para_id": 75,
+    "paper_id": 0,
+    "2d_coord": [
+      1.750383656767949,
+      -0.6351477992419872
+    ]
+  },
+  {
+    "idx": 376,
+    "MSU_id": 376,
+    "sentence": "This process facilitates downstream reporting and publication.",
+    "category": "Conclusion",
+    "rank": 3,
+    "type": "text",
+    "para_id": 82,
+    "paper_id": 0,
+    "2d_coord": [
+      1.578686942640677,
+      -0.27710694104190475
+    ]
+  },
+  {
+    "idx": 398,
+    "MSU_id": 398,
+    "sentence": "This approach helps avoid repeating past errors while maintaining focus on the current branch context.",
+    "category": "Conclusion",
+    "rank": 3,
+    "type": "text",
+    "para_id": 87,
+    "paper_id": 0,
+    "2d_coord": [
+      2.327805654131044,
+      -0.46865426717697706
+    ]
+  },
+  {
+    "idx": 410,
+    "MSU_id": 410,
+    "sentence": "The Sequence Log View enhances control in the genomic visualization process.",
+    "category": "Conclusion",
+    "rank": 5,
+    "type": "text",
+    "para_id": 90,
+    "paper_id": 0,
+    "2d_coord": [
+      -1.0621495154048668,
+      0.35762502380001787
+    ]
+  },
+  {
+    "idx": 411,
+    "MSU_id": 411,
+    "sentence": "The Sequence Log View enhances reliability in the genomic visualization process.",
+    "category": "Conclusion",
+    "rank": 5,
+    "type": "text",
+    "para_id": 90,
+    "paper_id": 0,
+    "2d_coord": [
+      -1.062796018471239,
+      0.35543230710925466
+    ]
+  },
+  {
+    "idx": 412,
+    "MSU_id": 412,
+    "sentence": "The Sequence Log View enhances efficiency in the genomic visualization process.",
+    "category": "Conclusion",
+    "rank": 5,
+    "type": "text",
+    "para_id": 90,
+    "paper_id": 0,
+    "2d_coord": [
+      -1.0570011571685904,
+      0.35460989709119783
+    ]
+  },
+  {
+    "idx": 417,
+    "MSU_id": 417,
+    "sentence": "The framework supports domain-specific generation, exploration, and reuse of circular genome visualizations.",
+    "category": "Conclusion",
+    "rank": 5,
+    "type": "text",
+    "para_id": 91,
+    "paper_id": 0,
+    "2d_coord": [
+      -2.179499525352974,
+      -0.18889294280827468
+    ]
+  },
+  {
+    "idx": 439,
+    "MSU_id": 439,
+    "sentence": "The integration supports exploratory hypotheses on regulatory disruptions and disease mechanisms in AML.",
+    "category": "Conclusion",
+    "rank": 5,
+    "type": "text",
+    "para_id": 95,
+    "paper_id": 0,
+    "2d_coord": [
+      -2.734741978456617,
+      1.6954143408227864
+    ]
+  },
+  {
+    "idx": 449,
+    "MSU_id": 449,
+    "sentence": "This integrated insight led $E _ { A }$ to annotate the region as a potential biomarker for AML.",
+    "category": "Conclusion",
+    "rank": 5,
+    "type": "text",
+    "para_id": 97,
+    "paper_id": 0,
+    "2d_coord": [
+      -2.739921516097024,
+      1.6929278053691312
+    ]
+  },
+  {
+    "idx": 450,
+    "MSU_id": 450,
+    "sentence": "The genomic region chr1:16816819–18551718 was suggested as a candidate for future experimental validation.",
+    "category": "Conclusion",
+    "rank": 4,
+    "type": "text",
+    "para_id": 97,
+    "paper_id": 0,
+    "2d_coord": [
+      -2.854128292528455,
+      1.5241510566674799
+    ]
+  },
+  {
+    "idx": 482,
+    "MSU_id": 482,
+    "sentence": "The workflow facilitates downstream analysis, sharing, and collaborative validation.",
+    "category": "Conclusion",
+    "rank": 3,
+    "type": "text",
+    "para_id": 105,
+    "paper_id": 0,
+    "2d_coord": [
+      1.5839492183986719,
+      -0.27874215546461617
+    ]
+  },
+  {
+    "idx": 548,
+    "MSU_id": 548,
+    "sentence": "This cross-disciplinary flexibility was highlighted as a key advantage over traditional tools.",
+    "category": "Conclusion",
+    "rank": 4,
+    "type": "text",
+    "para_id": 124,
+    "paper_id": 0,
+    "2d_coord": [
+      2.6357308197373204,
+      -0.2307639999740164
+    ]
+  },
+  {
+    "idx": 554,
+    "MSU_id": 554,
+    "sentence": "Participants suggested that optional confirmation or stepwise override could improve usability.",
+    "category": "Conclusion",
+    "rank": 4,
+    "type": "text",
+    "para_id": 125,
+    "paper_id": 0,
+    "2d_coord": [
+      2.3462341845941608,
+      0.2712324664646182
+    ]
+  },
+  {
+    "idx": 561,
+    "MSU_id": 561,
+    "sentence": "These design elements make AuraGenome well suited for handling the complex tasks of circular genome visualizations.",
+    "category": "Conclusion",
+    "rank": 5,
+    "type": "text",
+    "para_id": 126,
+    "paper_id": 0,
+    "2d_coord": [
+      -2.1730373121052873,
+      -0.03107845914291356
+    ]
+  },
+  {
+    "idx": 569,
+    "MSU_id": 569,
+    "sentence": "AuraGenome reinforces its value as a user-centric tool.",
+    "category": "Conclusion",
+    "rank": 5,
+    "type": "text",
+    "para_id": 127,
+    "paper_id": 0,
+    "2d_coord": [
+      -0.746342346696544,
+      1.4149375866009777
+    ]
+  },
+  {
+    "idx": 579,
+    "MSU_id": 579,
+    "sentence": "AuraGenome remains robust and reliable in handling complex genomic visualization tasks.",
+    "category": "Conclusion",
+    "rank": 5,
+    "type": "text",
+    "para_id": 128,
+    "paper_id": 0,
+    "2d_coord": [
+      -0.8488666136212278,
+      1.247039139403209
+    ]
+  },
+  {
+    "idx": 586,
+    "MSU_id": 586,
+    "sentence": "We plan to refine the multiagent workflow to capture more fine-grained user intents.",
+    "category": "Conclusion",
+    "rank": 3,
+    "type": "text",
+    "para_id": 130,
+    "paper_id": 0,
+    "2d_coord": [
+      1.3601278658465996,
+      0.7989866324446556
+    ]
+  },
+  {
+    "idx": 587,
+    "MSU_id": 587,
+    "sentence": "We plan to support richer interactions with visualization outcomes.",
+    "category": "Conclusion",
+    "rank": 3,
+    "type": "text",
+    "para_id": 130,
+    "paper_id": 0,
+    "2d_coord": [
+      0.7030965618390443,
+      -0.858291283900854
+    ]
+  },
+  {
+    "idx": 588,
+    "MSU_id": 588,
+    "sentence": "We aim to extend support beyond circular layouts.",
+    "category": "Conclusion",
+    "rank": 3,
+    "type": "text",
+    "para_id": 130,
+    "paper_id": 0,
+    "2d_coord": [
+      2.7479813703011544,
+      -2.4375944445235587
+    ]
+  },
+  {
+    "idx": 589,
+    "MSU_id": 589,
+    "sentence": "We aim to enable multiview genomic representations that accommodate diverse analytical needs.",
+    "category": "Conclusion",
+    "rank": 4,
+    "type": "text",
+    "para_id": 130,
+    "paper_id": 0,
+    "2d_coord": [
+      -1.7265245786592762,
+      0.9057252591843551
+    ]
+  },
+  {
+    "idx": 590,
+    "MSU_id": 590,
+    "sentence": "We will enhance the robustness of LLM-driven generation through improved retrieval grounding.",
+    "category": "Conclusion",
+    "rank": 4,
+    "type": "text",
+    "para_id": 130,
+    "paper_id": 0,
+    "2d_coord": [
+      1.1699284762575328,
+      1.1587445293551444
+    ]
+  },
+  {
+    "idx": 591,
+    "MSU_id": 591,
+    "sentence": "We will enhance the robustness of LLM-driven generation through improved validation strategies.",
+    "category": "Conclusion",
+    "rank": 4,
+    "type": "text",
+    "para_id": 130,
+    "paper_id": 0,
+    "2d_coord": [
+      1.1756436046863654,
+      1.1505596756391387
+    ]
+  },
+  {
+    "idx": 592,
+    "MSU_id": 592,
+    "sentence": "These enhancements aim to increase reliability and reduce the risk of hallucinated outputs.",
+    "category": "Conclusion",
+    "rank": 5,
+    "type": "text",
+    "para_id": 130,
+    "paper_id": 0,
+    "2d_coord": [
+      2.317917087328226,
+      -0.5898901041431915
+    ]
+  },
+  {
+    "idx": 630,
+    "MSU_id": 630,
+    "sentence": "CGView.js is suitable for developers building bioinformatics platforms.",
+    "category": "Conclusion",
+    "rank": 3,
+    "type": "text",
+    "para_id": 152,
+    "paper_id": 1,
+    "2d_coord": [
+      -1.7917287892891602,
+      -0.5809561302976615
+    ]
+  },
+  {
+    "idx": 665,
+    "MSU_id": 665,
+    "sentence": "CGView.js is recommended primarily for microbial and organellar genomes.",
+    "category": "Conclusion",
+    "rank": 4,
+    "type": "text",
+    "para_id": 160,
+    "paper_id": 1,
+    "2d_coord": [
+      -1.8522838878043302,
+      -0.5195964136109319
+    ]
+  },
+  {
+    "idx": 687,
+    "MSU_id": 687,
+    "sentence": "The project website supports reproducibility and community uptake.",
+    "category": "Conclusion",
+    "rank": 3,
+    "type": "text",
+    "para_id": 164,
+    "paper_id": 1,
+    "2d_coord": [
+      1.5117871171265176,
+      -0.221766742087248
+    ]
+  },
+  {
+    "idx": 761,
+    "MSU_id": 761,
+    "sentence": "This makes Circos suitable for rapid deployment in data analysis and reporting pipelines.",
+    "category": "Conclusion",
+    "rank": 3,
+    "type": "text",
+    "para_id": 187,
+    "paper_id": 2,
+    "2d_coord": [
+      -2.0983102352740457,
+      -2.1559096431573974
+    ]
+  },
+  {
+    "idx": 791,
+    "MSU_id": 791,
+    "sentence": "The report hinted at the benefit of adopting the circular layout for application to structural data.",
+    "category": "Conclusion",
+    "rank": 3,
+    "type": "text",
+    "para_id": 191,
+    "paper_id": 2,
+    "2d_coord": [
+      2.773527257154173,
+      -2.3361610504494723
+    ]
+  },
+  {
+    "idx": 1083,
+    "MSU_id": 1083,
+    "sentence": "The study provides insights into the evolution of a cancer genome.",
+    "category": "Conclusion",
+    "rank": 5,
+    "type": "text",
+    "para_id": 270,
+    "paper_id": 2,
+    "2d_coord": [
+      -2.722536932189078,
+      1.870342072318369
+    ]
+  },
+  {
+    "idx": 1182,
+    "MSU_id": 1182,
+    "sentence": "The case study confirms the utility of Gosling and provides guidance on suitable areas for future development.",
+    "category": "Conclusion",
+    "rank": 5,
+    "type": "text",
+    "para_id": 313,
+    "paper_id": 3,
+    "2d_coord": [
+      -1.02589218843881,
+      -1.1986458535103952
+    ]
+  },
+  {
+    "idx": 1195,
+    "MSU_id": 1195,
+    "sentence": "Visualization designs should primarily be evaluated on how well they support the analysis task at hand.",
+    "category": "Conclusion",
+    "rank": 3,
+    "type": "text",
+    "para_id": 316,
+    "paper_id": 3,
+    "2d_coord": [
+      0.6413085972842629,
+      -0.9708540053462856
+    ]
+  },
+  {
+    "idx": 1199,
+    "MSU_id": 1199,
+    "sentence": "The main contribution of the work is an empirical study on the suitability of circular and linear layouts for comparative tasks with matrix and connective data.",
+    "category": "Conclusion",
+    "rank": 5,
+    "type": "text",
+    "para_id": 317,
+    "paper_id": 3,
+    "2d_coord": [
+      2.729033496148753,
+      -2.1345586247085393
+    ]
+  },
+  {
+    "idx": 1201,
+    "MSU_id": 1201,
+    "sentence": "The results are expected to be informative for matrix and connective data types in other settings.",
+    "category": "Conclusion",
+    "rank": 4,
+    "type": "text",
+    "para_id": 317,
+    "paper_id": 3,
+    "2d_coord": [
+      2.40427765062719,
+      -1.2880185524038412
+    ]
+  },
+  {
+    "idx": 1220,
+    "MSU_id": 1220,
+    "sentence": "The authors recommend both linear and circular layouts for overview tasks searching for trends or patterns.",
+    "category": "Conclusion",
+    "rank": 3,
+    "type": "text",
+    "para_id": 321,
+    "paper_id": 3,
+    "2d_coord": [
+      2.546180753657977,
+      -2.316215276737754
+    ]
+  },
+  {
+    "idx": 1222,
+    "MSU_id": 1222,
+    "sentence": "For comparisons of length and position, the authors conclude that circular layouts are not useful citing Waldner et al.",
+    "category": "Conclusion",
+    "rank": 3,
+    "type": "text",
+    "para_id": 321,
+    "paper_id": 3,
+    "2d_coord": [
+      3.224337864849089,
+      -1.6595828900294372
+    ]
+  },
+  {
+    "idx": 1258,
+    "MSU_id": 1258,
+    "sentence": "Both data and task type affect what layout choices are appropriate.",
+    "category": "Conclusion",
+    "rank": 4,
+    "type": "text",
+    "para_id": 327,
+    "paper_id": 3,
+    "2d_coord": [
+      2.325264532694394,
+      -1.753794557933284
+    ]
+  },
+  {
+    "idx": 1259,
+    "MSU_id": 1259,
+    "sentence": "Layout needs to be considered to ensure the effectiveness of the visualization.",
+    "category": "Conclusion",
+    "rank": 4,
+    "type": "text",
+    "para_id": 327,
+    "paper_id": 3,
+    "2d_coord": [
+      2.344131077437226,
+      -2.010649037000006
+    ]
+  },
+  {
+    "idx": 1406,
+    "MSU_id": 1406,
+    "sentence": "The underlying tasks can be performed on data from other domains.",
+    "category": "Conclusion",
+    "rank": 3,
+    "type": "text",
+    "para_id": 374,
+    "paper_id": 3,
+    "2d_coord": [
+      2.6222075984204496,
+      -0.9507456895881727
+    ]
+  },
+  {
+    "idx": 1407,
+    "MSU_id": 1407,
+    "sentence": "By sampling a population that was not geneticists, the claim to generalization outside of genomics is strengthened.",
+    "category": "Conclusion",
+    "rank": 4,
+    "type": "text",
+    "para_id": 374,
+    "paper_id": 3,
+    "2d_coord": [
+      3.410945283777047,
+      0.7445875717148879
+    ]
+  },
+  {
+    "idx": 1409,
+    "MSU_id": 1409,
+    "sentence": "Recruiting more participants strengthened the statistical power of the results.",
+    "category": "Conclusion",
+    "rank": 4,
+    "type": "text",
+    "para_id": 374,
+    "paper_id": 3,
+    "2d_coord": [
+      3.2508027928130203,
+      0.39085060512667824
+    ]
+  },
+  {
+    "idx": 1411,
+    "MSU_id": 1411,
+    "sentence": "Domain experts might have had pre-existing mental models influenced by prior knowledge.",
+    "category": "Conclusion",
+    "rank": 2,
+    "type": "text",
+    "para_id": 374,
+    "paper_id": 3,
+    "2d_coord": [
+      1.4382166834918828,
+      0.6091842672197323
+    ]
+  },
+  {
+    "idx": 1441,
+    "MSU_id": 1441,
+    "sentence": "The results for time spent on each task are inconclusive.",
+    "category": "Conclusion",
+    "rank": 3,
+    "type": "text",
+    "para_id": 386,
+    "paper_id": 3,
+    "2d_coord": [
+      3.5088640146217056,
+      0.732525722918912
+    ]
+  },
+  {
+    "idx": 1491,
+    "MSU_id": 1491,
+    "sentence": "The tasks were just shy of being too difficult for participants to make an honest effort to solve.",
+    "category": "Conclusion",
+    "rank": 4,
+    "type": "text",
+    "para_id": 394,
+    "paper_id": 3,
+    "2d_coord": [
+      3.342622005767681,
+      0.110636592683225
+    ]
+  },
+  {
+    "idx": 1512,
+    "MSU_id": 1512,
+    "sentence": "The goal was to define best practices for current and future users of Gosling.",
+    "category": "Conclusion",
+    "rank": 4,
+    "type": "text",
+    "para_id": 398,
+    "paper_id": 3,
+    "2d_coord": [
+      -1.1020508882717628,
+      -1.248786213743304
+    ]
+  },
+  {
+    "idx": 1513,
+    "MSU_id": 1513,
+    "sentence": "The goal included providing specific feedback for improving Gosling to create added value for the community of Gosling users.",
+    "category": "Conclusion",
+    "rank": 4,
+    "type": "text",
+    "para_id": 398,
+    "paper_id": 3,
+    "2d_coord": [
+      -1.1250449475071949,
+      -1.2384857943049645
+    ]
+  },
+  {
+    "idx": 1521,
+    "MSU_id": 1521,
+    "sentence": "The diary entries suggest that the design reached the limits of the grammar’s specificity.",
+    "category": "Conclusion",
+    "rank": 4,
+    "type": "text",
+    "para_id": 399,
+    "paper_id": 3,
+    "2d_coord": [
+      3.2340412335044806,
+      -0.3114651842822464
+    ]
+  },
+  {
+    "idx": 1529,
+    "MSU_id": 1529,
+    "sentence": "While a prototyping tool cannot be expected to be entirely comprehensive, missing features and a limited set of help resources do affect the experience of using it.",
+    "category": "Conclusion",
+    "rank": 4,
+    "type": "text",
+    "para_id": 400,
+    "paper_id": 3,
+    "2d_coord": [
+      3.0718698273391305,
+      -0.3797202246289004
+    ]
+  },
+  {
+    "idx": 1542,
+    "MSU_id": 1542,
+    "sentence": "Data curation and formatting remain challenging for prototyping genomics visualizations.",
+    "category": "Conclusion",
+    "rank": 4,
+    "type": "text",
+    "para_id": 402,
+    "paper_id": 3,
+    "2d_coord": [
+      -1.1737637056000578,
+      0.5745041653009052
+    ]
+  },
+  {
+    "idx": 1549,
+    "MSU_id": 1549,
+    "sentence": "Our results oppose the conclusion that circular layouts are better for comparison tasks, adding nuance to the understanding of the utility of circular layouts.",
+    "category": "Conclusion",
+    "rank": 5,
+    "type": "text",
+    "para_id": 403,
+    "paper_id": 3,
+    "2d_coord": [
+      2.772309194287984,
+      -2.275441519644198
+    ]
+  },
+  {
+    "idx": 1555,
+    "MSU_id": 1555,
+    "sentence": "This approach yields other opportunities for visualization, such as a difference log, sorting, or highlighting of the selected sample as suggested by some participants.",
+    "category": "Conclusion",
+    "rank": 3,
+    "type": "text",
+    "para_id": 404,
+    "paper_id": 3,
+    "2d_coord": [
+      0.2637057161270599,
+      -1.2519151952227447
+    ]
+  },
+  {
+    "idx": 1559,
+    "MSU_id": 1559,
+    "sentence": "The authors echo the advice by L’Yi and Gehlenborg to not add too many tracks to circular plots.",
+    "category": "Conclusion",
+    "rank": 2,
+    "type": "text",
+    "para_id": 405,
+    "paper_id": 3,
+    "2d_coord": [
+      1.6628163941808076,
+      -3.1271196533922927
+    ]
+  },
+  {
+    "idx": 1565,
+    "MSU_id": 1565,
+    "sentence": "It appears that when navigation is necessary, circular layouts perform worse.",
+    "category": "Conclusion",
+    "rank": 4,
+    "type": "text",
+    "para_id": 405,
+    "paper_id": 3,
+    "2d_coord": [
+      3.179530055869533,
+      -1.830000032651223
+    ]
+  },
+  {
+    "idx": 1566,
+    "MSU_id": 1566,
+    "sentence": "This extends the findings of Goldberg and Helfman to two new graph types.",
+    "category": "Conclusion",
+    "rank": 3,
+    "type": "text",
+    "para_id": 405,
+    "paper_id": 3,
+    "2d_coord": [
+      2.4926355740678736,
+      -2.207354860050125
+    ]
+  },
+  {
+    "idx": 1571,
+    "MSU_id": 1571,
+    "sentence": "There is a weak indication that linear layouts should be used if speed is of the essence.",
+    "category": "Conclusion",
+    "rank": 4,
+    "type": "text",
+    "para_id": 406,
+    "paper_id": 3,
+    "2d_coord": [
+      2.6298144338896563,
+      -1.9522098034782802
+    ]
+  },
+  {
+    "idx": 1574,
+    "MSU_id": 1574,
+    "sentence": "Since accuracy does not seem to be affected by the layout, selecting a circular layout is reasonable for contexts where aesthetics are important.",
+    "category": "Conclusion",
+    "rank": 5,
+    "type": "text",
+    "para_id": 406,
+    "paper_id": 3,
+    "2d_coord": [
+      2.845388270565957,
+      -2.2361583277362374
+    ]
+  },
+  {
+    "idx": 1576,
+    "MSU_id": 1576,
+    "sentence": "Gosling is expected to become more useful as more features are supported and as the community grows.",
+    "category": "Conclusion",
+    "rank": 3,
+    "type": "text",
+    "para_id": 407,
+    "paper_id": 3,
+    "2d_coord": [
+      -1.1470020098136784,
+      -1.2219890008407344
+    ]
+  },
+  {
+    "idx": 1577,
+    "MSU_id": 1577,
+    "sentence": "One area to prioritize is the circular layout, completing the feature support, and improving the interaction design.",
+    "category": "Conclusion",
+    "rank": 4,
+    "type": "text",
+    "para_id": 407,
+    "paper_id": 3,
+    "2d_coord": [
+      2.8144135986672216,
+      -2.4725765817716443
+    ]
+  },
+  {
+    "idx": 1580,
+    "MSU_id": 1580,
+    "sentence": "These characteristics could be important to consider for other rapid prototyping tools.",
+    "category": "Conclusion",
+    "rank": 3,
+    "type": "text",
+    "para_id": 407,
+    "paper_id": 3,
+    "2d_coord": [
+      2.9634250423565964,
+      -0.3101100394110867
+    ]
+  },
+  {
+    "idx": 1590,
+    "MSU_id": 1590,
+    "sentence": "The findings likely generalize to geneticists.",
+    "category": "Conclusion",
+    "rank": 4,
+    "type": "text",
+    "para_id": 408,
+    "paper_id": 3,
+    "2d_coord": [
+      -1.280825139308963,
+      1.4478782013967049
+    ]
+  },
+  {
+    "idx": 1592,
+    "MSU_id": 1592,
+    "sentence": "Adding a cursor line to the circular layout as requested by participants might have improved performance.",
+    "category": "Conclusion",
+    "rank": 3,
+    "type": "text",
+    "para_id": 409,
+    "paper_id": 3,
+    "2d_coord": [
+      3.0898796897793117,
+      -2.2516405047416854
+    ]
+  },
+  {
+    "idx": 1593,
+    "MSU_id": 1593,
+    "sentence": "The cursor in the linear layout did not affect the performance much.",
+    "category": "Conclusion",
+    "rank": 2,
+    "type": "text",
+    "para_id": 409,
+    "paper_id": 3,
+    "2d_coord": [
+      2.748472164174609,
+      -1.8379568707647755
+    ]
+  },
+  {
+    "idx": 1597,
+    "MSU_id": 1597,
+    "sentence": "Starting from existing software is practicing responsible use of research resources.",
+    "category": "Conclusion",
+    "rank": 2,
+    "type": "text",
+    "para_id": 409,
+    "paper_id": 3,
+    "2d_coord": [
+      2.716865639772888,
+      -0.4840579041669596
+    ]
+  },
+  {
+    "idx": 1598,
+    "MSU_id": 1598,
+    "sentence": "A combination of matrix and connective data is suggested for future investigation.",
+    "category": "Conclusion",
+    "rank": 3,
+    "type": "text",
+    "para_id": 410,
+    "paper_id": 3,
+    "2d_coord": [
+      2.3995032574127455,
+      -1.294990909316344
+    ]
+  },
+  {
+    "idx": 1600,
+    "MSU_id": 1600,
+    "sentence": "It could be interesting to evaluate how completion time and accuracy are affected by linear versus circular layouts.",
+    "category": "Conclusion",
+    "rank": 3,
+    "type": "text",
+    "para_id": 410,
+    "paper_id": 3,
+    "2d_coord": [
+      2.72028448021859,
+      -2.2055593637253486
+    ]
+  },
+  {
+    "idx": 1601,
+    "MSU_id": 1601,
+    "sentence": "Adding external connections to circular layouts could be evaluated in comparison to two-sided connections in the linear case.",
+    "category": "Conclusion",
+    "rank": 3,
+    "type": "text",
+    "para_id": 410,
+    "paper_id": 3,
+    "2d_coord": [
+      2.6939316854128883,
+      -2.335802440882455
+    ]
+  },
+  {
+    "idx": 1602,
+    "MSU_id": 1602,
+    "sentence": "The performance of a more interactive tool with all the features suggested by participants could be investigated.",
+    "category": "Conclusion",
+    "rank": 3,
+    "type": "text",
+    "para_id": 410,
+    "paper_id": 3,
+    "2d_coord": [
+      2.8132073689483827,
+      0.47567438686539876
+    ]
+  },
+  {
+    "idx": 1605,
+    "MSU_id": 1605,
+    "sentence": "The contamination visualization represents a first step toward displaying genomics data without genomic position on any axis.",
+    "category": "Conclusion",
+    "rank": 3,
+    "type": "text",
+    "para_id": 411,
+    "paper_id": 3,
+    "2d_coord": [
+      -1.8842502901477043,
+      0.4493541585891269
+    ]
+  },
+  {
+    "idx": 1606,
+    "MSU_id": 1606,
+    "sentence": "There are interesting visualization opportunities in displaying genomics data without genomic position on any axis.",
+    "category": "Conclusion",
+    "rank": 2,
+    "type": "text",
+    "para_id": 411,
+    "paper_id": 3,
+    "2d_coord": [
+      -1.8759603252036585,
+      0.46353086681233363
+    ]
+  },
+  {
+    "idx": 1611,
+    "MSU_id": 1611,
+    "sentence": "The study contributes a strengthened and expanded understanding of when linear layouts are preferable over circular ones.",
+    "category": "Conclusion",
+    "rank": 5,
+    "type": "text",
+    "para_id": 412,
+    "paper_id": 3,
+    "2d_coord": [
+      2.711402482251533,
+      -2.2823063313556684
+    ]
+  },
+  {
+    "idx": 1612,
+    "MSU_id": 1612,
+    "sentence": "The study contributes an evaluation of the Gosling grammar as a tool for rapid prototyping.",
+    "category": "Conclusion",
+    "rank": 4,
+    "type": "text",
+    "para_id": 412,
+    "paper_id": 3,
+    "2d_coord": [
+      -0.9728076563705769,
+      -0.7154763422538184
+    ]
+  },
+  {
+    "idx": 1624,
+    "MSU_id": 1624,
+    "sentence": "The model aims to empower data in clinical contexts.",
+    "category": "Conclusion",
+    "rank": 4,
+    "type": "text",
+    "para_id": 416,
+    "paper_id": 3,
+    "2d_coord": [
+      0.8102024637643827,
+      0.39769323917191096
+    ]
+  },
+  {
+    "idx": 1758,
+    "MSU_id": 1758,
+    "sentence": "The limitations of current visualization approaches in genomics indicate a need for better visualization guidance.",
+    "category": "Conclusion",
+    "rank": 5,
+    "type": "text",
+    "para_id": 455,
+    "paper_id": 4,
+    "2d_coord": [
+      -1.0536172526817331,
+      0.6605402790409374
+    ]
+  },
+  {
+    "idx": 1853,
+    "MSU_id": 1853,
+    "sentence": "The tasks and data introduced in this section play a critical role in the design of the GenoREC system.",
+    "category": "Conclusion",
+    "rank": 5,
+    "type": "text",
+    "para_id": 466,
+    "paper_id": 4,
+    "2d_coord": [
+      -0.25939128784412735,
+      1.1367616593070475
+    ]
+  },
+  {
+    "idx": 1894,
+    "MSU_id": 1894,
+    "sentence": "The recommended visualization should be familiar to users in the genomics field.",
+    "category": "Conclusion",
+    "rank": 4,
+    "type": "text",
+    "para_id": 476,
+    "paper_id": 4,
+    "2d_coord": [
+      -1.3484433119984098,
+      0.53763478399415
+    ]
+  },
+  {
+    "idx": 1899,
+    "MSU_id": 1899,
+    "sentence": "Experts noted that it might require additional effort to understand and communicate the results of an unfamiliar visualization technique or design.",
+    "category": "Conclusion",
+    "rank": 3,
+    "type": "text",
+    "para_id": 476,
+    "paper_id": 4,
+    "2d_coord": [
+      3.0946908972299583,
+      -1.1410338328134273
+    ]
+  },
+  {
+    "idx": 1909,
+    "MSU_id": 1909,
+    "sentence": "Experts noted that the ability to specify data requirements in familiar file formats could reduce the learning curve associated with the system.",
+    "category": "Conclusion",
+    "rank": 3,
+    "type": "text",
+    "para_id": 478,
+    "paper_id": 4,
+    "2d_coord": [
+      2.4785954508222825,
+      -0.6392787780410345
+    ]
+  },
+  {
+    "idx": 1910,
+    "MSU_id": 1910,
+    "sentence": "The system should support file formats that accommodate common data types and structures available in genomics.",
+    "category": "Conclusion",
+    "rank": 4,
+    "type": "text",
+    "para_id": 478,
+    "paper_id": 4,
+    "2d_coord": [
+      -1.13637058431606,
+      1.0820905690183185
+    ]
+  },
+  {
+    "idx": 1911,
+    "MSU_id": 1911,
+    "sentence": "The recommendation system should enable users to steer the recommendation progressively.",
+    "category": "Conclusion",
+    "rank": 3,
+    "type": "text",
+    "para_id": 479,
+    "paper_id": 4,
+    "2d_coord": [
+      1.8582556610703835,
+      0.26226430793609773
+    ]
+  },
+  {
+    "idx": 1913,
+    "MSU_id": 1913,
+    "sentence": "Users may need methods to interact with recommendation inputs in a flexible way and update them until they find an item of interest.",
+    "category": "Conclusion",
+    "rank": 3,
+    "type": "text",
+    "para_id": 479,
+    "paper_id": 4,
+    "2d_coord": [
+      1.8437808105304523,
+      0.27651376455492443
+    ]
+  },
+  {
+    "idx": 1917,
+    "MSU_id": 1917,
+    "sentence": "Alternative designs of the same data should be recommended to analysts.",
+    "category": "Conclusion",
+    "rank": 4,
+    "type": "text",
+    "para_id": 480,
+    "paper_id": 4,
+    "2d_coord": [
+      2.467336305031864,
+      -1.213339240144694
+    ]
+  },
+  {
+    "idx": 1920,
+    "MSU_id": 1920,
+    "sentence": "The system should recommend design alternatives to users whenever it is possible.",
+    "category": "Conclusion",
+    "rank": 4,
+    "type": "text",
+    "para_id": 480,
+    "paper_id": 4,
+    "2d_coord": [
+      2.3077441493335176,
+      -0.12350037525548933
+    ]
+  },
+  {
+    "idx": 1921,
+    "MSU_id": 1921,
+    "sentence": "Options can improve the trust in the system.",
+    "category": "Conclusion",
+    "rank": 3,
+    "type": "text",
+    "para_id": 480,
+    "paper_id": 4,
+    "2d_coord": [
+      3.0939298192447926,
+      0.25612792190763095
+    ]
+  },
+  {
+    "idx": 1922,
+    "MSU_id": 1922,
+    "sentence": "Options may lead to serendipitous discoveries.",
+    "category": "Conclusion",
+    "rank": 3,
+    "type": "text",
+    "para_id": 480,
+    "paper_id": 4,
+    "2d_coord": [
+      1.4778548157871574,
+      0.3203849552799824
+    ]
+  },
+  {
+    "idx": 1923,
+    "MSU_id": 1923,
+    "sentence": "Serendipitous discoveries may lead to a positive attitude towards a recommendation system.",
+    "category": "Conclusion",
+    "rank": 3,
+    "type": "text",
+    "para_id": 480,
+    "paper_id": 4,
+    "2d_coord": [
+      1.4864539451842096,
+      0.3463575451065054
+    ]
+  },
+  {
+    "idx": 1946,
+    "MSU_id": 1946,
+    "sentence": "One of the main contributions of GenoREC is the use of sequential order to better reflect the dependencies between these components.",
+    "category": "Conclusion",
+    "rank": 5,
+    "type": "text",
+    "para_id": 485,
+    "paper_id": 4,
+    "2d_coord": [
+      0.13516895129687717,
+      1.0102559426880269
+    ]
+  },
+  {
+    "idx": 1951,
+    "MSU_id": 1951,
+    "sentence": "The sequential order of components ensures that the GenoREC system can accurately recommend visualizations.",
+    "category": "Conclusion",
+    "rank": 5,
+    "type": "text",
+    "para_id": 485,
+    "paper_id": 4,
+    "2d_coord": [
+      0.12602103621296445,
+      1.0190671271298821
+    ]
+  },
+  {
+    "idx": 2002,
+    "MSU_id": 2002,
+    "sentence": "This study recommends linear layouts when length and position are used in the encoding component for identifying and comparing tasks.",
+    "category": "Conclusion",
+    "rank": 4,
+    "type": "text",
+    "para_id": 497,
+    "paper_id": 4,
+    "2d_coord": [
+      2.699105024738017,
+      -2.1401251718478203
+    ]
+  },
+  {
+    "idx": 2003,
+    "MSU_id": 2003,
+    "sentence": "In overview tasks, where the user’s goal is to look for trends and patterns, GenoREC recommends both circular layouts and linear layouts.",
+    "category": "Conclusion",
+    "rank": 4,
+    "type": "text",
+    "para_id": 497,
+    "paper_id": 4,
+    "2d_coord": [
+      2.5436811421509224,
+      -2.3175649595934495
+    ]
+  },
+  {
+    "idx": 2055,
+    "MSU_id": 2055,
+    "sentence": "GenoREC recommends only the linear layout.",
+    "category": "Conclusion",
+    "rank": 5,
+    "type": "text",
+    "para_id": 505,
+    "paper_id": 4,
+    "2d_coord": [
+      -0.3283528514564278,
+      0.6693899447943266
+    ]
+  },
+  {
+    "idx": 2067,
+    "MSU_id": 2067,
+    "sentence": "'Focus+Context' interaction is vital for local comparison tasks.",
+    "category": "Conclusion",
+    "rank": 4,
+    "type": "text",
+    "para_id": 510,
+    "paper_id": 4,
+    "2d_coord": [
+      0.5065262902387881,
+      -0.2886361256142881
+    ]
+  },
+  {
+    "idx": 2092,
+    "MSU_id": 2092,
+    "sentence": "The validation of the recommendation rules ensures that GenoREC's subsequent implementation is valid.",
+    "category": "Conclusion",
+    "rank": 4,
+    "type": "text",
+    "para_id": 516,
+    "paper_id": 4,
+    "2d_coord": [
+      0.2082934584084294,
+      1.3701177002934273
+    ]
+  },
+  {
+    "idx": 2109,
+    "MSU_id": 2109,
+    "sentence": "Since we mainly focused on the recommendation of visual representations in the GenoREC interface, the tabular view is not included.",
+    "category": "Conclusion",
+    "rank": 3,
+    "type": "text",
+    "para_id": 518,
+    "paper_id": 4,
+    "2d_coord": [
+      -0.5280298877194759,
+      0.6715600835849606
+    ]
+  },
+  {
+    "idx": 2110,
+    "MSU_id": 2110,
+    "sentence": "We plan to add the tabular view feature to further enable effective visual exploration of genomics data.",
+    "category": "Conclusion",
+    "rank": 4,
+    "type": "text",
+    "para_id": 518,
+    "paper_id": 4,
+    "2d_coord": [
+      -1.4323839027502672,
+      0.6726702382280229
+    ]
+  },
+  {
+    "idx": 2113,
+    "MSU_id": 2113,
+    "sentence": "We decided to keep data descriptions in domain-specific terminology because other participants found it helpful.",
+    "category": "Conclusion",
+    "rank": 4,
+    "type": "text",
+    "para_id": 518,
+    "paper_id": 4,
+    "2d_coord": [
+      2.8002622814020794,
+      1.1267622863848221
+    ]
+  },
+  {
+    "idx": 2119,
+    "MSU_id": 2119,
+    "sentence": "We hypothesized that participants will find GenoREC’s top-ranked recommendation to be more useful than a mid-ranked visualization.",
+    "category": "Conclusion",
+    "rank": 5,
+    "type": "text",
+    "para_id": 519,
+    "paper_id": 4,
+    "2d_coord": [
+      0.210025981442775,
+      1.510572580396604
+    ]
+  },
+  {
+    "idx": 2179,
+    "MSU_id": 2179,
+    "sentence": "Participants found GenoREC’s top recommendation more useful than an alternate stimulus in most cases.",
+    "category": "Conclusion",
+    "rank": 5,
+    "type": "text",
+    "para_id": 533,
+    "paper_id": 4,
+    "2d_coord": [
+      0.21159147866312542,
+      1.535956496797858
+    ]
+  },
+  {
+    "idx": 2180,
+    "MSU_id": 2180,
+    "sentence": "Participants are less confident with the rating of the alternate stimulus, leading to a more dispersed interquartile range (IQR = 2; Q1 = 2, Q3 = 4).",
+    "category": "Conclusion",
+    "rank": 4,
+    "type": "text",
+    "para_id": 533,
+    "paper_id": 4,
+    "2d_coord": [
+      0.24277982808971746,
+      1.7898716110771535
+    ]
+  },
+  {
+    "idx": 2203,
+    "MSU_id": 2203,
+    "sentence": "Circular tracks are not effective for tasks in which users have to focus on a local region, as discussed in the feedback from Scenario 1.",
+    "category": "Conclusion",
+    "rank": 4,
+    "type": "text",
+    "para_id": 536,
+    "paper_id": 4,
+    "2d_coord": [
+      3.227295400375846,
+      -1.8291615191048152
+    ]
+  },
+  {
+    "idx": 2204,
+    "MSU_id": 2204,
+    "sentence": "Users could solve correlation tasks through an overview or a region-based focus approach.",
+    "category": "Conclusion",
+    "rank": 4,
+    "type": "text",
+    "para_id": 536,
+    "paper_id": 4,
+    "2d_coord": [
+      1.2282631222378724,
+      -0.46370586951193493
+    ]
+  },
+  {
+    "idx": 2205,
+    "MSU_id": 2205,
+    "sentence": "GenoREC’s model should provide users with features that allow them to focus on specific regions for correlation tasks.",
+    "category": "Conclusion",
+    "rank": 5,
+    "type": "text",
+    "para_id": 536,
+    "paper_id": 4,
+    "2d_coord": [
+      -0.2240854961872634,
+      1.4313861636528358
+    ]
+  },
+  {
+    "idx": 2211,
+    "MSU_id": 2211,
+    "sentence": "A small sample size of 13 participants is a limitation of the study.",
+    "category": "Conclusion",
+    "rank": 3,
+    "type": "text",
+    "para_id": 537,
+    "paper_id": 4,
+    "2d_coord": [
+      3.5146280721756953,
+      0.4943336205036388
+    ]
+  },
+  {
+    "idx": 2212,
+    "MSU_id": 2212,
+    "sentence": "Due to the specialized nature of the domain, it is a challenge to conduct the study with a larger number of participants.",
+    "category": "Conclusion",
+    "rank": 3,
+    "type": "text",
+    "para_id": 537,
+    "paper_id": 4,
+    "2d_coord": [
+      3.5143078258862808,
+      0.43846035709149783
+    ]
+  },
+  {
+    "idx": 2213,
+    "MSU_id": 2213,
+    "sentence": "Since we mainly used subjective responses from participants, additional follow-up studies would be required to validate objective aspects of the recommendation model.",
+    "category": "Conclusion",
+    "rank": 4,
+    "type": "text",
+    "para_id": 537,
+    "paper_id": 4,
+    "2d_coord": [
+      2.96424246866248,
+      0.40776891550844213
+    ]
+  },
+  {
+    "idx": 2214,
+    "MSU_id": 2214,
+    "sentence": "Validating actual coverage of the design space would require additional follow-up studies.",
+    "category": "Conclusion",
+    "rank": 3,
+    "type": "text",
+    "para_id": 537,
+    "paper_id": 4,
+    "2d_coord": [
+      2.963918653646087,
+      0.39537258889480514
+    ]
+  },
+  {
+    "idx": 2216,
+    "MSU_id": 2216,
+    "sentence": "Using subjective responses from domain users presents a practical way of assessing visualization recommendations for genomics.",
+    "category": "Conclusion",
+    "rank": 4,
+    "type": "text",
+    "para_id": 537,
+    "paper_id": 4,
+    "2d_coord": [
+      -0.1211585735541146,
+      0.9782623165949594
+    ]
+  },
+  {
+    "idx": 2219,
+    "MSU_id": 2219,
+    "sentence": "The sequential method can be applied in other domains and visualization techniques.",
+    "category": "Conclusion",
+    "rank": 4,
+    "type": "text",
+    "para_id": 538,
+    "paper_id": 4,
+    "2d_coord": [
+      1.221661728638012,
+      -0.5946028817618375
+    ]
+  },
+  {
+    "idx": 2223,
+    "MSU_id": 2223,
+    "sentence": "The sequential model may not apply universally across all domains and visualization techniques.",
+    "category": "Conclusion",
+    "rank": 3,
+    "type": "text",
+    "para_id": 538,
+    "paper_id": 4,
+    "2d_coord": [
+      1.2240281233235024,
+      -0.6037324522645878
+    ]
+  },
+  {
+    "idx": 2224,
+    "MSU_id": 2224,
+    "sentence": "Applying the sequential model to infographics can be challenging because they offer a lot of design freedom, making it difficult to identify their design space and decompose visualization into smaller components.",
+    "category": "Conclusion",
+    "rank": 3,
+    "type": "text",
+    "para_id": 538,
+    "paper_id": 4,
+    "2d_coord": [
+      2.9723292039964693,
+      -1.2461919447432548
+    ]
+  },
+  {
+    "idx": 2225,
+    "MSU_id": 2225,
+    "sentence": "Using a sequential model can simplify the process of designing a knowledge-based recommendation model for domains and visualization techniques where it is possible to break down visualization into components and apply order to them.",
+    "category": "Conclusion",
+    "rank": 5,
+    "type": "text",
+    "para_id": 538,
+    "paper_id": 4,
+    "2d_coord": [
+      1.0977719628605167,
+      -0.21019103621074
+    ]
+  },
+  {
+    "idx": 2226,
+    "MSU_id": 2226,
+    "sentence": "We anticipate the sequential model to be adopted more in the future.",
+    "category": "Conclusion",
+    "rank": 4,
+    "type": "text",
+    "para_id": 538,
+    "paper_id": 4,
+    "2d_coord": [
+      2.0468398730030004,
+      0.4724189314761618
+    ]
+  },
+  {
+    "idx": 2234,
+    "MSU_id": 2234,
+    "sentence": "Researchers are recommended to err on the side of inclusion when identifying the components to be used with GenoREC’s recommendation approach.",
+    "category": "Conclusion",
+    "rank": 3,
+    "type": "text",
+    "para_id": 539,
+    "paper_id": 4,
+    "2d_coord": [
+      0.13119085376804768,
+      1.3651239113964255
+    ]
+  },
+  {
+    "idx": 2236,
+    "MSU_id": 2236,
+    "sentence": "The model will be packaged into a library for programmatic access in the future.",
+    "category": "Conclusion",
+    "rank": 3,
+    "type": "text",
+    "para_id": 540,
+    "paper_id": 4,
+    "2d_coord": [
+      1.7832150997482137,
+      0.08300063080254676
+    ]
+  },
+  {
+    "idx": 2237,
+    "MSU_id": 2237,
+    "sentence": "The library will enable embedding GenoREC into tools like Gos that generate Gosling specifications through Python, e.g., in Jupyter Notebooks.",
+    "category": "Conclusion",
+    "rank": 3,
+    "type": "text",
+    "para_id": 540,
+    "paper_id": 4,
+    "2d_coord": [
+      -1.0684539533545427,
+      -0.24645994896400447
+    ]
+  },
+  {
+    "idx": 2238,
+    "MSU_id": 2238,
+    "sentence": "It will be possible to generate visualizations based on actual data files rather than descriptions of the files.",
+    "category": "Conclusion",
+    "rank": 3,
+    "type": "text",
+    "para_id": 540,
+    "paper_id": 4,
+    "2d_coord": [
+      0.43211452334928135,
+      -0.6731241568638408
+    ]
+  },
+  {
+    "idx": 2239,
+    "MSU_id": 2239,
+    "sentence": "Future features may include optimal color scales based on data.",
+    "category": "Conclusion",
+    "rank": 2,
+    "type": "text",
+    "para_id": 540,
+    "paper_id": 4,
+    "2d_coord": [
+      0.9513030493158098,
+      -1.4393988760252658
+    ]
+  },
+  {
+    "idx": 2240,
+    "MSU_id": 2240,
+    "sentence": "Future features may include coordinating color scales across similar attributes in separate tracks as recommended by Qu and Hullman.",
+    "category": "Conclusion",
+    "rank": 2,
+    "type": "text",
+    "para_id": 540,
+    "paper_id": 4,
+    "2d_coord": [
+      0.9570662616449884,
+      -1.4422621022005777
+    ]
+  },
+  {
+    "idx": 2241,
+    "MSU_id": 2241,
+    "sentence": "User preference in GenoREC’s recommendation model is an interesting direction for future work.",
+    "category": "Conclusion",
+    "rank": 2,
+    "type": "text",
+    "para_id": 540,
+    "paper_id": 4,
+    "2d_coord": [
+      0.17932140582801476,
+      1.2669816170711126
+    ]
+  },
+  {
+    "idx": 2243,
+    "MSU_id": 2243,
+    "sentence": "With the adoption of GenoREC, more information on user-preferred visualizations can be collected.",
+    "category": "Conclusion",
+    "rank": 3,
+    "type": "text",
+    "para_id": 540,
+    "paper_id": 4,
+    "2d_coord": [
+      -0.13438155223542586,
+      1.1578855332507465
+    ]
+  },
+  {
+    "idx": 2244,
+    "MSU_id": 2244,
+    "sentence": "User preference data can be used in the recommendation model for ranking the output.",
+    "category": "Conclusion",
+    "rank": 3,
+    "type": "text",
+    "para_id": 540,
+    "paper_id": 4,
+    "2d_coord": [
+      1.7093677141172492,
+      0.2792000873500784
+    ]
+  },
+  {
+    "idx": 2245,
+    "MSU_id": 2245,
+    "sentence": "The recommendation model will be explained to users in the future.",
+    "category": "Conclusion",
+    "rank": 3,
+    "type": "text",
+    "para_id": 540,
+    "paper_id": 4,
+    "2d_coord": [
+      1.7681545084144177,
+      0.31336645375407624
+    ]
+  },
+  {
+    "idx": 2246,
+    "MSU_id": 2246,
+    "sentence": "Explanations will justify the reasons behind recommendations to answer domain user questions, e.g., 'Why was a linear layout recommended over a circular layout?'",
+    "category": "Conclusion",
+    "rank": 4,
+    "type": "text",
+    "para_id": 540,
+    "paper_id": 4,
+    "2d_coord": [
+      2.1492819652933037,
+      0.3273712026628467
+    ]
+  },
+  {
+    "idx": 2250,
+    "MSU_id": 2250,
+    "sentence": "Our design and algorithm can be extended to create other domain-specific visualization recommendations.",
+    "category": "Conclusion",
+    "rank": 3,
+    "type": "text",
+    "para_id": 541,
+    "paper_id": 4,
+    "2d_coord": [
+      0.9914208936481311,
+      -0.36036246513368825
+    ]
+  },
+  {
+    "idx": 2251,
+    "MSU_id": 2251,
+    "sentence": "The visualization and task taxonomy must be well defined for creating domain-specific visualization recommendations.",
+    "category": "Conclusion",
+    "rank": 2,
+    "type": "text",
+    "para_id": 541,
+    "paper_id": 4,
+    "2d_coord": [
+      1.0587095225752452,
+      -0.3316409276795359
+    ]
+  },
+  {
+    "idx": 2252,
+    "MSU_id": 2252,
+    "sentence": "Our work offers critical guidance for visualization researchers developing similar recommendation systems in other domains.",
+    "category": "Conclusion",
+    "rank": 4,
+    "type": "text",
+    "para_id": 541,
+    "paper_id": 4,
+    "2d_coord": [
+      0.9937539958674636,
+      -0.3572452552392993
+    ]
+  },
+  {
+    "idx": 2338,
+    "MSU_id": 2338,
+    "sentence": "Future directions for comparative layouts are explored.",
+    "category": "Conclusion",
+    "rank": 2,
+    "type": "text",
+    "para_id": 571,
+    "paper_id": 4,
+    "2d_coord": [
+      2.489486078595204,
+      -1.758394328335433
+    ]
+  },
+  {
+    "idx": 2477,
+    "MSU_id": 2477,
+    "sentence": "A systematic learning process for the tools should also be considered.",
+    "category": "Conclusion",
+    "rank": 3,
+    "type": "text",
+    "para_id": 613,
+    "paper_id": 5,
+    "2d_coord": [
+      2.9007628923020414,
+      -0.4708405801254721
+    ]
+  },
+  {
+    "idx": 2732,
+    "MSU_id": 2732,
+    "sentence": "The main goal of this study is to deconstruct the layouts of circular glyphs by detecting all visual elements.",
+    "category": "Conclusion",
+    "rank": 5,
+    "type": "text",
+    "para_id": 662,
+    "paper_id": 5,
+    "2d_coord": [
+      0.6665972188355033,
+      -3.185999426712996
+    ]
+  },
+  {
+    "idx": 2733,
+    "MSU_id": 2733,
+    "sentence": "The goal involves identifying what visual elements appear and where they are located.",
+    "category": "Conclusion",
+    "rank": 4,
+    "type": "text",
+    "para_id": 662,
+    "paper_id": 5,
+    "2d_coord": [
+      1.3692991185266765,
+      -1.5446473937282907
+    ]
+  },
+  {
+    "idx": 2814,
+    "MSU_id": 2814,
+    "sentence": "They should be bound with the same data attribute.",
+    "category": "Conclusion",
+    "rank": 3,
+    "type": "text",
+    "para_id": 681,
+    "paper_id": 5,
+    "2d_coord": [
+      1.983159602706937,
+      -1.1601490034838926
+    ]
+  },
+  {
+    "idx": 2829,
+    "MSU_id": 2829,
+    "sentence": "GlyphCreator reduces the high effort usually necessary to produce circular glyphs.",
+    "category": "Conclusion",
+    "rank": 4,
+    "type": "text",
+    "para_id": 685,
+    "paper_id": 5,
+    "2d_coord": [
+      0.1623674639611568,
+      -3.3545349991801063
+    ]
+  },
+  {
+    "idx": 2838,
+    "MSU_id": 2838,
+    "sentence": "It is necessary to create a tool with a low learning cost and easy-to-use interactions.",
+    "category": "Conclusion",
+    "rank": 4,
+    "type": "text",
+    "para_id": 687,
+    "paper_id": 5,
+    "2d_coord": [
+      2.5334080919730715,
+      -0.32214568465873744
+    ]
+  },
+  {
+    "idx": 2849,
+    "MSU_id": 2849,
+    "sentence": "We aim to support end users in creating their own uniquely styled glyphs easily and intuitively.",
+    "category": "Conclusion",
+    "rank": 4,
+    "type": "text",
+    "para_id": 690,
+    "paper_id": 5,
+    "2d_coord": [
+      -0.07371741971966642,
+      -3.3069567008905456
+    ]
+  },
+  {
+    "idx": 2858,
+    "MSU_id": 2858,
+    "sentence": "This approach saves time that might have been spent on multiple design iterations.",
+    "category": "Conclusion",
+    "rank": 3,
+    "type": "text",
+    "para_id": 691,
+    "paper_id": 5,
+    "2d_coord": [
+      2.3440116189973033,
+      -0.46226540419231993
+    ]
+  },
+  {
+    "idx": 2862,
+    "MSU_id": 2862,
+    "sentence": "This approach transforms a labor-intensive and time-consuming workflow into an automatic and time-saving one.",
+    "category": "Conclusion",
+    "rank": 3,
+    "type": "text",
+    "para_id": 692,
+    "paper_id": 5,
+    "2d_coord": [
+      2.387630290581972,
+      -0.4126299036991115
+    ]
+  },
+  {
+    "idx": 2983,
+    "MSU_id": 2983,
+    "sentence": "People might have lost confidence in the Skoda brand and sold their new cars, even though the models they owned were not recalled.",
+    "category": "Conclusion",
+    "rank": 4,
+    "type": "text",
+    "para_id": 711,
+    "paper_id": 5,
+    "2d_coord": [
+      1.4536900262749388,
+      2.6674873495009974
+    ]
+  },
+  {
+    "idx": 3016,
+    "MSU_id": 3016,
+    "sentence": "Based on their previous design experience, they expressed the need for a system for generating circular glyphs because it could reduce the iteration time.",
+    "category": "Conclusion",
+    "rank": 4,
+    "type": "text",
+    "para_id": 715,
+    "paper_id": 5,
+    "2d_coord": [
+      0.19048417251153774,
+      -3.3792003309434606
+    ]
+  },
+  {
+    "idx": 3045,
+    "MSU_id": 3045,
+    "sentence": "According to the definition, a high AP value denotes a good detection model.",
+    "category": "Conclusion",
+    "rank": 3,
+    "type": "text",
+    "para_id": 718,
+    "paper_id": 5,
+    "2d_coord": [
+      2.064732812677691,
+      1.9335374028917311
+    ]
+  },
+  {
+    "idx": 3066,
+    "MSU_id": 3066,
+    "sentence": "A better model with high accuracy and fast performance is needed for an improved authoring tool benefiting the community.",
+    "category": "Conclusion",
+    "rank": 4,
+    "type": "text",
+    "para_id": 723,
+    "paper_id": 5,
+    "2d_coord": [
+      2.812539829175609,
+      -0.2417191078865951
+    ]
+  },
+  {
+    "idx": 3067,
+    "MSU_id": 3067,
+    "sentence": "A comprehensive understanding of the design space of circular glyphs for data visualization is required for a perfect model.",
+    "category": "Conclusion",
+    "rank": 3,
+    "type": "text",
+    "para_id": 723,
+    "paper_id": 5,
+    "2d_coord": [
+      0.4274157777554014,
+      -3.1736036651354413
+    ]
+  },
+  {
+    "idx": 3070,
+    "MSU_id": 3070,
+    "sentence": "GlyphCreator inspires the development of future visualization tools.",
+    "category": "Conclusion",
+    "rank": 4,
+    "type": "text",
+    "para_id": 723,
+    "paper_id": 5,
+    "2d_coord": [
+      0.04372384423485055,
+      -2.9574430847292845
+    ]
+  },
+  {
+    "idx": 3082,
+    "MSU_id": 3082,
+    "sentence": "The example-based glyph generation method provides improved efficiency to users who need to design glyphs, even without a complete understanding of the form.",
+    "category": "Conclusion",
+    "rank": 5,
+    "type": "text",
+    "para_id": 724,
+    "paper_id": 5,
+    "2d_coord": [
+      0.04790028785260773,
+      -3.3359471955199607
+    ]
+  },
+  {
+    "idx": 3083,
+    "MSU_id": 3083,
+    "sentence": "Example-based glyph generation is a useful and effective means of representing multivariate data visualization.",
+    "category": "Conclusion",
+    "rank": 4,
+    "type": "text",
+    "para_id": 724,
+    "paper_id": 5,
+    "2d_coord": [
+      0.46353975876832554,
+      -2.4564824706888655
+    ]
+  },
+  {
+    "idx": 3084,
+    "MSU_id": 3084,
+    "sentence": "Example-based glyph generation could have a wide range of applications.",
+    "category": "Conclusion",
+    "rank": 3,
+    "type": "text",
+    "para_id": 724,
+    "paper_id": 5,
+    "2d_coord": [
+      0.248559639695041,
+      -2.937907903904172
+    ]
+  },
+  {
+    "idx": 3093,
+    "MSU_id": 3093,
+    "sentence": "GlyphCreator has limited support for glyph style customization.",
+    "category": "Conclusion",
+    "rank": 3,
+    "type": "text",
+    "para_id": 726,
+    "paper_id": 5,
+    "2d_coord": [
+      -0.1439984731754488,
+      -3.4821894576979893
+    ]
+  },
+  {
+    "idx": 3094,
+    "MSU_id": 3094,
+    "sentence": "There is a default style for all users, and users must edit it manually.",
+    "category": "Conclusion",
+    "rank": 2,
+    "type": "text",
+    "para_id": 726,
+    "paper_id": 5,
+    "2d_coord": [
+      2.3389385796830537,
+      -1.0946733756269822
+    ]
+  },
+  {
+    "idx": 3095,
+    "MSU_id": 3095,
+    "sentence": "A possible solution is improving the model to learn the style parameters of input images, such as color scheme, and automatically configure the generated glyphs.",
+    "category": "Conclusion",
+    "rank": 4,
+    "type": "text",
+    "para_id": 726,
+    "paper_id": 5,
+    "2d_coord": [
+      0.1821279513337142,
+      -2.575717891577722
+    ]
+  },
+  {
+    "idx": 3096,
+    "MSU_id": 3096,
+    "sentence": "Our approach was applied only to circular glyphs, but it can potentially be generalized to other glyph types.",
+    "category": "Conclusion",
+    "rank": 4,
+    "type": "text",
+    "para_id": 726,
+    "paper_id": 5,
+    "2d_coord": [
+      0.5627786838104751,
+      -3.402768362634629
+    ]
+  },
+  {
+    "idx": 3097,
+    "MSU_id": 3097,
+    "sentence": "By analyzing and exploring the design space of other glyphs, we can extend our dataset and build a model for parsing all kinds of glyphs.",
+    "category": "Conclusion",
+    "rank": 5,
+    "type": "text",
+    "para_id": 726,
+    "paper_id": 5,
+    "2d_coord": [
+      0.47731938842293065,
+      -2.8218638068091897
+    ]
+  },
+  {
+    "idx": 3098,
+    "MSU_id": 3098,
+    "sentence": "The deconstruction model is not diverse enough to support circular glyphs in other fields.",
+    "category": "Conclusion",
+    "rank": 3,
+    "type": "text",
+    "para_id": 726,
+    "paper_id": 5,
+    "2d_coord": [
+      0.4776593771682551,
+      -3.6183789745871677
+    ]
+  },
+  {
+    "idx": 3100,
+    "MSU_id": 3100,
+    "sentence": "Other fields, such as journalism, could use glyphs for data representation, and these glyphs could also be collected for diversity.",
+    "category": "Conclusion",
+    "rank": 3,
+    "type": "text",
+    "para_id": 726,
+    "paper_id": 5,
+    "2d_coord": [
+      0.5984893968478661,
+      -2.7123481366112387
+    ]
+  },
+  {
+    "idx": 3101,
+    "MSU_id": 3101,
+    "sentence": "The deconstruction model could be utilized for many other images with high accuracy by adopting a dataset with a broadened range.",
+    "category": "Conclusion",
+    "rank": 4,
+    "type": "text",
+    "para_id": 726,
+    "paper_id": 5,
+    "2d_coord": [
+      1.136804068966468,
+      0.24215636886870648
+    ]
+  },
+  {
+    "idx": 3111,
+    "MSU_id": 3111,
+    "sentence": "The work provides a new idea for automatically generating glyphs in all visualizations via a two-way method, a loop of visualization and AI.",
+    "category": "Conclusion",
+    "rank": 4,
+    "type": "text",
+    "para_id": 727,
+    "paper_id": 5,
+    "2d_coord": [
+      0.318656621969811,
+      -2.6433677782800347
+    ]
+  },
+  {
+    "idx": 3112,
+    "MSU_id": 3112,
+    "sentence": "The pipeline will be extended in the future by analyzing other glyphs.",
+    "category": "Conclusion",
+    "rank": 2,
+    "type": "text",
+    "para_id": 727,
+    "paper_id": 5,
+    "2d_coord": [
+      0.49118032987825533,
+      -2.811396701726517
+    ]
+  },
+  {
+    "idx": 3113,
+    "MSU_id": 3113,
+    "sentence": "The authoring tools of GlyphCreator will be expanded to support other creative designs.",
+    "category": "Conclusion",
+    "rank": 2,
+    "type": "text",
+    "para_id": 727,
+    "paper_id": 5,
+    "2d_coord": [
+      -0.08911464531281922,
+      -3.092050877278226
+    ]
+  },
+  {
+    "idx": 3500,
+    "MSU_id": 3500,
+    "sentence": "The grammar and its toolkit should be domain specific to allow the target audience to learn the grammar quickly and author genomics visualizations efficiently.",
+    "category": "Conclusion",
+    "rank": 4,
+    "type": "text",
+    "para_id": 836,
+    "paper_id": 6,
+    "2d_coord": [
+      -0.9596744593469432,
+      -0.2367935000102131
+    ]
+  },
+  {
+    "idx": 3501,
+    "MSU_id": 3501,
+    "sentence": "The grammar should use the language and concepts familiar to genomics data analysts to ensure learnability.",
+    "category": "Conclusion",
+    "rank": 4,
+    "type": "text",
+    "para_id": 836,
+    "paper_id": 6,
+    "2d_coord": [
+      -1.1364814026801389,
+      1.149146025990272
+    ]
+  },
+  {
+    "idx": 3503,
+    "MSU_id": 3503,
+    "sentence": "Keeping the grammar consistent is important for learnability given the broad design space of genomics visualizations.",
+    "category": "Conclusion",
+    "rank": 3,
+    "type": "text",
+    "para_id": 836,
+    "paper_id": 6,
+    "2d_coord": [
+      -0.9660332734261121,
+      -0.16566835888257692
+    ]
+  },
+  {
+    "idx": 3505,
+    "MSU_id": 3505,
+    "sentence": "A grammar that supports both linear and circular layouts should provide a unified interface.",
+    "category": "Conclusion",
+    "rank": 4,
+    "type": "text",
+    "para_id": 836,
+    "paper_id": 6,
+    "2d_coord": [
+      -0.9461739651860952,
+      -1.1951595808814632
+    ]
+  },
+  {
+    "idx": 3506,
+    "MSU_id": 3506,
+    "sentence": "The grammar and its accompanying rendering toolkit should be domain-friendly to allow efficient visualization authoring.",
+    "category": "Conclusion",
+    "rank": 4,
+    "type": "text",
+    "para_id": 836,
+    "paper_id": 6,
+    "2d_coord": [
+      -0.13512032567697396,
+      -0.6295384977057984
+    ]
+  },
+  {
+    "idx": 3518,
+    "MSU_id": 3518,
+    "sentence": "The use of general language ensures Gosling is expressive enough to cover all use cases.",
+    "category": "Conclusion",
+    "rank": 4,
+    "type": "text",
+    "para_id": 838,
+    "paper_id": 6,
+    "2d_coord": [
+      -1.0756039917704616,
+      -1.115960921689241
+    ]
+  },
+  {
+    "idx": 3580,
+    "MSU_id": 3580,
+    "sentence": "This could be extended to support displacement algorithms that work in situations when two genomic axes are present in a track.",
+    "category": "Conclusion",
+    "rank": 3,
+    "type": "text",
+    "para_id": 854,
+    "paper_id": 6,
+    "2d_coord": [
+      -2.491858928144292,
+      0.5469238830175219
+    ]
+  },
+  {
+    "idx": 3691,
+    "MSU_id": 3691,
+    "sentence": "This approach is especially useful for genomics visualizations where the same encoding is often applied to many tracks.",
+    "category": "Conclusion",
+    "rank": 3,
+    "type": "text",
+    "para_id": 894,
+    "paper_id": 6,
+    "2d_coord": [
+      -2.0244392772622475,
+      0.5558357969126648
+    ]
+  },
+  {
+    "idx": 3710,
+    "MSU_id": 3710,
+    "sentence": "Gosling demonstrates expressiveness from the track to the multi-view level.",
+    "category": "Conclusion",
+    "rank": 4,
+    "type": "text",
+    "para_id": 898,
+    "paper_id": 6,
+    "2d_coord": [
+      -0.7686844558612677,
+      -1.1822780766183325
+    ]
+  },
+  {
+    "idx": 3781,
+    "MSU_id": 3781,
+    "sentence": "It is essential to consider appropriate APIs in Gosling.js to integrate visualizations with external components better.",
+    "category": "Conclusion",
+    "rank": 5,
+    "type": "text",
+    "para_id": 907,
+    "paper_id": 6,
+    "2d_coord": [
+      -1.1816453330466332,
+      -0.7658033527393079
+    ]
+  },
+  {
+    "idx": 3787,
+    "MSU_id": 3787,
+    "sentence": "The utility of space-filling and 3D layouts in the context of a grammar is limited as they do not afford alignment with other tracks.",
+    "category": "Conclusion",
+    "rank": 3,
+    "type": "text",
+    "para_id": 908,
+    "paper_id": 6,
+    "2d_coord": [
+      2.8841662457454698,
+      -1.577784499821702
+    ]
+  },
+  {
+    "idx": 3798,
+    "MSU_id": 3798,
+    "sentence": "Developing a domain-specific grammar and an accompanying toolkit can potentially overcome several critical limitations of general-purpose visualization grammars.",
+    "category": "Conclusion",
+    "rank": 5,
+    "type": "text",
+    "para_id": 910,
+    "paper_id": 6,
+    "2d_coord": [
+      -0.16051111377721627,
+      -0.6149744101617081
+    ]
+  },
+  {
+    "idx": 3799,
+    "MSU_id": 3799,
+    "sentence": "This work encourages the development of visualization grammars for other domains with unique domain-specific data types, visual representations, and analysis tasks.",
+    "category": "Conclusion",
+    "rank": 4,
+    "type": "text",
+    "para_id": 910,
+    "paper_id": 6,
+    "2d_coord": [
+      -0.1693843307976283,
+      -0.6039732518084069
+    ]
+  },
+  {
+    "idx": 3800,
+    "MSU_id": 3800,
+    "sentence": "Gosling will enable notable progress in genomics data visualization by providing a foundation for the design of novel scalable, interactive, multi-view visualizations.",
+    "category": "Conclusion",
+    "rank": 5,
+    "type": "text",
+    "para_id": 911,
+    "paper_id": 6,
+    "2d_coord": [
+      -1.0739820992724591,
+      -0.5408674794541185
+    ]
+  },
+  {
+    "idx": 3801,
+    "MSU_id": 3801,
+    "sentence": "Gosling removes common barriers such as limited expressiveness of template-based approaches and data scalability.",
+    "category": "Conclusion",
+    "rank": 4,
+    "type": "text",
+    "para_id": 911,
+    "paper_id": 6,
+    "2d_coord": [
+      -1.2159830605535604,
+      -1.051336991553996
+    ]
+  },
+  {
+    "idx": 3802,
+    "MSU_id": 3802,
+    "sentence": "Gosling will enable broader participation in visualization design and implementation in genomics.",
+    "category": "Conclusion",
+    "rank": 4,
+    "type": "text",
+    "para_id": 911,
+    "paper_id": 6,
+    "2d_coord": [
+      -1.072866402522241,
+      -0.5529552963667186
+    ]
+  },
+  {
+    "idx": 3803,
+    "MSU_id": 3803,
+    "sentence": "The success of visualization grammars in other fields suggests that this work will serve as the foundation of an ecosystem of tools built around Gosling and Gosling.js.",
+    "category": "Conclusion",
+    "rank": 5,
+    "type": "text",
+    "para_id": 911,
+    "paper_id": 6,
+    "2d_coord": [
+      -0.857822333974558,
+      -0.7122562016197367
+    ]
+  },
+  {
+    "idx": 4279,
+    "MSU_id": 4279,
+    "sentence": "This presumably explained the domination of ST11138 over other STs.",
+    "category": "Conclusion",
+    "rank": 3,
+    "type": "text",
+    "para_id": 1087,
+    "paper_id": 7,
+    "2d_coord": [
+      1.2091365299949266,
+      2.525957864941615
+    ]
+  },
+  {
+    "idx": 4329,
+    "MSU_id": 4329,
+    "sentence": "HERA's main contribution lies in the integration of features not previously combined in a single accessible platform.",
+    "category": "Conclusion",
+    "rank": 5,
+    "type": "text",
+    "para_id": 1095,
+    "paper_id": 7,
+    "2d_coord": [
+      -0.421721079747629,
+      2.1850070880923718
+    ]
+  },
+  {
+    "idx": 4345,
+    "MSU_id": 4345,
+    "sentence": "Support for long-read data through Mash-based distance estimation represents a direction for future development.",
+    "category": "Conclusion",
+    "rank": 2,
+    "type": "text",
+    "para_id": 1097,
+    "paper_id": 7,
+    "2d_coord": [
+      -1.1491680392620818,
+      2.130905636575883
+    ]
+  },
+  {
+    "idx": 4346,
+    "MSU_id": 4346,
+    "sentence": "Multi-reference comparison workflows represent a direction for future development.",
+    "category": "Conclusion",
+    "rank": 2,
+    "type": "text",
+    "para_id": 1097,
+    "paper_id": 7,
+    "2d_coord": [
+      1.4975324006928583,
+      -0.33171720755067136
+    ]
+  },
+  {
+    "idx": 4347,
+    "MSU_id": 4347,
+    "sentence": "Automatic identification of plasmid-associated contigs from draft genome assemblies represents a direction for future development.",
+    "category": "Conclusion",
+    "rank": 2,
+    "type": "text",
+    "para_id": 1097,
+    "paper_id": 7,
+    "2d_coord": [
+      -0.8511014819347754,
+      1.9192996236852757
+    ]
+  },
+  {
+    "idx": 4417,
+    "MSU_id": 4417,
+    "sentence": "The difficulty in specifying design requirements results in poor usability of GenoREC.",
+    "category": "Conclusion",
+    "rank": 3,
+    "type": "text",
+    "para_id": 1112,
+    "paper_id": 8,
+    "2d_coord": [
+      -0.581029803392764,
+      0.8223554771451629
+    ]
+  },
+  {
+    "idx": 4433,
+    "MSU_id": 4433,
+    "sentence": "The dataset aims to support and enhance the design recommendation process for circos plots.",
+    "category": "Conclusion",
+    "rank": 4,
+    "type": "text",
+    "para_id": 1115,
+    "paper_id": 8,
+    "2d_coord": [
+      -1.5094742281524256,
+      -1.7855590030369786
+    ]
+  },
+  {
+    "idx": 4478,
+    "MSU_id": 4478,
+    "sentence": "Creating the sketches still requires additional user efforts.",
+    "category": "Conclusion",
+    "rank": 3,
+    "type": "text",
+    "para_id": 1125,
+    "paper_id": 8,
+    "2d_coord": [
+      3.0395619541722048,
+      -0.5349604039024601
+    ]
+  },
+  {
+    "idx": 4507,
+    "MSU_id": 4507,
+    "sentence": "The aim is to provide more practical and tailored guidance for circos plot design.",
+    "category": "Conclusion",
+    "rank": 3,
+    "type": "text",
+    "para_id": 1129,
+    "paper_id": 8,
+    "2d_coord": [
+      -1.4709928329676256,
+      -2.2283564978546466
+    ]
+  },
+  {
+    "idx": 4515,
+    "MSU_id": 4515,
+    "sentence": "These challenges highlight the need for a streamlined approach to simplify the circos plot design stage.",
+    "category": "Conclusion",
+    "rank": 5,
+    "type": "text",
+    "para_id": 1131,
+    "paper_id": 8,
+    "2d_coord": [
+      -1.7109855900825834,
+      -2.4947369202359817
+    ]
+  },
+  {
+    "idx": 4516,
+    "MSU_id": 4516,
+    "sentence": "A streamlined approach is needed to better support users in their circos plot creation efforts.",
+    "category": "Conclusion",
+    "rank": 5,
+    "type": "text",
+    "para_id": 1131,
+    "paper_id": 8,
+    "2d_coord": [
+      -1.7125670996174045,
+      -2.494157193215352
+    ]
+  },
+  {
+    "idx": 4517,
+    "MSU_id": 4517,
+    "sentence": "Users should be enabled to describe their design requirements in a natural way.",
+    "category": "Conclusion",
+    "rank": 4,
+    "type": "text",
+    "para_id": 1132,
+    "paper_id": 8,
+    "2d_coord": [
+      2.1593072706877314,
+      0.014997125685278981
+    ]
+  },
+  {
+    "idx": 4522,
+    "MSU_id": 4522,
+    "sentence": "Our tool should support users in naturally expressing their design needs.",
+    "category": "Conclusion",
+    "rank": 5,
+    "type": "text",
+    "para_id": 1132,
+    "paper_id": 8,
+    "2d_coord": [
+      2.1735538166148864,
+      -0.002994564907845397
+    ]
+  },
+  {
+    "idx": 4527,
+    "MSU_id": 4527,
+    "sentence": "Relying on recommendation to generate a circos plot entirely from scratch is often impractical.",
+    "category": "Conclusion",
+    "rank": 4,
+    "type": "text",
+    "para_id": 1133,
+    "paper_id": 8,
+    "2d_coord": [
+      -1.4492664231206147,
+      -2.8086856586027547
+    ]
+  },
+  {
+    "idx": 4528,
+    "MSU_id": 4528,
+    "sentence": "The tool should provide recommendations in a progressive manner, offering incremental recommendations based on users’ current needs and the current design.",
+    "category": "Conclusion",
+    "rank": 5,
+    "type": "text",
+    "para_id": 1133,
+    "paper_id": 8,
+    "2d_coord": [
+      1.8733336264697344,
+      0.24896208722321686
+    ]
+  },
+  {
+    "idx": 4536,
+    "MSU_id": 4536,
+    "sentence": "An intelligent, interactive authoring tool is needed to streamline the design process.",
+    "category": "Conclusion",
+    "rank": 5,
+    "type": "text",
+    "para_id": 1135,
+    "paper_id": 8,
+    "2d_coord": [
+      2.8065366669140395,
+      -0.23085478243793564
+    ]
+  },
+  {
+    "idx": 4537,
+    "MSU_id": 4537,
+    "sentence": "An intelligent, interactive authoring tool is needed to enable more efficient implementation.",
+    "category": "Conclusion",
+    "rank": 5,
+    "type": "text",
+    "para_id": 1135,
+    "paper_id": 8,
+    "2d_coord": [
+      2.8069153276292647,
+      -0.22891152917758956
+    ]
+  },
+  {
+    "idx": 4542,
+    "MSU_id": 4542,
+    "sentence": "The tool should automatically apply selected designs and update the Circos plot in real time.",
+    "category": "Conclusion",
+    "rank": 4,
+    "type": "text",
+    "para_id": 1136,
+    "paper_id": 8,
+    "2d_coord": [
+      -1.7046619937038634,
+      -2.0418137904748237
+    ]
+  },
+  {
+    "idx": 4543,
+    "MSU_id": 4543,
+    "sentence": "This feature would streamline the design and implementation process when creating Circos plots.",
+    "category": "Conclusion",
+    "rank": 3,
+    "type": "text",
+    "para_id": 1136,
+    "paper_id": 8,
+    "2d_coord": [
+      -1.6429356014287,
+      -2.292900381211539
+    ]
+  },
+  {
+    "idx": 4587,
+    "MSU_id": 4587,
+    "sentence": "The use of more than five rings indicates complex requirements for track combination and ordering.",
+    "category": "Conclusion",
+    "rank": 4,
+    "type": "text",
+    "para_id": 1144,
+    "paper_id": 8,
+    "2d_coord": [
+      1.8317158837537657,
+      -2.741289284756117
+    ]
+  },
+  {
+    "idx": 4610,
+    "MSU_id": 4610,
+    "sentence": "This suggests that circos plots tend to stack multiple tracks of the same type.",
+    "category": "Conclusion",
+    "rank": 4,
+    "type": "text",
+    "para_id": 1150,
+    "paper_id": 8,
+    "2d_coord": [
+      -1.1647938042526804,
+      -1.977454673916903
+    ]
+  },
+  {
+    "idx": 4622,
+    "MSU_id": 4622,
+    "sentence": "Histogram and line are ideal for visualizing complex datasets.",
+    "category": "Conclusion",
+    "rank": 3,
+    "type": "text",
+    "para_id": 1153,
+    "paper_id": 8,
+    "2d_coord": [
+      0.8806489699768736,
+      -1.6433627759002638
+    ]
+  },
+  {
+    "idx": 4783,
+    "MSU_id": 4783,
+    "sentence": "It is difficult and unfair to compare IntelliCircos with existing tools.",
+    "category": "Conclusion",
+    "rank": 3,
+    "type": "text",
+    "para_id": 1184,
+    "paper_id": 8,
+    "2d_coord": [
+      3.0210370680806604,
+      0.07391419138742616
+    ]
+  },
+  {
+    "idx": 4834,
+    "MSU_id": 4834,
+    "sentence": "This reflects IntelliCircos’s limited editing capabilities compared to mature software (e.g., Circos).",
+    "category": "Conclusion",
+    "rank": 3,
+    "type": "text",
+    "para_id": 1194,
+    "paper_id": 8,
+    "2d_coord": [
+      -1.6586541533207477,
+      -2.919834283079087
+    ]
+  },
+  {
+    "idx": 4856,
+    "MSU_id": 4856,
+    "sentence": "IntelliCircos simplifies the implementation of circos plots.",
+    "category": "Conclusion",
+    "rank": 5,
+    "type": "text",
+    "para_id": 1197,
+    "paper_id": 8,
+    "2d_coord": [
+      -1.4110224421937738,
+      -2.362135005779861
+    ]
+  },
+  {
+    "idx": 4860,
+    "MSU_id": 4860,
+    "sentence": "IntelliCircos saves users time by reducing the need for manual configuration.",
+    "category": "Conclusion",
+    "rank": 4,
+    "type": "text",
+    "para_id": 1197,
+    "paper_id": 8,
+    "2d_coord": [
+      2.363267718464033,
+      -0.31928340021022955
+    ]
+  },
+  {
+    "idx": 4864,
+    "MSU_id": 4864,
+    "sentence": "Immediate visual feedback reduces the costs associated with trial-and-error.",
+    "category": "Conclusion",
+    "rank": 4,
+    "type": "text",
+    "para_id": 1197,
+    "paper_id": 8,
+    "2d_coord": [
+      0.9494093700842104,
+      -0.5904549518803157
+    ]
+  },
+  {
+    "idx": 4865,
+    "MSU_id": 4865,
+    "sentence": "More than half of the participants mentioned that IntelliCircos could evolve to support more complex, customizable features beyond those currently available in Circos.",
+    "category": "Conclusion",
+    "rank": 3,
+    "type": "text",
+    "para_id": 1197,
+    "paper_id": 8,
+    "2d_coord": [
+      2.701341113931846,
+      -0.049075611751501956
+    ]
+  },
+  {
+    "idx": 4866,
+    "MSU_id": 4866,
+    "sentence": "Participants suggested features such as split karyotype plots and log-scale color mappings for future development of IntelliCircos.",
+    "category": "Conclusion",
+    "rank": 3,
+    "type": "text",
+    "para_id": 1197,
+    "paper_id": 8,
+    "2d_coord": [
+      -1.2728918592350627,
+      -2.5372321539275084
+    ]
+  },
+  {
+    "idx": 4874,
+    "MSU_id": 4874,
+    "sentence": "The design lessons can serve as inspiration for developing future tools.",
+    "category": "Conclusion",
+    "rank": 3,
+    "type": "text",
+    "para_id": 1201,
+    "paper_id": 8,
+    "2d_coord": [
+      2.993358209460726,
+      -0.24611047414698758
+    ]
+  },
+  {
+    "idx": 4877,
+    "MSU_id": 4877,
+    "sentence": "Balancing simplicity and flexibility in the design-to-implementation workflow was an important lesson learned.",
+    "category": "Conclusion",
+    "rank": 3,
+    "type": "text",
+    "para_id": 1202,
+    "paper_id": 8,
+    "2d_coord": [
+      3.008996746737354,
+      -0.21672436008715246
+    ]
+  },
+  {
+    "idx": 4880,
+    "MSU_id": 4880,
+    "sentence": "This highlights the importance of workflows that adapt to users’ evolving needs.",
+    "category": "Conclusion",
+    "rank": 3,
+    "type": "text",
+    "para_id": 1202,
+    "paper_id": 8,
+    "2d_coord": [
+      2.105130238594642,
+      -0.1078095115902436
+    ]
+  },
+  {
+    "idx": 4885,
+    "MSU_id": 4885,
+    "sentence": "This underscores the value of intuitive UI enhancements in reducing the learning curve.",
+    "category": "Conclusion",
+    "rank": 3,
+    "type": "text",
+    "para_id": 1202,
+    "paper_id": 8,
+    "2d_coord": [
+      2.4249984307771184,
+      -0.4493894561173338
+    ]
+  },
+  {
+    "idx": 4888,
+    "MSU_id": 4888,
+    "sentence": "A promising future direction is to enable users to select circos plots as references.",
+    "category": "Conclusion",
+    "rank": 4,
+    "type": "text",
+    "para_id": 1202,
+    "paper_id": 8,
+    "2d_coord": [
+      -1.5941020805893078,
+      -1.9946794222007345
+    ]
+  },
+  {
+    "idx": 4889,
+    "MSU_id": 4889,
+    "sentence": "Allowing the tool to learn from user-selected circos plot examples could enable it to recommend similar designs that better align with user preferences.",
+    "category": "Conclusion",
+    "rank": 4,
+    "type": "text",
+    "para_id": 1202,
+    "paper_id": 8,
+    "2d_coord": [
+      -1.5583753669766798,
+      -1.9741951691024082
+    ]
+  },
+  {
+    "idx": 4890,
+    "MSU_id": 4890,
+    "sentence": "This approach could reduce the need for manual adjustments.",
+    "category": "Conclusion",
+    "rank": 3,
+    "type": "text",
+    "para_id": 1202,
+    "paper_id": 8,
+    "2d_coord": [
+      2.3896903851874254,
+      -0.46708346686766894
+    ]
+  },
+  {
+    "idx": 4897,
+    "MSU_id": 4897,
+    "sentence": "This underscores the importance of transparency in AI assistance.",
+    "category": "Conclusion",
+    "rank": 3,
+    "type": "text",
+    "para_id": 1203,
+    "paper_id": 8,
+    "2d_coord": [
+      2.070194185835557,
+      0.2924264519688857
+    ]
+  },
+  {
+    "idx": 4898,
+    "MSU_id": 4898,
+    "sentence": "Embedding contextual information, such as provenance or real-world examples, can enhance user confidence in AI-driven tools.",
+    "category": "Conclusion",
+    "rank": 4,
+    "type": "text",
+    "para_id": 1203,
+    "paper_id": 8,
+    "2d_coord": [
+      2.23196148062749,
+      0.8230491943096413
+    ]
+  },
+  {
+    "idx": 4901,
+    "MSU_id": 4901,
+    "sentence": "This highlights the importance of enabling users to actively guide and refine AI outputs, rather than solely relying on automated suggestions.",
+    "category": "Conclusion",
+    "rank": 4,
+    "type": "text",
+    "para_id": 1203,
+    "paper_id": 8,
+    "2d_coord": [
+      2.0263448617914155,
+      0.28823991128839405
+    ]
+  },
+  {
+    "idx": 4902,
+    "MSU_id": 4902,
+    "sentence": "This section discusses the limitations of IntelliCircos.",
+    "category": "Conclusion",
+    "rank": 2,
+    "type": "text",
+    "para_id": 1204,
+    "paper_id": 8,
+    "2d_coord": [
+      2.9988664456386553,
+      0.07355548764772864
+    ]
+  },
+  {
+    "idx": 4903,
+    "MSU_id": 4903,
+    "sentence": "This section discusses future work regarding the functionalities of IntelliCircos.",
+    "category": "Conclusion",
+    "rank": 2,
+    "type": "text",
+    "para_id": 1204,
+    "paper_id": 8,
+    "2d_coord": [
+      2.8297005224225686,
+      -0.08315971831915803
+    ]
+  },
+  {
+    "idx": 4904,
+    "MSU_id": 4904,
+    "sentence": "This section discusses future work regarding the evaluations of IntelliCircos.",
+    "category": "Conclusion",
+    "rank": 2,
+    "type": "text",
+    "para_id": 1204,
+    "paper_id": 8,
+    "2d_coord": [
+      2.827529045969829,
+      -0.08795998235790876
+    ]
+  },
+  {
+    "idx": 4905,
+    "MSU_id": 4905,
+    "sentence": "The functionalities of IntelliCircos can be further extended.",
+    "category": "Conclusion",
+    "rank": 3,
+    "type": "text",
+    "para_id": 1205,
+    "paper_id": 8,
+    "2d_coord": [
+      2.754692079643208,
+      -0.07327384702000166
+    ]
+  },
+  {
+    "idx": 4908,
+    "MSU_id": 4908,
+    "sentence": "In the future, the tool can be enhanced to support data processing tasks, e.g., data filtering, to broaden the use cases of IntelliCircos.",
+    "category": "Conclusion",
+    "rank": 4,
+    "type": "text",
+    "para_id": 1205,
+    "paper_id": 8,
+    "2d_coord": [
+      2.745104037217553,
+      -0.09392497410802178
+    ]
+  },
+  {
+    "idx": 4910,
+    "MSU_id": 4910,
+    "sentence": "In the future, IntelliCircos can be enhanced to recommend tailored configurations.",
+    "category": "Conclusion",
+    "rank": 4,
+    "type": "text",
+    "para_id": 1205,
+    "paper_id": 8,
+    "2d_coord": [
+      2.738014667160274,
+      -0.07728880507677875
+    ]
+  },
+  {
+    "idx": 4911,
+    "MSU_id": 4911,
+    "sentence": "By learning from users’ created circos plots, the tool could suggest preferences for track combinations, track types, color schemes, and more.",
+    "category": "Conclusion",
+    "rank": 5,
+    "type": "text",
+    "para_id": 1205,
+    "paper_id": 8,
+    "2d_coord": [
+      -1.557778638260275,
+      -1.966222321633185
+    ]
+  },
+  {
+    "idx": 4912,
+    "MSU_id": 4912,
+    "sentence": "This enhancement could streamline the customization process.",
+    "category": "Conclusion",
+    "rank": 4,
+    "type": "text",
+    "para_id": 1205,
+    "paper_id": 8,
+    "2d_coord": [
+      2.0923410480689926,
+      -0.5208791396908531
+    ]
+  },
+  {
+    "idx": 4914,
+    "MSU_id": 4914,
+    "sentence": "The evaluation process could be improved from several perspectives.",
+    "category": "Conclusion",
+    "rank": 2,
+    "type": "text",
+    "para_id": 1206,
+    "paper_id": 8,
+    "2d_coord": [
+      3.0871007784292313,
+      0.27926002826116203
+    ]
+  },
+  {
+    "idx": 4917,
+    "MSU_id": 4917,
+    "sentence": "Evaluating AI assistance in terms of trust and perceived cognitive load could provide empirical insights.",
+    "category": "Conclusion",
+    "rank": 3,
+    "type": "text",
+    "para_id": 1206,
+    "paper_id": 8,
+    "2d_coord": [
+      2.2404148557016184,
+      0.8411906930370306
+    ]
+  },
+  {
+    "idx": 4920,
+    "MSU_id": 4920,
+    "sentence": "A thorough empirical investigation comparing IntelliCircos and Circos software could provide a broader understanding of their respective strengths and limitations.",
+    "category": "Conclusion",
+    "rank": 4,
+    "type": "text",
+    "para_id": 1206,
+    "paper_id": 8,
+    "2d_coord": [
+      -1.3089502766289847,
+      -2.6398204817541946
+    ]
+  },
+  {
+    "idx": 4922,
+    "MSU_id": 4922,
+    "sentence": "Future work should involve a larger and more diverse participant group, including those not experienced creators, to better assess the tool’s real-world value.",
+    "category": "Conclusion",
+    "rank": 4,
+    "type": "text",
+    "para_id": 1206,
+    "paper_id": 8,
+    "2d_coord": [
+      2.8299539020380644,
+      -0.3406155841230049
+    ]
+  },
+  {
+    "idx": 4924,
+    "MSU_id": 4924,
+    "sentence": "A better design approach would involve inverting the polarity of questions to validate participants’ responses.",
+    "category": "Conclusion",
+    "rank": 3,
+    "type": "text",
+    "para_id": 1206,
+    "paper_id": 8,
+    "2d_coord": [
+      3.3696248723667335,
+      0.4358622740978919
+    ]
+  },
+  {
+    "idx": 5137,
+    "MSU_id": 5137,
+    "sentence": "To our knowledge, NG-Circos is the most powerful software to construct interactive Circos plots.",
+    "category": "Conclusion",
+    "rank": 4,
+    "type": "text",
+    "para_id": 1282,
+    "paper_id": 9,
+    "2d_coord": [
+      -2.0747066750361793,
+      -2.0278709601034253
+    ]
+  },
+  {
+    "idx": 5138,
+    "MSU_id": 5138,
+    "sentence": "By supporting diverse data types in a dynamic browser interface, NG-Circos will accelerate next-generation data visualization and interpretation.",
+    "category": "Conclusion",
+    "rank": 4,
+    "type": "text",
+    "para_id": 1282,
+    "paper_id": 9,
+    "2d_coord": [
+      -2.3609289092624106,
+      -1.8007848420063395
+    ]
+  },
+  {
+    "idx": 5139,
+    "MSU_id": 5139,
+    "sentence": "NG-Circos promotes reproducible research in biomedical sciences and beyond.",
+    "category": "Conclusion",
+    "rank": 3,
+    "type": "text",
+    "para_id": 1282,
+    "paper_id": 9,
+    "2d_coord": [
+      -2.4525003774336476,
+      -1.5945946999663503
+    ]
+  },
+  {
+    "idx": 5156,
+    "MSU_id": 5156,
+    "sentence": "NG-Circos will accelerate nextgeneration data visualization and interpretation.",
+    "category": "Conclusion",
+    "rank": 3,
+    "type": "text",
+    "para_id": 1285,
+    "paper_id": 9,
+    "2d_coord": [
+      -2.3569077052682315,
+      -1.7893373993205552
+    ]
+  },
+  {
+    "idx": 5218,
+    "MSU_id": 5218,
+    "sentence": "NG-Circos offers users great flexibility in module choices.",
+    "category": "Conclusion",
+    "rank": 3,
+    "type": "text",
+    "para_id": 1299,
+    "paper_id": 9,
+    "2d_coord": [
+      -2.2451943420285767,
+      -1.987272740886161
+    ]
+  },
+  {
+    "idx": 5219,
+    "MSU_id": 5219,
+    "sentence": "NG-Circos offers users great flexibility in Circos plot types.",
+    "category": "Conclusion",
+    "rank": 3,
+    "type": "text",
+    "para_id": 1299,
+    "paper_id": 9,
+    "2d_coord": [
+      -2.228258102925811,
+      -1.9355436875346654
+    ]
+  },
+  {
+    "idx": 5226,
+    "MSU_id": 5226,
+    "sentence": "NG-Circos serves as a tool to explore genomic data interactively, allowing users to extract additional information by mouse hovering and clicking on the plots.",
+    "category": "Conclusion",
+    "rank": 5,
+    "type": "text",
+    "para_id": 1300,
+    "paper_id": 9,
+    "2d_coord": [
+      -2.341067253175697,
+      -1.6901223369063045
+    ]
+  },
+  {
+    "idx": 5234,
+    "MSU_id": 5234,
+    "sentence": "By supporting diverse types of genomic data in an interactive web interface, NG-Circos will enhance genomic research in the biomedical field in the future.",
+    "category": "Conclusion",
+    "rank": 5,
+    "type": "text",
+    "para_id": 1301,
+    "paper_id": 9,
+    "2d_coord": [
+      -2.4316807998947265,
+      -1.700809806061146
+    ]
+  },
+  {
+    "idx": 5269,
+    "MSU_id": 5269,
+    "sentence": "An interactive Circos-like tool for web applications would greatly facilitate visualization of biological data.",
+    "category": "Conclusion",
+    "rank": 5,
+    "type": "text",
+    "para_id": 1315,
+    "paper_id": 10,
+    "2d_coord": [
+      -2.621570884159985,
+      -1.5138534922689446
+    ]
+  },
+  {
+    "idx": 5273,
+    "MSU_id": 5273,
+    "sentence": "BioCircos.js facilitates the development of web applications for visualization of biological data in a circular format similar to that of Circos.",
+    "category": "Conclusion",
+    "rank": 4,
+    "type": "text",
+    "para_id": 1316,
+    "paper_id": 10,
+    "2d_coord": [
+      -2.7117488583598637,
+      -1.5447410013726224
+    ]
+  },
+  {
+    "idx": 5326,
+    "MSU_id": 5326,
+    "sentence": "We will continue to develop BioCircos.js to provide more features and support to the research community.",
+    "category": "Conclusion",
+    "rank": 3,
+    "type": "text",
+    "para_id": 1327,
+    "paper_id": 10,
+    "2d_coord": [
+      -2.7383422604950316,
+      -1.8271731571305503
+    ]
+  },
+  {
+    "idx": 5409,
+    "MSU_id": 5409,
+    "sentence": "This display strategy can circumvent numerous problems, such as fixing dependencies or upgrading Perl modules, when installing Circos on a local computer.",
+    "category": "Conclusion",
+    "rank": 3,
+    "type": "text",
+    "para_id": 1353,
+    "paper_id": 11,
+    "2d_coord": [
+      -2.0963881940543514,
+      -2.6560170527132643
+    ]
+  },
+  {
+    "idx": 5428,
+    "MSU_id": 5428,
+    "sentence": "With the updating and upgrading of BioCircos.js, circosJS, and NG-Circos, interacCircos is expected to adapt to more types of biological data and plots.",
+    "category": "Conclusion",
+    "rank": 4,
+    "type": "text",
+    "para_id": 1356,
+    "paper_id": 11,
+    "2d_coord": [
+      -2.530576422792901,
+      -1.7478068705671912
+    ]
+  },
+  {
+    "idx": 5429,
+    "MSU_id": 5429,
+    "sentence": "InteracCircos is expected to subsequently facilitate research in the bioinformatics field in the future.",
+    "category": "Conclusion",
+    "rank": 3,
+    "type": "text",
+    "para_id": 1356,
+    "paper_id": 11,
+    "2d_coord": [
+      -1.2023450764901604,
+      2.8506782628395197
+    ]
+  }
+]
