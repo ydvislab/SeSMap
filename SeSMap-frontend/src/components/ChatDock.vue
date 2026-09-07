@@ -8,7 +8,7 @@ const taRef = ref(null), text = ref(''); const MIN_ROWS = 1, MAX_ROWS = 8
 const hintChips = ref([
   'show air related papers in gallery',
   'show all subspaces in case 1',
-  'summarize case 1',
+  'synthesize case 1',
   'show background and results subspaces',
   'filter MSUs with the meaning of'
 ])
