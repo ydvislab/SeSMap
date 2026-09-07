@@ -1798,9 +1798,9 @@ function getDisplaySummaryForHsuItem(panelIdx, item) {
   const key = getHsuSummaryKey(panelIdx, item);
   const cached = App.hsuSummaryCache?.get?.(key);
   if (cached?.status === 'ready') return cached.text || '';
-  if (cached?.status === 'error') return buildLocalHsuSummary(item) || 'LLM summary unavailable for this aggregated HSU.';
-  if (App.hsuSummaryPending?.has?.(key)) return 'Generating LLM summary...';
-  return 'Generating LLM summary...';
+  if (cached?.status === 'error') return buildLocalHsuSummary(item) || 'LLM synthesis unavailable for this aggregated HSU.';
+  if (App.hsuSummaryPending?.has?.(key)) return 'LLM synthesizing evidence...';
+  return 'LLM waiting for synthesis...';
 }
 
 function refreshHoveredBucketTooltip() {
@@ -1895,7 +1895,7 @@ function renderHsuSummaryHTML(summary) {
     .trim();
   if (!raw) return '';
 
-  if (/^(Generating LLM summary|LLM summary unavailable)/i.test(raw)) {
+  if (/^(LLM (synthesizing evidence|waiting for synthesis|synthesis unavailable))/i.test(raw)) {
     return '<span style="opacity:.72">' + _escapeHtml(raw) + '</span>';
   }
 
@@ -1977,8 +1977,8 @@ function renderBucketTooltipHTML(bucket) {
 
       html += '<div style="margin-left:18px;margin-top:2px;opacity:.95;min-width:0;overflow-wrap:anywhere;word-break:break-word;white-space:normal">'
            +   (sumHtml
-                ? ('<div style="font-weight:700;color:#1f2937;margin-bottom:1px">Summary:</div>' + sumHtml)
-                : '<span style="opacity:.62">No summary</span>')
+                ? ('<div style="font-weight:700;color:#1f2937;margin-bottom:1px">Synthesis:</div>' + sumHtml)
+                : '<span style="opacity:.62">No synthesis</span>')
            + '</div>';
     }
 
@@ -3375,7 +3375,7 @@ function renderHexTooltipHTML({ color = '#999', msuCount = 0, summary = '' }) {
         background:${color};flex:none;border:1px solid rgba(255,255,255,0.25)
       "></span>
       <span style="opacity:.9;flex:none"><b>${msuCount}</b> ${label}: </span>
-      <span style="opacity:.95;flex:1">${safeSummary || '<span style="opacity:.62">No summary</span>'}</span>
+      <span style="opacity:.95;flex:1">${safeSummary || '<span style="opacity:.62">No synthesis</span>'}</span>
     </div>
   `;
 }

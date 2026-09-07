@@ -79,7 +79,7 @@ const MAX_LINK_HEIGHT = 900
 
 const stepPrefix = (i) => `Step ${i + 1}`
 const defaultTitle = (step, i) => {
-  return `${stepPrefix(i)} · LLM Summarizing...`
+  return `${stepPrefix(i)} · LLM synthesizing evidence...`
 }
 
 let offSaved = null
@@ -313,7 +313,7 @@ function cleanGeneratedStepTitle(raw, stepIdx) {
     .replace(/^\s*step\s*\d+\s*[·:：-]\s*/i, '')
     .replace(/\s+/g, ' ')
     .trim()
-  if (!text) text = 'Selected evidence summary'
+  if (!text) text = 'Selected evidence synthesis'
   if (text.length > 90) text = `${text.slice(0, 87).trim()}...`
   return `${stepPrefix(stepIdx)} · ${text}`
 }

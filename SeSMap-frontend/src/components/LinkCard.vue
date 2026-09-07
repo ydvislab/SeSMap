@@ -54,7 +54,8 @@
     >
        <div v-if="displayMsuSentences.length > 0" class="msu-sentences">
          <!-- ★ 点击 HSU 后只显示该 HSU 的 MSU；聚合后默认折叠过长的证据列表 -->
-         <div v-for="(msu, index) in visibleMsuSentences" :key="msu.uid" class="msu-sentence">
+         <div v-for="group in visibleMsuGroups" :key="group.key" class="msu-paragraph-group">
+          <div v-for="(msu, index) in group.msus" :key="msu.uid" class="msu-sentence">
           <!-- 点击这一行（勾选框/Details 按钮除外）折叠或展开该 MSU 的正文 -->
           <div class="msu-meta" @click="toggleMsuCollapse(msu.uid)">
             <label class="msu-checkwrap" @click.stop>
@@ -82,29 +83,30 @@
             </button>
 
             <button
+              v-if="index === 0"
               class="show-original-btn"
               type="button"
-              :aria-expanded="String(isOriginalVisible(msu.uid))"
-              @click.stop="toggleOriginal(msu.uid)"
+              :aria-expanded="String(isOriginalVisible(group.key))"
+              @click.stop="toggleOriginal(group.key)"
             >
-              {{ isOriginalVisible(msu.uid) ? 'Hide Details' : 'Show Details' }}
+              {{ isOriginalVisible(group.key) ? 'Hide Details' : 'Show Details' }}
             </button>
           </div>
 
           <template v-if="!isMsuCollapsed(msu.uid)">
             <div class="msu-text">{{ msu.sentence }}</div>
-
-            <!-- 展开显示的原文/上下文（字段兼容 + 调试兜底） -->
-            <div v-if="isOriginalVisible(msu.uid)" class="para-info">
-              <div v-if="msu.para_info && String(msu.para_info).trim().length" class="para-info-content">
-                {{ msu.para_info }}
-              </div>
-              <div v-else class="para-info-content para-info-empty">
-                Original source context is unavailable for this MSU.
-              </div>
-            </div>
           </template>
         </div>
+        <!-- One source paragraph is shared by all MSUs in this group. -->
+        <div v-if="isOriginalVisible(group.key)" class="para-info">
+          <div v-if="group.paragraph" class="para-info-content">
+            {{ group.paragraph }}
+          </div>
+          <div v-else class="para-info-content para-info-empty">
+            Original source context is unavailable for this MSU.
+          </div>
+        </div>
+       </div>
         <button
           v-if="hasCollapsedMsus"
           class="msu-list-toggle"
@@ -143,16 +145,16 @@
         ></span>
       </div>
       <div v-else-if="llmLoading" class="llm-loading">
-        LLM is summarizing...
+        LLM synthesizing evidence...
       </div>
       <div v-else-if="llmError" class="llm-error">
         {{ llmError }}
       </div>
-      <div v-else class="placeholder">LLM summary</div>
+      <div v-else class="placeholder">LLM waiting for synthesis...</div>
     </div>
     <div
       class="section-resize-handle"
-      title="Drag to resize LLM summary area"
+      title="Drag to resize Evidence Synthesis area"
       @mousedown="startSectionResize('llm', $event)"
     />
   </section>
@@ -461,7 +463,7 @@ const pickedNodeKey = ref(null)
 const msuListExpanded = ref(false)
 const MSU_PREVIEW_LIMIT = 8
 
-// Details belong to a single, stable MSU—not to the whole aggregated HSU/card.
+// Details belong to one source paragraph shared by its MSUs.
 const detailMsus = ref(new Set())
 const isOriginalVisible = (uid) => detailMsus.value.has(uid)
 const toggleOriginal = (uid) => {
@@ -756,7 +758,7 @@ const summarizeSelected = async () => {
       JSON.stringify(answer);
   } catch (err) {
     console.error(err);
-    llmError.value = 'Failed to generate summary.';
+    llmError.value = 'Failed to generate evidence synthesis.';
   } finally {
     llmLoading.value = false;
   }
@@ -769,12 +771,42 @@ const displayMsuSentences = computed(() => {
   return all.filter(m => m.hsuKey === pickedNodeKey.value)
 })
 
+function paragraphGroupKey(msu) {
+  const paragraph = String(msu?.para_info || '').trim()
+  // Prefer the source identity when supplied.  Include the paragraph text as
+  // a guard against accidental reuse of a local para_id by another paper.
+  const raw = msu?.raw || {}
+  const paperId = raw.paper_id ?? raw.paperId ?? msu?.paperId ?? ''
+  const paraId = raw.para_id ?? raw.paraId ?? ''
+  return paragraph
+    ? `paragraph:${paperId}:${paraId}:${paragraph}`
+    : `msu:${msu?.uid}`
+}
+
+const msuParagraphGroups = computed(() => {
+  const groups = new Map()
+  ;(displayMsuSentences.value || []).forEach(msu => {
+    const key = paragraphGroupKey(msu)
+    if (!groups.has(key)) groups.set(key, { key, paragraph: String(msu.para_info || '').trim(), msus: [] })
+    groups.get(key).msus.push(msu)
+  })
+  return Array.from(groups.values())
+})
+
 const hasCollapsedMsus = computed(() => displayMsuSentences.value.length > MSU_PREVIEW_LIMIT)
-const visibleMsuSentences = computed(() => (
-  msuListExpanded.value
-    ? displayMsuSentences.value
-    : displayMsuSentences.value.slice(0, MSU_PREVIEW_LIMIT)
-))
+const visibleMsuGroups = computed(() => {
+  const groups = msuParagraphGroups.value
+  if (msuListExpanded.value) return groups
+
+  // Do not split one paragraph across the preview boundary: it would defeat
+  // the shared-detail treatment.  A large first group remains intact.
+  let count = 0
+  return groups.filter(group => {
+    if (count >= MSU_PREVIEW_LIMIT) return false
+    count += group.msus.length
+    return true
+  })
+})
 
 watch(pickedNodeKey, () => { msuListExpanded.value = false })
 watch(() => props.link, () => {
@@ -1094,8 +1126,21 @@ onBeforeUnmount(() => {
 }
 .subcard__source.is-sized{ flex: 0 1 auto; }
 .msu-sentences { font-size: 11px; line-height: 1.4; }
-.msu-sentence { margin-bottom: 8px; padding: 6px; background: #f9fafb; border-radius: 4px; border-left: 3px solid #e5e7eb; }
-.msu-sentence:last-child { margin-bottom: 0; }
+/* One box represents one original paragraph.  Its individual MSUs remain
+   independently selectable and collapsible inside the shared source group. */
+.msu-paragraph-group{
+  margin-bottom:8px;
+  padding:6px;
+  background:#f9fafb;
+  border:1px solid #e5e7eb;
+  border-left:3px solid #d8dee8;
+  border-radius:5px;
+}
+.msu-paragraph-group:last-of-type { margin-bottom:0; }
+.msu-sentence { padding:4px 0; }
+.msu-sentence + .msu-sentence { border-top:1px solid #e5e7eb; }
+.msu-sentence:first-child { padding-top:0; }
+.msu-sentence:last-of-type { padding-bottom:0; }
 .msu-list-toggle{
   display:block;
   width:100%;
