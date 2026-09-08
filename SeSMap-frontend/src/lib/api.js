@@ -393,6 +393,9 @@ ${legendLines || '(none)'}
 EVIDENCE GROUPED BY PAPER/SOURCE:
 ${paperBlock || '(none)'}
 
+PAPER IDENTIFIERS:
+- Any P-number in a paper/source label is a canonical manuscript identifier. Preserve it exactly; never renumber it from an internal or zero-based data id.
+
 ${shape.isTraversal ? 'ORDERED HOPS (do not reorder; source of truth):' : 'SELECTED EVIDENCE (source of truth):'}
 ${hopsBlock || '(none)'}
 
