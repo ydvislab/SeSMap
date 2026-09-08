@@ -2328,19 +2328,23 @@ function renderBucketTooltipHTML(bucket) {
       });
     }
 
-    // 透明度兜底：渲染时缓存（updateHexStyles 写入）
+    // The Stepwise mini-map is a visual snapshot.  The render cache contains
+    // the final alpha actually visible in the main map: MSU-count opacity plus
+    // any active selection emphasis.  It must override the base colour-ramp
+    // alpha above, otherwise saved HSU chips look noticeably paler than the
+    // selected HSU they represent.
     if (App && App.alphaCacheByHex) {
       if (App.alphaCacheByHex instanceof Map) {
         App.alphaCacheByHex.forEach((a, k) => {
           const kc = _keyPipeToColon(k);
-          if (alphaByNode[kc] == null && typeof a === 'number' && a >= 0 && a <= 1) {
+          if (typeof a === 'number' && a >= 0 && a <= 1) {
             alphaByNode[kc] = a;
           }
         });
       } else if (typeof App.alphaCacheByHex === 'object') {
         Object.entries(App.alphaCacheByHex).forEach(([k, a]) => {
           const kc = _keyPipeToColon(k);
-          if (alphaByNode[kc] == null && typeof a === 'number' && a >= 0 && a <= 1) {
+          if (typeof a === 'number' && a >= 0 && a <= 1) {
             alphaByNode[kc] = a;
           }
         });
@@ -2432,19 +2436,21 @@ function renderBucketTooltipHTML(bucket) {
       });
     }
 
-    // 2) 透明度兜底：来自渲染缓存（updateHexStyles 写入）
+    // The render cache is the visible source of truth.  Preserve the final
+    // main-map alpha in all Stepwise colour snapshots rather than falling back
+    // to the un-emphasized MSU-count ramp.
     if (App && App.alphaCacheByHex) {
       if (App.alphaCacheByHex instanceof Map) {
         App.alphaCacheByHex.forEach((a, k) => {
           const keyColon = _keyPipeToColon(k);
-          if (alphaByNode[keyColon] == null && typeof a === 'number' && a >= 0 && a <= 1) {
+          if (typeof a === 'number' && a >= 0 && a <= 1) {
             alphaByNode[keyColon] = a;
           }
         });
       } else if (typeof App.alphaCacheByHex === 'object') {
         Object.entries(App.alphaCacheByHex).forEach(([k, a]) => {
           const keyColon = _keyPipeToColon(k);
-          if (alphaByNode[keyColon] == null && typeof a === 'number' && a >= 0 && a <= 1) {
+          if (typeof a === 'number' && a >= 0 && a <= 1) {
             alphaByNode[keyColon] = a;
           }
         });
@@ -3508,6 +3514,13 @@ function isFlightDeleteHoverEnabled() {
 function ensureFlightDeleteButton() {
   let btn = document.getElementById('flight-delete-button');
   if (btn && btn.dataset.semanticMapOwner !== App.instanceId) {
+    // A map may be rebuilt when the corpus, aggregation, or component view
+    // changes.  The old button owns document-level capture listeners; merely
+    // removing its DOM node leaves those listeners alive.  They can then
+    // intercept a click on the new button and try to delete from the old App
+    // instance, which fails silently because that instance no longer has the
+    // displayed Flight.
+    btn._cleanupFlightDeleteListeners?.();
     btn.remove();
     btn = null;
   }
@@ -3536,7 +3549,7 @@ function ensureFlightDeleteButton() {
   btn.addEventListener('mousemove', (event) => {
     if (!isPointerNearFlightDeleteButton(event, 42)) hideFlightDeleteButton();
   });
-  document.addEventListener('pointerdown', (event) => {
+  const onDocumentPointerDown = (event) => {
     if (btn.style.display === 'none') return;
     const rect = btn.getBoundingClientRect();
     const hitByCoord =
@@ -3552,8 +3565,8 @@ function ensureFlightDeleteButton() {
     if (typeof event.stopImmediatePropagation === 'function') event.stopImmediatePropagation();
     const id = btn.dataset.flightId || App.flightDeleteTargetId || App.hoveredFlightId;
     deleteFlightTarget(id, App.flightDeleteTargetLink, App.flightDeleteTargetSignature);
-  }, true);
-  document.addEventListener('mousemove', (event) => {
+  };
+  const onDocumentMouseMove = (event) => {
     if (btn.style.display === 'none') return;
     if (btn.contains(event.target)) return;
     if (isPointerNearFlightDeleteButton(event, 34)) return;
@@ -3562,7 +3575,9 @@ function ensureFlightDeleteButton() {
     const dx = event.clientX - a.x;
     const dy = event.clientY - a.y;
     if (Math.hypot(dx, dy) > 92) hideFlightDeleteButton();
-  }, true);
+  };
+  document.addEventListener('pointerdown', onDocumentPointerDown, true);
+  document.addEventListener('mousemove', onDocumentMouseMove, true);
   const commitDelete = (event) => {
     event.preventDefault();
     event.stopPropagation();
@@ -3571,6 +3586,13 @@ function ensureFlightDeleteButton() {
   };
   btn.addEventListener('pointerdown', commitDelete);
   btn.addEventListener('click', commitDelete);
+  const cleanupFlightDeleteButton = () => {
+    document.removeEventListener('pointerdown', onDocumentPointerDown, true);
+    document.removeEventListener('mousemove', onDocumentMouseMove, true);
+    if (btn.dataset.semanticMapOwner === App.instanceId) btn.remove();
+  };
+  btn._cleanupFlightDeleteListeners = cleanupFlightDeleteButton;
+  cleanupFns.push(cleanupFlightDeleteButton);
   document.body.appendChild(btn);
   return btn;
 }
