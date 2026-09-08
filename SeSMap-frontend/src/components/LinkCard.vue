@@ -48,7 +48,7 @@
     <!-- ② 原文句子 - 显示当前link关联的MSU句子（含勾选） -->
     <div
       class="subcard__source"
-      :class="{ 'is-sized': sourceHeight != null }"
+      :class="{ 'is-sized': sourceHeight != null, 'is-collapsed': isSectionCollapsed('source') }"
       ref="sourceRef"
       :style="sourcePanelStyle"
     >
@@ -120,14 +120,15 @@
     </div>
     <div
       class="section-resize-handle"
-      title="Drag to resize MSU area"
+      :class="{ 'is-collapsed-target': isSectionCollapsed('source') }"
+      :title="isSectionCollapsed('source') ? 'Drag down to show MSUs' : 'Drag to resize or hide MSUs'"
       @mousedown="startSectionResize('source', $event)"
     />
 
     <!-- ③ 大模型总结（展示点击按钮后的结果） -->
     <div
       class="subcard__llm"
-      :class="{ 'is-sized': llmHeight != null }"
+      :class="{ 'is-sized': llmHeight != null, 'is-collapsed': isSectionCollapsed('llm') }"
       ref="llmRef"
       :style="llmPanelStyle"
       @pointerdown.stop
@@ -154,17 +155,19 @@
     </div>
     <div
       class="section-resize-handle"
-      title="Drag to resize Evidence Synthesis area"
+      :class="{ 'is-collapsed-target': isSectionCollapsed('llm') }"
+      :title="isSectionCollapsed('llm') ? 'Drag down to show Evidence Synthesis' : 'Drag to resize or hide Evidence Synthesis'"
       @mousedown="startSectionResize('llm', $event)"
     />
   </section>
 </template>
 
 <script setup>
-import { onMounted, watch, ref, onBeforeUnmount, computed, nextTick } from 'vue'
+import { onMounted, watch, ref, reactive, onBeforeUnmount, computed, nextTick } from 'vue'
 import { mountMiniLink } from '@/lib/useLinkCard'
 import { summarizeMsuSentences } from '@/lib/api'
 import { onStepwiseMsuCandidates, onApplyStepwiseMsuFilter } from '@/lib/selectionBus'
+import { canonicalPaperLabel } from '@/lib/paperIdentity'
 
 const props = defineProps({
   link:  { type: Object, required: true },
@@ -207,6 +210,7 @@ const synthesisHighlights = ref([])
 let miniHeight = null
 const sourceHeight = ref(null)
 const llmHeight = ref(null)
+const sectionCollapsed = reactive({ source: false, llm: false })
 const sectionResize = {
   active: false,
   target: null,
@@ -222,6 +226,9 @@ const SECTION_MAX_HEIGHT = {
   source: 800,
   llm: 800
 }
+// Dragging a panel into this small zone snaps it fully closed.  The separator
+// remains visible, so pulling it down restores the panel without losing data.
+const SECTION_COLLAPSE_SNAP = 24
 // 生成总结后自动为 Evidence Synthesis 争取的最大高度（超出部分自行滚动）
 const LLM_AUTOFIT_MAX = 200
 // 用户手动拖过 LLM 分隔条后就不再自动调整，尊重用户的设定
@@ -236,10 +243,12 @@ const subspaceTrail = computed(() => {
 })
 
 const sourcePanelStyle = computed(() => (
-  sourceHeight.value == null ? {} : { height: `${sourceHeight.value}px` }
+  isSectionCollapsed('source') ? { height: '0px' } :
+    (sourceHeight.value == null ? {} : { height: `${sourceHeight.value}px` })
 ))
 const llmPanelStyle = computed(() => (
-  llmHeight.value == null ? {} : { height: `${llmHeight.value}px` }
+  isSectionCollapsed('llm') ? { height: '0px' } :
+    (llmHeight.value == null ? {} : { height: `${llmHeight.value}px` })
 ))
 
 function escapeSynthesisHtml(value) {
@@ -352,6 +361,10 @@ function sectionEl(target) {
   return target === 'llm' ? llmRef.value : sourceRef.value
 }
 
+function isSectionCollapsed(target) {
+  return Boolean(sectionCollapsed[target])
+}
+
 function setSectionHeight(target, value) {
   if (target === 'llm') llmHeight.value = value
   else sourceHeight.value = value
@@ -377,9 +390,12 @@ function startSectionResize(target, event) {
   const el = sectionEl(target)
   if (!el) return
 
-  // 起点用真实渲染高度，不做 max 夹取，避免按下瞬间跳一下
-  const current = Math.max(SECTION_MIN_HEIGHT[target] ?? 48, el.getBoundingClientRect().height)
-  setSectionHeight(target, current)
+  // A collapsed panel starts at zero.  It stays hidden until the drag leaves
+  // the snap zone, then reappears at its normal minimum height.
+  const current = isSectionCollapsed(target)
+    ? 0
+    : Math.max(SECTION_MIN_HEIGHT[target] ?? 48, el.getBoundingClientRect().height)
+  if (!isSectionCollapsed(target)) setSectionHeight(target, current)
 
   if (target === 'llm') llmSizedByUser.value = true
 
@@ -397,11 +413,14 @@ function onSectionResizeMove(event) {
   if (!sectionResize.active || !sectionResize.target) return
   const target = sectionResize.target
   const el = sectionEl(target)
-  const next = clampSectionHeight(target, sectionResize.startHeight + (event.clientY - sectionResize.startY))
+  const rawHeight = sectionResize.startHeight + (event.clientY - sectionResize.startY)
+  const shouldCollapse = rawHeight <= SECTION_COLLAPSE_SNAP
+  const next = shouldCollapse ? 0 : clampSectionHeight(target, rawHeight)
 
   // 卡片高度按“想要多高 - 现在实际多高”补差，每帧都以真实布局为准，
   // 这样在夹取边界上也不会和外层卡片高度失配。
   const rendered = el ? el.getBoundingClientRect().height : next
+  sectionCollapsed[target] = shouldCollapse
   setSectionHeight(target, next)
 
   const delta = next - rendered
@@ -569,6 +588,8 @@ function normalizePaperId(rawMsu, node) {
 }
 
 function extractPaperLabel(rawMsu) {
+ const canonical = canonicalPaperLabel(rawMsu)
+ if (canonical) return canonical
  const value =
    rawMsu?.paper_info ??
    rawMsu?.paper_title ??
@@ -1125,6 +1146,9 @@ onBeforeUnmount(() => {
   overflow-y: auto;
 }
 .subcard__source.is-sized{ flex: 0 1 auto; }
+.subcard__source.is-collapsed{
+  display:none;
+}
 .msu-sentences { font-size: 11px; line-height: 1.4; }
 /* One box represents one original paragraph.  Its individual MSUs remain
    independently selectable and collapsible inside the shared source group. */
@@ -1225,6 +1249,9 @@ onBeforeUnmount(() => {
   overflow-y: auto;
 }
 .subcard__llm.is-sized{ max-height: none; }
+.subcard__llm.is-collapsed{
+  display:none;
+}
 .llm-content { font-size: 11px; line-height: 1.45; color: #374151; padding: 7px 8px; background: #ffffff; border-radius: 5px; border-left: 3px solid #d8dee8; }
 .llm-label{ font-weight:700; color:#1f2937; margin-right:4px; }
 .llm-text{ color:#374151; }
@@ -1275,6 +1302,13 @@ onBeforeUnmount(() => {
   width:44px;
   opacity:1;
   background:#aeb7c2;
+}
+.section-resize-handle.is-collapsed-target::before{
+  width:44px;
+  height:3px;
+  opacity:1;
+  background:#94a3b8;
+  box-shadow:0 0 0 2px #f8fafc;
 }
 :global(body.is-section-resizing){
   cursor:ns-resize;

@@ -67,6 +67,7 @@ import { ref, onMounted, onBeforeUnmount, reactive } from 'vue'
 import { onSelectionSaved, emitSummarizeSelected } from '../lib/selectionBus'
 import LinkCard from './LinkCard.vue'
 import { buildStartCountMap } from '@/lib/useLinkCard'
+import { canonicalPaperLabel } from '@/lib/paperIdentity'
 
 const steps = ref([])
 const stackRef = ref(null)
@@ -224,6 +225,8 @@ function msuIdOf(msu, idx) {
 
 function paperOfMsu(msu, node) {
   if (msu && typeof msu === 'object') {
+    const canonical = canonicalPaperLabel(msu)
+    if (canonical) return canonical
     return msu.paper || msu.paperLabel || msu.source || msu.paperId || msu.paper_id || msu.title || null
   }
   return node?.paper || node?.paperLabel || node?.source || node?.paperId || node?.paper_id || null
