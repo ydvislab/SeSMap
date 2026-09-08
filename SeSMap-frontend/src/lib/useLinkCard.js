@@ -136,7 +136,9 @@ function appendSegmentArrows(layer, coords, style) {
     const py = ux;
     const x = (a.x + b.x) / 2;
     const y = (a.y + b.y) / 2;
-    const size = Math.max(4.8, (style.width || 1.2) * 4.2);
+    // Keep the Stepwise thumbnail direction cue in sync with the main map's
+    // enlarged Flight arrows.
+    const size = Math.max(7, (style.width || 1.2) * 6.0);
     const half = size * 0.42;
     const tip = [x + ux * size * 0.58, y + uy * size * 0.58];
     const base = [x - ux * size * 0.52, y - uy * size * 0.52];
@@ -356,7 +358,10 @@ export function mountMiniLink(
         return gg;
       });
 
-    const s = styleOfLink(link?.type);
+    const baseStyle = styleOfLink(link?.type);
+    const s = (link?.type === 'flight' && link?.color)
+      ? { ...baseStyle, stroke: link.color }
+      : baseStyle;
     gLinks.append('polyline')
       .attr('points', coords.map(d => `${d.x},${d.y}`).join(' '))
       .attr('fill', 'none').attr('stroke', s.stroke)

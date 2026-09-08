@@ -1286,6 +1286,9 @@ function buildSplitLinks(rawLinks) {
           links.push({
             baseId: L.id || L._uid || null,
             type: L.type || 'road',
+            // Preserve analyst-selected Flight colours in Stepwise snapshots.
+            // Road/river links simply leave this null and keep their defaults.
+            color: L.color || null,
             country_from: cidA,
             country_to: cidB,
             from: { panelIdx: pa, q: a.q, r: a.r, key: `${pa}|${a.q},${a.r}|${cidA||''}` },
@@ -3260,6 +3263,136 @@ function hideColorMenu() {
   if (menu) menu.style.display = 'none';
 }
 
+// Flight colour menu intentionally mirrors the Paper Gallery colour control:
+// native picker, editable HEX value, random palette choice, swatches, and an
+// explicit Apply action.  It is separate from the HSU/paper menu because a
+// Flight owns a colour on its link record rather than a country colour.
+function ensureFlightColorMenu() {
+  let menu = document.getElementById('flight-color-menu');
+  if (menu && menu.dataset.semanticMapOwner !== App.instanceId) {
+    menu._cleanupFlightColorMenu?.();
+    menu.remove();
+    menu = null;
+  }
+  if (menu) return menu;
+
+  menu = document.createElement('div');
+  menu.id = 'flight-color-menu';
+  menu.dataset.semanticMapOwner = App.instanceId;
+  Object.assign(menu.style, {
+    position: 'fixed', display: 'none', zIndex: 2147483647, width: '180px',
+    boxSizing: 'border-box', padding: '8px', border: '1px solid rgba(0,0,0,.12)',
+    borderRadius: '8px', background: '#fff', boxShadow: '0 12px 28px rgba(15,23,42,.18)'
+  });
+
+  const swatches = (Array.isArray(COLOR_PALETTE) ? COLOR_PALETTE : []).slice(0, 7)
+    .map(color => {
+      const hex = normalizeColorToHex(color, '#4C78A8').toUpperCase();
+      return `<button type="button" data-flight-color-swatch="${hex}" aria-label="Use ${hex}"
+        style="width:18px;height:18px;padding:0;border:1px solid rgba(0,0,0,.18);border-radius:999px;background:${hex};cursor:pointer"></button>`;
+    }).join('');
+  menu.innerHTML = `
+    <div style="display:grid;grid-template-columns:30px 94px 26px;align-items:center;gap:6px;margin-bottom:7px">
+      <input id="flight-color-input" type="color" style="width:30px;height:26px;box-sizing:border-box;padding:0;border:1px solid #d1d5db;border-radius:5px;background:#fff;cursor:pointer" />
+      <input id="flight-color-hex" type="text" placeholder="#AABBCC" spellcheck="false" style="width:94px;min-width:94px;max-width:94px;box-sizing:border-box;height:26px;border-radius:5px;border:1px solid #d1d5db;background:#fff;color:#111827;padding:0 7px;font-size:11.5px;outline:none;font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,'Liberation Mono',monospace" />
+      <button id="flight-color-random" type="button" title="Random color" aria-label="Random color" style="width:26px;height:26px;box-sizing:border-box;border:1px solid #111827;border-radius:999px;background:#111827;color:#fff;cursor:pointer;font-size:11px;font-weight:800;line-height:24px;text-align:center;padding:0">R</button>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(7,18px);gap:6px;margin-bottom:7px">${swatches}</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:6px">
+      <button id="flight-color-cancel" type="button" style="height:27px;box-sizing:border-box;padding:0 9px;border-radius:6px;border:1px solid #d1d5db;background:#fff;color:#111827;font-size:11.5px;cursor:pointer">Cancel</button>
+      <button id="flight-color-apply" type="button" style="height:27px;box-sizing:border-box;padding:0 9px;border-radius:6px;border:1px solid #111827;background:#111827;color:#fff;font-size:11.5px;cursor:pointer">Apply</button>
+    </div>`;
+
+  const fields = () => ({
+    input: menu.querySelector('#flight-color-input'),
+    hex: menu.querySelector('#flight-color-hex')
+  });
+  const setValue = (color) => {
+    const next = normalizeColorToHex(color, '#4C78A8').toUpperCase();
+    const { input, hex } = fields();
+    if (input) input.value = next;
+    if (hex) hex.value = next;
+  };
+  menu.querySelector('#flight-color-input').addEventListener('input', () => {
+    const { input, hex } = fields();
+    if (input && hex) hex.value = input.value.toUpperCase();
+  });
+  menu.querySelector('#flight-color-hex').addEventListener('input', () => {
+    const { input, hex } = fields();
+    const value = hex?.value?.trim();
+    if (input && /^#([0-9a-f]{6})$/i.test(value || '')) input.value = value;
+  });
+  menu.querySelector('#flight-color-random').addEventListener('click', (event) => {
+    event.preventDefault();
+    event.stopPropagation();
+    setValue(pickRandomColor(`flight:${Date.now()}`, [menu._flightColor || '']));
+  });
+  menu.querySelectorAll('[data-flight-color-swatch]').forEach(button => {
+    button.addEventListener('click', (event) => {
+      event.preventDefault();
+      event.stopPropagation();
+      setValue(button.getAttribute('data-flight-color-swatch'));
+    });
+  });
+  menu.querySelector('#flight-color-cancel').addEventListener('click', () => hideFlightColorMenu());
+  menu.querySelector('#flight-color-apply').addEventListener('click', () => {
+    const { input, hex } = fields();
+    const color = (hex?.value || input?.value || '').trim();
+    if (!/^#([0-9a-f]{6})$/i.test(color)) return;
+    const target = findFlightTarget(menu._flightTarget);
+    if (!target) return hideFlightColorMenu();
+    target.color = normalizeColorToHex(color, App.config.flight.color).toUpperCase();
+    if (App.currentData && Array.isArray(App.currentData.links)) App.currentData.links = App._lastLinks;
+    drawOverlayLinesFromLinks(App._lastLinks, App.allHexDataByPanel, App.hexMapsByPanel, !!(App.flightStart || App.flightDraft));
+    updateHexStyles();
+    publishToStepAnalysis?.();
+    hideFlightColorMenu();
+  });
+  const onOutsidePointerDown = (event) => {
+    if (menu.style.display !== 'none' && !menu.contains(event.target)) hideFlightColorMenu();
+  };
+  document.addEventListener('pointerdown', onOutsidePointerDown, true);
+  menu._cleanupFlightColorMenu = () => document.removeEventListener('pointerdown', onOutsidePointerDown, true);
+  cleanupFns.push(menu._cleanupFlightColorMenu);
+  document.body.appendChild(menu);
+  return menu;
+}
+
+function findFlightTarget(target) {
+  if (!target) return null;
+  return (App._lastLinks || []).find(link => {
+    if ((link?.type || '') !== 'flight') return false;
+    if (target.linkRef && link === target.linkRef) return true;
+    if (target.signature && flightSignature(link) === target.signature) return true;
+    return !!target.id && linkKey(link) === target.id;
+  }) || null;
+}
+
+function showFlightColorMenu(clientX, clientY, target) {
+  const menu = ensureFlightColorMenu();
+  if (!menu) return;
+  const link = findFlightTarget(target);
+  const color = flightColorOf(link);
+  const input = menu.querySelector('#flight-color-input');
+  const hex = menu.querySelector('#flight-color-hex');
+  if (input) input.value = color;
+  if (hex) hex.value = color;
+  menu._flightTarget = target;
+  menu._flightColor = color;
+  menu.style.display = 'block';
+  const pad = 8;
+  menu.style.left = `${Math.max(pad, Math.min(clientX, window.innerWidth - (menu.offsetWidth || 180) - pad))}px`;
+  menu.style.top = `${Math.max(pad, Math.min(clientY, window.innerHeight - (menu.offsetHeight || 126) - pad))}px`;
+}
+
+function hideFlightColorMenu() {
+  const menu = document.getElementById('flight-color-menu');
+  if (menu) {
+    menu.style.display = 'none';
+    menu._flightTarget = null;
+  }
+}
+
 function isHexTooltipNode(node) {
   return !!(node && (
     node.id === 'hex-tip' ||
@@ -3570,6 +3703,7 @@ function ensureFlightDeleteButton() {
     if (btn.style.display === 'none') return;
     if (btn.contains(event.target)) return;
     if (isPointerNearFlightDeleteButton(event, 34)) return;
+    if (isPointerNearFlightColorButton(event, 34)) return;
     const a = App.flightDeleteAnchor;
     if (!a) return;
     const dx = event.clientX - a.x;
@@ -3597,6 +3731,59 @@ function ensureFlightDeleteButton() {
   return btn;
 }
 
+function ensureFlightColorButton() {
+  let btn = document.getElementById('flight-color-button');
+  if (btn && btn.dataset.semanticMapOwner !== App.instanceId) {
+    btn._cleanupFlightColorButton?.();
+    btn.remove();
+    btn = null;
+  }
+  if (btn) return btn;
+
+  btn = document.createElement('button');
+  btn.id = 'flight-color-button';
+  btn.className = 'flight-color-button';
+  btn.dataset.semanticMapOwner = App.instanceId;
+  btn.setAttribute('aria-label', 'Set flight color');
+  btn.title = 'Set flight color';
+  Object.assign(btn.style, {
+    position: 'fixed', display: 'none', top: '0px', left: '0px', zIndex: 2147483647,
+    width: '18px', height: '18px', padding: '0', borderRadius: '999px',
+    border: '2px solid #fff', boxShadow: '0 1px 4px rgba(15,23,42,.42)', cursor: 'pointer'
+  });
+  const openMenu = (event) => {
+    event.preventDefault();
+    event.stopPropagation();
+    if (typeof event.stopImmediatePropagation === 'function') event.stopImmediatePropagation();
+    const rect = btn.getBoundingClientRect();
+    showFlightColorMenu(rect.left, rect.bottom + 7, btn._flightTarget);
+  };
+  const onDocumentPointerDown = (event) => {
+    if (btn.style.display === 'none') return;
+    const rect = btn.getBoundingClientRect();
+    const hitByCoord = event.clientX >= rect.left - 4 && event.clientX <= rect.right + 4 &&
+      event.clientY >= rect.top - 4 && event.clientY <= rect.bottom + 4;
+    const hitByTarget = event.target?.closest?.('#flight-color-button') === btn;
+    if (!hitByCoord && !hitByTarget) return;
+    openMenu(event);
+  };
+  btn.addEventListener('pointerdown', openMenu);
+  btn.addEventListener('click', openMenu);
+  btn.addEventListener('mouseenter', () => {
+    if (App.flightDeleteHideTimer) clearTimeout(App.flightDeleteHideTimer);
+    App.flightDeleteHideTimer = null;
+  });
+  document.addEventListener('pointerdown', onDocumentPointerDown, true);
+  const cleanupFlightColorButton = () => {
+    document.removeEventListener('pointerdown', onDocumentPointerDown, true);
+    if (btn.dataset.semanticMapOwner === App.instanceId) btn.remove();
+  };
+  btn._cleanupFlightColorButton = cleanupFlightColorButton;
+  cleanupFns.push(cleanupFlightColorButton);
+  document.body.appendChild(btn);
+  return btn;
+}
+
 function flightSignature(link) {
   if (!link || (link.type || '') !== 'flight') return '';
   const path = Array.isArray(link.path) ? link.path : [];
@@ -3604,6 +3791,10 @@ function flightSignature(link) {
     const panelIdx = resolvePanelIdxForPathPoint(point, link, i);
     return `${panelIdx}:${point.q},${point.r}`;
   }).join('>');
+}
+
+function flightColorOf(link) {
+  return normalizeColorToHex(link?.color || App.config?.flight?.color || STYLE.FLIGHT_COLOR, STYLE.FLIGHT_COLOR).toUpperCase();
 }
 
 function positionFlightDeleteButton(clientX, clientY, routeId, linkRef = null) {
@@ -3623,6 +3814,23 @@ function positionFlightDeleteButton(clientX, clientY, routeId, linkRef = null) {
   btn.style.display = 'inline-flex';
 }
 
+function positionFlightColorButton(clientX, clientY, routeId, linkRef = null) {
+  const btn = ensureFlightColorButton();
+  const pad = 8;
+  const size = 18;
+  const x = Math.max(pad, Math.min((clientX || 0) + 36, window.innerWidth - size - pad));
+  const y = Math.max(pad, Math.min((clientY || 0) - 26, window.innerHeight - size - pad));
+  btn._flightTarget = {
+    id: routeId || null,
+    linkRef: linkRef || App.flightDeleteTargetLink || null,
+    signature: flightSignature(linkRef) || App.flightDeleteTargetSignature || null
+  };
+  btn.style.background = flightColorOf(btn._flightTarget.linkRef);
+  btn.style.left = `${x}px`;
+  btn.style.top = `${y}px`;
+  btn.style.display = 'inline-flex';
+}
+
 function isPointerNearFlightDeleteButton(event, margin = 34) {
   const btn = document.getElementById('flight-delete-button');
   if (!btn || btn.style.display === 'none') return false;
@@ -3631,6 +3839,16 @@ function isPointerNearFlightDeleteButton(event, margin = 34) {
   const y = event?.clientY;
   if (!Number.isFinite(x) || !Number.isFinite(y)) return false;
   return x >= rect.left - margin && x <= rect.right + margin && y >= rect.top - margin && y <= rect.bottom + margin;
+}
+
+function isPointerNearFlightColorButton(event, margin = 34) {
+  const btn = document.getElementById('flight-color-button');
+  if (!btn || btn.style.display === 'none') return false;
+  const rect = btn.getBoundingClientRect();
+  const x = event?.clientX;
+  const y = event?.clientY;
+  return Number.isFinite(x) && Number.isFinite(y) &&
+    x >= rect.left - margin && x <= rect.right + margin && y >= rect.top - margin && y <= rect.bottom + margin;
 }
 
 function hideFlightDeleteButton() {
@@ -3649,6 +3867,11 @@ function hideFlightDeleteButton() {
     btn.style.display = 'none';
     btn.dataset.flightId = '';
   }
+  const colorBtn = document.getElementById('flight-color-button');
+  if (colorBtn) {
+    colorBtn.style.display = 'none';
+    colorBtn._flightTarget = null;
+  }
   highlightFlightLink(null);
 }
 
@@ -3661,6 +3884,7 @@ function scheduleFlightDeleteButton(routeId, clientX, clientY, linkRef = null) {
     if (!isFlightDeleteHoverEnabled()) return;
     const pos = App.flightHoverClient || { x: clientX, y: clientY };
     positionFlightDeleteButton(pos.x, pos.y, routeId, linkRef);
+    positionFlightColorButton(pos.x, pos.y, routeId, linkRef);
   }, 1500);
 }
 
@@ -5490,7 +5714,10 @@ const mode = getPanelLayoutMode(panelIdx);
       const uy = dy / len;
       const px = -uy;
       const py = ux;
-      const size = Math.max(5.5, (style.width || 1.2) * 4.8);
+      // The original arrow was only about 5--6 px at the default line width.
+      // Raise it by roughly two visual sizes so direction remains legible when
+      // Flights cross several subspaces.
+      const size = Math.max(8, (style.width || 1.2) * 6.7);
       const half = size * 0.42;
       const tip = [x + ux * size * 0.62, y + uy * size * 0.62];
       const base = [x - ux * size * 0.55, y - uy * size * 0.55];
@@ -5510,9 +5737,9 @@ const mode = getPanelLayoutMode(panelIdx);
         layer.append('path')
           .attr('class', 'flight-shadow')
           .attr('d', pathD)
-          .attr('stroke', '#111827')
+          .attr('stroke', style.color)
           .attr('stroke-width', Math.max(width + 3, 5))
-          .attr('stroke-opacity', meta.hovered ? 0.11 : 0)
+          .attr('stroke-opacity', meta.hovered ? Math.min(0.22, Math.max(0.13, (opacity ?? 0.98) * 0.18)) : 0)
           .attr('fill', 'none')
           .attr('stroke-linecap', 'round')
           .style('pointer-events', 'none')
@@ -5544,7 +5771,9 @@ const mode = getPanelLayoutMode(panelIdx);
 
     (links || []).forEach(link => {
       const type  = link.type || 'road';
-      const style = styleOf(type);
+      const style = type === 'flight'
+        ? { ...styleOf(type), color: flightColorOf(link) }
+        : styleOf(type);
 
       // 1) 原始路径 → 标准化 panelIdx
       const ptsRaw = (link.path || []).map((p, i) => ({
@@ -5595,13 +5824,32 @@ const mode = getPanelLayoutMode(panelIdx);
             App.flightDeleteTargetLink = link;
             App.flightDeleteTargetSignature = flightSignature(link);
           })
+          // Right-click is the direct, discoverable entry point for Flight
+          // colouring.  The transparent hit path below bubbles this event to
+          // the group, so it works on both the curve and its enlarged hit area.
+          .on('contextmenu', (event) => {
+            event.preventDefault();
+            event.stopPropagation();
+            if (App.flightDeleteTimer) clearTimeout(App.flightDeleteTimer);
+            App.flightDeleteTimer = null;
+            App.hoveredFlightId = flightId;
+            App.flightHoverClient = { x: event.clientX, y: event.clientY };
+            App.flightDeleteTargetLink = link;
+            App.flightDeleteTargetSignature = flightSignature(link);
+            highlightFlightLink(flightId);
+            showFlightColorMenu(event.clientX, event.clientY, {
+              id: flightId,
+              linkRef: link,
+              signature: flightSignature(link)
+            });
+          })
           .on('mouseleave', (event) => {
             if (App.flightDeleteTimer) clearTimeout(App.flightDeleteTimer);
             App.flightDeleteTimer = null;
             App.flightDeleteHideTimer = setTimeout(() => {
               const btn = document.getElementById('flight-delete-button');
               if (btn && btn.matches(':hover')) return;
-              if (isPointerNearFlightDeleteButton(event, 34)) return;
+              if (isPointerNearFlightDeleteButton(event, 34) || isPointerNearFlightColorButton(event, 34)) return;
               hideFlightDeleteButton();
             }, 520);
           });
