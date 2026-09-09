@@ -1044,6 +1044,19 @@ function filterBucketToVisibleCountries(bucket) {
   return { ...bucket, items, countries, msuCount };
 }
 
+// The Gallery selection is the active paper scope for every area-based
+// operation.  `null` means that no Gallery filtering is active, so the full
+// collection remains the scope.  Keep this separate from rendering helpers:
+// callers that reason about boundary zones must test the scoped source set,
+// rather than the unfiltered bucket that produced the HSU.
+function getScopedBucketCountries(bucket) {
+  if (!bucket?.countries) return new Set();
+  const countries = Array.from(bucket.countries).map(normalizeCountryId);
+  return App.visibleCountries
+    ? new Set(countries.filter(cid => App.visibleCountries.has(cid)))
+    : new Set(countries);
+}
+
 // One SVG hex represents an HSU, not a particular record within that HSU.
 // Never let whichever raw MSU happened to be first/last determine the HSU's
 // country identity: a multi-source HSU deliberately has no single country.
@@ -1123,8 +1136,9 @@ function getPanelCountryColor(panelIdx, cidRaw) {
     if (tmp?.color) return tmp.color;
   }
 
-  // 4) 最后回退
-  return (App.config?.countryBorder?.color) || '#999';
+  // 4) 未显式设置论文色时使用中性浅灰。不要回退到 countryBorder，
+  // 因为它是深色描边；在高 MSU 透明度下会把普通 HSU 渲染得近乎黑色。
+  return App.config?.hex?.textFill || STYLE.HEX_FILL_TEXT || '#DCDCDC';
 }
 
 function getExplicitCountryColor(panelIdx, cidRaw) {
@@ -1161,6 +1175,17 @@ function getConflictContextCountryId(panelIdx, q, r, key, focusCid = null) {
   if (App.visibleCountries) {
     const visible = Array.from(countries).filter(cid => App.visibleCountries.has(cid));
     if (visible.length === 1) return visible[0];
+  }
+
+  // Area Select has an explicit source owner.  Keep it after a click so the
+  // owner's boundary HSUs remain coloured even if the pointer leaves the
+  // originating source HSU.  Outside Area/Alt mode, boundary zones remain
+  // neutral gray.
+  const areaPreviewActive = !!(App.uiPref?.area || App.modKeys?.alt)
+    && !!App.highlightedHexKeys?.has?.(key);
+  const activeCid = App.activeAltCountry ? normalizeCountryId(App.activeAltCountry) : null;
+  if (areaPreviewActive && activeCid && countries.has(activeCid)) {
+    return activeCid;
   }
 
   const pendingCid = App._pendingColorEdit?.countryId
@@ -2241,18 +2266,20 @@ function renderBucketTooltipHTML(bucket) {
     return new Set(m.get(cid) || []);
   }
 
-    // ★ 新增：面板内冲突区域 key 集合（countries.size > 1）
+  // 面板内 boundary-zone key 集合。Gallery 选中的论文才参与冲突判定；
+  // 未选择论文时，App.visibleCountries 为 null，因而使用全局集合。
   function getConflictKeysInPanel(panelIdx, countriesFilter) {
     const out = new Set();
     const buckets = App.hexBucketsByPanel?.[panelIdx];
     if (!buckets) return out;
     const filter = countriesFilter ? new Set(Array.from(countriesFilter).map(normalizeCountryId)) : null;
     buckets.forEach((b, key) => {
-      if (!b || !b.countries || b.countries.size <= 1) return;
+      const scopedCountries = getScopedBucketCountries(b);
+      if (scopedCountries.size <= 1) return;
       if (filter) {
-        // 与过滤国家有交集才纳入
+        // 与当前论文范围中的过滤国家有交集才纳入
         let has = false;
-        b.countries.forEach(cid => { if (filter.has(normalizeCountryId(cid))) has = true; });
+        scopedCountries.forEach(cid => { if (filter.has(cid)) has = true; });
         if (!has) return;
       }
       out.add(`${panelIdx}|${b.q},${b.r}`);
@@ -2686,11 +2713,11 @@ App._pendingColorEdit = null;
 App.panelConflictColors = new Map();
 // 临时预览（和国家改色的 pending 并存）
 App._pendingConflictEdit = null;
-// 判断某格是否冲突（countries.size > 1）
+// 判断某格是否为当前 Gallery 论文范围内的 boundary zone。
 function isConflictHex(panelIdx, q, r) {
   try {
     const b = getBucket(panelIdx, q, r);
-    return !!(b && b.countries && b.countries.size > 1);
+    return getScopedBucketCountries(b).size > 1;
   } catch { return false; }
 }
 
@@ -4269,20 +4296,23 @@ function deleteFlightById(routeId) {
   function computeHoverOrCountryPreview(panelIdx, q, r, { withCtrl=false, withShift=false, withAlt=false } = {}) {
     if (withAlt) {
       App._forceSingleNextClick = true;
-      // 判定当前格是否冲突：同一 (q,r) 存在多个国家
+      // Gallery selection defines the source scope.  A raw multi-source HSU
+      // becomes source-exclusive when only one of its papers is selected.
       const bucket = getBucket(panelIdx, q, r);
-      const isConflict = !!(bucket && bucket.countries && bucket.countries.size > 1);
+      const countriesHere = getScopedBucketCountries(bucket);
+      const isConflict = countriesHere.size > 1;
 
       if (isConflict) {
         // 仅显示“当前子空间下的冲突区域”
         // 为了语义聚焦，仅取与鼠标所在格同一冲突国家集合有交集的冲突格
-        const countriesHere = new Set(bucket.countries || []);
         return getConflictKeysInPanel(panelIdx, countriesHere);
       } else {
         // 非冲突格：按国家版图显示，并把该国家参与的冲突格也纳入当前子空间预览
-        const hex = App.hexMapsByPanel[panelIdx]?.get(`${q},${r}`);
-        const cid = hex?.country_id ? normalizeCountryId(hex.country_id) : null;
+        const cid = countriesHere.values().next().value || null;
         if (!cid) return new Set();
+        // Persist the Area Select owner so its boundary zones retain this
+        // source colour after the pointer leaves the originating HSU.
+        App.activeAltCountry = cid;
 
         // 复制面板：仅本面板预览（国家格  该国家的冲突格）
         if (App.altIsolatedPanels.has(panelIdx)) {
@@ -4332,6 +4362,7 @@ function deleteFlightById(routeId) {
       App.uiPref.route = false;
       App.uiPref.connectArmed = false;
       App.uiPref.area = false;
+      App.activeAltCountry = null;
       App.insertMode = null;
       App.flightStart = null;
       App.modKeys = { ...(App.modKeys||{}), ctrl:false, meta:false, shift:false, alt:false };
@@ -4387,6 +4418,7 @@ function deleteFlightById(routeId) {
       } else {
         App._pendingColorEdit = null;
         App._pendingConflictEdit = null;
+        App.activeAltCountry = null;
       }
       if (App.hoveredHex) {
         const { panelIdx, q, r } = App.hoveredHex;
@@ -4819,7 +4851,7 @@ function deleteFlightById(routeId) {
           updateHexStyles();
         }
 
-      if (!down && e.key === 'Alt') {
+      if (!down && e.key === 'Alt' && !App.uiPref.area) {
         App.activeAltCountry = null;   // ★ 退出 ALT，清掉当前国家
       }
 
@@ -5383,9 +5415,9 @@ const mode = getPanelLayoutMode(panelIdx);
                 };
                 App._pendingColorEdit = null;
               } else {
-                const raw = d.country_id || null;
-                if (!raw) return;
-                const countryId = normalizeCountryId(raw);
+                const bucket = getBucket(panelIdx, q, r);
+                const countryId = getScopedBucketCountries(bucket).values().next().value || null;
+                if (!countryId) return;
                 const { keys, alphaByKey } = buildAlphaRampFor(panelIdx, countryId); // 你现有的方法
                 App._pendingColorEdit = {
                   panelIdx,
@@ -6034,8 +6066,14 @@ function updateHexStyles() {
       const hatch = gSel.select('path.hex-hatch');
       const key   = `${panelIdx}|${d.q},${d.r}`;
 
+      // Resolve source ownership from the current Gallery scope instead of
+      // the record captured when the HSU was first rendered.  A raw
+      // multi-source HSU may contain only one selected paper now, in which
+      // case it must use that paper's color rather than falling back to gray.
+      const scopedCountries = getScopedBucketCountries(getBucket(panelIdx, d.q, d.r));
+
       // 基础底色（未覆盖时）
-      const baseFill = getHexFillColor(d);
+      const baseFill = computeHexBaseFill(panelIdx, d.q, d.r, d.modality);
 
       // === 记录最终边框样式到缓存（供右端使用） ===
       const stroke  = path.attr('stroke') || (App?.config?.hex?.borderColor) || '#FFFFFF';
@@ -6044,7 +6082,9 @@ function updateHexStyles() {
       App.borderCacheByHex.set(key, { stroke, strokeW });
 
       // —— 国家与 Alt 焦点 —— //
-      const thisCid     = d.country_id ? normalizeCountryId(d.country_id) : null;
+      const thisCid     = scopedCountries.size === 1
+        ? scopedCountries.values().next().value
+        : null;
       const isFocusHex  = !!(focusCid && thisCid === focusCid);
 
       // Alt=filled：仅改变焦点国内的“填充色”，并压暗非焦点；不要统一透明度
@@ -6123,7 +6163,8 @@ function updateHexStyles() {
       }
 
       // —— 颜色与 alpha 选择优先级 —— //
-      // 颜色：冲突预览 > 当前国家上下文里的冲突色 > 冲突已确认 > 国家预览 > 国家已确认 > 焦点底色 > 默认底色
+      // 颜色：冲突预览 > 当前国家上下文 > 冲突已确认 > 国家预览 > 国家已确认
+      // > 默认底色。常态 boundary 保持中性灰，只有 Area Select 上下文才带入来源色。
       let finalFill =
         previewConflictColor ??
         conflictContextColor ??
@@ -6760,19 +6801,21 @@ function updateHexStyles() {
         return; // ← 不改 persistent、不 emit
       } else {
         // Alt 点击普通国家格：只把整国放入“高亮预览”，用于右键确认上色
-        const hex = App.hexMapsByPanel?.[panelIdx]?.get(`${q},${r}`);
-        const cid = hex?.country_id ? normalizeCountryId(hex.country_id) : null;
+        const bucket = getBucket(panelIdx, q, r);
+        const cid = getScopedBucketCountries(bucket).values().next().value || null;
         if (cid) {
-          // 差集：国家 - 冲突区（保证 Alt Click 后的“高亮/上色集合”与右键逻辑一致）
+          // Keep the source's boundary HSUs in the preview as well.  Their
+          // temporary colour comes from activeAltCountry in Area Select;
+          // normal mode still renders them neutral gray.
           const all = getCountryKeysInPanel(panelIdx, cid);
-          const conflicts = getConflictKeysForCountryInPanel(panelIdx, cid);
-          const filteredKeys = new Set([...all].filter(k => !conflicts.has(k)));
+          const areaKeys = new Set(all);
+          App.activeAltCountry = cid;
 
-          App.highlightedHexKeys = new Set(filteredKeys);
+          App.highlightedHexKeys = new Set(areaKeys);
           App._pendingColorEdit = {
             panelIdx,
             countryId: cid,
-            keys: new Set(filteredKeys),
+            keys: new Set(areaKeys),
             color: getCountryColorOverride(panelIdx, cid)?.color || null,
             alphaByKey: buildAlphaMapForPanelCountry(panelIdx, cid)
           };

@@ -8,6 +8,10 @@ from openai import OpenAI
 
 BACKEND_DIR = Path(__file__).resolve().parents[1]
 load_dotenv(BACKEND_DIR / ".env")
+# Keep credentials and provider-specific local overrides out of the shared
+# configuration.  `.env.local` is gitignored and intentionally wins over
+# `.env` when both define the same setting.
+load_dotenv(BACKEND_DIR / ".env.local", override=True)
 
 
 @dataclass(frozen=True)

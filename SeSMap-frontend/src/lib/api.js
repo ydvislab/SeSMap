@@ -475,7 +475,11 @@ REQUIRED OUTPUT:
 
   } catch (e) {
     console.error('Summary generation error:', e);
-    return '';
+    // Do not convert a failed request into an empty successful response.
+    // LinkCard distinguishes an empty synthesis from an error, and previously
+    // this catch made backend failures look as though the Synthesize button
+    // had done nothing (especially noticeable for larger Case 3 selections).
+    throw e instanceof Error ? e : new Error(String(e || 'Summary generation failed'));
   }
 }
 
