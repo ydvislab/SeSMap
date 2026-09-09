@@ -779,7 +779,12 @@ const summarizeSelected = async () => {
       JSON.stringify(answer);
   } catch (err) {
     console.error(err);
-    llmError.value = 'Failed to generate evidence synthesis.';
+    // Preserve the server/provider message.  A generic message made a failed
+    // Case 3 request indistinguishable from a button click that did nothing.
+    const detail = err instanceof Error ? err.message : String(err || '');
+    llmError.value = detail
+      ? `Failed to generate evidence synthesis: ${detail}`
+      : 'Failed to generate evidence synthesis.';
   } finally {
     llmLoading.value = false;
   }
