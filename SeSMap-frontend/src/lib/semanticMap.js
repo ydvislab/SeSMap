@@ -2227,7 +2227,10 @@ function renderBucketTooltipHTML(bucket) {
     updateHexStyles();
     emitSemanticColorSnapshot();
     publishToStepAnalysis();
-    applyResponsiveLayout(true);
+    // Re-aggregation changes HSU membership only.  Keep each existing
+    // subspace's user-controlled position, dimensions, and zoom state instead
+    // of forcing the default grid layout again.
+    applyResponsiveLayout(false);
   }
 
   // 仅取单面板（原有逻辑保留，如需）
