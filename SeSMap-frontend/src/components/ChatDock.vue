@@ -1,15 +1,15 @@
 <script setup>
 import { ref, onMounted, nextTick } from 'vue'
-const emit = defineEmits(['send','upload-files','upload-images'])
+const emit = defineEmits(['send','upload-files','upload-images','dock-resize'])
 const props = defineProps({ busy:{type:Boolean,default:false}, placeholder:{type:String,default:'Say something in English…'} })
 const taRef = ref(null), text = ref(''); const MIN_ROWS = 1, MAX_ROWS = 8
 
 // 常用指令提示（可按需替换/追加）
 const hintChips = ref([
-  'show air related papers in gallery',
+  'show combustion related papers in gallery',
   'show all subspaces in case 1',
   'synthesize case 1',
-  'show background and results subspaces',
+  'show background, method, result and conclusion subspaces in case 1',
   'filter MSUs with the meaning of'
 ])
 
@@ -29,13 +29,19 @@ function autoResize(){
 function onInput(){ autoResize() }
 function onKeydown(e){ /* Enter to send; Shift+Enter newline */ if(e.key==='Enter' && !e.shiftKey){ e.preventDefault(); doSend() } }
 async function doSend(){ const msg=text.value.trim(); if(!msg || props.busy) return; emit('send', msg); text.value=''; await nextTick(); autoResize() }
+function onDockEnter(){ emit('dock-resize', { phase:'start', expanded:true }) }
+function onHintsTransitionEnd(event){
+  // Only the height transition changes the message viewport.  Reporting this
+  // final frame lets the parent scroll after the dock has reached its full size.
+  if (event.propertyName === 'max-height') emit('dock-resize', { phase:'end', expanded:true })
+}
 onMounted(()=> nextTick(autoResize))
 </script>
 
 <template>
-  <div class="chat-dock">
+  <div class="chat-dock" @mouseenter="onDockEnter">
     <!-- 悬停时出现的提示条（不影响原有编辑区结构） -->
-    <div class="dock-hints" aria-hidden="true">
+    <div class="dock-hints" aria-hidden="true" @transitionend="onHintsTransitionEnd">
       <div class="hint-label">Try:</div>
       <div class="hint-list">
         <button v-for="h in hintChips" :key="h" class="hint-chip" type="button" @click="applyHint(h)">
@@ -133,6 +139,7 @@ onMounted(()=> nextTick(autoResize))
 .hint-chip{
   font-size:11px;
   line-height:1;
+  text-align:left; /* override the browser's centered button text when a chip wraps */
   border:1px dashed #e5e7eb;
   background:#fafafa;
   padding:4px 8px;
