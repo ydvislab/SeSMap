@@ -1,6 +1,6 @@
 <!-- src/components/LeftPane.vue -->
 <script setup>
-import { ref, watch, nextTick, onMounted, onBeforeUnmount } from 'vue'
+import { computed, ref, watch, nextTick, onMounted, onBeforeUnmount } from 'vue'
 import ChatDock from './ChatDock.vue'
 import PaperList from './PaperList.vue'
 import MarkdownView from './MarkdownView.vue'
@@ -145,6 +145,90 @@ function onChatDockResize({ phase } = {}) {
 }
 onMounted(() => nextTick(() => scrollToBottom('instant')))
 watch(() => messages.value.length, async () => { await nextTick(); if (atBottom.value) scrollToBottom('smooth') })
+
+// ====== Left-pane vertical resizers ======================================
+// The first two heights are explicit; the Chat panel receives the remaining
+// space.  This makes both separators independently useful while keeping every
+// panel readable on smaller screens.
+const leftPaneShellRef = ref(null)
+const leftPaneHeights = ref([null, null])
+const LEFT_PANE_MIN_HEIGHT = 118
+const LEFT_PANE_HANDLE_HEIGHT = 10
+let activeLeftPaneResize = null
+
+const leftPaneShellStyle = computed(() => {
+  const [controlHeight, galleryHeight] = leftPaneHeights.value
+  if (!Number.isFinite(controlHeight) || !Number.isFinite(galleryHeight)) return {}
+  return {
+    gridTemplateRows: `${controlHeight}px ${LEFT_PANE_HANDLE_HEIGHT}px ${galleryHeight}px ${LEFT_PANE_HANDLE_HEIGHT}px minmax(${LEFT_PANE_MIN_HEIGHT}px, 1fr)`
+  }
+})
+
+function clampLeftPaneHeight(value, min, max) {
+  return Math.max(min, Math.min(max, value))
+}
+
+function initializeLeftPaneHeights() {
+  const shell = leftPaneShellRef.value
+  const panels = shell?.querySelectorAll?.('.lp-card')
+  if (!panels || panels.length < 3 || leftPaneHeights.value[0] != null) return
+  leftPaneHeights.value = [
+    Math.round(panels[0].getBoundingClientRect().height),
+    Math.round(panels[1].getBoundingClientRect().height)
+  ]
+}
+
+function onLeftPaneResizeMove(event) {
+  const state = activeLeftPaneResize
+  const shell = leftPaneShellRef.value
+  if (!state || !shell) return
+  const delta = event.clientY - state.startY
+  const available = shell.clientHeight - LEFT_PANE_HANDLE_HEIGHT * 2
+  const maxPair = Math.max(LEFT_PANE_MIN_HEIGHT * 2, available - LEFT_PANE_MIN_HEIGHT)
+
+  let [controlHeight, galleryHeight] = state.initialHeights
+  if (state.index === 0) {
+    // The upper divider only exchanges height between the first two panels.
+    const sum = controlHeight + galleryHeight
+    controlHeight = clampLeftPaneHeight(controlHeight + delta, LEFT_PANE_MIN_HEIGHT, sum - LEFT_PANE_MIN_HEIGHT)
+    galleryHeight = sum - controlHeight
+  } else {
+    // The lower divider exchanges height between Gallery and Chat; Chat is the
+    // flexible final grid track, so cap Gallery by the space left for Chat.
+    galleryHeight = clampLeftPaneHeight(galleryHeight + delta, LEFT_PANE_MIN_HEIGHT, maxPair - controlHeight)
+  }
+  leftPaneHeights.value = [Math.round(controlHeight), Math.round(galleryHeight)]
+}
+
+function stopLeftPaneResize() {
+  if (!activeLeftPaneResize) return
+  activeLeftPaneResize = null
+  document.body.style.userSelect = ''
+  document.body.style.cursor = ''
+  document.removeEventListener('pointermove', onLeftPaneResizeMove)
+  document.removeEventListener('pointerup', stopLeftPaneResize)
+  document.removeEventListener('pointercancel', stopLeftPaneResize)
+}
+
+function startLeftPaneResize(index, event) {
+  if (event.button !== 0) return
+  initializeLeftPaneHeights()
+  const [controlHeight, galleryHeight] = leftPaneHeights.value
+  if (!Number.isFinite(controlHeight) || !Number.isFinite(galleryHeight)) return
+  activeLeftPaneResize = {
+    index,
+    startY: event.clientY,
+    initialHeights: [controlHeight, galleryHeight]
+  }
+  document.body.style.userSelect = 'none'
+  document.body.style.cursor = 'row-resize'
+  document.addEventListener('pointermove', onLeftPaneResizeMove)
+  document.addEventListener('pointerup', stopLeftPaneResize)
+  document.addEventListener('pointercancel', stopLeftPaneResize)
+}
+
+onMounted(() => nextTick(initializeLeftPaneHeights))
+onBeforeUnmount(stopLeftPaneResize)
 
 function handleUploadFiles(files){ /* 占位 */ }
 
@@ -942,7 +1026,7 @@ async function handleSend(msg) {
 </script>
 
 <template>
-  <div class="lp-shell">
+  <div ref="leftPaneShellRef" class="lp-shell" :style="leftPaneShellStyle">
     <!-- 1) Control Panel -->
     <section class="lp-card">
       <header class="card__title">Control Panel</header>
@@ -978,6 +1062,13 @@ async function handleSend(msg) {
       </div>
     </section>
 
+    <div
+      class="lp-pane-resizer"
+      role="separator"
+      aria-label="Resize Control Panel and Semantic Source Gallery"
+      @pointerdown.prevent="startLeftPaneResize(0, $event)"
+    ></div>
+
     <!-- 2) Semantic Source Gallery（用图片列表直接填充） -->
     <section class="lp-card">
       <header class="card__title">
@@ -1011,6 +1102,13 @@ async function handleSend(msg) {
       </div>
     </section>
 
+    <div
+      class="lp-pane-resizer"
+      role="separator"
+      aria-label="Resize Semantic Source Gallery and Chat with LLM"
+      @pointerdown.prevent="startLeftPaneResize(1, $event)"
+    ></div>
+
     <!-- 3) Chat -->
     <section class="lp-card lp-chat">
       <header class="card__title">Chat with LLM</header>
@@ -1028,8 +1126,35 @@ async function handleSend(msg) {
 
 <style scoped>
 /* 布局 */
-.lp-shell{ height:100%; display:grid; grid-template-rows:1.55fr 1.3fr 1.5fr; gap:6px; background:#f3f4f6; overflow:hidden; }
+.lp-shell{ height:100%; display:grid; grid-template-rows:1.55fr 10px 1.3fr 10px 1.5fr; gap:0; background:#f3f4f6; overflow:hidden; }
 .lp-card{ --r:12px; background:#fff; border-radius:var(--r); display:flex; flex-direction:column; min-height:0; overflow:hidden; }
+.lp-pane-resizer{
+  position:relative;
+  min-height:10px;
+  cursor:row-resize;
+  touch-action:none;
+  user-select:none;
+  z-index:2;
+}
+.lp-pane-resizer::before{
+  content:'';
+  position:absolute;
+  left:50%;
+  top:50%;
+  width:44px;
+  height:3px;
+  border-radius:999px;
+  background:#cbd5e1;
+  box-shadow:0 0 0 2px #f3f4f6;
+  transform:translate(-50%,-50%);
+  opacity:.65;
+  transition:width .15s ease, background .15s ease, opacity .15s ease;
+}
+.lp-pane-resizer:hover::before{
+  width:62px;
+  background:#64748b;
+  opacity:1;
+}
 .card__title{ font-size:var(--panel-title-size); font-weight:var(--panel-title-weight); color:#333; border-bottom:1px solid #eee; padding:8px 10px; }
 .lp-card__body{ padding:6px 8px; overflow:auto; min-height:0; border-bottom-left-radius:var(--r); border-bottom-right-radius:var(--r); background-clip:padding-box; scrollbar-width:none; }
 .lp-card__body::-webkit-scrollbar{ width:0; height:0; }
