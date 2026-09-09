@@ -1,83 +1,92 @@
 # SeSMap
 
-SeSMap is a **semantic-map visual analytics system** for scientific literature. It decomposes papers into fine-grained Minimal Semantic Units (MSUs), projects them into 2D with a parametric model, organizes them into discourse-role subspaces, and supports cross-paper semantic inspection with LLM-assisted retrieval, summarization, and interaction.
+SeSMap is a visual analytics system for cross-paper scientific knowledge
+synthesis. It turns paper paragraphs into source-traceable **Minimum Semantic
+Units (MSUs)**, projects them into a shared two-dimensional reference, and
+supports the discovery, inspection, and synthesis of related evidence.
 
-## Architecture
+## What it provides
+
+- **Semantic Subspace Map**: discourse-role subspaces shown as aligned hexagonal
+  semantic units (HSUs), with adjustable aggregation scale.
+- **Semantic Source Gallery**: paper thumbnails and colors; the selected papers
+  define the active scope for map filtering and Area Select highlighting.
+- **Flights and Area Select**: retain analyst-created connections across HSUs,
+  inspect source-exclusive regions and boundary zones, and revise selections.
+- **Stepwise Analysis**: keep selected MSUs, source paragraphs, and generated
+  evidence syntheses together in resizable, revisable analysis cards.
+- **LLM assistance**: natural-language map control, source-grounded summaries,
+  semantic selection, and optional RAG over a case's PDFs.
+
+## Project layout
 
 ```text
 SeSMap/
-├── SeSMap-backend/    Flask backend + data/model pipeline + RAG   → SeSMap-backend/README.md
-└── SeSMap-frontend/   Vue 3 + Vite frontend (map UI / gallery / chat) → SeSMap-frontend/README.md
+├── SeSMap-backend/    Flask API, case-building pipeline, model code, and data
+└── SeSMap-frontend/   Vue 3 + Vite interface
 ```
 
-The frontend proxies `/api/*` to the backend at `http://127.0.0.1:5000`.
+The development frontend proxies `/api/*` to `http://127.0.0.1:5000`.
+See the component READMEs for backend-pipeline and frontend-specific details.
 
-## Environment Configuration
+## Quick start
 
-Real `.env` files are intentionally ignored by Git. Copy the provided templates
-locally; never commit API keys. The backend template is the important one:
+### 1. Configure and run the backend
 
-| Location | Required setting | Purpose |
-| --- | --- | --- |
-| `SeSMap-backend/.env` | `LLM_API_KEY` | Enables chat, RAG, summaries, and case-building LLM steps. |
-| `SeSMap-backend/.env` | `LLM_BASE_URL` (optional) | OpenAI-compatible provider endpoint; the template preserves the current default. |
-| `SeSMap-frontend/.env` | `VITE_API_TARGET` (optional) | Backend URL for Vite's development proxy; defaults to `http://127.0.0.1:5000`. |
-
-Use the templates as follows:
-
-```bash
-cp SeSMap-backend/.env.example SeSMap-backend/.env
-cp SeSMap-frontend/.env.example SeSMap-frontend/.env  # only needed to override the default API URL
-```
-
-`VITE_*` values are visible in the browser bundle, so frontend `.env` files
-must not contain secrets. See the component READMEs for optional model, data
-path, checkpoint, and MinerU settings.
-
-## Pipeline Overview
-
-```text
-PDF → Markdown (MinerU) → MSU corpus (LLM) → sentence embeddings (bge)
-    → 2D coordinates (v10 parametric projection) → hex binning (HSU)
-    → HSU summaries → case files → semantic_map_data.json → frontend rendering
-```
-
-## Quick Start
-
-**1. Backend** (Python 3.10)
+Python 3.10 is recommended.
 
 ```bash
 cd SeSMap-backend
 python3 -m pip install -r requirements.txt
-cp .env.example .env                 # set LLM_API_KEY (and LLM_BASE_URL if needed)
-python3 scripts/install_models.py    # download the bge encoder
-python3 app.py                       # http://127.0.0.1:5000
+cp .env.example .env
+# Set LLM_API_KEY, LLM_BASE_URL, and optional LLM_*_MODEL values in .env.
+python3 app.py
 ```
 
-**2. Frontend**
+The backend serves at `http://127.0.0.1:5000`. For a machine-specific provider
+or key, place the same variables in `SeSMap-backend/.env.local`; it is ignored
+by Git and overrides `.env`. Never put a key in the frontend environment file.
+
+### 2. Run the frontend
 
 ```bash
 cd SeSMap-frontend
 npm install
-cp .env.example .env                 # optional: override the backend proxy URL
-npm run dev                          # http://localhost:5173
+npm run dev
 ```
 
-## Building a New Case
+Open `http://localhost:5173`. Set `VITE_API_TARGET` in
+`SeSMap-frontend/.env` only when the backend is not running on port 5000.
 
-Put PDFs into `SeSMap-backend/data/caseN/pdf/` and run that case's pipeline
-steps in order (see the backend README):
+## Data and case pipeline
+
+Each case is stored in `SeSMap-backend/data/<caseId>/` and provides its PDF
+collection, gallery manifest, thumbnails, and `semantic_map_data.json`.
 
 ```text
-mineru_pdf → build_corpus → precompute_embeddings → train_all_v10
-→ formdatabase → generate_hex → summarize_hex → build_case_files
-→ build_semantic_map → extract_thumbnails
+PDF → Markdown → MSUs → embeddings → 2D projection → HSUs
+    → summaries and gallery assets → semantic_map_data.json
 ```
 
-## Main Features
+For an existing case, the v11 rebuild script can regenerate its frontend data:
 
-- Multiple cases: each corpus builds its own semantic map.
-- Natural-language control of subspace visibility and construction.
-- Source Gallery with automatic paper thumbnails; selecting papers filters the map dynamically.
-- Stepwise Analysis View for saved routes and structured MSU summaries.
-- RAG question answering over the project PDFs.
+```bash
+cd SeSMap-backend
+bash build_case_v11.sh case3
+python3 scripts/audit_source_mappings.py case3
+```
+
+The rebuild requires the local BGE encoder; install it beforehand with
+`python3 scripts/install_models.py`. Building a new corpus also requires the
+MinerU PDF-to-Markdown setup documented in
+[the backend README](SeSMap-backend/README.md).
+
+## Verification
+
+```bash
+cd SeSMap-frontend && npm run build
+cd ../SeSMap-backend && python3 scripts/audit_source_mappings.py
+```
+
+The mapping audit checks that gallery papers, HSU country identifiers, and MSU
+paper identifiers agree for every included case.
