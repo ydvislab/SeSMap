@@ -122,12 +122,27 @@ function updatePaperGroups(nextGroups) {
 const messages = ref([{ role: 'system', type:'text', text: 'You are chatting with SeSMap agents.' }])
 const msgBoxRef = ref(null)
 const atBottom = ref(true)
+let pinChatBottomAfterDockResize = false
 function isNearBottom(el, threshold = 80) { return el.scrollHeight - el.scrollTop - el.clientHeight <= threshold }
 function scrollToBottom(behavior = 'smooth') {
   const el = msgBoxRef.value; if (!el) return
   el.scrollTo({ top: el.scrollHeight, behavior })
 }
 function onMsgsScroll(e){ atBottom.value = isNearBottom(e.target) }
+function onChatDockResize({ phase } = {}) {
+  if (phase === 'start') {
+    // Respect a reader who intentionally scrolled up.  Otherwise remember the
+    // bottom-pinned state before the expanding quick-input dock shrinks the
+    // available message viewport.
+    pinChatBottomAfterDockResize = !!atBottom.value
+    if (pinChatBottomAfterDockResize) nextTick(() => scrollToBottom('auto'))
+    return
+  }
+  if (phase === 'end' && pinChatBottomAfterDockResize) {
+    pinChatBottomAfterDockResize = false
+    nextTick(() => scrollToBottom('auto'))
+  }
+}
 onMounted(() => nextTick(() => scrollToBottom('instant')))
 watch(() => messages.value.length, async () => { await nextTick(); if (atBottom.value) scrollToBottom('smooth') })
 
@@ -1006,7 +1021,7 @@ async function handleSend(msg) {
           <div v-else class="msg-bubble">{{ m.text }}</div>
         </div>
       </div>
-      <ChatDock @send="handleSend" @upload-files="handleUploadFiles" />
+      <ChatDock @send="handleSend" @upload-files="handleUploadFiles" @dock-resize="onChatDockResize" />
     </section>
   </div>
 </template>
