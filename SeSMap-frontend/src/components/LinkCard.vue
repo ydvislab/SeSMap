@@ -73,6 +73,7 @@
               :style="{ backgroundColor: msu.paperColor }"
               :title="msu.paperLabel"
             ></span>
+            <span v-if="msu.paperLabel" class="paper-tag" :title="msu.paperLabel">{{ paperTag(msu.paperLabel) }}</span>
             <button
               class="msu-id"
               type="button"
@@ -189,6 +190,12 @@ const props = defineProps({
   fillByNode: { type: [Object, Map], default: () => ({}) },
 })
 const emit = defineEmits(['resize-card-delta', 'close-link'])
+
+function paperTag(label) {
+  const text = String(label || '').trim()
+  const short = text.split(' — ')[0]
+  return short.length > 16 ? `${short.slice(0, 15)}…` : short
+}
 
 const svgRef = ref(null)
 const hexScrollRef = ref(null)
@@ -1331,5 +1338,18 @@ onBeforeUnmount(() => {
 .mini :deep(.nodes-layer .node.picked .hex) {
   stroke: #111;
   stroke-width: 1;
+}
+.paper-tag {
+  flex: none;
+  max-width: 96px;
+  margin-left: 6px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: 600;
+  line-height: inherit;
+  color: #374151;
 }
 </style>

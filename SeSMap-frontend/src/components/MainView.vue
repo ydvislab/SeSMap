@@ -83,6 +83,7 @@ async function bootstrapSemanticMap(projectId) {
   ready.value = true
   selectionHasContent.value = false
   controller?.setAggregationRange?.(props.aggregationRange)
+  controller?.setViewedFocus?.(viewedFocus.value)
 }
 
 watch(
@@ -139,6 +140,18 @@ async function onAddSubspace() {
   controller.addSubspace?.(created?.subspace || { subspaceName: 'New Subspace', hexList: [] })
 }
 
+const viewed = ref({ msuViewed: 0, msuTotal: 0 })
+function onViewedChange(e) {
+  viewed.value = e.detail
+}
+const viewedFocus = ref(null)
+function toggleViewedFocus(mode) {
+  viewedFocus.value = viewedFocus.value === mode ? null : mode
+  controller?.setViewedFocus?.(viewedFocus.value)
+}
+onMounted(() => window.addEventListener('semantic-map-viewed', onViewedChange))
+onBeforeUnmount(() => window.removeEventListener('semantic-map-viewed', onViewedChange))
+
 /* 点击 Save 时，打印当前选择的节点 */
 function onSave() {
   if (!ready.value || !controller || !selectionHasContent.value) return
@@ -171,6 +184,7 @@ function onSave() {
   console.log('links:', snap.links)
   console.groupEnd()
 
+  controller.markSelectionViewed?.()
   emitSelectionSaved({
     ...snap,
     title: titleText,
@@ -201,6 +215,21 @@ function onSave() {
       </div>
 
       <div class="mv-actions">
+        <div v-if="viewed.msuTotal" class="viewed-status">
+          <button
+            type="button"
+            :class="{ 'is-on': viewedFocus === 'viewed' }"
+            title="Show the HSUs you have inspected"
+            @click="toggleViewedFocus('viewed')"
+          >{{ viewed.msuViewed }} viewed</button>
+          <span>/</span>
+          <button
+            type="button"
+            :class="{ 'is-on': viewedFocus === 'unviewed' }"
+            title="Show the HSUs that still have uninspected MSUs"
+            @click="toggleViewedFocus('unviewed')"
+          >{{ viewed.msuTotal - viewed.msuViewed }} unviewed</button>
+        </div>
         <!-- <button class="add-btn" @click="onAddSubspace" title="Add subspace">＋</button> -->
         <!-- <button class="filter-btn" title="Filter">Filter</button> -->
         <button
@@ -222,6 +251,15 @@ function onSave() {
 
 
 <style scoped>
+.mainview { position: relative; }
+.mv-title { white-space: nowrap; }
+.viewed-status { display: flex; align-items: center; gap: 4px; font-size: 12px; color: #8a8a8a; white-space: nowrap; }
+.viewed-status button {
+  padding: 0; border: 0; background: none; box-shadow: none; height: auto; width: auto;
+  font: inherit; color: inherit; cursor: pointer;
+}
+.viewed-status button:hover { color: #333; }
+.viewed-status button.is-on { color: #111; font-weight: 600; }
 /* 根容器：上下布局，header 固定在上，下面是滚动区 */
 .mainview {
   height: 100%;

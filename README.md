@@ -16,7 +16,11 @@ supports the discovery, inspection, and synthesis of related evidence.
 - **Stepwise Analysis**: keep selected MSUs, source paragraphs, and generated
   evidence syntheses together in resizable, revisable analysis cards.
 - **LLM assistance**: natural-language map control, source-grounded summaries,
-  semantic selection, and optional RAG over a case's PDFs.
+  semantic selection, candidate HSU suggestions, and optional RAG over a case's
+  PDFs.
+- **Adding papers**: upload PDFs in the Control Panel to add them to the loaded
+  collection. They are split into MSUs and mapped by the fixed projector, so
+  existing coordinates do not change.
 
 ## Project layout
 
@@ -77,9 +81,11 @@ python3 scripts/audit_source_mappings.py case3
 ```
 
 The rebuild requires the local BGE encoder; install it beforehand with
-`python3 scripts/install_models.py`. Building a new corpus also requires the
-MinerU PDF-to-Markdown setup documented in
-[the backend README](SeSMap-backend/README.md).
+`python3 scripts/install_models.py`. Building a new corpus or uploading papers
+also requires the MinerU PDF-to-Markdown setup documented in
+[the backend README](SeSMap-backend/README.md). The BGE encoder
+(`SeSMap-backend/models/`) and MinerU environment
+(`SeSMap-backend/.venv-mineru/`) are local downloads and are ignored by git.
 
 ## Verification
 

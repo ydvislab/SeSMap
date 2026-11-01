@@ -44,10 +44,46 @@ def reject_reason(text: str) -> str | None:
         return "isolated_figure_label"
     if METADATA_PREFIX.match(text) or text.lower().rstrip(".") in METADATA_EXACT:
         return "publication_metadata"
+    if NON_SCIENTIFIC.search(text) or GIBBERISH.match(text):
+        return "non_scientific_statement"
     # A bare access-date/bibliography fragment is a parsing artifact, not an MSU.
     if re.fullmatch(r"(?:p\.?\s*\d+[,.;]?\s*)?(?:\d{4}|\d{4}-\d{1,2}-\d{1,2})[.]?", text, re.I):
         return "bibliography_fragment"
     return None
+
+
+# A reference entry yields well-formed MSUs ("The study was published in ..."), so it
+# can only be recognized from the source paragraph, not from the MSU sentence.
+REF_PARAGRAPH = [
+    re.compile(r"^\s*(<sup>\d+</sup>|\[[^\]]{1,12}\]\.?|\d{1,3}\.)\s*[A-Z]"),
+    re.compile(r"[A-Z][a-z'-]+,\s+[A-Z]\.(\s*[A-Z]\.)*[,:;]"),
+    re.compile(r"\b[A-Z]\.\s*(?:[A-Z]\.\s*)?[A-Z][a-z'-]+,\s+[A-Z]\."),
+    re.compile(r"\b(vol\.|pp\.|doi:|proceedings of|journal of|ieee trans|arxiv:)", re.I),
+]
+REF_YEAR = re.compile(r"\((19|20)\d{2}[a-z]?\)|\b(19|20)\d{2}\.\s*$|,\s*(19|20)\d{2}[.;]?\s*$")
+
+
+# Statements about the publication rather than its science.  Kept narrow on purpose:
+# words such as "located in" or "supported by" also occur in valid findings.
+NON_SCIENTIFIC = re.compile(
+    r"^(?:keywords?|index terms)\b.*\b(?:include|are)\b"
+    r"|^cite as\b|^available online\b|^https?://|\bdoi\b.*\bhttps?://"
+    r"|\b(?:paper|article|manuscript)\s+(?:is|was)\s+(?:published|accepted|received|submitted)\b"
+    r"|\bpublished (?:under|by)\b|\bpublished in\b.*\b(?:volume|vol\.)"
+    r"|\b(?:project|work|research|study)\s+(?:was|is)\s+(?:partly\s+|partially\s+|financially\s+)?(?:supported|funded)\s+by\b"
+    r"|\bgrant (?:no|number)\b"
+    r"|\b(?:university|institute|laboratory|college|academy|ucas)\b.*\bis located (?:in|at)\b"
+    r"|\b(?:university|institute|institutefor)\b.*,\s*\d{5,6},\s*[A-Z]"
+    r"|^the data that support the findings\b"
+    r"|^the (?:source )?(?:code|demonstration video|video) is available\b",
+    re.I,
+)
+GIBBERISH = re.compile(r"^[a-z0-9.]{6,}\s*\(")
+
+
+def is_reference_paragraph(text: str) -> bool:
+    hits = sum(bool(p.search(text)) for p in REF_PARAGRAPH)
+    return hits >= 2 or (hits == 1 and len(text) < 500 and bool(REF_YEAR.search(text)))
 
 
 def main() -> int:
@@ -67,6 +103,8 @@ def main() -> int:
             continue
         text = clean_text(rec.get("sentence"))
         reason = reject_reason(text)
+        if not reason and is_reference_paragraph(clean_text(rec.get("paragraph_info"))):
+            reason = "reference_entry"
         if reason:
             counts[reason] += 1
             removed.append({"MSU_id": rec.get("MSU_id", rec.get("idx")), "reason": reason, "sentence": text})

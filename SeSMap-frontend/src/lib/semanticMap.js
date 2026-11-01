@@ -164,6 +164,7 @@ const STYLE = {
   HATCH_OPACITY: 0.6,            // 斜线透明度
   HATCH_ANGLE: 45,                // 斜线角度（度）
 
+  STATUS_FOCUS_FILL: '#8c8c8c',    // 查看状态聚焦时，未设论文色的 HSU 用的中性深灰
   FOCUS_COUNTRY_FILL: '#FCFCFC',   // Alt 聚焦国家的统一填充色（不区分 modality）
   OPACITY_NONFOCUS: 0.08,          // Alt 聚焦时，非该国家 hex 的压暗透明度
 
@@ -1352,8 +1353,80 @@ function emitSelectionPayload(){
 }
 
 
+// 已查看状态按 MSU 记录：聚合半径变化时 HSU 会重组，MSU 不变，所以标记和计数都能重算。
+function collectMsuIdsFromKeys(keys) {
+  const ids = new Set();
+  (keys || []).forEach(key => {
+    const [p, qr] = String(key).split('|');
+    const [q, r] = String(qr || '').split(',').map(Number);
+    const bucket = getBucketSafe(Number(p), q, r);
+    if (bucket) buildHsuDisplayRecord(bucket).msu_ids.forEach(id => ids.add(String(id)));
+  });
+  return ids;
+}
+
+// 未设论文色时的临时显示色：按论文稳定取色，不写入用户的颜色设置
+function paperPaletteColor(countryId) {
+  const n = Number(String(countryId).replace(/\D/g, '')) || 0;
+  return COLOR_PALETTE[n % COLOR_PALETTE.length];
+}
+
+function isPanelShown(panelIdx) {
+  const el = App.playgroundEl?.querySelector?.(`.subspace[data-index="${panelIdx}"]`);
+  return !el || el.style.display !== 'none';
+}
+
+function isCandidateSelection() {
+  const a = App.candidateHexKeys, b = App.persistentHexKeys;
+  return !!(a && a.size && b && a.size === b.size && [...a].every(k => b.has(k)));
+}
+
+function markSelectionViewed() {
+  if (!App.viewedMsuIds) App.viewedMsuIds = new Set();
+  collectMsuIdsFromKeys(App.persistentHexKeys).forEach(id => App.viewedMsuIds.add(id));
+}
+
+function refreshViewedStats() {
+  if (!App.viewedMsuIds) App.viewedMsuIds = new Set();
+  const share = new Map();
+  const focusKeys = new Set();
+  let hsuTotal = 0, hsuViewed = 0, msuTotal = 0, msuViewed = 0;
+  (App.allHexDataByPanel || []).forEach((hexes, panelIdx) => {
+    if (!isPanelShown(panelIdx)) return;
+    const seen = new Set();
+    (hexes || []).forEach(hex => {
+      const key = `${panelIdx}|${hex.q},${hex.r}`;
+      if (seen.has(key) || !isHexKeyVisible(key)) return;
+      seen.add(key);
+      const bucket = getBucketSafe(panelIdx, hex.q, hex.r);
+      const ids = bucket ? buildHsuDisplayRecord(bucket).msu_ids : [];
+      if (!ids.length) return;
+      const seenCount = ids.filter(id => App.viewedMsuIds.has(String(id))).length;
+      hsuTotal += 1;
+      msuTotal += ids.length;
+      msuViewed += seenCount;
+      if (seenCount) {
+        hsuViewed += 1;
+        share.set(key, seenCount / ids.length);
+      }
+      // 部分看过的 HSU 同时属于两组：它既有看过的，也有没看的
+      if (App.viewedFocus === 'viewed' ? seenCount > 0 : seenCount < ids.length) focusKeys.add(key);
+    });
+  });
+  App.viewedShareByKey = share;
+  App.statusFocusKeys = focusKeys;
+  if (App.viewedFocus) updateHexStyles();
+  App.drawStatusContours?.();
+  window.dispatchEvent(new CustomEvent('semantic-map-viewed', {
+    detail: { hsuTotal, hsuViewed, msuTotal, msuViewed }
+  }));
+}
+
 function publishToStepAnalysis() {
   try {
+    if (!isCandidateSelection()) markSelectionViewed();
+    refreshViewedStats();
+    App.refreshPanelStats?.();
     const nodesAll = buildSplitNodes();
 
     // 1) 路线级选择 → 分段导出 linksA
@@ -1985,6 +2058,11 @@ function renderBucketTooltipHTML(bucket) {
        +  ' · ' + regionLabel
        +  ' · ' + (totalMSU === 1 ? '1 MSU' : (totalMSU + ' MSUs'))
        +  '</div>';
+  var viewedCount = buildHsuDisplayRecord(bucket).msu_ids
+    .filter(function (id) { return App.viewedMsuIds && App.viewedMsuIds.has(String(id)); }).length;
+  if (viewedCount) {
+    html += '<div style="margin-bottom:6px;opacity:.72">Viewed ' + viewedCount + ' of ' + totalMSU + ' MSUs</div>';
+  }
 
   var maxGroups = 4;
   var visibleGroups = ordered.slice(0, maxGroups);
@@ -2214,16 +2292,106 @@ function renderBucketTooltipHTML(bucket) {
     return { data, changed: true };
   }
 
+  // HSU 随半径重组后，选集跟着它包含的 MSU 走
+  function restoreSelectionFromMsuIds(ids, wasCandidate) {
+    if (!ids || !ids.size) return;
+    const keys = new Set();
+    (App.allHexDataByPanel || []).forEach((hexes, panelIdx) => {
+      (hexes || []).forEach(hex => {
+        const key = pkey(panelIdx, hex.q, hex.r);
+        if ((hex.msu_ids || []).some(id => ids.has(String(id))) && isHexKeyVisible(key)) keys.add(key);
+      });
+    });
+    App.persistentHexKeys = keys;
+    App.lastSelectionKind = keys.size ? 'single' : null;
+    App.candidateHexKeys = wasCandidate ? new Set(keys) : null;
+    emitSelectionPayload?.();
+  }
+
+  // Flight 的停靠点按 MSU 记住：HSU 重组后落到包含其最多 MSU 的新 HSU。
+  // 相邻停靠点并入同一 HSU 时路径缩短；只剩一个 HSU 的 Flight 暂时收起，换回细一些的尺度时恢复。
+  function collectFlightStops() {
+    const flights = [
+      ...(App._lastLinks || []).filter(link => link?.type === 'flight' && Array.isArray(link.path)),
+      ...(App.collapsedFlights || []),
+    ];
+    flights.forEach(link => {
+      const signature = JSON.stringify(link.path);
+      if (link._stops && link._stopsSignature === signature) return;
+      link._stops = link.path.map((pt, i) => {
+        const panelIdx = resolvePanelIdxForPathPoint(pt, link, i);
+        return { panelIdx, msuIds: [...collectMsuIdsFromKeys([pkey(panelIdx, pt.q, pt.r)])] };
+      });
+      link._stopsSignature = signature;
+    });
+    return flights;
+  }
+
+  function hexHoldingMsus(stop) {
+    let best = null, bestCount = 0;
+    ensureCoordIndex(stop.panelIdx).forEach((items, coord) => {
+      const held = new Set(items.flatMap(it => it?.msu_ids || []).map(String));
+      const count = stop.msuIds.filter(id => held.has(id)).length;
+      if (count > bestCount) {
+        const [q, r] = coord.split(',').map(Number);
+        best = { q, r, panelIdx: stop.panelIdx };
+        bestCount = count;
+      }
+    });
+    return best;
+  }
+
+  function restoreFlights(flights) {
+    const live = [], collapsed = [];
+    flights.forEach(link => {
+      const path = [];
+      link._stops.forEach(stop => {
+        const hex = hexHoldingMsus(stop);
+        const last = path[path.length - 1];
+        if (hex && !(last && last.panelIdx === hex.panelIdx && last.q === hex.q && last.r === hex.r)) path.push(hex);
+      });
+      if (path.length < 2) {
+        collapsed.push(link);
+        return;
+      }
+      const first = path[0], end = path[path.length - 1];
+      Object.assign(link, {
+        path, from: { ...first }, to: { ...end },
+        panelIdxFrom: first.panelIdx, panelIdxTo: end.panelIdx,
+        _stopsSignature: JSON.stringify(path),
+      });
+      live.push(link);
+    });
+    App._lastLinks = [...(App._lastLinks || []).filter(link => link?.type !== 'flight'), ...live];
+    App.collapsedFlights = collapsed;
+  }
+
+  function refreshPanelStats() {
+    App.playgroundEl?.querySelectorAll?.('.subspace').forEach((node, i) => {
+      const el = node.querySelector('.subspace-stat');
+      if (!el) return;
+      const stat = controller?.getNeighborhoodSize?.(Number(node.dataset.index ?? i));
+      el.textContent = stat
+        ? `${stat.msuCount} MSUs in ${stat.hsuCount} HSUs\n`
+          + `An HSU usually holds ${stat.perHsu}, up to ${stat.maxPerHsu}\n`
+          + `${stat.multiSource} HSUs (${Math.round(stat.multiSource / stat.hsuCount * 100)}%) compare several papers`
+        : '';
+    });
+  }
+  App.refreshPanelStats = refreshPanelStats;
+
   function applyAggregationRange(rangeRaw) {
     const nextRange = Math.max(1, Number(rangeRaw) || DEFAULT_AGGREGATION_RANGE);
     if (!App.baseSemanticData) App.baseSemanticData = cloneSemanticData(App.currentData);
     if (Math.abs((App.aggregationRange || DEFAULT_AGGREGATION_RANGE) - nextRange) < 0.001) return;
 
+    const carriedMsuIds = collectMsuIdsFromKeys(App.persistentHexKeys);
+    const carriedFlights = collectFlightStops();
+    const carriedCandidates = isCandidateSelection();
     const { data, changed } = reaggregateSemanticData(nextRange);
     App.aggregationRange = nextRange;
     App.currentData = data;
-    App._lastLinks = changed ? [] : (data.links || []);
-    stampSubspaceNamesOnAllLinks(App._lastLinks);
+    App._lastLinks = changed ? [] : (data.links || []).filter(link => link?.type !== 'flight');
     App.countryKeysGlobal = new Map();
     App.countryKeysByPanel = [];
     App.coordIndexByPanel = new Map();
@@ -2246,6 +2414,9 @@ function renderBucketTooltipHTML(bucket) {
 
     clearInteractionForAggregation();
     (data.subspaces || []).forEach((space, i) => renderHexGridFromData(i, space, App.config.hex.radius));
+    restoreFlights(carriedFlights);
+    stampSubspaceNamesOnAllLinks(App._lastLinks);
+    restoreSelectionFromMsuIds(carriedMsuIds, carriedCandidates);
     recomputeMsuAlphaForAllPanels();
     refreshColorOverridesForCurrentAggregation();
     drawOverlayLinesFromLinks(App._lastLinks, App.allHexDataByPanel, App.hexMapsByPanel, false);
@@ -4920,6 +5091,10 @@ function deleteFlightById(routeId) {
     title.innerText = space.subspaceName || `Subspace ${i + 1}`;
     div.appendChild(title);
 
+    const stat = document.createElement('div');
+    stat.className = 'subspace-stat';
+    div.appendChild(stat);
+
     // Layout toggle (hex <-> scatter) — placed before release
     const layoutBtn = document.createElement('button');
     layoutBtn.className = 'subspace-layout';
@@ -5576,7 +5751,37 @@ const mode = getPanelLayoutMode(panelIdx);
     }
   }
   
+  // 查看状态的区域轮廓：线型与 exclusive region 的实线轮廓一致，随选集和聚合半径重算
+  function drawStatusContours() {
+    App.subspaceSvgs.forEach((svg, panelIdx) => {
+      const container = svg.select('g');
+      container.selectAll('.status-border').remove();
+      container.selectAll('.country-border').attr('display', App.viewedFocus ? 'none' : null);
+      if (!App.viewedFocus) return;
+      const radius = App.drawnHexRadius || App.config.hex.radius;
+      const dirs = [[+1,0],[0,+1],[-1,+1],[-1,0],[0,-1],[+1,-1]];
+      const corner = (i) => [radius * Math.cos(Math.PI / 3 * i), radius * Math.sin(Math.PI / 3 * i)];
+      const inFocus = (q, r) => App.statusFocusKeys?.has?.(pkey(panelIdx, q, r));
+      container.selectAll('g.hex').each(function (d) {
+        if (!inFocus(d.q, d.r)) return;
+        dirs.forEach(([dq, dr], i) => {
+          if (inFocus(d.q + dq, d.r + dr)) return;
+          const a = corner(i), b = corner((i + 1) % 6);
+          container.append('line')
+            .attr('class', 'status-border')
+            .attr('x1', d.x + a[0]).attr('y1', d.y + a[1])
+            .attr('x2', d.x + b[0]).attr('y2', d.y + b[1])
+            .attr('stroke', App.config.countryBorder.color)
+            .attr('stroke-width', App.config.countryBorder.width)
+            .attr('pointer-events', 'none');
+        });
+      });
+    });
+  }
+  App.drawStatusContours = drawStatusContours;
+
   function drawCountries(space, svg, hexRadius, opts = {}) {
+    App.drawnHexRadius = hexRadius;
     const focusId  = opts.focusCountryId || null;
     const focusMode= opts.focusMode || null; // 'filled'|'outline'|null
     const container = svg.select('g');
@@ -5701,6 +5906,7 @@ const mode = getPanelLayoutMode(panelIdx);
           .attr('pointer-events', 'none');
       });
     }
+    if (App.viewedFocus) container.selectAll('.country-border').attr('display', 'none');
   }
 
   /* =========================
@@ -6257,8 +6463,17 @@ function updateHexStyles() {
 
       // 预览邻居的斜线填充 + 应用样式
       hatch.attr('fill', (isPreviewNeighbor && !filteredOut) ? `url(#hex-hatch-${panelIdx})` : 'none');
-      path .attr('fill', finalFill)
-           .attr('fill-opacity', finalOpacity);
+      // 查看状态聚焦：沿用 Area Select 的读法，焦点组上色，其余压暗，轮廓由 drawStatusContours 绘制
+      const statusFocus = !!App.viewedFocus && !filteredOut;
+      const inStatusFocus = statusFocus && !!App.statusFocusKeys?.has?.(key);
+      const isNeutralFill = String(finalFill).toUpperCase() === STYLE.HEX_FILL_TEXT.toUpperCase();
+      const statusFill = inStatusFocus && isNeutralFill
+        ? (thisCid ? paperPaletteColor(thisCid) : STYLE.STATUS_FOCUS_FILL)
+        : finalFill;
+      const statusOpacity = !statusFocus ? finalOpacity
+        : (inStatusFocus ? Math.max(finalOpacity, 0.45) : STYLE.OPACITY_NONFOCUS);
+      path .attr('fill', statusFill)
+           .attr('fill-opacity', statusOpacity);
 
       // Scatter dot uses the same final color/alpha as hex
       // const dot = gSel.select('circle.scatter-dot');
@@ -6273,6 +6488,7 @@ function updateHexStyles() {
       let strokeOpacity = conflictMode ? (isSelected ? STYLE.BORDER_ALT_ACTIVE : STYLE.BORDER_ALT_OTHER) : 1;
       let strokeWidth   = conflictMode ? (App.config.hex.borderWidth * (isSelected ? 1.6 : 1.0)) : App.config.hex.borderWidth;
       if (filteredOut) strokeOpacity = 0; // 被筛掉的 hex 边框彻底去掉
+      else if (statusFocus && !inStatusFocus) strokeOpacity = Math.min(strokeOpacity, 0.15);
       path.attr('stroke-opacity', strokeOpacity).attr('stroke-width', strokeWidth)
           .style('pointer-events', filteredOut ? 'none' : null); // 隐藏的 hex 不响应 hover
 
@@ -8042,13 +8258,18 @@ function _deleteSubspaceByIndex(idx) {
 
         // 每格 MSU 数：同一 (q,r) 下可能有多条来源记录，按 msu_ids 累加
         const counts = new Map();
+        let multiSource = 0;
         idx.forEach((arr, key) => {
           let n = 0;
+          const papers = new Set();
           for (const it of arr) {
+            if (!isVisibleCountry(it?.country_id)) continue;
             const ids = it && Array.isArray(it.msu_ids) ? it.msu_ids : null;
             n += ids ? ids.length : 1;
+            papers.add(it?.country_id);
           }
           if (n > 0) counts.set(key, n);
+          if (papers.size > 1) multiSource += 1;
         });
         if (counts.size === 0) return null;
 
@@ -8074,6 +8295,9 @@ function _deleteSubspaceByIndex(idx) {
           neighborhood: median(neigh),
           perHsu: median(perHsu),
           hsuCount: counts.size,
+          msuCount: perHsu.reduce((total, n) => total + n, 0),
+          maxPerHsu: Math.max(...perHsu),
+          multiSource,
         };
       } catch (e) {
         return null;
@@ -8216,7 +8440,58 @@ function _deleteSubspaceByIndex(idx) {
         const arr = App?.currentData?.subspaces || [];
         return arr.map((s, i) => (s?.subspaceName || s?.title || `Subspace ${i}`));
       },
-      
+
+      // Chat with LLM 的候选 HSU：范围与用户当前所见一致（可见子空间 + Gallery 论文范围）
+      getVisibleHsus() {
+        const names = this.getSubspaceNames();
+        const out = [];
+        App.playgroundEl.querySelectorAll('.subspace').forEach((node, i) => {
+          if (node.style.display === 'none') return;
+          const panelIdx = Number(node.dataset.index ?? i);
+          const seen = new Set();
+          (App.allHexDataByPanel[panelIdx] || []).forEach(hex => {
+            const key = pkey(panelIdx, hex.q, hex.r);
+            if (seen.has(key) || !isHexKeyVisible(key)) return;
+            seen.add(key);
+            const bucket = getBucketSafe(panelIdx, hex.q, hex.r);
+            if (!bucket) return;
+            const msus = buildHsuDisplayRecord(bucket).msu_ids.map(getMsuRecord).filter(Boolean);
+            if (msus.length) out.push({ key, panelIdx, subspace: names[panelIdx], msus });
+          });
+        });
+        return out;
+      },
+
+      // 把候选 HSU 写入持久选集，之后的点选、Flight 和 Stepwise 都沿用这份选集
+      selectHsus(keys = []) {
+        const visible = (keys || []).filter(isHexKeyVisible);
+        App.selectedRouteIds?.clear?.();
+        App.excludedHexKeys?.clear?.();
+        App.highlightedHexKeys?.clear?.();
+        App.persistentHexKeys = new Set(visible);
+        App.candidateHexKeys = new Set(visible);
+        App.selectedHex = null;
+        App.lastSelectionKind = visible.length ? 'single' : null;
+        drawOverlayLinesFromLinks(App._lastLinks, App.allHexDataByPanel, App.hexMapsByPanel, !!App.flightStart);
+        emitSelectionPayload?.();
+        updateHexStyles();
+        refreshLinkNamesFromDOM();
+        publishToStepAnalysis?.();
+        return visible.length;
+      },
+
+      markSelectionViewed() {
+        markSelectionViewed();
+        refreshViewedStats();
+        updateHexStyles();
+      },
+
+      setViewedFocus(mode) {
+        App.viewedFocus = mode || null;
+        refreshViewedStats();
+        updateHexStyles();
+      },
+
       // === 显隐控制（重写/新增） ===
       hideAllSubspaces() {
         const nodes = App.playgroundEl.querySelectorAll('.subspace');

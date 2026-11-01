@@ -9,7 +9,7 @@ python3 -m pip install -r requirements.txt          # Python 3.10 (pyenv, pinned
 cp .env.example .env                                # set LLM_API_KEY (and LLM_BASE_URL if needed)
 python3 scripts/install_models.py                   # bge-large-en-v1.5 encoder → models/
 # MinerU (PDF → Markdown) lives in its own venv:
-/opt/homebrew/bin/python3.12 -m venv .venv-mineru && .venv-mineru/bin/pip install -U "mineru[core]"
+/opt/homebrew/bin/python3.12 -m venv .venv-mineru && .venv-mineru/bin/pip install "mineru[core]<4"
 ```
 
 ## Environment variables
@@ -60,6 +60,25 @@ python3 code_for_data/extract_thumbnails.py --case caseN ...       # ⑨ gallery
 ```
 
 `bash build_case3.sh` runs the whole case3 build in one command.
+
+### Adding papers to an existing case
+
+The Control Panel upload calls `POST /api/papers/upload` and runs the same step
+from the command line:
+
+```bash
+python3 code_for_data/ingest_paper.py --case case1 --pdf data/case1/pdf/new.pdf
+```
+
+Each PDF goes through MinerU, LLM MSU construction, quality filtering, BGE
+encoding, and a forward pass of the case's fixed projector. New MSUs and the
+gallery entry are appended to `data/<case>/semantic_map_data.json` and
+`gallery.json`; existing coordinates and HSUs are not recomputed.
+
+This needs the BGE encoder (`python3 scripts/install_models.py`), the
+`.venv-mineru` environment, and `LLM_API_KEY`. `models/` and `.venv-mineru/` are
+local downloads and are ignored by git. MinerU fetches its own layout models on
+first use.
 
 ## 3. Evaluation
 

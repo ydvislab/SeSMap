@@ -76,6 +76,8 @@ def main():
     ap.add_argument("--eval-k", type=int, default=12)
     ap.add_argument("--device", default="cuda" if torch.cuda.is_available() else "cpu")
     ap.add_argument("--seed", type=int, default=0)
+    ap.add_argument("--cross-paper-weight", type=float, default=1.0, help="P 中跨论文近邻的权重；>1 时需要 --formdb")
+    ap.add_argument("--formdb", type=Path, default=None, help="提供每条 MSU 的 paper_id，与嵌入按 idx 对齐")
     ap.add_argument("--p-cache", type=Path, default=None, help="P 矩阵缓存(存在则读，不存在则算完写入)")
     args = ap.parse_args()
     set_seed(args.seed)
@@ -105,6 +107,12 @@ def main():
             if args.p_cache:
                 args.p_cache.parent.mkdir(parents=True, exist_ok=True)
                 np.save(args.p_cache, P_np); print(f"[P] cached -> {args.p_cache}")
+        if args.cross_paper_weight > 1:
+            # 二维压缩主要丢失跨论文近邻，这里提高它们在邻域目标里的比重
+            paper_of = {int(r["idx"]): int(r["paper_id"]) for r in json.load(open(args.formdb)) if r.get("idx") not in (None, "")}
+            papers = np.array([paper_of[int(i)] for i in ids])
+            P_np = P_np * np.where(papers[:, None] != papers[None, :], args.cross_paper_weight, 1.0)
+            P_np = P_np / P_np.sum()
         P = torch.tensor(P_np, dtype=torch.float32, device=device)
         print(f"[P] ready {P_np.shape}")
 
@@ -167,7 +175,8 @@ def main():
         "dropout": args.dropout, "out_dim": 2,
         "objective": f"hybrid parametric t-SNE + cross-paper InfoNCE "
                      f"(lambda_tsne={args.lambda_tsne}, lambda_con={args.lambda_con}, "
-                     f"perplexity={args.perplexity}, dropout={args.dropout}, input_noise={args.input_noise})",
+                     f"cross_paper_weight={args.cross_paper_weight}, perplexity={args.perplexity}, "
+                     f"dropout={args.dropout}, input_noise={args.input_noise})",
         "final_metrics": {"trust": tw, "knnOv": ko, **rec},
     }, args.out)
     print(f"[save] {args.out}")

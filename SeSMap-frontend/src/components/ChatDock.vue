@@ -6,11 +6,12 @@ const taRef = ref(null), text = ref(''); const MIN_ROWS = 1, MAX_ROWS = 8
 
 // 常用指令提示（可按需替换/追加）
 const hintChips = ref([
-  'show combustion related papers in gallery',
-  'show all subspaces in case 1',
-  'synthesize case 1',
-  'show background, method, result and conclusion subspaces in case 1',
-  'filter MSUs with the meaning of'
+  { label: 'All subspaces', text: 'show all subspaces in case 1' },
+  { label: 'Four subspaces', text: 'show background, method, result and conclusion subspaces in case 1' },
+  { label: 'Combustion papers', text: 'show combustion related papers in gallery' },
+  { label: 'Synthesize case 1', text: 'synthesize case 1' },
+  { label: 'Find HSUs', text: 'find candidate HSUs about' },
+  { label: 'Filter MSUs', text: 'filter MSUs with the meaning of' }
 ])
 
 function applyHint(h){
@@ -44,8 +45,8 @@ onMounted(()=> nextTick(autoResize))
     <div class="dock-hints" aria-hidden="true" @transitionend="onHintsTransitionEnd">
       <div class="hint-label">Try:</div>
       <div class="hint-list">
-        <button v-for="h in hintChips" :key="h" class="hint-chip" type="button" @click="applyHint(h)">
-          {{ h }}
+        <button v-for="h in hintChips" :key="h.text" class="hint-chip" type="button" :title="h.text" @click="applyHint(h.text)">
+          {{ h.label }}
         </button>
       </div>
     </div>
@@ -112,7 +113,7 @@ onMounted(()=> nextTick(autoResize))
 
 /* 鼠标悬停到 chat-dock：展开提示 + 整体高度略增 */
 .chat-dock:hover .dock-hints{
-  max-height:90px;           /* 展开高度（约三行提示，其余滚动查看） */
+  max-height:112px;          /* 展开高度（标签 + 三行提示） */
   opacity:1;
   transform: translateY(0);
 }
@@ -130,16 +131,20 @@ onMounted(()=> nextTick(autoResize))
 }
 
 .hint-list{
-  display:flex;
+  display:grid;
+  grid-template-columns:repeat(2, minmax(0, 1fr));
   gap:6px;
-  flex-wrap:wrap;
 }
 
 /* 胶囊提示（可点填充输入框，不自动发送） */
 .hint-chip{
+  min-width:0;
+  overflow:hidden;
+  white-space:nowrap;
+  text-overflow:ellipsis;
   font-size:11px;
-  line-height:1;
-  text-align:left; /* override the browser's centered button text when a chip wraps */
+  line-height:1.2;
+  text-align:center;
   border:1px dashed #e5e7eb;
   background:#fafafa;
   padding:4px 8px;
@@ -154,14 +159,13 @@ onMounted(()=> nextTick(autoResize))
 /* === 滚动增强（只新增，不改动你已有规则） === */
 
 /* 让整行提示在展开时为统一高度，便于内部滚动；并让列表占满剩余空间 */
-.dock-hints{ align-items: stretch; }
-.hint-label{ align-self: center; } /* 标签保持垂直居中即可 */
+.dock-hints{ flex-direction: column; align-items: stretch; gap: 4px; }
 
 /* 列表容器：默认隐藏滚动条与滚动能力；在 hover 时再开放滚动 */
 .hint-list{
   flex: 1 1 auto;
-  /* 3 行胶囊：3 × 21px + 2 × 6px 间距 = 75px，正好不切半行 */
-  max-height: 75px;            /* 与 .chat-dock:hover .dock-hints 的 max-height 协同 */
+  /* 3 行胶囊：3 × 23px + 2 × 6px 间距 = 81px，全部显示且不切半行 */
+  max-height: 84px;            /* 与 .chat-dock:hover .dock-hints 的 max-height 协同 */
   overflow: hidden;            /* 默认不滚动 */
   padding-right: 2px;          /* 给滚动条预留一丝空间，避免挤压内容 */
   overscroll-behavior: contain;
@@ -174,7 +178,7 @@ onMounted(()=> nextTick(autoResize))
 
 /* 悬停 chat-dock 时：启用垂直滚动，显示细滚动条 */
 .chat-dock:hover .hint-list{
-  overflow-y: auto;
+  overflow-y: hidden;          /* 提示已全部显示，不需要滚动 */
   /* Firefox 显示细滚动条 */
   scrollbar-width: thin;
   scrollbar-color: #d1d5db transparent;   /* 滑块+轨道 */

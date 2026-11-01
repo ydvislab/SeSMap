@@ -6,6 +6,7 @@ import PaperList from './PaperList.vue'
 import MarkdownView from './MarkdownView.vue'
 import { sendQueryToLLM, interpretLLMResponse, getActiveProjectId } from '../lib/api'
 import { collectStepwiseMsuCandidates, emitApplyStepwiseMsuFilter } from '../lib/selectionBus'
+import { canonicalPaperLabel } from '../lib/paperIdentity'
 
 // ====== Emits ==========================================================
 const emit = defineEmits(['updateHexRadius','updateSystemPrompt','uploadPdfs','updateMarkdownModel'])
@@ -33,10 +34,61 @@ const hexMin = 4, hexMax = 120, hexStep = 1
 
 // ====== PDF 上传 =======================================================
 const uploadedFiles = ref([])
-function handlePdfUpload(e) {
+const uploadStage = ref('')
+const UPLOAD_POLL_MS = 3000
+
+async function handlePdfUpload(e) {
   const files = Array.from(e.target.files || [])
+  e.target.value = ''
+  if (!files.length) return
   uploadedFiles.value = files.map(f => ({ name: f.name, size: f.size }))
   emit('uploadPdfs', files)
+
+  const projectId = getActiveProjectId?.()
+  if (!projectId) {
+    messages.value.push({ role: 'assistant', type: 'error', text: 'Load a collection first, then upload PDFs to add them to it.' })
+    return
+  }
+  const form = new FormData()
+  form.append('project_id', projectId)
+  files.forEach(file => form.append('files', file))
+  uploadStage.value = 'Uploading'
+  try {
+    const res = await fetch('/api/papers/upload', { method: 'POST', body: form })
+    if (!res.ok) throw new Error((await res.text()).replace(/<[^>]+>/g, ' ').trim() || `Upload failed: ${res.status}`)
+    const { job_id: jobId } = await res.json()
+    const job = await waitForUpload(jobId)
+    const added = (job.papers || []).reduce((total, paper) => total + paper.added, 0)
+    messages.value.push({
+      role: 'assistant',
+      type: 'markdown',
+      text: added
+        ? `Added ${job.papers.length} paper(s) with ${added} MSUs to \`${projectId}\`. Existing coordinates are unchanged.`
+        : 'These papers are already in this collection.'
+    })
+    if (added) {
+      window.dispatchEvent(new CustomEvent('semantic-map:project-changed', { detail: { projectId } }))
+      const folder = Object.keys(FOLDER_PROJECT).find(key => FOLDER_PROJECT[key] === projectId) || projectId
+      if (paperGroups.value.some(group => group?.folder === folder)) await showFolder(folder)
+    }
+  } catch (err) {
+    messages.value.push({ role: 'assistant', type: 'error', text: `Upload failed: ${err.message}` })
+  } finally {
+    uploadStage.value = ''
+    uploadedFiles.value = []
+  }
+}
+
+async function waitForUpload(jobId) {
+  for (;;) {
+    const res = await fetch(`/api/papers/upload/${jobId}`, { cache: 'no-store' })
+    if (!res.ok) throw new Error(`Upload status failed: ${res.status}`)
+    const job = await res.json()
+    uploadStage.value = job.stage || ''
+    if (job.status === 'done') return job
+    if (job.status === 'error') throw new Error(job.error || 'Processing failed')
+    await new Promise(resolve => setTimeout(resolve, UPLOAD_POLL_MS))
+  }
 }
 
 // ====== Semantic Source Gallery（改为“多分组”渲染） ============================
@@ -943,6 +995,212 @@ async function runMsuSemanticFilter(msg) {
   })
 }
 
+// ====== Chat ➜ candidate HSUs on the map ==============================
+const HSU_CANDIDATE_REVIEW_LIMIT = 60
+const HSU_CANDIDATE_DEFAULT_COUNT = 8
+const HSU_CANDIDATE_MAX_COUNT = 15
+const HSU_CANDIDATE_MSUS_IN_PROMPT = 3
+
+function isHsuCandidateCommand(text) {
+  const raw = String(text || '')
+  const t = raw.toLowerCase()
+  if (!raw.trim()) return false
+  if (/where\s+(should|can|do)\s+i\s+(start|begin)|where\s+to\s+(start|begin)/.test(t)
+    || /从哪(里|儿)?(开始|看起|入手)/.test(raw)) return true
+  const hasTarget = /\b(hsus?|hexagons?|candidates?|regions?)\b/.test(t) || /候选|六边形|区域/.test(raw)
+  const hasAction = /\b(find|select|pick|choose|recommend|suggest|locate|show|highlight|mark|identify)\b/.test(t)
+    || /找|选|挑|推荐|定位|标出|高亮|筛/.test(raw)
+  return hasTarget && hasAction
+}
+
+function requestedHsuCount(text) {
+  const raw = String(text || '')
+  const m = raw.match(/\b(?:top\s+)?(\d{1,2})\s*(?:hsus?|hexagons?|candidates?|regions?)\b/i)
+    || raw.match(/(\d{1,2})\s*个/)
+  const n = Number(m?.[1])
+  if (!Number.isInteger(n) || n < 1) return HSU_CANDIDATE_DEFAULT_COUNT
+  return Math.min(n, HSU_CANDIDATE_MAX_COUNT)
+}
+
+function buildHsuIntentPrompt(userText, subspaceNames) {
+  return `A researcher wants to find starting points on a semantic map.
+
+User request:
+"""${userText}"""
+
+Available subspaces: ${subspaceNames.join(', ')}
+
+Task:
+1. State the core topic of the request as a short phrase.
+2. List up to 15 English keywords or short phrases likely to appear in relevant statements, including synonyms and domain terms. The statements are in English even if the request is not.
+3. List subspaces only if the request explicitly names them; otherwise use an empty array.
+
+JSON schema:
+{"intent":"short topic","keywords":["term 1","term 2"],"subspaces":[]}`
+}
+
+function hsuKeywordScore(text, keywords) {
+  return keywords.reduce((score, keyword) => {
+    if (text.includes(keyword)) return score + 2
+    const tokens = tokenizeForFallback(keyword)
+    return tokens.length > 1 && tokens.every(t => text.includes(t)) ? score + 1 : score
+  }, 0)
+}
+
+function rankHsusByKeywords(hsus, keywords) {
+  return hsus
+    .map(hsu => {
+      const msus = hsu.msus
+        .map(msu => {
+          const text = String(msu.sentence || '').toLowerCase()
+          return { msu, score: hsuKeywordScore(text, keywords) }
+        })
+        .sort((a, b) => b.score - a.score)
+      const score = msus.reduce((total, item) => total + item.score, 0)
+      return { ...hsu, msus: msus.map(item => item.msu), score }
+    })
+    .filter(hsu => hsu.score > 0)
+    .sort((a, b) => b.score - a.score)
+}
+
+function shortPaperLabel(msu) {
+  const label = canonicalPaperLabel(msu, getActiveProjectId())
+  return label ? label.split(' — ')[0] : `Paper ${Number(msu?.paper_id) + 1}`
+}
+
+function hsuPaperLabels(hsu) {
+  return Array.from(new Set(hsu.msus.map(shortPaperLabel)))
+}
+
+function buildHsuReviewPrompt(userText, intent, candidates, count) {
+  const lines = candidates.map((hsu, index) => {
+    const msus = hsu.msus.slice(0, HSU_CANDIDATE_MSUS_IN_PROMPT)
+      .map(msu => `- ${truncateForPrompt(msu.sentence, 200)}`)
+      .join('\n')
+    return `[${index + 1}] subspace=${hsu.subspace} | msus=${hsu.msus.length} | papers=${hsuPaperLabels(hsu).join(', ')}\n${msus}`
+  }).join('\n\n')
+  return `Choose candidate HSUs as starting points for the researcher.
+
+User request:
+"""${userText}"""
+
+Core topic: ${intent}
+
+Task:
+1. Select up to ${count} HSUs whose statements are directly relevant to the request.
+2. Give each a reason of at most 12 words, based on its statements.
+3. Write one short sentence, in the language of the request, saying what you looked for.
+
+JSON schema:
+{"answer":"one short sentence","matches":[{"id":1,"reason":"short reason"}]}
+
+Candidate HSUs:
+${lines}`
+}
+
+function normalizeHsuMatches(parsed, candidates) {
+  const raw = Array.isArray(parsed?.matches) ? parsed.matches : []
+  const seen = new Set()
+  const out = []
+  raw.forEach(item => {
+    const hsu = candidates[Number(item?.id ?? item) - 1]
+    if (!hsu || seen.has(hsu.key)) return
+    seen.add(hsu.key)
+    out.push({ hsu, reason: String(item?.reason || '').trim() })
+  })
+  return out
+}
+
+async function askHsuCandidateJson(prompt) {
+  const res = await sendQueryToLLM(prompt, selectedLLM.value, { task: 'hsu_candidate_select' })
+  const parsed = parseJsonObjectFromText(llmResultToText(res))
+  if (!parsed) throw new Error('The LLM did not return valid JSON.')
+  return parsed
+}
+
+async function runHsuCandidateSelection(msg) {
+  const ctrl = window?.SemanticMapCtrl
+  const visible = ctrl?.getVisibleHsus?.() || []
+  if (!visible.length) {
+    messages.value.push({
+      role: 'assistant',
+      type: 'markdown',
+      text: 'There are no visible HSUs yet. Show a subspace first, then ask again.'
+    })
+    return
+  }
+
+  const count = requestedHsuCount(msg)
+  let intent = cleanMsuFilterIntentText(msg)
+  let keywords = tokenizeForFallback(msg)
+  let scope = visible
+  let usedFallback = false
+
+  try {
+    const names = Array.from(new Set(visible.map(hsu => hsu.subspace)))
+    const parsed = await askHsuCandidateJson(buildHsuIntentPrompt(msg, names))
+    if (parsed.intent) intent = cleanMsuFilterIntentText(parsed.intent)
+    const terms = (Array.isArray(parsed.keywords) ? parsed.keywords : [])
+      .map(term => String(term || '').toLowerCase().trim())
+      .filter(Boolean)
+    if (terms.length) keywords = terms
+    const wanted = new Set((Array.isArray(parsed.subspaces) ? parsed.subspaces : [])
+      .map(name => String(name || '').toLowerCase()))
+    const scoped = visible.filter(hsu => wanted.has(String(hsu.subspace || '').toLowerCase()))
+    if (scoped.length) scope = scoped
+  } catch (err) {
+    console.warn('[LeftPane] HSU intent fell back to the request text:', err)
+    usedFallback = true
+  }
+
+  const candidates = rankHsusByKeywords(scope, keywords).slice(0, HSU_CANDIDATE_REVIEW_LIMIT)
+  if (!candidates.length) {
+    ctrl.selectHsus([])
+    messages.value.push({
+      role: 'assistant',
+      type: 'markdown',
+      text: `I found no visible HSUs for \`${intent}\`. Try different terms, or show more subspaces or papers.`
+    })
+    return
+  }
+
+  let answer = ''
+  let matches = []
+  try {
+    const parsed = await askHsuCandidateJson(buildHsuReviewPrompt(msg, intent, candidates, count))
+    if (parsed.answer) answer = String(parsed.answer).trim()
+    matches = normalizeHsuMatches(parsed, candidates).slice(0, count)
+  } catch (err) {
+    console.warn('[LeftPane] HSU review fell back to keyword ranking:', err)
+    usedFallback = true
+    matches = candidates.slice(0, count).map(hsu => ({ hsu, reason: 'Keyword match' }))
+  }
+
+  const selected = ctrl.selectHsus(matches.map(match => match.hsu.key))
+  if (!selected) {
+    messages.value.push({
+      role: 'assistant',
+      type: 'markdown',
+      text: `I reviewed ${candidates.length} of ${scope.length} visible HSUs for \`${intent}\`, but none was relevant enough to select.`
+    })
+    return
+  }
+
+  const list = matches.map(({ hsu, reason }) => {
+    const detail = `**${hsu.subspace}** · ${hsu.msus.length} MSU(s) · ${hsuPaperLabels(hsu).join(', ')}`
+    return reason ? `- ${detail}: ${reason}` : `- ${detail}`
+  }).join('\n')
+  const fallbackNote = usedFallback
+    ? '\n\nNote: An LLM step failed, so I used keyword ranking for that step.'
+    : ''
+
+  messages.value.push({
+    role: 'assistant',
+    type: 'markdown',
+    text: `${answer || `Candidates for: ${intent}.`}\n\nSelected ${selected} HSU(s) on the map, from ${candidates.length} reviewed out of ${scope.length} visible.\n\n${list}\n\nThese are starting points, and related HSUs may be missing. Inspect their MSUs, change the selection, or build Flights from here.${fallbackNote}`
+  })
+}
+
 // ====== 发送消息：本地解析优先（命中 -> 更新 Semantic Source  Gallery），否则后端 ======
 async function handleSend(msg) {
   messages.value.push({ role: 'user', type:'text', text: msg })
@@ -982,6 +1240,12 @@ async function handleSend(msg) {
     return
   }
 
+  // B1) 候选 HSU：LLM 解析主题并审核候选，结果写入地图选集供用户继续探索
+  if (isHsuCandidateCommand(msg)) {
+    await runHsuCandidateSelection(msg)
+    return
+  }
+
   // B) Gallery 命令（必须带有 'gallery' / 'Semantic Source gallery' / '图集' / 'collect' 等关键词）
    if (isGalleryCommand(msg) || isAutoGalleryTopic(msg)) {
      const folder = resolveFolderFromText(msg)
@@ -996,7 +1260,8 @@ async function handleSend(msg) {
   // D) 走后端 LLM（保留你的原逻辑）
   try {
     const res = await sendQueryToLLM(msg, selectedLLM.value, {
-      messages: messages.value
+      messages: messages.value,
+      systemPrompt: systemPrompt.value
       // 如果你将来想显式标记子空间命令，也可以在这里按需加上：
       // task: /subspace/i.test(msg) ? 'subspace' : undefined
     })
@@ -1039,11 +1304,12 @@ async function handleSend(msg) {
         <div class="cp-divider"></div>
 
         <div class="cp-block">
-          <div class="cp-label-top">Upload PDFs to Markdown</div>
+          <div class="cp-label-top">Add Papers (PDF)</div>
           <input type="file" accept=".pdf" multiple class="cp-input cp-file-input" @change="handlePdfUpload" />
           <div v-if="uploadedFiles.length" class="cp-files">
             <span class="cp-file" v-for="(f, i) in uploadedFiles" :key="i">{{ f.name }}</span>
           </div>
+          <div v-if="uploadStage" class="cp-note">{{ uploadStage }}…</div>
         </div>
 
         <div class="cp-divider"></div>

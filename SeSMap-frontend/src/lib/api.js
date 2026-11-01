@@ -69,6 +69,7 @@ export async function sendQueryToLLM(query, llm = 'ChatGPT', opts = {}) {
     task: opts.task || undefined
   };
   if (opts.model) body.model = opts.model;
+  if (opts.systemPrompt) body.system_prompt = opts.systemPrompt;
 
   const res = await fetch('/api/query', {
     method: 'POST',

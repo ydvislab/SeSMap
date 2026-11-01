@@ -236,6 +236,29 @@ body,
 }
 
 /* —— 编辑态：与 RightPane 的标题编辑效果保持一致 —— */
+#playground .subspace-stat {
+  position: absolute;
+  top: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 30;
+  padding: 6px 10px;
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.15);
+  font-size: 12px;
+  line-height: 1.5;
+  color: #555;
+  white-space: pre;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.15s;
+}
+
+#playground .subspace-title:hover + .subspace-stat {
+  opacity: 1;
+}
+
 #playground .subspace-title[contenteditable="plaintext-only"] {
   cursor: text;
   /* 文本光标 */

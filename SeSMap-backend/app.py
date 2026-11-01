@@ -1,5 +1,5 @@
 # app.py
-import os, json, sys, pathlib, hashlib, time
+import os, json, sys, pathlib, hashlib, time, subprocess, tempfile, threading
 from typing import List, Dict, Any, Optional
 import re
 from flask import Flask, jsonify, request, abort, make_response, send_from_directory, url_for
@@ -94,6 +94,18 @@ Rules:
 - Do not output markdown, code fences, explanations outside JSON, or extra keys.
 """).strip()
 
+PROMPT_HSU_CANDIDATE_SELECT = os.getenv("PROMPT_HSU_CANDIDATE_SELECT", """
+You help researchers choose starting points on SeSMap's semantic map of scientific papers.
+A Hexagonal Semantic Unit (HSU) aggregates Minimum Semantic Units (MSUs), which are short statements from papers.
+
+Rules:
+- Follow the task and JSON schema in the user message exactly.
+- Use the provided MSU text as evidence. Do not rely on paper titles or outside knowledge.
+- Prefer precision over recall; exclude weak, adjacent, or generic matches.
+- Candidates are starting points for inspection. Do not claim that statements agree or are equivalent.
+- Return only strict JSON. Do not output markdown, code fences, or extra prose.
+""").strip()
+
 TASK_PROMPTS = {
     "literature": PROMPT_LITERATURE_SEARCH,
     "subspace":   PROMPT_SUBSPACE_ANALYSIS,
@@ -101,6 +113,7 @@ TASK_PROMPTS = {
     "step_title": PROMPT_STEP_TITLE,
     "hsu_hover_summary": PROMPT_HSU_HOVER_SUMMARY,
     "stepwise_msu_filter": PROMPT_STEPWISE_MSU_FILTER,
+    "hsu_candidate_select": PROMPT_HSU_CANDIDATE_SELECT,
 }
 
 
@@ -906,6 +919,71 @@ def get_gallery_pdf(project, fname):
         abort(404, "PDF not found")
     return send_from_directory(str(d), fname)
 
+# ================= Paper upload: PDF -> MSUs -> fixed projector -> map =================
+_upload_lock = threading.Lock()
+_UPLOAD_LOG_DIR = pathlib.Path(tempfile.gettempdir()) / "sesmap_uploads"
+
+
+def _read_upload_job(job_id: str) -> Optional[Dict[str, Any]]:
+    # The log file is the job record, so progress survives a backend restart.
+    log_path = _UPLOAD_LOG_DIR / f"{job_id}.log"
+    if not log_path.exists():
+        return None
+    job: Dict[str, Any] = {"status": "running", "stage": "Queued", "papers": []}
+    lines = log_path.read_text(encoding="utf-8", errors="replace").splitlines()
+    for line in lines:
+        if line.startswith("[stage] "):
+            job["stage"] = line[len("[stage] "):]
+        elif line.startswith("[result] "):
+            job.update(status="done", stage="Done", papers=json.loads(line[len("[result] "):]))
+        elif line.startswith("[failed] "):
+            job.update(status="error", error=line[len("[failed] "):])
+    return job
+
+
+def _run_upload_job(job_id: str, case_id: str, pdfs: List[pathlib.Path]):
+    script = pathlib.Path(__file__).parent / "code_for_data" / "ingest_paper.py"
+    cmd = [sys.executable, str(script), "--case", case_id, "--pdf", *[str(p) for p in pdfs]]
+    log_path = _UPLOAD_LOG_DIR / f"{job_id}.log"
+    try:
+        with log_path.open("a", encoding="utf-8") as log:
+            proc = subprocess.Popen(cmd, cwd=script.parents[1], stdout=log, stderr=subprocess.STDOUT,
+                                    start_new_session=True)
+        proc.wait()
+    finally:
+        _upload_lock.release()
+
+
+@app.post("/api/papers/upload")
+def upload_papers():
+    case_id = _normalize_case_id(request.form.get("project_id"))
+    files = [f for f in request.files.getlist("files") if f.filename.lower().endswith(".pdf")]
+    if not case_id or not files:
+        abort(400, "project_id and at least one PDF are required")
+    if not _upload_lock.acquire(blocking=False):
+        abort(409, "Another upload is still being processed")
+    pdf_dir = _case_pdf_dir(case_id)
+    pdf_dir.mkdir(parents=True, exist_ok=True)
+    pdfs = []
+    for f in files:
+        path = pdf_dir / pathlib.Path(f.filename).name
+        f.save(path)
+        pdfs.append(path)
+    job_id = hashlib.sha1(f"{case_id}{time.time()}".encode()).hexdigest()[:12]
+    _UPLOAD_LOG_DIR.mkdir(parents=True, exist_ok=True)
+    (_UPLOAD_LOG_DIR / f"{job_id}.log").touch()
+    threading.Thread(target=_run_upload_job, args=(job_id, case_id, pdfs), daemon=True).start()
+    return jsonify({"job_id": job_id}), 202
+
+
+@app.get("/api/papers/upload/<job_id>")
+def upload_status(job_id):
+    job = _read_upload_job(job_id)
+    if job is None:
+        abort(404, "Unknown upload job")
+    return jsonify(job)
+
+
 @app.post("/api/rag/index")
 def rag_build_index():
     rag = _ensure_rag()
@@ -1067,6 +1145,25 @@ def query_gpt():
             print("[Stepwise MSU filter] error:", e)
             return app.response_class(f"Stepwise MSU filter error: {str(e)}", mimetype="text/plain"), 500
 
+    # 0.9) Chat with LLM 的候选 HSU：意图解析与候选审核都走这里，不走 RAG。
+    if task_type == "hsu_candidate_select":
+        try:
+            resp = client.chat.completions.create(
+                model=model_for("summary"),
+                messages=[
+                    {"role": "system", "content": PROMPT_HSU_CANDIDATE_SELECT},
+                    {"role": "user", "content": user_query}
+                ],
+                temperature=0.0,
+                max_tokens=900,
+                timeout=30.0
+            )
+            answer = resp.choices[0].message.content
+            return app.response_class(answer, mimetype="text/plain"), 200
+        except Exception as e:
+            print("[HSU candidate select] error:", e)
+            return app.response_class(f"HSU candidate select error: {str(e)}", mimetype="text/plain"), 500
+
 
     # 1) NL intent for RAG（规则优先，失败走 LLM）
     intent = parse_intent_rules(user_query)
@@ -1118,7 +1215,8 @@ def query_gpt():
     task_type = (task_type or "literature") or "literature"
     task_prompt = TASK_PROMPTS.get(task_type, "")
     try:
-        openai_messages = [{"role": "system", "content": SYSTEM_PROMPT_ACTIVE}]
+        system_prompt = (body.get("system_prompt") or "").strip() or SYSTEM_PROMPT_ACTIVE
+        openai_messages = [{"role": "system", "content": system_prompt}]
 
         if isinstance(messages_from_client, list) and messages_from_client:
             # 直接拼接最近 8 条

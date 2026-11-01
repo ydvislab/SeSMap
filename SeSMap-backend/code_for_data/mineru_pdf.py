@@ -6,7 +6,7 @@ Stage 1 (local): PDF -> Markdown via MinerU.
 corpus/<name>/<name>.md，供 build_corpus.py 直接消费。
 
 安装（任选其一）:
-  pip install -U "mineru[core]"        # 新版 MinerU，命令: mineru
+  pip install "mineru[core]<4"         # MinerU 4 的命令行不兼容，命令: mineru
   pip install -U magic-pdf             # 旧版，命令: magic-pdf
 或设环境变量 MINERU_CMD 为你的命令模板（用 {pdf} {out} 占位），例如:
   export MINERU_CMD='mineru -p {pdf} -o {out}'
@@ -33,7 +33,7 @@ def run_mineru(pdf: str, out_dir: str):
         cmd, shell = ["magic-pdf", "-p", pdf, "-o", out_dir, "-m", "auto"], False
     else:
         raise RuntimeError(
-            "未找到 mineru / magic-pdf。请 `pip install -U \"mineru[core]\"`，"
+            "未找到 mineru / magic-pdf。请 `pip install \"mineru[core]<4\"`，"
             "或设置环境变量 MINERU_CMD 指定你的命令模板。")
     print("  $", cmd if shell else " ".join(cmd))
     subprocess.run(cmd, shell=shell, check=True)
