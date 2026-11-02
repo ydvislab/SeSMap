@@ -61,6 +61,12 @@ REF_PARAGRAPH = [
     re.compile(r"\b(vol\.|pp\.|doi:|proceedings of|journal of|ieee trans|arxiv:)", re.I),
 ]
 REF_YEAR = re.compile(r"\((19|20)\d{2}[a-z]?\)|\b(19|20)\d{2}\.\s*$|,\s*(19|20)\d{2}[.;]?\s*$")
+# Author-year and bracket-keyed entries ("Johnson, B. and B. Shneiderman. 1991.", "[KSB*09] ...").
+REF_ENTRY = re.compile(
+    r"^[A-Z][\w'’-]+,\s+[A-Z]\.?.{0,300}?\b(19|20)\d{2}[a-z]?\b[.:)]"
+    r"|^[A-Z][\w'’-]+,? [A-Z]\.?[A-Z]?\.?(,| and ).{0,300}?\b(19|20)\d{2}\."
+    r"|^\[[A-Za-z<>∗*+0-9/]{2,20}\]\s"
+)
 
 
 # Statements about the publication rather than its science.  Kept narrow on purpose:
@@ -82,6 +88,8 @@ GIBBERISH = re.compile(r"^[a-z0-9.]{6,}\s*\(")
 
 
 def is_reference_paragraph(text: str) -> bool:
+    if REF_ENTRY.search(text):
+        return True
     hits = sum(bool(p.search(text)) for p in REF_PARAGRAPH)
     return hits >= 2 or (hits == 1 and len(text) < 500 and bool(REF_YEAR.search(text)))
 
